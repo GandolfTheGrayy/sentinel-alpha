@@ -4,6 +4,7 @@ Sentinel Daily Build Script
 Reads TODO.md to determine today's priorities, then uses Claude to generate
 1-11 modular commits that meaningfully advance the Sentinel Sentiment Engine.
 """
+import json
 import os
 import random
 import subprocess
@@ -14,7 +15,8 @@ from pathlib import Path
 
 import anthropic
 
-COMMITS_PER_DAY = random.randint(1, 11)
+COMMITS_PER_DAY = random.randint(1, 4)
+STATE_PATH = Path("scripts/build_state.json")
 
 PROJECT_CONTEXT = """
 You are a senior engineer building the Sentinel Sentiment Engine — an autonomous
@@ -34,7 +36,7 @@ ARCHITECTURE:
 LLM USAGE (strict):
   - Claude via `anthropic` SDK (model "claude-sonnet-4-6") — reasoning ONLY:
     Linguist analyses, Judge calibration, Historian RAG synthesis.
-  - Gemini via `google-generativeai` SDK (model "gemini-3.1-flash-lite") —
+  - Gemini via `google-generativeai` SDK (model "gemini-3.1-flash-lite-preview") —
     web scraping, HTML/text extraction, high-volume parsing in Scout modules.
   - Never call Claude for scraping or bulk extraction. Never call Gemini for
     nuanced reasoning or final scoring.
@@ -109,17 +111,31 @@ def read_todo() -> str:
     return "No TODO.md found. Focus on base infrastructure."
 
 
-def pick_tasks(today: date) -> list[tuple[str, str]]:
-    """Pick today's pillar/task pairs deterministically from the date."""
+def load_state() -> dict:
+    """Load persisted build state (which (pillar, task) pairs are done)."""
+    if STATE_PATH.exists():
+        return json.loads(STATE_PATH.read_text(encoding="utf-8"))
+    return {"completed": [], "iterations": {}}
+
+
+def save_state(state: dict) -> None:
+    """Persist build state to disk."""
+    STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    STATE_PATH.write_text(json.dumps(state, indent=2), encoding="utf-8")
+
+
+def pick_tasks(today: date, state: dict) -> list[tuple[str, str]]:
+    """Pick today's tasks, preferring un-built ones; recycle once exhausted."""
     random.seed(today.toordinal())
-    pillars = list(PILLAR_TASKS.keys())
-    weights = [3, 2, 2, 2, 1]  # scout weighted heavier early on
-    chosen = []
-    for _ in range(COMMITS_PER_DAY):
-        pillar = random.choices(pillars, weights=weights)[0]
-        task = random.choice(PILLAR_TASKS[pillar])
-        chosen.append((pillar, task))
-    return chosen
+    completed = {tuple(t) for t in state["completed"]}
+    flat = [(p, t) for p, ts in PILLAR_TASKS.items() for t in ts]
+    available = [pt for pt in flat if pt not in completed]
+    if len(available) < COMMITS_PER_DAY:
+        recycled = [pt for pt in flat if pt in completed]
+        random.shuffle(recycled)
+        available = available + recycled
+    random.shuffle(available)
+    return available[:COMMITS_PER_DAY]
 
 
 def generate_module(
@@ -150,7 +166,7 @@ def generate_module(
     """).strip()
 
     message = client.messages.create(
-        model="claude-sonnet-4-6",
+        model="claude-haiku-4-5-20251001",
         max_tokens=2048,
         messages=[{"role": "user", "content": prompt}],
     )
@@ -194,13 +210,15 @@ def main() -> None:
     client = anthropic.Anthropic(api_key=api_key)
     today = date.today()
     todo_context = read_todo()
-    tasks = pick_tasks(today)
+    state = load_state()
+    tasks = pick_tasks(today, state)
     print(f"Sentinel Daily Build — {today}")
-    print(f"Generating {COMMITS_PER_DAY} commits...\n")
+    print(f"Generating {len(tasks)} commits...\n")
 
+    done_state = {tuple(t) for t in state["completed"]}
     completed = []
     for i, (pillar, task) in enumerate(tasks, start=1):
-        print(f"[{i}/{COMMITS_PER_DAY}] [{pillar.upper()}] {task[:60]}...")
+        print(f"[{i}/{len(tasks)}] [{pillar.upper()}] {task[:60]}...")
         try:
             file_path, code, commit_msg = generate_module(
                 client, pillar, task, todo_context, i
@@ -211,21 +229,30 @@ def main() -> None:
 
         out = Path(file_path)
         out.parent.mkdir(parents=True, exist_ok=True)
-        # Avoid overwriting — append index if file exists
+        if (pillar, task) in done_state:
+            n = state["iterations"].get(f"{pillar}::{task}", 1) + 1
+            state["iterations"][f"{pillar}::{task}"] = n
+            out = out.with_stem(f"{out.stem}_v{n}")
+            commit_msg += f" (iter {n})"
         if out.exists():
             out = out.with_stem(f"{out.stem}_{i:02d}")
         out.write_text(code, encoding="utf-8")
         run(["git", "add", str(out)])
         run(["git", "commit", "-m", commit_msg])
         completed.append((pillar, task))
+        if (pillar, task) not in done_state:
+            state["completed"].append([pillar, task])
+            done_state.add((pillar, task))
         print(f"  ✓  {out}")
 
+    save_state(state)
     update_todo(completed)
+    extra = 0
     if completed:
-        run(["git", "add", "TODO.md"])
-        run(["git", "commit", "-m", "chore: update TODO.md with today's completed tasks"])
-
-    print(f"\nDone — {len(completed) + 1} commits pushed.")
+        run(["git", "add", str(STATE_PATH), "TODO.md"])
+        run(["git", "commit", "-m", "chore: update TODO.md and build state"])
+        extra = 1
+    print(f"\nDone — {len(completed) + extra} commits pushed.")
 
 
 if __name__ == "__main__":

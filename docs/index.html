@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sentinel Sentiment Engine</title>
 <style>
-:root{--bg:#0a0e14;--fg:#c9d1d9;--dim:#6e7681;--line:#21262d;--accent:#39d353;--scout:#58a6ff;--linguist:#f778ba;--historian:#d29922;--judge:#a371f7;--meta:#8b949e;}
+:root{--bg:#0a0e14;--fg:#c9d1d9;--dim:#6e7681;--line:#21262d;--panel:#10151c;--accent:#39d353;--scout:#58a6ff;--linguist:#f778ba;--historian:#d29922;--judge:#a371f7;--red:#f85149;--green:#3fb950;}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);color:var(--fg);font:14px/1.5 ui-monospace,'SF Mono',Menlo,monospace;padding:32px 24px;max-width:1100px;margin:0 auto;}
 h1{font-size:22px;margin-bottom:4px;letter-spacing:-.5px;}
@@ -16,72 +16,104 @@ h2{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim)
 .bar{background:var(--line);height:6px;border-radius:3px;overflow:hidden;}
 .bar>div{background:var(--accent);height:100%;transition:width .3s;}
 .bar-meta{display:flex;justify-content:space-between;font-size:12px;color:var(--dim);margin-top:6px;}
-.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
-.pillar{background:var(--line);padding:14px;border-radius:6px;border-left:3px solid var(--scout);}
-.pillar.linguist{border-left-color:var(--linguist);}
-.pillar.historian{border-left-color:var(--historian);}
-.pillar.judge{border-left-color:var(--judge);}
-.pillar-name{font-weight:600;font-size:13px;margin-bottom:4px;}
-.pillar-desc{font-size:11px;color:var(--dim);margin-bottom:10px;line-height:1.4;}
-.pillar-count{font-size:28px;font-weight:700;line-height:1;}
-.pillar-count small{font-size:11px;color:var(--dim);font-weight:400;margin-left:4px;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.grid-2{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.card{background:var(--panel);border:1px solid var(--line);padding:16px;border-radius:8px;}
+.card.scout{border-left:3px solid var(--scout);}
+.card.linguist{border-left:3px solid var(--linguist);}
+.card.historian{border-left:3px solid var(--historian);}
+.card.judge{border-left:3px solid var(--judge);}
+.card-title{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.big{font-size:32px;font-weight:700;line-height:1;}
+.big small{font-size:12px;color:var(--dim);font-weight:400;margin-left:4px;}
 .flow{display:flex;align-items:center;justify-content:space-between;background:var(--line);padding:14px;border-radius:6px;font-size:11px;color:var(--dim);overflow-x:auto;gap:8px;}
 .flow span{white-space:nowrap;}
 .flow .arrow{color:var(--accent);}
-.commits{display:flex;flex-direction:column;}
 .commit{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:12px;align-items:center;}
 .commit:last-child{border-bottom:none;}
 .tag{padding:2px 8px;border-radius:4px;background:rgba(255,255,255,.04);font-size:10px;flex-shrink:0;min-width:80px;text-align:center;text-transform:uppercase;letter-spacing:.5px;font-weight:600;}
-.tag.scout{color:var(--scout);}
-.tag.linguist{color:var(--linguist);}
-.tag.historian{color:var(--historian);}
-.tag.judge{color:var(--judge);}
-.tag.tests{color:#7ee787;}
-.tag.meta{color:var(--meta);}
-.commit-msg{flex:1;color:var(--fg);}
-.commit-time{color:var(--dim);flex-shrink:0;font-size:11px;}
+.tag.scout{color:var(--scout);}.tag.linguist{color:var(--linguist);}.tag.historian{color:var(--historian);}.tag.judge{color:var(--judge);}.tag.tests{color:#7ee787;}.tag.meta{color:var(--dim);}.tag.chore{color:var(--dim);}
+.commit-msg{flex:1;}.commit-time{color:var(--dim);font-size:11px;}
 .loader{color:var(--dim);font-style:italic;padding:12px 0;}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-.stat{background:var(--line);padding:14px;border-radius:6px;}
-.stat-num{font-size:24px;font-weight:700;}
-.stat-lbl{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;margin-top:2px;}
+.ticker-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--line);font-size:13px;}
+.ticker-row:last-child{border-bottom:none;}
+.ticker-name{font-weight:600;}
+.pos{color:var(--green);}.neg{color:var(--red);}
+.match{padding:8px 0;border-bottom:1px solid var(--line);font-size:12px;}
+.match:last-child{border-bottom:none;}
+.match-date{color:var(--historian);font-weight:600;font-size:11px;}
+.match-event{color:var(--fg);margin:2px 0;}
+.match-meta{color:var(--dim);font-size:11px;}
+.headline-quote{font-style:italic;color:var(--dim);border-left:2px solid var(--linguist);padding-left:12px;font-size:13px;margin-bottom:12px;}
+.score-pill{display:inline-block;padding:4px 10px;border-radius:12px;font-weight:600;font-size:12px;}
 footer{color:var(--dim);font-size:11px;margin-top:48px;text-align:center;padding-top:24px;border-top:1px solid var(--line);}
 footer a{color:var(--dim);}
-@media(max-width:700px){.pillars{grid-template-columns:1fr 1fr;}.stats{grid-template-columns:1fr;}}
+@media(max-width:760px){.grid-4{grid-template-columns:1fr 1fr;}.grid-2{grid-template-columns:1fr;}.grid-3{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 <h1>Sentinel Sentiment Engine</h1>
-<div class="sub">autonomous financial intelligence · <a href="https://github.com/GandolfTheGrayy/sentinel-alpha">github.com/GandolfTheGrayy/sentinel-alpha</a> · <span id="last-build">checking…</span></div>
+<div class="sub">autonomous financial intelligence · <a href="https://github.com/GandolfTheGrayy/sentinel-alpha">github</a> · <span id="last-build">checking…</span></div>
 
 <section>
 <h2>Pipeline</h2>
 <div class="flow">
 <span>raw signals</span><span class="arrow">→</span>
-<span style="color:var(--scout);">SCOUT (Gemini scrape)</span><span class="arrow">→</span>
-<span style="color:var(--linguist);">LINGUIST (Claude reason)</span><span class="arrow">→</span>
-<span style="color:var(--historian);">HISTORIAN (RAG match)</span><span class="arrow">→</span>
+<span style="color:var(--scout);">SCOUT</span><span class="arrow">→</span>
+<span style="color:var(--linguist);">LINGUIST</span><span class="arrow">→</span>
+<span style="color:var(--historian);">HISTORIAN</span><span class="arrow">→</span>
 <span>prediction</span><span class="arrow">→</span>
-<span style="color:var(--judge);">JUDGE (post-mortem)</span>
+<span style="color:var(--judge);">JUDGE</span>
+</div>
+</section>
+
+<section id="run-section">
+<h2>Latest Run · <span id="run-date" style="color:var(--fg);">—</span></h2>
+<div id="run-empty" class="loader">no pipeline run yet — manually trigger <a href="https://github.com/GandolfTheGrayy/sentinel-alpha/actions/workflows/daily_pipeline.yml" style="color:var(--accent);">Sentinel Daily Pipeline</a></div>
+<div id="run-grid" class="grid-2" style="display:none;">
+  <div class="card linguist">
+    <div class="card-title">Headline analyzed</div>
+    <div class="headline-quote" id="headline">—</div>
+    <div class="card-title">Linguist certainty</div>
+    <div><span class="score-pill" id="score-pill">—</span></div>
+    <div id="score-reasoning" style="color:var(--dim);font-size:12px;margin-top:8px;"></div>
+  </div>
+  <div class="card scout">
+    <div class="card-title">Scout watchlist (5d %)</div>
+    <div id="watchlist"></div>
+  </div>
+</div>
+<div class="card historian" id="historian-card" style="margin-top:12px;display:none;">
+  <div class="card-title">Historian — top RAG matches</div>
+  <div id="matches"></div>
+</div>
+</section>
+
+<section>
+<h2>Trend (last 30 runs)</h2>
+<div class="card judge">
+  <div class="card-title">Linguist score over time</div>
+  <svg id="trend" viewBox="0 0 600 100" preserveAspectRatio="none" style="width:100%;height:100px;"></svg>
 </div>
 </section>
 
 <section>
 <h2>Module Footprint</h2>
-<div class="pillars">
-<div class="pillar scout"><div class="pillar-name">SCOUT</div><div class="pillar-desc">scrapers · prices · filings</div><div class="pillar-count" id="scout-count">—<small>files</small></div></div>
-<div class="pillar linguist"><div class="pillar-name">LINGUIST</div><div class="pillar-desc">tells · drift · whispers</div><div class="pillar-count" id="linguist-count">—<small>files</small></div></div>
-<div class="pillar historian"><div class="pillar-name">HISTORIAN</div><div class="pillar-desc">RAG · vector lookup</div><div class="pillar-count" id="historian-count">—<small>files</small></div></div>
-<div class="pillar judge"><div class="pillar-name">JUDGE</div><div class="pillar-desc">backtest · calibration</div><div class="pillar-count" id="judge-count">—<small>files</small></div></div>
+<div class="grid-4">
+<div class="card scout"><div class="card-title">SCOUT</div><div class="big" id="scout-count">—<small>files</small></div></div>
+<div class="card linguist"><div class="card-title">LINGUIST</div><div class="big" id="linguist-count">—<small>files</small></div></div>
+<div class="card historian"><div class="card-title">HISTORIAN</div><div class="big" id="historian-count">—<small>files</small></div></div>
+<div class="card judge"><div class="card-title">JUDGE</div><div class="big" id="judge-count">—<small>files</small></div></div>
 </div>
 </section>
 
 <section>
 <h2>Build Stats</h2>
-<div class="stats">
-<div class="stat"><div class="stat-num" id="commit-count">—</div><div class="stat-lbl">total commits</div></div>
-<div class="stat"><div class="stat-num" id="day-count">—</div><div class="stat-lbl">commits today</div></div>
-<div class="stat"><div class="stat-num" id="backtest-count">—</div><div class="stat-lbl">post-mortems</div></div>
+<div class="grid-3">
+<div class="card"><div class="card-title">Total commits (last 30)</div><div class="big" id="commit-count">—</div></div>
+<div class="card"><div class="card-title">Commits today</div><div class="big" id="day-count">—</div></div>
+<div class="card"><div class="card-title">Post-mortems</div><div class="big" id="backtest-count">—</div></div>
 </div>
 </section>
 
@@ -93,18 +125,68 @@ footer a{color:var(--dim);}
 
 <section>
 <h2>Recent Commits</h2>
-<div class="commits" id="commits"><div class="loader">fetching…</div></div>
+<div id="commits"><div class="loader">fetching…</div></div>
 </section>
 
-<footer>data live from github · refresh to update · <a href="https://github.com/GandolfTheGrayy/sentinel-alpha/actions">run history</a></footer>
+<footer>data live from github + pipeline · <a href="https://github.com/GandolfTheGrayy/sentinel-alpha/actions">run history</a></footer>
 
 <script>
 const R='GandolfTheGrayy/sentinel-alpha';
 const P=['scout','linguist','historian','judge','tests'];
 const gh=u=>fetch(u).then(r=>r.json());
-const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const rel=d=>{const s=(Date.now()-d)/1000;if(s<60)return'just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';return Math.floor(s/86400)+'d ago';};
-async function load(){
+const scoreColor=n=>n<0?'var(--dim)':n<33?'var(--red)':n<66?'var(--historian)':'var(--green)';
+
+async function loadRun(){
+  try{
+    const d=await fetch('./data.json',{cache:'no-store'}).then(r=>r.ok?r.json():null);
+    if(!d)return;
+    document.getElementById('run-empty').style.display='none';
+    document.getElementById('run-grid').style.display='grid';
+    document.getElementById('historian-card').style.display='block';
+    document.getElementById('run-date').textContent=d.date;
+    document.getElementById('headline').textContent=d.headline;
+    const score=(d.linguist&&d.linguist.score!=null)?d.linguist.score:-1;
+    const pill=document.getElementById('score-pill');
+    pill.textContent=score>=0?`${score} / 100`:'parse failed';
+    pill.style.background=scoreColor(score);pill.style.color='#fff';
+    document.getElementById('score-reasoning').textContent=d.linguist?.reasoning||'';
+    const wl=document.getElementById('watchlist');wl.innerHTML='';
+    for(const p of d.watchlist||[]){
+      const row=document.createElement('div');row.className='ticker-row';
+      if(p.error){row.innerHTML=`<span class="ticker-name">${esc(p.ticker)}</span><span class="neg">err</span>`;}
+      else{const cls=p.pct_change>=0?'pos':'neg';const sign=p.pct_change>=0?'+':'';
+        row.innerHTML=`<span class="ticker-name">${esc(p.ticker)}</span><span><span style="color:var(--dim);">$${p.close}</span> &nbsp; <span class="${cls}">${sign}${p.pct_change}%</span></span>`;}
+      wl.appendChild(row);
+    }
+    const mc=document.getElementById('matches');mc.innerHTML='';
+    if(!d.historian||!d.historian.length){mc.innerHTML='<div class="loader">no matches</div>';}
+    else for(const m of d.historian){
+      const div=document.createElement('div');div.className='match';
+      const sign=m.sp500_5d_pct>=0?'+':'';const cls=m.sp500_5d_pct>=0?'pos':'neg';
+      div.innerHTML=`<div class="match-date">${esc(m.date)} <span style="color:var(--dim);font-weight:400;">· overlap ${m.match_score}</span></div><div class="match-event">${esc(m.event)}</div><div class="match-meta">S&amp;P 5d: <span class="${cls}">${sign}${m.sp500_5d_pct}%</span></div>`;
+      mc.appendChild(div);
+    }
+  }catch(e){console.warn('run load failed',e);}
+}
+
+async function loadTrend(){
+  try{
+    const h=await fetch('./history.json',{cache:'no-store'}).then(r=>r.ok?r.json():null);
+    if(!h||!h.length)return;
+    const recent=h.slice(-30);
+    const svg=document.getElementById('trend');svg.innerHTML='';
+    const w=600,hh=100,pad=8;
+    const xs=recent.map((_,i)=>pad+i*((w-2*pad)/Math.max(1,recent.length-1)));
+    const ys=recent.map(p=>{const s=p.linguist_score;return s<0?hh-pad:hh-pad-(s/100)*(hh-2*pad);});
+    let path='';xs.forEach((x,i)=>{path+=(i?' L':'M')+x.toFixed(1)+' '+ys[i].toFixed(1);});
+    svg.insertAdjacentHTML('beforeend',`<path d="${path}" fill="none" stroke="var(--linguist)" stroke-width="2"/>`);
+    xs.forEach((x,i)=>svg.insertAdjacentHTML('beforeend',`<circle cx="${x.toFixed(1)}" cy="${ys[i].toFixed(1)}" r="2" fill="var(--linguist)"/>`));
+  }catch(e){console.warn('trend load failed',e);}
+}
+
+async function loadRepo(){
   const tree=await gh(`https://api.github.com/repos/${R}/git/trees/main?recursive=1`);
   const counts={scout:0,linguist:0,historian:0,judge:0};
   let backtests=0;
@@ -131,20 +213,19 @@ async function load(){
   document.getElementById('commit-count').textContent=commits.length>=30?'30+':commits.length;
   const today=new Date().toDateString();
   document.getElementById('day-count').textContent=commits.filter(c=>new Date(c.commit.author.date).toDateString()===today).length;
-  const list=document.getElementById('commits');
-  list.innerHTML='';
+  const list=document.getElementById('commits');list.innerHTML='';
   for(const c of commits.slice(0,15)){
     const msg=c.commit.message.split('\n')[0];
     const m=msg.match(/^\w+\(([^)]+)\)/);
-    const tag=m&&P.includes(m[1])?m[1]:'meta';
-    const div=document.createElement('div');
-    div.className='commit';
+    const tag=m&&P.includes(m[1])?m[1]:(msg.startsWith('chore')?'chore':'meta');
+    const div=document.createElement('div');div.className='commit';
     div.innerHTML=`<span class="tag ${tag}">${tag}</span><span class="commit-msg">${esc(msg)}</span><span class="commit-time">${rel(new Date(c.commit.author.date))}</span>`;
     list.appendChild(div);
   }
   if(commits[0])document.getElementById('last-build').textContent=`last commit ${rel(new Date(commits[0].commit.author.date))}`;
 }
-load().catch(e=>{document.getElementById('commits').innerHTML=`<div class="loader">error: ${esc(e.message)}</div>`;});
+
+Promise.allSettled([loadRun(),loadTrend(),loadRepo()]);
 </script>
 </body>
 </html>
