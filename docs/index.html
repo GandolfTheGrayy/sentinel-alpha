@@ -101,10 +101,10 @@ footer a{color:var(--dim);}
 <section>
 <h2>Module Footprint</h2>
 <div class="grid-4">
-<div class="card scout"><div class="card-title">SCOUT</div><div class="big" id="scout-count">—<small>files</small></div></div>
-<div class="card linguist"><div class="card-title">LINGUIST</div><div class="big" id="linguist-count">—<small>files</small></div></div>
-<div class="card historian"><div class="card-title">HISTORIAN</div><div class="big" id="historian-count">—<small>files</small></div></div>
-<div class="card judge"><div class="card-title">JUDGE</div><div class="big" id="judge-count">—<small>files</small></div></div>
+<div class="card scout"><div class="card-title">SCOUT</div><div class="big" id="scout-count">—</div><div class="card-title" id="scout-split" style="margin-top:6px;">— spine · — scaffolding</div></div>
+<div class="card linguist"><div class="card-title">LINGUIST</div><div class="big" id="linguist-count">—</div><div class="card-title" id="linguist-split" style="margin-top:6px;">— spine · — scaffolding</div></div>
+<div class="card historian"><div class="card-title">HISTORIAN</div><div class="big" id="historian-count">—</div><div class="card-title" id="historian-split" style="margin-top:6px;">— spine · — scaffolding</div></div>
+<div class="card judge"><div class="card-title">JUDGE</div><div class="big" id="judge-count">—</div><div class="card-title" id="judge-split" style="margin-top:6px;">— spine · — scaffolding</div></div>
 </div>
 </section>
 
@@ -188,16 +188,22 @@ async function loadTrend(){
 
 async function loadRepo(){
   const tree=await gh(`https://api.github.com/repos/${R}/git/trees/main?recursive=1`);
-  const counts={scout:0,linguist:0,historian:0,judge:0};
+  const spine={scout:0,linguist:0,historian:0,judge:0};
+  const scaff={scout:0,linguist:0,historian:0,judge:0};
   let backtests=0;
   for(const f of tree.tree||[]){
     if(f.path.startsWith('backtest_results/')&&f.path.endsWith('.md'))backtests++;
     if(!f.path.startsWith('sentinel/'))continue;
-    if(!f.path.endsWith('.py')||f.path.endsWith('__init__.py'))continue;
-    const p=f.path.split('/')[1];
-    if(counts[p]!==undefined)counts[p]++;
+    if(!f.path.endsWith('.py')||f.path.endsWith('/__init__.py'))continue;
+    const parts=f.path.split('/');
+    const p=parts[1];
+    if(spine[p]===undefined)continue;
+    if(parts.includes('_generated'))scaff[p]++;else spine[p]++;
   }
-  for(const p of ['scout','linguist','historian','judge'])document.getElementById(`${p}-count`).innerHTML=counts[p]+'<small>files</small>';
+  for(const p of ['scout','linguist','historian','judge']){
+    document.getElementById(`${p}-count`).innerHTML=(spine[p]+scaff[p])+'<small>files</small>';
+    document.getElementById(`${p}-split`).textContent=`${spine[p]} spine · ${scaff[p]} scaffolding`;
+  }
   document.getElementById('backtest-count').textContent=backtests;
 
   const todo=await fetch(`https://raw.githubusercontent.com/${R}/main/TODO.md`).then(r=>r.text());

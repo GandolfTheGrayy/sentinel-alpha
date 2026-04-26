@@ -51,8 +51,10 @@ CODING RULES:
   4. Each output must be a single complete, importable Python module or script.
   5. Output ONLY raw source code — no markdown fences, no prose, no preamble.
   6. On the very first line, output the target file path prefixed with:
-       # path: sentinel/scout/sec_scraper.py
-     Then a blank line, then the code.
+       # path: sentinel/scout/_generated/sec_scraper.py
+     Then a blank line, then the code. AI-generated modules ALWAYS go in
+     the `_generated/` subdir of their pillar — never in the pillar root,
+     which is reserved for hand-written spine modules.
 """
 
 PILLAR_TASKS = {
@@ -157,8 +159,8 @@ def generate_module(
         Build: {task}
 
         Requirements:
-        - Output the file path on line 1 as:  # path: sentinel/{pillar}/filename.py
-          (or sentinel/tests/filename.py for test modules)
+        - Output the file path on line 1 as:  # path: sentinel/{pillar}/_generated/filename.py
+          (or sentinel/tests/_generated/filename.py for test modules)
         - Then a blank line, then the complete Python module.
         - The module must be self-contained and importable.
         - Include a module docstring explaining how this file fits into Sentinel.
@@ -173,15 +175,24 @@ def generate_module(
     raw = message.content[0].text.strip()
 
     lines = raw.splitlines()
-    # Default path
-    file_path = f"sentinel/{pillar}/module_{index:02d}.py"
+    file_path = f"sentinel/{pillar}/_generated/module_{index:02d}.py"
     code_lines = lines
     if lines and lines[0].startswith("# path:"):
         file_path = lines[0].split(":", 1)[1].strip()
         code_lines = lines[2:] if len(lines) > 2 else lines[1:]
 
+    p = Path(file_path)
+    if "_generated" not in p.parts:
+        parts = list(p.parts)
+        if len(parts) >= 2 and parts[0] == "sentinel":
+            parts.insert(2, "_generated")
+            p = Path(*parts)
+        else:
+            p = Path("sentinel") / pillar / "_generated" / p.name
+    file_path = str(p).replace("\\", "/")
+
     code = "\n".join(code_lines).strip() + "\n"
-    filename = Path(file_path).stem.replace("_", " ")
+    filename = p.stem.replace("_", " ")
     commit_msg = f"feat({pillar}): {filename}"
     return file_path, code, commit_msg
 
