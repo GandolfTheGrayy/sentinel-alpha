@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentinel Sentiment Engine</title>
+<style>
+:root{--bg:#0a0e14;--fg:#c9d1d9;--dim:#6e7681;--line:#21262d;--accent:#39d353;--scout:#58a6ff;--linguist:#f778ba;--historian:#d29922;--judge:#a371f7;--meta:#8b949e;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--fg);font:14px/1.5 ui-monospace,'SF Mono',Menlo,monospace;padding:32px 24px;max-width:1100px;margin:0 auto;}
+h1{font-size:22px;margin-bottom:4px;letter-spacing:-.5px;}
+.sub{color:var(--dim);font-size:12px;margin-bottom:32px;}
+.sub a{color:var(--accent);text-decoration:none;}
+section{margin-bottom:32px;}
+h2{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim);margin-bottom:12px;}
+.bar{background:var(--line);height:6px;border-radius:3px;overflow:hidden;}
+.bar>div{background:var(--accent);height:100%;transition:width .3s;}
+.bar-meta{display:flex;justify-content:space-between;font-size:12px;color:var(--dim);margin-top:6px;}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.pillar{background:var(--line);padding:14px;border-radius:6px;border-left:3px solid var(--scout);}
+.pillar.linguist{border-left-color:var(--linguist);}
+.pillar.historian{border-left-color:var(--historian);}
+.pillar.judge{border-left-color:var(--judge);}
+.pillar-name{font-weight:600;font-size:13px;margin-bottom:4px;}
+.pillar-desc{font-size:11px;color:var(--dim);margin-bottom:10px;line-height:1.4;}
+.pillar-count{font-size:28px;font-weight:700;line-height:1;}
+.pillar-count small{font-size:11px;color:var(--dim);font-weight:400;margin-left:4px;}
+.flow{display:flex;align-items:center;justify-content:space-between;background:var(--line);padding:14px;border-radius:6px;font-size:11px;color:var(--dim);overflow-x:auto;gap:8px;}
+.flow span{white-space:nowrap;}
+.flow .arrow{color:var(--accent);}
+.commits{display:flex;flex-direction:column;}
+.commit{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:12px;align-items:center;}
+.commit:last-child{border-bottom:none;}
+.tag{padding:2px 8px;border-radius:4px;background:rgba(255,255,255,.04);font-size:10px;flex-shrink:0;min-width:80px;text-align:center;text-transform:uppercase;letter-spacing:.5px;font-weight:600;}
+.tag.scout{color:var(--scout);}
+.tag.linguist{color:var(--linguist);}
+.tag.historian{color:var(--historian);}
+.tag.judge{color:var(--judge);}
+.tag.tests{color:#7ee787;}
+.tag.meta{color:var(--meta);}
+.commit-msg{flex:1;color:var(--fg);}
+.commit-time{color:var(--dim);flex-shrink:0;font-size:11px;}
+.loader{color:var(--dim);font-style:italic;padding:12px 0;}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.stat{background:var(--line);padding:14px;border-radius:6px;}
+.stat-num{font-size:24px;font-weight:700;}
+.stat-lbl{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;margin-top:2px;}
+footer{color:var(--dim);font-size:11px;margin-top:48px;text-align:center;padding-top:24px;border-top:1px solid var(--line);}
+footer a{color:var(--dim);}
+@media(max-width:700px){.pillars{grid-template-columns:1fr 1fr;}.stats{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<h1>Sentinel Sentiment Engine</h1>
+<div class="sub">autonomous financial intelligence · <a href="https://github.com/GandolfTheGrayy/sentinel-alpha">github.com/GandolfTheGrayy/sentinel-alpha</a> · <span id="last-build">checking…</span></div>
+
+<section>
+<h2>Pipeline</h2>
+<div class="flow">
+<span>raw signals</span><span class="arrow">→</span>
+<span style="color:var(--scout);">SCOUT (Gemini scrape)</span><span class="arrow">→</span>
+<span style="color:var(--linguist);">LINGUIST (Claude reason)</span><span class="arrow">→</span>
+<span style="color:var(--historian);">HISTORIAN (RAG match)</span><span class="arrow">→</span>
+<span>prediction</span><span class="arrow">→</span>
+<span style="color:var(--judge);">JUDGE (post-mortem)</span>
+</div>
+</section>
+
+<section>
+<h2>Module Footprint</h2>
+<div class="pillars">
+<div class="pillar scout"><div class="pillar-name">SCOUT</div><div class="pillar-desc">scrapers · prices · filings</div><div class="pillar-count" id="scout-count">—<small>files</small></div></div>
+<div class="pillar linguist"><div class="pillar-name">LINGUIST</div><div class="pillar-desc">tells · drift · whispers</div><div class="pillar-count" id="linguist-count">—<small>files</small></div></div>
+<div class="pillar historian"><div class="pillar-name">HISTORIAN</div><div class="pillar-desc">RAG · vector lookup</div><div class="pillar-count" id="historian-count">—<small>files</small></div></div>
+<div class="pillar judge"><div class="pillar-name">JUDGE</div><div class="pillar-desc">backtest · calibration</div><div class="pillar-count" id="judge-count">—<small>files</small></div></div>
+</div>
+</section>
+
+<section>
+<h2>Build Stats</h2>
+<div class="stats">
+<div class="stat"><div class="stat-num" id="commit-count">—</div><div class="stat-lbl">total commits</div></div>
+<div class="stat"><div class="stat-num" id="day-count">—</div><div class="stat-lbl">commits today</div></div>
+<div class="stat"><div class="stat-num" id="backtest-count">—</div><div class="stat-lbl">post-mortems</div></div>
+</div>
+</section>
+
+<section>
+<h2>Sprint Progress</h2>
+<div class="bar"><div id="todo-bar" style="width:0%"></div></div>
+<div class="bar-meta"><span id="todo-meta">loading TODO.md…</span><span id="todo-sprint"></span></div>
+</section>
+
+<section>
+<h2>Recent Commits</h2>
+<div class="commits" id="commits"><div class="loader">fetching…</div></div>
+</section>
+
+<footer>data live from github · refresh to update · <a href="https://github.com/GandolfTheGrayy/sentinel-alpha/actions">run history</a></footer>
+
+<script>
+const R='GandolfTheGrayy/sentinel-alpha';
+const P=['scout','linguist','historian','judge','tests'];
+const gh=u=>fetch(u).then(r=>r.json());
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const rel=d=>{const s=(Date.now()-d)/1000;if(s<60)return'just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';return Math.floor(s/86400)+'d ago';};
+async function load(){
+  const tree=await gh(`https://api.github.com/repos/${R}/git/trees/main?recursive=1`);
+  const counts={scout:0,linguist:0,historian:0,judge:0};
+  let backtests=0;
+  for(const f of tree.tree||[]){
+    if(f.path.startsWith('backtest_results/')&&f.path.endsWith('.md'))backtests++;
+    if(!f.path.startsWith('sentinel/'))continue;
+    if(!f.path.endsWith('.py')||f.path.endsWith('__init__.py'))continue;
+    const p=f.path.split('/')[1];
+    if(counts[p]!==undefined)counts[p]++;
+  }
+  for(const p of ['scout','linguist','historian','judge'])document.getElementById(`${p}-count`).innerHTML=counts[p]+'<small>files</small>';
+  document.getElementById('backtest-count').textContent=backtests;
+
+  const todo=await fetch(`https://raw.githubusercontent.com/${R}/main/TODO.md`).then(r=>r.text());
+  const total=(todo.match(/^\s*- \[[ x]\]/gm)||[]).length;
+  const done=(todo.match(/^\s*- \[x\]/gm)||[]).length;
+  const pct=total?Math.round(done/total*100):0;
+  document.getElementById('todo-bar').style.width=pct+'%';
+  document.getElementById('todo-meta').textContent=`${done} / ${total} tasks complete (${pct}%)`;
+  const sprint=todo.match(/## Current Sprint[^\n]*\n([^#]+)/);
+  if(sprint)document.getElementById('todo-sprint').textContent=sprint[0].split('\n')[0].replace('## ','');
+
+  const commits=await gh(`https://api.github.com/repos/${R}/commits?per_page=30`);
+  document.getElementById('commit-count').textContent=commits.length>=30?'30+':commits.length;
+  const today=new Date().toDateString();
+  document.getElementById('day-count').textContent=commits.filter(c=>new Date(c.commit.author.date).toDateString()===today).length;
+  const list=document.getElementById('commits');
+  list.innerHTML='';
+  for(const c of commits.slice(0,15)){
+    const msg=c.commit.message.split('\n')[0];
+    const m=msg.match(/^\w+\(([^)]+)\)/);
+    const tag=m&&P.includes(m[1])?m[1]:'meta';
+    const div=document.createElement('div');
+    div.className='commit';
+    div.innerHTML=`<span class="tag ${tag}">${tag}</span><span class="commit-msg">${esc(msg)}</span><span class="commit-time">${rel(new Date(c.commit.author.date))}</span>`;
+    list.appendChild(div);
+  }
+  if(commits[0])document.getElementById('last-build').textContent=`last commit ${rel(new Date(commits[0].commit.author.date))}`;
+}
+load().catch(e=>{document.getElementById('commits').innerHTML=`<div class="loader">error: ${esc(e.message)}</div>`;});
+</script>
+</body>
+</html>
