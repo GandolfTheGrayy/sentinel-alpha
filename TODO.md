@@ -45,4 +45,12 @@
 
 ## Completed
 
+### 2026-04-26
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+- [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
+- [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+
 (nothing yet — this is day one)
