@@ -31,11 +31,21 @@ ARCHITECTURE:
   sentinel/judge/     — Daily post-mortem: predicted vs. actual market moves,
                         heuristic refinement, anomaly flagging
 
+LLM USAGE (strict):
+  - Claude via `anthropic` SDK (model "claude-sonnet-4-6") — reasoning ONLY:
+    Linguist analyses, Judge calibration, Historian RAG synthesis.
+  - Gemini via `google-generativeai` SDK (model "gemini-3.1-flash-lite") —
+    web scraping, HTML/text extraction, high-volume parsing in Scout modules.
+  - Never call Claude for scraping or bulk extraction. Never call Gemini for
+    nuanced reasoning or final scoring.
+  - Read keys from env: ANTHROPIC_API_KEY, GEMINI_API_KEY.
+
 CODING RULES:
   1. Every file must have a module-level docstring explaining its role in Sentinel.
   2. Functions must have type hints and docstrings.
-  3. Use only stdlib + these approved packages: anthropic, yfinance, praw,
-     chromadb, requests, beautifulsoup4, pyyaml, sqlite3, numpy, pandas.
+  3. Use only stdlib + these approved packages: anthropic, google-generativeai,
+     yfinance, praw, chromadb, requests, beautifulsoup4, pyyaml, sqlite3,
+     numpy, pandas.
   4. Each output must be a single complete, importable Python module or script.
   5. Output ONLY raw source code — no markdown fences, no prose, no preamble.
   6. On the very first line, output the target file path prefixed with:
