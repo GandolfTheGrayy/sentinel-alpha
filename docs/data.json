@@ -1,0 +1,73 @@
+{
+  "date": "2026-04-26",
+  "headline": "Apple's quarterly outlook may be subject to ongoing supply chain headwinds, though leadership remains cautiously optimistic about the upcoming product cycle.",
+  "watchlist": [
+    {
+      "ticker": "AAPL",
+      "close": 271.06,
+      "pct_change": -0.73
+    },
+    {
+      "ticker": "MSFT",
+      "close": 424.62,
+      "pct_change": 1.57
+    },
+    {
+      "ticker": "NVDA",
+      "close": 208.27,
+      "pct_change": 3.07
+    },
+    {
+      "ticker": "GOOGL",
+      "close": 344.4,
+      "pct_change": 2.07
+    },
+    {
+      "ticker": "META",
+      "close": 675.03,
+      "pct_change": 0.61
+    },
+    {
+      "ticker": "TSLA",
+      "close": 376.3,
+      "pct_change": -4.13
+    },
+    {
+      "ticker": "AMZN",
+      "close": 263.99,
+      "pct_change": 6.33
+    }
+  ],
+  "linguist": {
+    "score": 25,
+    "reasoning": "The text heavily employs hedging language including 'may be', 'subject to', and 'cautiously optimistic', which significantly reduce linguistic certainty despite the underlying topic."
+  },
+  "historian": [
+    {
+      "date": "2020-03-12",
+      "event": "COVID circuit breaker \u2014 broad equity sell-off, supply chain fears",
+      "sp500_5d_pct": -12.0,
+      "tags": [
+        "pandemic",
+        "supply chain",
+        "panic",
+        "circuit breaker"
+      ],
+      "match_score": 2
+    },
+    {
+      "date": "2023-05-04",
+      "event": "Apple earnings \u2014 cautious supply chain commentary, guidance hedged",
+      "sp500_5d_pct": 1.8,
+      "tags": [
+        "earnings",
+        "apple",
+        "supply chain",
+        "hedged",
+        "guidance"
+      ],
+      "match_score": 2
+    }
+  ],
+  "report": "backtest_results/2026-04-26.md"
+}
