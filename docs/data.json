@@ -1,46 +1,46 @@
 {
-  "date": "2026-04-26",
+  "date": "2026-04-27",
   "headline": "Apple's quarterly outlook may be subject to ongoing supply chain headwinds, though leadership remains cautiously optimistic about the upcoming product cycle.",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 271.06,
-      "pct_change": -0.73
+      "close": 267.61,
+      "pct_change": 0.54
     },
     {
       "ticker": "MSFT",
-      "close": 424.62,
-      "pct_change": 1.57
+      "close": 424.82,
+      "pct_change": 0.16
     },
     {
       "ticker": "NVDA",
-      "close": 208.27,
-      "pct_change": 3.07
+      "close": 216.61,
+      "pct_change": 8.37
     },
     {
       "ticker": "GOOGL",
-      "close": 344.4,
-      "pct_change": 2.07
+      "close": 350.34,
+      "pct_change": 5.43
     },
     {
       "ticker": "META",
-      "close": 675.03,
-      "pct_change": 0.61
+      "close": 678.62,
+      "pct_change": 1.46
     },
     {
       "ticker": "TSLA",
-      "close": 376.3,
-      "pct_change": -4.13
+      "close": 378.67,
+      "pct_change": -2.01
     },
     {
       "ticker": "AMZN",
-      "close": 263.99,
-      "pct_change": 6.33
+      "close": 261.12,
+      "pct_change": 4.49
     }
   ],
   "linguist": {
     "score": 25,
-    "reasoning": "The text heavily employs hedging language including 'may be', 'subject to', and 'cautiously optimistic', which significantly reduce linguistic certainty despite the underlying topic."
+    "reasoning": "The text uses multiple hedging terms ('may be', 'subject to', 'cautiously optimistic') that significantly reduce linguistic certainty and express conditional or tentative claims rather than definitive statements."
   },
   "historian": [
     {
@@ -69,5 +69,5 @@
       "match_score": 2
     }
   ],
-  "report": "backtest_results/2026-04-26.md"
+  "report": "backtest_results/2026-04-27.md"
 }

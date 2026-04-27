@@ -1,0 +1,17 @@
+{
+  "completed": [
+    [
+      "historian",
+      "An event schema module defining dataclasses for MarketEvent, HistoricalMatch, and ConfidenceReport used across the Historian layer"
+    ],
+    [
+      "linguist",
+      "A prompt template system for LLM-based 'certainty vs. hesitation' scoring of corporate text, returning a structured CertaintyScore dataclass"
+    ],
+    [
+      "scout",
+      "A GitHub repository health signal collector measuring stars, commit velocity (commits/week), and issue open rate for a given repo"
+    ]
+  ],
+  "iterations": {}
+}
