@@ -45,6 +45,11 @@
 
 ## Completed
 
+### 2026-04-27
+- [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
+- [x] A prompt template system for LLM-based 'certainty vs. hesitation' scoring of cor
+- [x] A GitHub repository health signal collector measuring stars, commit velocity (co
+
 ### 2026-04-26
 - [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
 - [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
