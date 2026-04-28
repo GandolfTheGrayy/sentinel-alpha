@@ -11,6 +11,18 @@
     [
       "scout",
       "A GitHub repository health signal collector measuring stars, commit velocity (commits/week), and issue open rate for a given repo"
+    ],
+    [
+      "judge",
+      "A heuristic update logger that appends CalibrationResult entries to a JSONL file and computes rolling 7-day and 30-day accuracy metrics"
+    ],
+    [
+      "historian",
+      "A ChromaDB vector database setup module \u2014 initializes the local DB, defines collections for market events and filings, and provides a typed client wrapper"
+    ],
+    [
+      "judge",
+      "A Predicted Residual vs. Actual Market Move comparator that calculates directional accuracy and magnitude error, returning a CalibrationResult"
     ]
   ],
   "iterations": {}

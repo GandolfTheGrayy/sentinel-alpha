@@ -45,6 +45,11 @@
 
 ## Completed
 
+### 2026-04-28
+- [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+
 ### 2026-04-27
 - [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
 - [x] A prompt template system for LLM-based 'certainty vs. hesitation' scoring of cor
