@@ -45,6 +45,12 @@
 
 ## Completed
 
+### 2026-04-29
+- [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
+- [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+- [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
+
 ### 2026-04-28
 - [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
 - [x] A ChromaDB vector database setup module — initializes the local DB, defines coll

@@ -23,6 +23,22 @@
     [
       "judge",
       "A Predicted Residual vs. Actual Market Move comparator that calculates directional accuracy and magnitude error, returning a CalibrationResult"
+    ],
+    [
+      "judge",
+      "A post-mortem report generator that reads yesterday's PredictionRecord from SQLite, fetches actual price data, and writes a markdown report to backtest_results/"
+    ],
+    [
+      "historian",
+      "A RAG query interface \u2014 given a current SentimentResidual, queries ChromaDB for the top-k most similar historical events and returns a HistoricalMatch list"
+    ],
+    [
+      "historian",
+      "A historical market event ingestion pipeline that reads from a CSV of past events and embeds them into ChromaDB using a simple embedding function"
+    ],
+    [
+      "scout",
+      "An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing metadata into a normalized dataclass"
     ]
   ],
   "iterations": {}
