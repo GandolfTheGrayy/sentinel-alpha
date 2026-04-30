@@ -39,6 +39,14 @@
     [
       "scout",
       "An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing metadata into a normalized dataclass"
+    ],
+    [
+      "linguist",
+      "A sentiment aggregator that combines Scout signals and Linguist scores into a composite SentimentResidual score with a weighted formula"
+    ],
+    [
+      "scout",
+      "A base time-series SQLite schema module \u2014 creates tables for price history, sentiment signals, and prediction records"
     ]
   ],
   "iterations": {}

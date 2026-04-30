@@ -45,6 +45,10 @@
 
 ## Completed
 
+### 2026-04-30
+- [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
+- [x] A base time-series SQLite schema module — creates tables for price history, sent
+
 ### 2026-04-29
 - [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
 - [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
