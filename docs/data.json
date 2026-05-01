@@ -5,56 +5,69 @@
     {
       "ticker": "AAPL",
       "close": 271.35,
-      "pct_change": 0.11
+      "pct_change": 0.11,
+      "source": "yfinance"
     },
     {
       "ticker": "MSFT",
       "close": 407.78,
-      "pct_change": -3.97
+      "pct_change": -3.97,
+      "source": "yfinance"
     },
     {
       "ticker": "NVDA",
       "close": 199.57,
-      "pct_change": -4.18
+      "pct_change": -4.18,
+      "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
       "close": 384.8,
-      "pct_change": 11.73
+      "pct_change": 11.73,
+      "source": "yfinance"
     },
     {
       "ticker": "META",
       "close": 611.91,
-      "pct_change": -9.35
+      "pct_change": -9.35,
+      "source": "yfinance"
     },
     {
       "ticker": "TSLA",
       "close": 381.63,
-      "pct_change": 1.42
+      "pct_change": 1.42,
+      "source": "yfinance"
     },
     {
       "ticker": "AMZN",
       "close": 265.06,
-      "pct_change": 0.41
+      "pct_change": 0.41,
+      "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 72,
-    "reasoning": "The headline uses factual, declarative language about market movements ('tick up', 'close April on record highs') without hedging qualifiers, but the future tense ('futures') and relative modifier ('after') introduce slight temporal/conditional nuance rather than absolute certainty."
+    "reasoning": "The headline uses declarative factual language about market movements ('tick up', 'close April on record highs') with no hedging qualifiers, but the future-oriented 'futures' reference introduces slight temporal uncertainty about outcomes."
   },
   "historian": [],
   "report": "backtest_results/2026-05-01.md",
   "predictions_today": [
     {
-      "id": "2026-05-01-AAPL",
+      "id": "2026-05-01-AAPL-claude",
       "made": "2026-05-01",
       "ticker": "AAPL",
+      "strategy": "claude",
       "direction": "up",
-      "magnitude_pct": 0.8,
-      "confidence": 52,
-      "rationale": "Positive market momentum with futures ticking up and record highs suggest continued strength, though AAPL's minimal recent move and macro uncertainty limit conviction.",
+      "magnitude_pct": 1.2,
+      "confidence": 55,
+      "rationale": "Positive market momentum with S&P 500 and Nasdaq futures rising after record April closes suggests continued strength for mega-cap tech stocks like AAPL, though recent 5-day movement has been modest.",
       "headline": "Stock market today: S&P 500, Nasdaq, Dow futures tick up after gauges close April on record highs",
       "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
+      },
       "horizon_days": 5,
       "made_pct_5d_prior": 0.11,
       "price_at_prediction": 271.35,
@@ -62,15 +75,21 @@
       "resolved": false
     },
     {
-      "id": "2026-05-01-MSFT",
+      "id": "2026-05-01-MSFT-claude",
       "made": "2026-05-01",
       "ticker": "MSFT",
+      "strategy": "claude",
       "direction": "neutral",
-      "magnitude_pct": 2.1,
-      "confidence": 42,
-      "rationale": "MSFT recent -3.97% decline suggests sector weakness, but the Nvidia-specific headline about competition doesn't directly impact Microsoft's cloud/software business, leaving near-term direction uncertain.",
+      "magnitude_pct": 1.5,
+      "confidence": 35,
+      "rationale": "Recent -3.97% decline suggests sector weakness in AI/semiconductors, but headline concerns Nvidia not MSFT directly; MSFT's diversified cloud/software business provides some insulation, limiting predictability in near-term 5-day window.",
       "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
       "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-29",
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+      },
       "horizon_days": 5,
       "made_pct_5d_prior": -3.97,
       "price_at_prediction": 407.78,
@@ -78,15 +97,21 @@
       "resolved": false
     },
     {
-      "id": "2026-05-01-NVDA",
+      "id": "2026-05-01-NVDA-claude",
       "made": "2026-05-01",
       "ticker": "NVDA",
-      "direction": "down",
+      "strategy": "claude",
+      "direction": "up",
       "magnitude_pct": 2.5,
-      "confidence": 35,
-      "rationale": "Recent downward momentum combined with competitive pressure concerns suggests continued weakness, but low confidence reflects high volatility in semiconductor stocks and potential oversold conditions providing support.",
+      "confidence": 45,
+      "rationale": "Recent -4.18% decline may be oversold given NVDA's market position, but competition concerns and weak near-term sentiment limit upside recovery potential.",
       "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
       "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-04-27",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000026/nvda-20260424.htm"
+      },
       "horizon_days": 5,
       "made_pct_5d_prior": -4.18,
       "price_at_prediction": 199.57,
@@ -94,15 +119,21 @@
       "resolved": false
     },
     {
-      "id": "2026-05-01-GOOGL",
+      "id": "2026-05-01-GOOGL-claude",
       "made": "2026-05-01",
       "ticker": "GOOGL",
+      "strategy": "claude",
       "direction": "up",
       "magnitude_pct": 2.5,
-      "confidence": 58,
-      "rationale": "Google's competitive positioning against Nvidia is positive for GOOGL fundamentals, but recent 11.73% gain suggests potential pullback risk; modest upside expected as market digests AI competition dynamics.",
+      "confidence": 62,
+      "rationale": "Google's competitive positioning against Nvidia in AI/semiconductors is positive for long-term outlook, and recent +11.73% momentum suggests continued strength, though valuations may warrant some consolidation.",
       "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
       "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm"
+      },
       "horizon_days": 5,
       "made_pct_5d_prior": 11.73,
       "price_at_prediction": 384.8,
@@ -110,15 +141,21 @@
       "resolved": false
     },
     {
-      "id": "2026-05-01-META",
+      "id": "2026-05-01-META-claude",
       "made": "2026-05-01",
       "ticker": "META",
+      "strategy": "claude",
       "direction": "up",
       "magnitude_pct": 3.5,
       "confidence": 42,
-      "rationale": "Recent -9.35% decline has created oversold conditions, and headline affirms Big Tech's AI spending commitment which benefits META's infrastructure and ad ecosystem, but weak confidence due to macro uncertainty and lack of direct META-specific catalyst.",
+      "rationale": "After a sharp 9.35% decline, mean reversion pressure exists, and positive sentiment around Big Tech's AI spending opportunities may provide near-term support, though the weak headline clarity and recent bearish momentum limit conviction.",
       "headline": "Blue Owl CEO touts Big Tech's AI spending as 'significant' opportunity for the private credit giant",
       "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028526/meta-20260331.htm"
+      },
       "horizon_days": 5,
       "made_pct_5d_prior": -9.35,
       "price_at_prediction": 611.91,
@@ -126,15 +163,21 @@
       "resolved": false
     },
     {
-      "id": "2026-05-01-TSLA",
+      "id": "2026-05-01-TSLA-claude",
       "made": "2026-05-01",
       "ticker": "TSLA",
-      "direction": "up",
-      "magnitude_pct": 1.8,
-      "confidence": 42,
-      "rationale": "Positive Nasdaq momentum and recent uptrend suggest continued strength, but broad market headlines lack Tesla-specific catalysts and confidence is tempered by insufficient fundamental context.",
+      "strategy": "claude",
+      "direction": "neutral",
+      "magnitude_pct": 2.1,
+      "confidence": 35,
+      "rationale": "Recent modest upside momentum (+1.42%) amid broad Nasdaq strength is insufficient to establish a directional bias over 5 trading days without fundamental catalysts or technical confirmation.",
       "headline": "Nasdaq leads US stocks in monthly gains following April rally",
       "publisher": "Yahoo Finance Video",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-23",
+        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+      },
       "horizon_days": 5,
       "made_pct_5d_prior": 1.42,
       "price_at_prediction": 381.63,
@@ -142,15 +185,21 @@
       "resolved": false
     },
     {
-      "id": "2026-05-01-AMZN",
+      "id": "2026-05-01-AMZN-claude",
       "made": "2026-05-01",
       "ticker": "AMZN",
+      "strategy": "claude",
       "direction": "up",
       "magnitude_pct": 1.2,
-      "confidence": 42,
-      "rationale": "The headline mentions Amazon as a competitive threat to Nvidia, suggesting market recognition of Amazon's AI capabilities, though recent momentum is modest and broader market direction remains uncertain.",
+      "confidence": 58,
+      "rationale": "Amazon's competitive positioning against Nvidia in AI/cloud infrastructure is viewed favorably by markets, though modest near-term gains are expected given the recent flat momentum and broader tech sector uncertainty.",
       "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
       "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
+      },
       "horizon_days": 5,
       "made_pct_5d_prior": 0.41,
       "price_at_prediction": 265.06,
@@ -161,15 +210,21 @@
   "resolved_today": [],
   "open_predictions": [
     {
-      "id": "2026-05-01-AAPL",
+      "id": "2026-05-01-AAPL-claude",
       "made": "2026-05-01",
       "ticker": "AAPL",
+      "strategy": "claude",
       "direction": "up",
-      "magnitude_pct": 0.8,
-      "confidence": 52,
-      "rationale": "Positive market momentum with futures ticking up and record highs suggest continued strength, though AAPL's minimal recent move and macro uncertainty limit conviction.",
+      "magnitude_pct": 1.2,
+      "confidence": 55,
+      "rationale": "Positive market momentum with S&P 500 and Nasdaq futures rising after record April closes suggests continued strength for mega-cap tech stocks like AAPL, though recent 5-day movement has been modest.",
       "headline": "Stock market today: S&P 500, Nasdaq, Dow futures tick up after gauges close April on record highs",
       "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
+      },
       "horizon_days": 5,
       "made_pct_5d_prior": 0.11,
       "price_at_prediction": 271.35,
@@ -177,15 +232,87 @@
       "resolved": false
     },
     {
-      "id": "2026-05-01-MSFT",
+      "id": "2026-05-01-AAPL-always_up",
+      "made": "2026-05-01",
+      "ticker": "AAPL",
+      "strategy": "always_up",
+      "direction": "up",
+      "magnitude_pct": 1.0,
+      "confidence": 50,
+      "rationale": "always-up baseline",
+      "headline": "Stock market today: S&P 500, Nasdaq, Dow futures tick up after gauges close April on record highs",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.11,
+      "price_at_prediction": 271.35,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-AAPL-always_neutral",
+      "made": "2026-05-01",
+      "ticker": "AAPL",
+      "strategy": "always_neutral",
+      "direction": "neutral",
+      "magnitude_pct": 0.0,
+      "confidence": 50,
+      "rationale": "always-neutral baseline",
+      "headline": "Stock market today: S&P 500, Nasdaq, Dow futures tick up after gauges close April on record highs",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.11,
+      "price_at_prediction": 271.35,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-AAPL-momentum",
+      "made": "2026-05-01",
+      "ticker": "AAPL",
+      "strategy": "momentum",
+      "direction": "neutral",
+      "magnitude_pct": 0.06,
+      "confidence": 50,
+      "rationale": "5d momentum follow (+0.1%)",
+      "headline": "Stock market today: S&P 500, Nasdaq, Dow futures tick up after gauges close April on record highs",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.11,
+      "price_at_prediction": 271.35,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-MSFT-claude",
       "made": "2026-05-01",
       "ticker": "MSFT",
+      "strategy": "claude",
       "direction": "neutral",
-      "magnitude_pct": 2.1,
-      "confidence": 42,
-      "rationale": "MSFT recent -3.97% decline suggests sector weakness, but the Nvidia-specific headline about competition doesn't directly impact Microsoft's cloud/software business, leaving near-term direction uncertain.",
+      "magnitude_pct": 1.5,
+      "confidence": 35,
+      "rationale": "Recent -3.97% decline suggests sector weakness in AI/semiconductors, but headline concerns Nvidia not MSFT directly; MSFT's diversified cloud/software business provides some insulation, limiting predictability in near-term 5-day window.",
       "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
       "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-29",
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+      },
       "horizon_days": 5,
       "made_pct_5d_prior": -3.97,
       "price_at_prediction": 407.78,
@@ -193,15 +320,87 @@
       "resolved": false
     },
     {
-      "id": "2026-05-01-NVDA",
+      "id": "2026-05-01-MSFT-always_up",
       "made": "2026-05-01",
-      "ticker": "NVDA",
-      "direction": "down",
-      "magnitude_pct": 2.5,
-      "confidence": 35,
-      "rationale": "Recent downward momentum combined with competitive pressure concerns suggests continued weakness, but low confidence reflects high volatility in semiconductor stocks and potential oversold conditions providing support.",
+      "ticker": "MSFT",
+      "strategy": "always_up",
+      "direction": "up",
+      "magnitude_pct": 1.0,
+      "confidence": 50,
+      "rationale": "always-up baseline",
       "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
       "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-29",
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -3.97,
+      "price_at_prediction": 407.78,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-MSFT-always_neutral",
+      "made": "2026-05-01",
+      "ticker": "MSFT",
+      "strategy": "always_neutral",
+      "direction": "neutral",
+      "magnitude_pct": 0.0,
+      "confidence": 50,
+      "rationale": "always-neutral baseline",
+      "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-29",
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -3.97,
+      "price_at_prediction": 407.78,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-MSFT-momentum",
+      "made": "2026-05-01",
+      "ticker": "MSFT",
+      "strategy": "momentum",
+      "direction": "down",
+      "magnitude_pct": 1.99,
+      "confidence": 50,
+      "rationale": "5d momentum follow (-4.0%)",
+      "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-29",
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -3.97,
+      "price_at_prediction": 407.78,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-NVDA-claude",
+      "made": "2026-05-01",
+      "ticker": "NVDA",
+      "strategy": "claude",
+      "direction": "up",
+      "magnitude_pct": 2.5,
+      "confidence": 45,
+      "rationale": "Recent -4.18% decline may be oversold given NVDA's market position, but competition concerns and weak near-term sentiment limit upside recovery potential.",
+      "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-04-27",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000026/nvda-20260424.htm"
+      },
       "horizon_days": 5,
       "made_pct_5d_prior": -4.18,
       "price_at_prediction": 199.57,
@@ -209,15 +408,87 @@
       "resolved": false
     },
     {
-      "id": "2026-05-01-GOOGL",
+      "id": "2026-05-01-NVDA-always_up",
       "made": "2026-05-01",
-      "ticker": "GOOGL",
+      "ticker": "NVDA",
+      "strategy": "always_up",
       "direction": "up",
-      "magnitude_pct": 2.5,
-      "confidence": 58,
-      "rationale": "Google's competitive positioning against Nvidia is positive for GOOGL fundamentals, but recent 11.73% gain suggests potential pullback risk; modest upside expected as market digests AI competition dynamics.",
+      "magnitude_pct": 1.0,
+      "confidence": 50,
+      "rationale": "always-up baseline",
       "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
       "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-04-27",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000026/nvda-20260424.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -4.18,
+      "price_at_prediction": 199.57,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-NVDA-always_neutral",
+      "made": "2026-05-01",
+      "ticker": "NVDA",
+      "strategy": "always_neutral",
+      "direction": "neutral",
+      "magnitude_pct": 0.0,
+      "confidence": 50,
+      "rationale": "always-neutral baseline",
+      "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-04-27",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000026/nvda-20260424.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -4.18,
+      "price_at_prediction": 199.57,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-NVDA-momentum",
+      "made": "2026-05-01",
+      "ticker": "NVDA",
+      "strategy": "momentum",
+      "direction": "down",
+      "magnitude_pct": 2.09,
+      "confidence": 50,
+      "rationale": "5d momentum follow (-4.2%)",
+      "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-04-27",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000026/nvda-20260424.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -4.18,
+      "price_at_prediction": 199.57,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-GOOGL-claude",
+      "made": "2026-05-01",
+      "ticker": "GOOGL",
+      "strategy": "claude",
+      "direction": "up",
+      "magnitude_pct": 2.5,
+      "confidence": 62,
+      "rationale": "Google's competitive positioning against Nvidia in AI/semiconductors is positive for long-term outlook, and recent +11.73% momentum suggests continued strength, though valuations may warrant some consolidation.",
+      "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm"
+      },
       "horizon_days": 5,
       "made_pct_5d_prior": 11.73,
       "price_at_prediction": 384.8,
@@ -225,15 +496,87 @@
       "resolved": false
     },
     {
-      "id": "2026-05-01-META",
+      "id": "2026-05-01-GOOGL-always_up",
+      "made": "2026-05-01",
+      "ticker": "GOOGL",
+      "strategy": "always_up",
+      "direction": "up",
+      "magnitude_pct": 1.0,
+      "confidence": 50,
+      "rationale": "always-up baseline",
+      "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 11.73,
+      "price_at_prediction": 384.8,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-GOOGL-always_neutral",
+      "made": "2026-05-01",
+      "ticker": "GOOGL",
+      "strategy": "always_neutral",
+      "direction": "neutral",
+      "magnitude_pct": 0.0,
+      "confidence": 50,
+      "rationale": "always-neutral baseline",
+      "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 11.73,
+      "price_at_prediction": 384.8,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-GOOGL-momentum",
+      "made": "2026-05-01",
+      "ticker": "GOOGL",
+      "strategy": "momentum",
+      "direction": "up",
+      "magnitude_pct": 5.87,
+      "confidence": 50,
+      "rationale": "5d momentum follow (+11.7%)",
+      "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 11.73,
+      "price_at_prediction": 384.8,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-META-claude",
       "made": "2026-05-01",
       "ticker": "META",
+      "strategy": "claude",
       "direction": "up",
       "magnitude_pct": 3.5,
       "confidence": 42,
-      "rationale": "Recent -9.35% decline has created oversold conditions, and headline affirms Big Tech's AI spending commitment which benefits META's infrastructure and ad ecosystem, but weak confidence due to macro uncertainty and lack of direct META-specific catalyst.",
+      "rationale": "After a sharp 9.35% decline, mean reversion pressure exists, and positive sentiment around Big Tech's AI spending opportunities may provide near-term support, though the weak headline clarity and recent bearish momentum limit conviction.",
       "headline": "Blue Owl CEO touts Big Tech's AI spending as 'significant' opportunity for the private credit giant",
       "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028526/meta-20260331.htm"
+      },
       "horizon_days": 5,
       "made_pct_5d_prior": -9.35,
       "price_at_prediction": 611.91,
@@ -241,15 +584,87 @@
       "resolved": false
     },
     {
-      "id": "2026-05-01-TSLA",
+      "id": "2026-05-01-META-always_up",
+      "made": "2026-05-01",
+      "ticker": "META",
+      "strategy": "always_up",
+      "direction": "up",
+      "magnitude_pct": 1.0,
+      "confidence": 50,
+      "rationale": "always-up baseline",
+      "headline": "Blue Owl CEO touts Big Tech's AI spending as 'significant' opportunity for the private credit giant",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028526/meta-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -9.35,
+      "price_at_prediction": 611.91,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-META-always_neutral",
+      "made": "2026-05-01",
+      "ticker": "META",
+      "strategy": "always_neutral",
+      "direction": "neutral",
+      "magnitude_pct": 0.0,
+      "confidence": 50,
+      "rationale": "always-neutral baseline",
+      "headline": "Blue Owl CEO touts Big Tech's AI spending as 'significant' opportunity for the private credit giant",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028526/meta-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -9.35,
+      "price_at_prediction": 611.91,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-META-momentum",
+      "made": "2026-05-01",
+      "ticker": "META",
+      "strategy": "momentum",
+      "direction": "down",
+      "magnitude_pct": 4.67,
+      "confidence": 50,
+      "rationale": "5d momentum follow (-9.3%)",
+      "headline": "Blue Owl CEO touts Big Tech's AI spending as 'significant' opportunity for the private credit giant",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028526/meta-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -9.35,
+      "price_at_prediction": 611.91,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-TSLA-claude",
       "made": "2026-05-01",
       "ticker": "TSLA",
-      "direction": "up",
-      "magnitude_pct": 1.8,
-      "confidence": 42,
-      "rationale": "Positive Nasdaq momentum and recent uptrend suggest continued strength, but broad market headlines lack Tesla-specific catalysts and confidence is tempered by insufficient fundamental context.",
+      "strategy": "claude",
+      "direction": "neutral",
+      "magnitude_pct": 2.1,
+      "confidence": 35,
+      "rationale": "Recent modest upside momentum (+1.42%) amid broad Nasdaq strength is insufficient to establish a directional bias over 5 trading days without fundamental catalysts or technical confirmation.",
       "headline": "Nasdaq leads US stocks in monthly gains following April rally",
       "publisher": "Yahoo Finance Video",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-23",
+        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+      },
       "horizon_days": 5,
       "made_pct_5d_prior": 1.42,
       "price_at_prediction": 381.63,
@@ -257,15 +672,153 @@
       "resolved": false
     },
     {
-      "id": "2026-05-01-AMZN",
+      "id": "2026-05-01-TSLA-always_up",
+      "made": "2026-05-01",
+      "ticker": "TSLA",
+      "strategy": "always_up",
+      "direction": "up",
+      "magnitude_pct": 1.0,
+      "confidence": 50,
+      "rationale": "always-up baseline",
+      "headline": "Nasdaq leads US stocks in monthly gains following April rally",
+      "publisher": "Yahoo Finance Video",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-23",
+        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 1.42,
+      "price_at_prediction": 381.63,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-TSLA-always_neutral",
+      "made": "2026-05-01",
+      "ticker": "TSLA",
+      "strategy": "always_neutral",
+      "direction": "neutral",
+      "magnitude_pct": 0.0,
+      "confidence": 50,
+      "rationale": "always-neutral baseline",
+      "headline": "Nasdaq leads US stocks in monthly gains following April rally",
+      "publisher": "Yahoo Finance Video",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-23",
+        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 1.42,
+      "price_at_prediction": 381.63,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-TSLA-momentum",
+      "made": "2026-05-01",
+      "ticker": "TSLA",
+      "strategy": "momentum",
+      "direction": "up",
+      "magnitude_pct": 0.71,
+      "confidence": 50,
+      "rationale": "5d momentum follow (+1.4%)",
+      "headline": "Nasdaq leads US stocks in monthly gains following April rally",
+      "publisher": "Yahoo Finance Video",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-23",
+        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 1.42,
+      "price_at_prediction": 381.63,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-AMZN-claude",
       "made": "2026-05-01",
       "ticker": "AMZN",
+      "strategy": "claude",
       "direction": "up",
       "magnitude_pct": 1.2,
-      "confidence": 42,
-      "rationale": "The headline mentions Amazon as a competitive threat to Nvidia, suggesting market recognition of Amazon's AI capabilities, though recent momentum is modest and broader market direction remains uncertain.",
+      "confidence": 58,
+      "rationale": "Amazon's competitive positioning against Nvidia in AI/cloud infrastructure is viewed favorably by markets, though modest near-term gains are expected given the recent flat momentum and broader tech sector uncertainty.",
       "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
       "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.41,
+      "price_at_prediction": 265.06,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-AMZN-always_up",
+      "made": "2026-05-01",
+      "ticker": "AMZN",
+      "strategy": "always_up",
+      "direction": "up",
+      "magnitude_pct": 1.0,
+      "confidence": 50,
+      "rationale": "always-up baseline",
+      "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.41,
+      "price_at_prediction": 265.06,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-AMZN-always_neutral",
+      "made": "2026-05-01",
+      "ticker": "AMZN",
+      "strategy": "always_neutral",
+      "direction": "neutral",
+      "magnitude_pct": 0.0,
+      "confidence": 50,
+      "rationale": "always-neutral baseline",
+      "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.41,
+      "price_at_prediction": 265.06,
+      "resolves_on": "2026-05-08",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-01-AMZN-momentum",
+      "made": "2026-05-01",
+      "ticker": "AMZN",
+      "strategy": "momentum",
+      "direction": "neutral",
+      "magnitude_pct": 0.2,
+      "confidence": 50,
+      "rationale": "5d momentum follow (+0.4%)",
+      "headline": "Nvidia stock slips as investors weigh rising competition from Google and Amazon",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
+      },
       "horizon_days": 5,
       "made_pct_5d_prior": 0.41,
       "price_at_prediction": 265.06,
@@ -274,10 +827,34 @@
     }
   ],
   "accuracy": {
-    "total_resolved": 0,
-    "hits": 0,
-    "hit_rate": null,
-    "rolling_7": null,
-    "rolling_30": null
-  }
+    "claude": {
+      "total_resolved": 0,
+      "hits": 0,
+      "hit_rate": null,
+      "rolling_30": null,
+      "rolling_7": null
+    },
+    "always_up": {
+      "total_resolved": 0,
+      "hits": 0,
+      "hit_rate": null,
+      "rolling_30": null,
+      "rolling_7": null
+    },
+    "always_neutral": {
+      "total_resolved": 0,
+      "hits": 0,
+      "hit_rate": null,
+      "rolling_30": null,
+      "rolling_7": null
+    },
+    "momentum": {
+      "total_resolved": 0,
+      "hits": 0,
+      "hit_rate": null,
+      "rolling_30": null,
+      "rolling_7": null
+    }
+  },
+  "alerts_sent": 0
 }
