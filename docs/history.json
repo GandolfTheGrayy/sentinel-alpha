@@ -28,5 +28,14 @@
     "linguist_score": 25,
     "n_matches": 2,
     "watchlist_avg_pct": -0.55
+  },
+  {
+    "date": "2026-05-01",
+    "linguist_score": 72,
+    "watchlist_avg_pct": -0.55,
+    "predictions_made": 7,
+    "predictions_resolved": 0,
+    "hit_rate": null,
+    "rolling_7": null
   }
 ]
