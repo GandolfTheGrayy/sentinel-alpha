@@ -35,6 +35,22 @@ HISTORY_PATH = Path("docs/history.json")
 HORIZON_DAYS = 5
 ALL_STRATEGIES = ["claude", *baselines.STRATEGIES]
 
+TICKER_NAMES: dict[str, list[str]] = {
+    "AAPL": ["apple", "aapl"],
+    "MSFT": ["microsoft", "msft"],
+    "NVDA": ["nvidia", "nvda"],
+    "GOOGL": ["google", "alphabet", "googl"],
+    "META": ["meta platforms", "facebook", " meta "],
+    "TSLA": ["tesla", "tsla"],
+    "AMZN": ["amazon", "amzn"],
+}
+
+
+def _headline_belongs_to(headline: str, ticker: str) -> bool:
+    """Return True if the headline mentions this ticker's company name."""
+    h = f" {headline.lower()} "
+    return any(name in h for name in TICKER_NAMES.get(ticker, [ticker.lower()]))
+
 
 def _load(p: Path, default):
     """Load JSON or return default on missing/corrupt."""
@@ -120,14 +136,27 @@ def run() -> dict:
     # ---- make new predictions for today (per-ticker isolated) ----
     new_today: list[dict] = []
     already = {(p["ticker"], p.get("strategy", "claude")) for p in predictions if p.get("made") == today_iso}
+    seen_headlines: dict[str, str] = {}
     for t in WATCHLIST:
         try:
             pr = price_by.get(t)
             if not pr or "error" in pr:
+                print(f"  {t}: no price data, skipping", file=sys.stderr)
                 continue
             nh = latest_headline(t) or {"title": "", "publisher": ""}
+            title = nh.get("title", "")
+            if title:
+                if title in seen_headlines and not _headline_belongs_to(title, t):
+                    print(f"  {t}: dropping shared headline (already used by {seen_headlines[title]}, no name match)")
+                    nh, title = {"title": "", "publisher": ""}, ""
+                elif title not in seen_headlines:
+                    seen_headlines[title] = t
             filing = latest_filing(t)
-            ctx_text = nh.get("title", "")
+            if filing:
+                print(f"  {t}: SEC {filing['form']} filed {filing['filed']} ({len(filing.get('text',''))} chars)")
+            else:
+                print(f"  {t}: no recent SEC filing")
+            ctx_text = title
             if filing and filing.get("text"):
                 ctx_text = (ctx_text + " | " + filing["text"][:1500]).strip(" |")
             publisher = nh.get("publisher", "") or (filing["form"] + " filing" if filing else "")
