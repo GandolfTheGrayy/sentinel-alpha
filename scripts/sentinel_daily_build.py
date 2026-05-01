@@ -205,10 +205,15 @@ def update_todo(completed: list[tuple[str, str]]) -> None:
     content = todo_path.read_text(encoding="utf-8")
     today = date.today().isoformat()
     entry = f"\n### {today}\n" + "\n".join(f"- [x] {task[:80]}" for _, task in completed)
-    if "## Completed" in content:
-        content = content.replace("## Completed", f"## Completed\n{entry}")
+    marker = "## Completed (AI scaffolding"
+    if marker in content:
+        idx = content.index(marker)
+        line_end = content.index("\n", idx) + 1
+        content = content[:line_end] + entry + "\n" + content[line_end:]
+    elif "## Completed" in content:
+        content = content.replace("## Completed", f"## Completed (AI scaffolding — `_generated/` only, not production)\n{entry}")
     else:
-        content += f"\n## Completed\n{entry}\n"
+        content += f"\n## Completed (AI scaffolding — `_generated/` only, not production)\n{entry}\n"
     todo_path.write_text(content, encoding="utf-8")
 
 

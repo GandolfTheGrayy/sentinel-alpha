@@ -29,10 +29,13 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python -m sentinel.pipeline
 
       - name: Commit and push artifacts
         run: |
-          git add backtest_results/ docs/data.json docs/history.json
+          git pull --rebase
+          git add backtest_results/ docs/data.json docs/predictions.json docs/history.json docs/_cache/
           git diff --cached --quiet || git commit -m "chore(pipeline): post-mortem $(date -u +%F)"
           git push

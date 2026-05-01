@@ -112,11 +112,12 @@ footer a{color:var(--dim);}
 </section>
 
 <section>
-<h2>Track Record · Resolved Predictions</h2>
-<div class="grid-3" style="margin-bottom:12px;">
-  <div class="card"><div class="card-title">Hit rate (lifetime)</div><div class="big" id="hit-lifetime">—</div></div>
-  <div class="card"><div class="card-title">Hit rate (last 30)</div><div class="big" id="hit-30">—</div></div>
-  <div class="card"><div class="card-title">Resolved total</div><div class="big" id="resolved-total">—</div></div>
+<h2>Track Record · Claude vs Baselines</h2>
+<div class="grid-4" style="margin-bottom:12px;" id="strat-cards">
+  <div class="card linguist"><div class="card-title">Claude</div><div class="big" id="hit-claude">—</div><div class="card-title" id="claude-meta" style="margin-top:6px;">— resolved</div></div>
+  <div class="card"><div class="card-title">Always Up</div><div class="big" id="hit-always_up">—</div><div class="card-title" id="always_up-meta" style="margin-top:6px;">— resolved</div></div>
+  <div class="card"><div class="card-title">Always Neutral</div><div class="big" id="hit-always_neutral">—</div><div class="card-title" id="always_neutral-meta" style="margin-top:6px;">— resolved</div></div>
+  <div class="card"><div class="card-title">Momentum</div><div class="big" id="hit-momentum">—</div><div class="card-title" id="momentum-meta" style="margin-top:6px;">— resolved</div></div>
 </div>
 <div class="card judge">
   <div id="resolved-empty" class="empty">no resolved predictions yet — wait 5–7 days after first prediction.</div>
@@ -222,12 +223,16 @@ async function loadRun(){
     }
 
     const acc=d.accuracy||{};
-    document.getElementById('hit-lifetime').textContent=acc.hit_rate!=null?acc.hit_rate+'%':'—';
-    document.getElementById('hit-30').textContent=acc.rolling_30!=null?acc.rolling_30+'%':'—';
-    document.getElementById('resolved-total').textContent=acc.total_resolved||0;
+    for(const s of ['claude','always_up','always_neutral','momentum']){
+      const a=acc[s]||{};
+      const el=document.getElementById('hit-'+s);
+      if(el)el.textContent=a.hit_rate!=null?a.hit_rate+'%':'—';
+      const m=document.getElementById(s+'-meta');
+      if(m)m.textContent=`${a.total_resolved||0} resolved · 30d ${a.rolling_30!=null?a.rolling_30+'%':'—'}`;
+    }
 
     const allPreds=await fetch('./predictions.json',{cache:'no-store'}).then(r=>r.ok?r.json():[]).catch(()=>[]);
-    const closed=allPreds.filter(p=>p.resolved&&p.actual_direction).slice(-15).reverse();
+    const closed=allPreds.filter(p=>p.resolved&&p.actual_direction&&(p.strategy||'claude')==='claude').slice(-15).reverse();
     const rb=document.getElementById('resolved-body');
     if(closed.length){
       document.getElementById('resolved-empty').style.display='none';
@@ -247,16 +252,29 @@ async function loadTrend(){
   try{
     const h=await fetch('./history.json',{cache:'no-store'}).then(r=>r.ok?r.json():null);
     if(!h||!h.length)return;
-    const recent=h.slice(-30).filter(p=>p.rolling_7!=null||p.hit_rate!=null);
+    const recent=h.slice(-30).filter(p=>p.rolling_7!=null);
     if(!recent.length)return;
     const svg=document.getElementById('trend');svg.innerHTML='';
     const w=600,hh=100,pad=10;
     const xs=recent.map((_,i)=>pad+i*((w-2*pad)/Math.max(1,recent.length-1)));
-    const ys=recent.map(p=>{const v=p.rolling_7??p.hit_rate??50;return hh-pad-(v/100)*(hh-2*pad);});
-    svg.insertAdjacentHTML('beforeend',`<line x1="${pad}" y1="${hh-pad-0.5*(hh-2*pad)}" x2="${w-pad}" y2="${hh-pad-0.5*(hh-2*pad)}" stroke="var(--line)" stroke-dasharray="2,3"/>`);
-    let path='';xs.forEach((x,i)=>{path+=(i?' L':'M')+x.toFixed(1)+' '+ys[i].toFixed(1);});
-    svg.insertAdjacentHTML('beforeend',`<path d="${path}" fill="none" stroke="var(--judge)" stroke-width="2"/>`);
-    xs.forEach((x,i)=>svg.insertAdjacentHTML('beforeend',`<circle cx="${x.toFixed(1)}" cy="${ys[i].toFixed(1)}" r="2.5" fill="var(--judge)"/>`));
+    const yOf=v=>hh-pad-((v??50)/100)*(hh-2*pad);
+    svg.insertAdjacentHTML('beforeend',`<line x1="${pad}" y1="${yOf(50)}" x2="${w-pad}" y2="${yOf(50)}" stroke="var(--line)" stroke-dasharray="2,3"/>`);
+    const series=[
+      {key:'rolling_7',color:'var(--judge)',width:2.2,label:'Claude'},
+      {key:'baseline_momentum_rolling_7',color:'var(--scout)',width:1.4,label:'Momentum'},
+      {key:'baseline_always_up_rolling_7',color:'var(--historian)',width:1.4,label:'Always Up'},
+    ];
+    for(const s of series){
+      const pts=recent.map((p,i)=>p[s.key]!=null?[xs[i],yOf(p[s.key])]:null).filter(Boolean);
+      if(pts.length<2)continue;
+      let path='';pts.forEach((pt,i)=>{path+=(i?' L':'M')+pt[0].toFixed(1)+' '+pt[1].toFixed(1);});
+      svg.insertAdjacentHTML('beforeend',`<path d="${path}" fill="none" stroke="${s.color}" stroke-width="${s.width}"/>`);
+    }
+    const claudePts=recent.map((p,i)=>p.rolling_7!=null?[xs[i],yOf(p.rolling_7)]:null).filter(Boolean);
+    claudePts.forEach(pt=>svg.insertAdjacentHTML('beforeend',`<circle cx="${pt[0].toFixed(1)}" cy="${pt[1].toFixed(1)}" r="2.5" fill="var(--judge)"/>`));
+    svg.insertAdjacentHTML('beforeend',`<text x="${w-pad}" y="${pad+8}" text-anchor="end" fill="var(--judge)" font-size="9">Claude</text>`);
+    svg.insertAdjacentHTML('beforeend',`<text x="${w-pad}" y="${pad+20}" text-anchor="end" fill="var(--scout)" font-size="9">Momentum</text>`);
+    svg.insertAdjacentHTML('beforeend',`<text x="${w-pad}" y="${pad+32}" text-anchor="end" fill="var(--historian)" font-size="9">Always Up</text>`);
   }catch(e){console.warn('trend load failed',e);}
 }
 

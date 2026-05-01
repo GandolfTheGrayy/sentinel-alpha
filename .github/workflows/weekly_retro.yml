@@ -1,0 +1,34 @@
+name: Sentinel Weekly Retrospective
+
+on:
+  schedule:
+    - cron: '0 12 * * 0'
+  workflow_dispatch:
+
+jobs:
+  retro:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install anthropic
+
+      - run: |
+          git config user.name "${{ secrets.GIT_USER_NAME }}"
+          git config user.email "${{ secrets.GIT_USER_EMAIL }}"
+
+      - env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/weekly_retro.py
+
+      - run: |
+          git pull --rebase
+          git add backtest_results/weekly/
+          git diff --cached --quiet || git commit -m "chore(retro): weekly retrospective $(date -u +%Y-W%V)"
+          git push

@@ -1,5 +1,30 @@
 # Sentinel — Task Backlog
 
+> **Two checklist models.** Items in `## Spine Progress` are hand-edited and reflect modules actually wired into `sentinel/pipeline.py`. Items under `## Completed` are auto-appended by the daily build script — they represent AI-generated stubs in `_generated/`, not production code. Don't confuse the two.
+
+## Spine Progress (production)
+
+- [x] Live price fetcher (yfinance + stooq fallback) — `sentinel/scout/live_prices.py`
+- [x] News headline fetcher — `sentinel/scout/news.py`
+- [x] SEC EDGAR 8-K/10-Q scraper — `sentinel/scout/sec_filings.py`
+- [x] Linguist certainty scorer — `sentinel/linguist/sample_score.py`
+- [x] Embedding-based RAG (Gemini) — `sentinel/historian/rag_query.py`
+- [x] Per-ticker prediction (Claude) — `sentinel/judge/predictor.py`
+- [x] Three baseline strategies — `sentinel/judge/baselines.py`
+- [x] Auto-resolver — `sentinel/judge/resolver.py`
+- [x] Discord notifier — `sentinel/judge/notify.py`
+- [x] Post-mortem renderer — `sentinel/judge/postmortem.py`
+- [x] End-to-end pipeline orchestrator — `sentinel/pipeline.py`
+- [x] Spine smoke tests — `sentinel/tests/test_spine.py`
+- [x] Weekly retrospective generator — `scripts/weekly_retro.py`
+- [x] Promote-to-spine CLI — `scripts/promote.py`
+- [ ] Linguistic Drift detector (per-company tone shift over time)
+- [ ] Earnings calendar awareness (weight predictions by event proximity)
+- [ ] Embedding-based corpus expansion (ingest historical SEC + news at scale)
+- [ ] Paper-trading simulator on top of Claude predictions
+- [ ] Predictions.json yearly rotation
+- [ ] Cache layer for SEC + yfinance to survive rate limits
+
 ## Current Sprint: Base Infrastructure
 
 ### High Priority
@@ -43,7 +68,7 @@
 - [ ] Integration test for end-to-end pipeline
 - [ ] Architecture decision records (ADRs) in sentinel/docs/
 
-## Completed
+## Completed (AI scaffolding — `_generated/` only, not production)
 
 ### 2026-04-30
 - [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
