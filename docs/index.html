@@ -49,6 +49,14 @@ h2{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--dim)
 .match-meta{color:var(--dim);font-size:11px;}
 .headline-quote{font-style:italic;color:var(--dim);border-left:2px solid var(--linguist);padding-left:12px;font-size:13px;margin-bottom:12px;}
 .score-pill{display:inline-block;padding:4px 10px;border-radius:12px;font-weight:600;font-size:12px;}
+table.preds{width:100%;border-collapse:collapse;font-size:12px;}
+table.preds th{text-align:left;color:var(--dim);font-weight:600;text-transform:uppercase;font-size:10px;letter-spacing:.5px;padding:6px 8px;border-bottom:1px solid var(--line);}
+table.preds td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top;}
+table.preds tr:last-child td{border-bottom:none;}
+.dir{font-weight:600;}.dir.up{color:var(--green);}.dir.down{color:var(--red);}.dir.neutral{color:var(--dim);}
+.hit{color:var(--green);font-weight:600;}.miss{color:var(--red);font-weight:600;}
+.rationale{color:var(--dim);font-size:11px;}
+.empty{color:var(--dim);font-style:italic;padding:12px 0;font-size:12px;}
 footer{color:var(--dim);font-size:11px;margin-top:48px;text-align:center;padding-top:24px;border-top:1px solid var(--line);}
 footer a{color:var(--dim);}
 @media(max-width:760px){.grid-4{grid-template-columns:1fr 1fr;}.grid-2{grid-template-columns:1fr;}.grid-3{grid-template-columns:1fr;}}
@@ -93,9 +101,36 @@ footer a{color:var(--dim);}
 </section>
 
 <section>
-<h2>Trend (last 30 runs)</h2>
+<h2>Today's Predictions</h2>
+<div class="card judge" id="preds-card">
+  <div id="preds-empty" class="empty">no predictions yet — run the pipeline.</div>
+  <table class="preds" id="preds-table" style="display:none;">
+    <thead><tr><th>Ticker</th><th>Direction</th><th>Mag %</th><th>Conf</th><th>Headline / Rationale</th></tr></thead>
+    <tbody id="preds-body"></tbody>
+  </table>
+</div>
+</section>
+
+<section>
+<h2>Track Record · Resolved Predictions</h2>
+<div class="grid-3" style="margin-bottom:12px;">
+  <div class="card"><div class="card-title">Hit rate (lifetime)</div><div class="big" id="hit-lifetime">—</div></div>
+  <div class="card"><div class="card-title">Hit rate (last 30)</div><div class="big" id="hit-30">—</div></div>
+  <div class="card"><div class="card-title">Resolved total</div><div class="big" id="resolved-total">—</div></div>
+</div>
 <div class="card judge">
-  <div class="card-title">Linguist score over time</div>
+  <div id="resolved-empty" class="empty">no resolved predictions yet — wait 5–7 days after first prediction.</div>
+  <table class="preds" id="resolved-table" style="display:none;">
+    <thead><tr><th>Made</th><th>Ticker</th><th>Predicted</th><th>Actual</th><th>Hit?</th></tr></thead>
+    <tbody id="resolved-body"></tbody>
+  </table>
+</div>
+</section>
+
+<section>
+<h2>Hit Rate Trend</h2>
+<div class="card judge">
+  <div class="card-title">Rolling-7 hit rate over time</div>
   <svg id="trend" viewBox="0 0 600 100" preserveAspectRatio="none" style="width:100%;height:100px;"></svg>
 </div>
 </section>
@@ -140,6 +175,8 @@ const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[
 const rel=d=>{const s=(Date.now()-d)/1000;if(s<60)return'just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';return Math.floor(s/86400)+'d ago';};
 const scoreColor=n=>n<0?'var(--dim)':n<33?'var(--red)':n<66?'var(--historian)':'var(--green)';
 
+function dirArrow(d){return d==='up'?'▲':d==='down'?'▼':'—';}
+
 async function loadRun(){
   try{
     const d=await fetch('./data.json',{cache:'no-store'}).then(r=>r.ok?r.json():null);
@@ -170,6 +207,39 @@ async function loadRun(){
       div.innerHTML=`<div class="match-date">${esc(m.date)} <span style="color:var(--dim);font-weight:400;">· overlap ${m.match_score}</span></div><div class="match-event">${esc(m.event)}</div><div class="match-meta">S&amp;P 5d: <span class="${cls}">${sign}${m.sp500_5d_pct}%</span></div>`;
       mc.appendChild(div);
     }
+
+    const ptoday=d.predictions_today||[];
+    const ptbody=document.getElementById('preds-body');
+    if(ptoday.length){
+      document.getElementById('preds-empty').style.display='none';
+      document.getElementById('preds-table').style.display='table';
+      ptbody.innerHTML='';
+      for(const p of ptoday){
+        const tr=document.createElement('tr');
+        tr.innerHTML=`<td><strong>${esc(p.ticker)}</strong></td><td class="dir ${p.direction}">${dirArrow(p.direction)} ${esc(p.direction)}</td><td>${(+p.magnitude_pct).toFixed(2)}%</td><td>${p.confidence}</td><td><div>${esc((p.headline||'').slice(0,90))}${(p.headline||'').length>90?'…':''}</div><div class="rationale">${esc(p.rationale||'')}</div></td>`;
+        ptbody.appendChild(tr);
+      }
+    }
+
+    const acc=d.accuracy||{};
+    document.getElementById('hit-lifetime').textContent=acc.hit_rate!=null?acc.hit_rate+'%':'—';
+    document.getElementById('hit-30').textContent=acc.rolling_30!=null?acc.rolling_30+'%':'—';
+    document.getElementById('resolved-total').textContent=acc.total_resolved||0;
+
+    const allPreds=await fetch('./predictions.json',{cache:'no-store'}).then(r=>r.ok?r.json():[]).catch(()=>[]);
+    const closed=allPreds.filter(p=>p.resolved&&p.actual_direction).slice(-15).reverse();
+    const rb=document.getElementById('resolved-body');
+    if(closed.length){
+      document.getElementById('resolved-empty').style.display='none';
+      document.getElementById('resolved-table').style.display='table';
+      rb.innerHTML='';
+      for(const p of closed){
+        const sign=p.actual_pct>=0?'+':'';
+        const tr=document.createElement('tr');
+        tr.innerHTML=`<td>${esc(p.made)}</td><td><strong>${esc(p.ticker)}</strong></td><td class="dir ${p.direction}">${dirArrow(p.direction)} ${(+p.magnitude_pct).toFixed(1)}%</td><td class="dir ${p.actual_direction}">${dirArrow(p.actual_direction)} ${sign}${p.actual_pct}%</td><td class="${p.correct_direction?'hit':'miss'}">${p.correct_direction?'HIT':'MISS'}</td>`;
+        rb.appendChild(tr);
+      }
+    }
   }catch(e){console.warn('run load failed',e);}
 }
 
@@ -177,14 +247,16 @@ async function loadTrend(){
   try{
     const h=await fetch('./history.json',{cache:'no-store'}).then(r=>r.ok?r.json():null);
     if(!h||!h.length)return;
-    const recent=h.slice(-30);
+    const recent=h.slice(-30).filter(p=>p.rolling_7!=null||p.hit_rate!=null);
+    if(!recent.length)return;
     const svg=document.getElementById('trend');svg.innerHTML='';
-    const w=600,hh=100,pad=8;
+    const w=600,hh=100,pad=10;
     const xs=recent.map((_,i)=>pad+i*((w-2*pad)/Math.max(1,recent.length-1)));
-    const ys=recent.map(p=>{const s=p.linguist_score;return s<0?hh-pad:hh-pad-(s/100)*(hh-2*pad);});
+    const ys=recent.map(p=>{const v=p.rolling_7??p.hit_rate??50;return hh-pad-(v/100)*(hh-2*pad);});
+    svg.insertAdjacentHTML('beforeend',`<line x1="${pad}" y1="${hh-pad-0.5*(hh-2*pad)}" x2="${w-pad}" y2="${hh-pad-0.5*(hh-2*pad)}" stroke="var(--line)" stroke-dasharray="2,3"/>`);
     let path='';xs.forEach((x,i)=>{path+=(i?' L':'M')+x.toFixed(1)+' '+ys[i].toFixed(1);});
-    svg.insertAdjacentHTML('beforeend',`<path d="${path}" fill="none" stroke="var(--linguist)" stroke-width="2"/>`);
-    xs.forEach((x,i)=>svg.insertAdjacentHTML('beforeend',`<circle cx="${x.toFixed(1)}" cy="${ys[i].toFixed(1)}" r="2" fill="var(--linguist)"/>`));
+    svg.insertAdjacentHTML('beforeend',`<path d="${path}" fill="none" stroke="var(--judge)" stroke-width="2"/>`);
+    xs.forEach((x,i)=>svg.insertAdjacentHTML('beforeend',`<circle cx="${x.toFixed(1)}" cy="${ys[i].toFixed(1)}" r="2.5" fill="var(--judge)"/>`));
   }catch(e){console.warn('trend load failed',e);}
 }
 
