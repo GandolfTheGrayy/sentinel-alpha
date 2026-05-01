@@ -35,7 +35,11 @@ jobs:
 
       - name: Commit and push artifacts
         run: |
-          git pull --rebase
-          git add backtest_results/ docs/data.json docs/predictions.json docs/history.json docs/_cache/
-          git diff --cached --quiet || git commit -m "chore(pipeline): post-mortem $(date -u +%F)"
-          git push
+          git add docs/ backtest_results/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(pipeline): post-mortem $(date -u +%F)"
+            git pull --rebase
+            git push
+          else
+            echo "no artifact changes"
+          fi

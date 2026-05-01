@@ -28,7 +28,11 @@ jobs:
         run: python scripts/weekly_retro.py
 
       - run: |
-          git pull --rebase
           git add backtest_results/weekly/
-          git diff --cached --quiet || git commit -m "chore(retro): weekly retrospective $(date -u +%Y-W%V)"
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(retro): weekly retrospective $(date -u +%Y-W%V)"
+            git pull --rebase
+            git push
+          else
+            echo "no retrospective changes"
+          fi
