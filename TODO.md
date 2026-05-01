@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-01
+- [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
+- [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
+- [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
+
 ### 2026-04-30
 - [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
 - [x] A base time-series SQLite schema module — creates tables for price history, sent

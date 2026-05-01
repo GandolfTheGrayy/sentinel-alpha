@@ -47,6 +47,18 @@
     [
       "scout",
       "A base time-series SQLite schema module \u2014 creates tables for price history, sentiment signals, and prediction records"
+    ],
+    [
+      "linguist",
+      "A Linguistic Drift detector that compares a company's current 10-Q language against a rolling 30-day baseline and flags significant tone shifts"
+    ],
+    [
+      "linguist",
+      "An earnings call transcript parser that segments text by speaker role (CEO, CFO, Analyst) and prepares each segment for LLM analysis"
+    ],
+    [
+      "linguist",
+      "A 'tells' extractor \u2014 given a block of corporate text, uses Claude to identify specific linguistic tells that historically precede price moves"
     ]
   ],
   "iterations": {}
