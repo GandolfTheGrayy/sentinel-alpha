@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-02
+- [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+
 ### 2026-05-01
 - [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
 - [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,

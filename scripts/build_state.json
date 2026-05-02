@@ -59,6 +59,14 @@
     [
       "linguist",
       "A 'tells' extractor \u2014 given a block of corporate text, uses Claude to identify specific linguistic tells that historically precede price moves"
+    ],
+    [
+      "linguist",
+      "A Regulatory Whispers detector that scans SEC filings for hedging language patterns (e.g. 'may', 'subject to', 'could materially') and scores their density"
+    ],
+    [
+      "judge",
+      "An anomaly flagging system that detects when actual market moves exceed 2x the predicted residual and generates an AnomalyAlert dataclass"
     ]
   ],
   "iterations": {}
