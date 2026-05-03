@@ -67,6 +67,10 @@
     [
       "judge",
       "An anomaly flagging system that detects when actual market moves exceed 2x the predicted residual and generates an AnomalyAlert dataclass"
+    ],
+    [
+      "judge",
+      "A daily summary printer that reads the latest post-mortem and prints a concise console summary of Sentinel's performance"
     ]
   ],
   "iterations": {}
