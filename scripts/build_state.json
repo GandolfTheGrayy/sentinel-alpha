@@ -71,6 +71,10 @@
     [
       "judge",
       "A daily summary printer that reads the latest post-mortem and prints a concise console summary of Sentinel's performance"
+    ],
+    [
+      "tests",
+      "A pytest unit test module for the Scout price fetcher \u2014 mocks yfinance responses and asserts correct SQLite writes"
     ]
   ],
   "iterations": {}
