@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-05
+- [x] A pytest unit test module for the config loader — tests env var overrides, missi
+- [x] A config loader that reads a YAML config file and environment variables, with a 
+- [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
+
 ### 2026-05-04
 - [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
 

@@ -75,6 +75,18 @@
     [
       "tests",
       "A pytest unit test module for the Scout price fetcher \u2014 mocks yfinance responses and asserts correct SQLite writes"
+    ],
+    [
+      "tests",
+      "A pytest unit test module for the config loader \u2014 tests env var overrides, missing key handling, and type coercion"
+    ],
+    [
+      "scout",
+      "A config loader that reads a YAML config file and environment variables, with a typed Settings dataclass"
+    ],
+    [
+      "scout",
+      "A modular yfinance-based live price fetcher that stores OHLCV data in SQLite with a swap-ready interface for TimescaleDB"
     ]
   ],
   "iterations": {}
