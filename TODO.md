@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-06
+- [x] A confidence score weighting system that combines RAG similarity scores with rec
+- [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
+- [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
+
 ### 2026-05-05
 - [x] A pytest unit test module for the config loader — tests env var overrides, missi
 - [x] A config loader that reads a YAML config file and environment variables, with a 

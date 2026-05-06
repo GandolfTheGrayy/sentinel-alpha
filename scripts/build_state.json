@@ -87,6 +87,18 @@
     [
       "scout",
       "A modular yfinance-based live price fetcher that stores OHLCV data in SQLite with a swap-ready interface for TimescaleDB"
+    ],
+    [
+      "historian",
+      "A confidence score weighting system that combines RAG similarity scores with recency decay to produce a final WeightedConfidence float"
+    ],
+    [
+      "tests",
+      "A pytest integration test that runs the Scout \u2192 Linguist pipeline end-to-end with mocked external calls"
+    ],
+    [
+      "tests",
+      "A pytest unit test module for the Linguistic Drift detector \u2014 uses fixture text to assert correct drift scoring"
     ]
   ],
   "iterations": {}
