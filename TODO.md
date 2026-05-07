@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-07
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+- [x] A pytest unit test module for the config loader — tests env var overrides, missi
+- [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+
 ### 2026-05-06
 - [x] A confidence score weighting system that combines RAG similarity scores with rec
 - [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
