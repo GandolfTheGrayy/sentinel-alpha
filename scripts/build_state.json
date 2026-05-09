@@ -99,6 +99,10 @@
     [
       "tests",
       "A pytest unit test module for the Linguistic Drift detector \u2014 uses fixture text to assert correct drift scoring"
+    ],
+    [
+      "scout",
+      "A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring developer community sentiment"
     ]
   ],
   "iterations": {

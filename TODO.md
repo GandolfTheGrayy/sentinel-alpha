@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-09
+- [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
+
 ### 2026-05-08
 - [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
 - [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
