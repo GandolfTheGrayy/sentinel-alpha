@@ -72,6 +72,14 @@ table.preds tr:last-child td{border-bottom:none;}
 .report-quote{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
 .report-quote .price{font-size:28px;font-weight:700;}
 .report-quote .name{color:var(--dim);font-size:14px;}
+.quote-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:12px 0;font-size:12px;}
+.quote-meta div{background:var(--line);padding:8px 10px;border-radius:6px;}
+.quote-meta .label{color:var(--dim);font-size:10px;text-transform:uppercase;letter-spacing:.5px;}
+.quote-meta .value{font-weight:600;margin-top:2px;}
+.generate-btn{background:var(--judge);color:#fff;border:none;padding:12px 18px;border-radius:6px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;width:100%;margin-top:8px;}
+.generate-btn:hover{filter:brightness(1.15);}
+.generate-btn:disabled{opacity:.5;cursor:not-allowed;}
+@media(max-width:760px){.quote-meta{grid-template-columns:1fr 1fr;}}
 .horizons{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0;}
 .horizon{background:var(--line);padding:10px;border-radius:6px;border-left:3px solid var(--judge);}
 .horizon-label{font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;}
@@ -104,12 +112,22 @@ footer a{color:var(--dim);}
   <button id="search-btn">Search</button>
 </div>
 <div id="search-results" class="search-results"></div>
-<div id="report-card" class="card" style="display:none;">
+<div id="quote-loading" class="empty" style="display:none;">fetching quote…</div>
+<div id="quote-card" class="card" style="display:none;">
   <div class="report-quote">
-    <span class="price" id="rpt-price">—</span>
-    <span id="rpt-change" class="dir up">—</span>
-    <span class="name" id="rpt-name">—</span>
+    <span class="price" id="q-price">—</span>
+    <span id="q-change" class="dir up">—</span>
+    <span class="name" id="q-name">—</span>
   </div>
+  <div class="quote-meta">
+    <div><div class="label">Open</div><div class="value" id="q-open">—</div></div>
+    <div><div class="label">Day Range</div><div class="value" id="q-range">—</div></div>
+    <div><div class="label">Prev Close</div><div class="value" id="q-prev">—</div></div>
+    <div><div class="label">Industry</div><div class="value" id="q-industry">—</div></div>
+  </div>
+  <button id="generate-btn" class="generate-btn">Generate Deep Research Prediction →</button>
+</div>
+<div id="report-card" class="card" style="display:none;margin-top:12px;">
   <div id="rpt-summary" style="font-size:13px;line-height:1.6;margin-bottom:12px;"></div>
   <div class="card-title">Predictions across horizons</div>
   <div class="horizons" id="rpt-horizons"></div>
@@ -123,7 +141,7 @@ footer a{color:var(--dim);}
   <div class="card-title" style="margin-top:12px;">Recent News</div>
   <div id="rpt-news" style="font-size:12px;"></div>
 </div>
-<div id="report-loading" class="empty" style="display:none;">running deep research… 20-40s typical</div>
+<div id="report-loading" class="empty" style="display:none;">running deep research… 25-45s typical</div>
 <div id="report-error" class="empty" style="display:none;color:var(--red);"></div>
 </section>
 
@@ -389,6 +407,7 @@ Promise.allSettled([loadRun(),loadTrend(),loadRepo()]);
 // ---- Lookup + on-demand report ----
 const $=id=>document.getElementById(id);
 let searchTimer=null;
+let currentTicker=null;
 
 async function doSearch(q){
   if(!q||q.length<1){$('search-results').innerHTML='';return;}
@@ -398,39 +417,77 @@ async function doSearch(q){
     for(const item of (r.results||[])){
       const row=document.createElement('div');row.className='search-row';
       row.innerHTML=`<span class="sym">${esc(item.ticker)}</span><span class="name">${esc(item.name||'')}</span>`;
-      row.onclick=()=>{$('search-results').innerHTML='';$('search-input').value=item.ticker;runReport(item.ticker);};
+      row.onclick=()=>{$('search-results').innerHTML='';$('search-input').value=item.ticker;runQuote(item.ticker);};
       list.appendChild(row);
     }
   }catch(e){console.warn(e);}
 }
 
-async function runReport(ticker){
+async function runQuote(ticker){
   const t=String(ticker||'').toUpperCase().trim();
+  if(!t)return;
+  currentTicker=t;
+  $('search-results').innerHTML='';
+  $('quote-card').style.display='none';
+  $('report-card').style.display='none';
+  $('report-error').style.display='none';
+  $('report-loading').style.display='none';
+  $('quote-loading').style.display='block';
+  try{
+    const d=await fetch(`/api/quote?ticker=${encodeURIComponent(t)}`).then(r=>r.json());
+    if(d.error)throw new Error(d.error);
+    renderQuote(d);
+  }catch(e){
+    $('quote-loading').style.display='none';
+    $('report-error').style.display='block';
+    $('report-error').textContent=`error: ${e.message||e}`;
+  }
+}
+
+function renderQuote(d){
+  $('quote-loading').style.display='none';
+  $('quote-card').style.display='block';
+  $('q-price').textContent=d.price!=null?`$${d.price.toFixed(2)}`:'—';
+  const cls=(d.change_pct||0)>=0?'up':'down';
+  $('q-change').className=`dir ${cls}`;
+  $('q-change').textContent=d.change_pct!=null?`${dirArrow(cls)} ${(d.change_pct>=0?'+':'')}${d.change_pct.toFixed(2)}% (${d.change>=0?'+':''}$${(d.change||0).toFixed(2)})`:'—';
+  $('q-name').textContent=`${d.name||d.ticker}`;
+  $('q-open').textContent=d.open!=null?`$${d.open.toFixed(2)}`:'—';
+  $('q-range').textContent=(d.low!=null&&d.high!=null)?`$${d.low.toFixed(2)} – $${d.high.toFixed(2)}`:'—';
+  $('q-prev').textContent=d.prev_close!=null?`$${d.prev_close.toFixed(2)}`:'—';
+  $('q-industry').textContent=d.industry||d.exchange||'—';
+  const btn=$('generate-btn');
+  btn.disabled=false;
+  btn.textContent='Generate Deep Research Prediction →';
+}
+
+async function runReport(ticker){
+  const t=String(ticker||currentTicker||'').toUpperCase().trim();
   if(!t)return;
   $('report-card').style.display='none';
   $('report-error').style.display='none';
   $('report-loading').style.display='block';
-  $('search-results').innerHTML='';
+  const btn=$('generate-btn');
+  btn.disabled=true;
+  btn.textContent='Researching… (25-45s)';
   try{
     const d=await fetch(`/api/report?ticker=${encodeURIComponent(t)}`).then(r=>r.json());
     if(d.error){throw new Error(d.error);}
     renderReport(d);
+    btn.textContent='Re-run Research';
+    btn.disabled=false;
   }catch(e){
     $('report-loading').style.display='none';
     $('report-error').style.display='block';
     $('report-error').textContent=`error: ${e.message||e}`;
+    btn.disabled=false;
+    btn.textContent='Retry Deep Research →';
   }
 }
 
 function renderReport(d){
   $('report-loading').style.display='none';
   $('report-card').style.display='block';
-  const q=d.quote||{};
-  $('rpt-price').textContent=q.price!=null?`$${q.price.toFixed(2)}`:'—';
-  const cls=(q.change_pct||0)>=0?'up':'down';
-  $('rpt-change').className=`dir ${cls}`;
-  $('rpt-change').textContent=q.change_pct!=null?`${dirArrow(cls)} ${(q.change_pct>=0?'+':'')}${q.change_pct.toFixed(2)}%`:'—';
-  $('rpt-name').textContent=`${d.name||d.ticker} · ${d.industry||''}`;
   const r=d.report||{};
   $('rpt-summary').textContent=r.summary||(r.error?`(synthesis error: ${r.error})`:'');
   const horiz=$('rpt-horizons');horiz.innerHTML='';
@@ -467,9 +524,10 @@ $('search-input').addEventListener('input',e=>{
   searchTimer=setTimeout(()=>doSearch(e.target.value.trim()),200);
 });
 $('search-input').addEventListener('keydown',e=>{
-  if(e.key==='Enter'){e.preventDefault();const v=e.target.value.trim().toUpperCase();if(v)runReport(v);}
+  if(e.key==='Enter'){e.preventDefault();const v=e.target.value.trim().toUpperCase();if(v)runQuote(v);}
 });
-$('search-btn').addEventListener('click',()=>{const v=$('search-input').value.trim().toUpperCase();if(v)runReport(v);});
+$('search-btn').addEventListener('click',()=>{const v=$('search-input').value.trim().toUpperCase();if(v)runQuote(v);});
+$('generate-btn').addEventListener('click',()=>{if(currentTicker)runReport(currentTicker);});
 </script>
 </body>
 </html>
