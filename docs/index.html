@@ -57,6 +57,37 @@ table.preds tr:last-child td{border-bottom:none;}
 .hit{color:var(--green);font-weight:600;}.miss{color:var(--red);font-weight:600;}
 .rationale{color:var(--dim);font-size:11px;}
 .empty{color:var(--dim);font-style:italic;padding:12px 0;font-size:12px;}
+.lookup{display:flex;gap:8px;margin-bottom:8px;}
+.lookup input{flex:1;background:var(--line);border:1px solid var(--line);color:var(--fg);padding:10px 12px;border-radius:6px;font:inherit;font-size:13px;outline:none;}
+.lookup input:focus{border-color:var(--accent);}
+.lookup button{background:var(--accent);color:#000;border:none;padding:10px 16px;border-radius:6px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;}
+.lookup button:disabled{opacity:.5;cursor:not-allowed;}
+.search-results{display:flex;flex-direction:column;gap:2px;background:var(--panel);border:1px solid var(--line);border-radius:6px;max-height:240px;overflow-y:auto;margin-bottom:12px;}
+.search-results:empty{display:none;}
+.search-row{padding:8px 12px;cursor:pointer;font-size:12px;display:flex;justify-content:space-between;border-bottom:1px solid var(--line);}
+.search-row:last-child{border-bottom:none;}
+.search-row:hover{background:rgba(57,211,83,.08);}
+.search-row .sym{font-weight:600;color:var(--accent);}
+.search-row .name{color:var(--dim);text-align:right;flex:1;margin-left:12px;}
+.report-quote{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
+.report-quote .price{font-size:28px;font-weight:700;}
+.report-quote .name{color:var(--dim);font-size:14px;}
+.horizons{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0;}
+.horizon{background:var(--line);padding:10px;border-radius:6px;border-left:3px solid var(--judge);}
+.horizon-label{font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;}
+.horizon-dir{font-size:18px;font-weight:700;margin:4px 0;}
+.horizon-mag{font-size:11px;color:var(--dim);}
+.horizon-conf{font-size:11px;color:var(--dim);margin-top:2px;}
+.horizon-rationale{font-size:10px;color:var(--dim);margin-top:6px;line-height:1.4;}
+.catalyst{padding:6px 0;border-bottom:1px solid var(--line);font-size:12px;}
+.catalyst:last-child{border-bottom:none;}
+.catalyst-date{color:var(--historian);font-weight:600;font-size:11px;}
+.impact-high{color:var(--red);font-weight:600;}.impact-medium{color:var(--historian);}.impact-low{color:var(--dim);}
+.research-block{background:var(--line);padding:12px;border-radius:6px;font-size:12px;color:var(--dim);max-height:280px;overflow-y:auto;line-height:1.6;white-space:pre-wrap;}
+.sources-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.source-pill{background:var(--line);color:var(--accent);padding:3px 8px;border-radius:10px;font-size:10px;text-decoration:none;}
+.source-pill:hover{background:rgba(57,211,83,.15);}
+@media(max-width:760px){.horizons{grid-template-columns:1fr 1fr;}}
 footer{color:var(--dim);font-size:11px;margin-top:48px;text-align:center;padding-top:24px;border-top:1px solid var(--line);}
 footer a{color:var(--dim);}
 @media(max-width:760px){.grid-4{grid-template-columns:1fr 1fr;}.grid-2{grid-template-columns:1fr;}.grid-3{grid-template-columns:1fr;}}
@@ -65,6 +96,36 @@ footer a{color:var(--dim);}
 <body>
 <h1>Sentinel Sentiment Engine</h1>
 <div class="sub">autonomous financial intelligence · <a href="https://github.com/GandolfTheGrayy/sentinel-alpha">github</a> · <span id="last-build">checking…</span></div>
+
+<section>
+<h2>Lookup · On-Demand Prediction</h2>
+<div class="lookup">
+  <input id="search-input" type="text" placeholder="Search any US ticker — symbol or company name (e.g. NVDA, Palantir)" autocomplete="off"/>
+  <button id="search-btn">Search</button>
+</div>
+<div id="search-results" class="search-results"></div>
+<div id="report-card" class="card" style="display:none;">
+  <div class="report-quote">
+    <span class="price" id="rpt-price">—</span>
+    <span id="rpt-change" class="dir up">—</span>
+    <span class="name" id="rpt-name">—</span>
+  </div>
+  <div id="rpt-summary" style="font-size:13px;line-height:1.6;margin-bottom:12px;"></div>
+  <div class="card-title">Predictions across horizons</div>
+  <div class="horizons" id="rpt-horizons"></div>
+  <div class="card-title" style="margin-top:12px;">Key Catalysts</div>
+  <div id="rpt-catalysts"></div>
+  <div class="card-title" style="margin-top:12px;">Risks</div>
+  <div id="rpt-risks" style="font-size:12px;color:var(--dim);"></div>
+  <div class="card-title" style="margin-top:12px;">Deep Research <span style="color:var(--dim);font-weight:400;text-transform:none;letter-spacing:0;">— Gemini + Google Search</span></div>
+  <div class="research-block" id="rpt-research">—</div>
+  <div class="sources-list" id="rpt-sources"></div>
+  <div class="card-title" style="margin-top:12px;">Recent News</div>
+  <div id="rpt-news" style="font-size:12px;"></div>
+</div>
+<div id="report-loading" class="empty" style="display:none;">running deep research… 20-40s typical</div>
+<div id="report-error" class="empty" style="display:none;color:var(--red);"></div>
+</section>
 
 <section>
 <h2>Pipeline</h2>
@@ -324,6 +385,91 @@ async function loadRepo(){
 }
 
 Promise.allSettled([loadRun(),loadTrend(),loadRepo()]);
+
+// ---- Lookup + on-demand report ----
+const $=id=>document.getElementById(id);
+let searchTimer=null;
+
+async function doSearch(q){
+  if(!q||q.length<1){$('search-results').innerHTML='';return;}
+  try{
+    const r=await fetch(`/api/search?q=${encodeURIComponent(q)}`).then(r=>r.json());
+    const list=$('search-results');list.innerHTML='';
+    for(const item of (r.results||[])){
+      const row=document.createElement('div');row.className='search-row';
+      row.innerHTML=`<span class="sym">${esc(item.ticker)}</span><span class="name">${esc(item.name||'')}</span>`;
+      row.onclick=()=>{$('search-results').innerHTML='';$('search-input').value=item.ticker;runReport(item.ticker);};
+      list.appendChild(row);
+    }
+  }catch(e){console.warn(e);}
+}
+
+async function runReport(ticker){
+  const t=String(ticker||'').toUpperCase().trim();
+  if(!t)return;
+  $('report-card').style.display='none';
+  $('report-error').style.display='none';
+  $('report-loading').style.display='block';
+  $('search-results').innerHTML='';
+  try{
+    const d=await fetch(`/api/report?ticker=${encodeURIComponent(t)}`).then(r=>r.json());
+    if(d.error){throw new Error(d.error);}
+    renderReport(d);
+  }catch(e){
+    $('report-loading').style.display='none';
+    $('report-error').style.display='block';
+    $('report-error').textContent=`error: ${e.message||e}`;
+  }
+}
+
+function renderReport(d){
+  $('report-loading').style.display='none';
+  $('report-card').style.display='block';
+  const q=d.quote||{};
+  $('rpt-price').textContent=q.price!=null?`$${q.price.toFixed(2)}`:'—';
+  const cls=(q.change_pct||0)>=0?'up':'down';
+  $('rpt-change').className=`dir ${cls}`;
+  $('rpt-change').textContent=q.change_pct!=null?`${dirArrow(cls)} ${(q.change_pct>=0?'+':'')}${q.change_pct.toFixed(2)}%`:'—';
+  $('rpt-name').textContent=`${d.name||d.ticker} · ${d.industry||''}`;
+  const r=d.report||{};
+  $('rpt-summary').textContent=r.summary||(r.error?`(synthesis error: ${r.error})`:'');
+  const horiz=$('rpt-horizons');horiz.innerHTML='';
+  const labels={one_day:'1 DAY',one_week:'1 WEEK',one_month:'1 MONTH',one_year:'1 YEAR'};
+  for(const k of ['one_day','one_week','one_month','one_year']){
+    const p=(r.predictions||{})[k];if(!p){continue;}
+    const cell=document.createElement('div');cell.className='horizon';
+    cell.innerHTML=`<div class="horizon-label">${labels[k]}</div><div class="horizon-dir dir ${p.direction}">${dirArrow(p.direction)} ${esc(p.direction||'—')}</div><div class="horizon-mag">${(+p.magnitude_pct||0).toFixed(2)}% expected</div><div class="horizon-conf">conf ${p.confidence}</div><div class="horizon-rationale">${esc(p.rationale||'')}</div>`;
+    horiz.appendChild(cell);
+  }
+  const cat=$('rpt-catalysts');cat.innerHTML='';
+  for(const c of (r.key_catalysts||[])){
+    const div=document.createElement('div');div.className='catalyst';
+    div.innerHTML=`<span class="catalyst-date">${esc(c.date)}</span> · <span class="impact-${esc(c.impact)}">${esc(c.impact||'').toUpperCase()}</span> · ${esc(c.event)} <span style="color:var(--dim);">(${esc(c.direction||'')})</span>`;
+    cat.appendChild(div);
+  }
+  if(!r.key_catalysts||!r.key_catalysts.length)cat.innerHTML='<div class="empty">no catalysts identified</div>';
+  const risks=$('rpt-risks');risks.innerHTML=(r.risks||[]).map(x=>`• ${esc(x)}`).join('<br>')||'<div class="empty">no risks listed</div>';
+  $('rpt-research').textContent=d.research?.text||'—';
+  const src=$('rpt-sources');src.innerHTML='';
+  for(const s of (d.research?.sources||[]).slice(0,12)){
+    const a=document.createElement('a');a.className='source-pill';a.href=s.uri;a.target='_blank';a.rel='noopener';a.textContent=(s.title||s.uri).slice(0,60);src.appendChild(a);
+  }
+  const news=$('rpt-news');news.innerHTML='';
+  for(const n of (d.news||[]).slice(0,6)){
+    const div=document.createElement('div');div.style.padding='4px 0';div.style.borderBottom='1px solid var(--line)';
+    div.innerHTML=`<a href="${esc(n.url||'#')}" target="_blank" rel="noopener" style="color:var(--fg);text-decoration:none;">${esc(n.headline)}</a> <span style="color:var(--dim);">— ${esc(n.source)} · ${esc(n.datetime||'')}</span>`;
+    news.appendChild(div);
+  }
+}
+
+$('search-input').addEventListener('input',e=>{
+  clearTimeout(searchTimer);
+  searchTimer=setTimeout(()=>doSearch(e.target.value.trim()),200);
+});
+$('search-input').addEventListener('keydown',e=>{
+  if(e.key==='Enter'){e.preventDefault();const v=e.target.value.trim().toUpperCase();if(v)runReport(v);}
+});
+$('search-btn').addEventListener('click',()=>{const v=$('search-input').value.trim().toUpperCase();if(v)runReport(v);});
 </script>
 </body>
 </html>
