@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-10
+- [x] A GitHub repository health signal collector measuring stars, commit velocity (co
+- [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
+- [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
+- [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
+
 ### 2026-05-09
 - [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
 
