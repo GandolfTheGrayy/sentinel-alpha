@@ -3,7 +3,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const FINNHUB = 'https://finnhub.io/api/v1';
-const CLAUDE_MODEL = 'claude-sonnet-4-6';
+const CLAUDE_MODEL = 'claude-haiku-4-5-20251001';
 const GEMINI_RESEARCH_MODEL = 'gemini-2.5-flash';
 
 const SYNTH_PROMPT = (ctx: string) => `You are an investment forecaster. Read the data below and output ONLY a JSON object — no prose outside it — matching this exact schema:
@@ -79,18 +79,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         model: GEMINI_RESEARCH_MODEL,
         tools: [{ googleSearch: {} } as any],
       });
-      const prompt = `Conduct deep equity research on ${ticker} (${profile.name || ticker}). Use Google Search aggressively across multiple queries.
+      const prompt = `Equity research on ${ticker} (${profile.name || ticker}). Use Google Search.
 
-Cover, with concrete dates, figures, and source attributions:
-1. Recent material events (last 90 days): earnings beats/misses with magnitude, executive changes, lawsuits, product launches, regulatory actions, M&A activity, FDA decisions.
-2. Upcoming catalysts (next 90 days): earnings dates, product launches, conference appearances, regulatory deadlines, ex-dividend dates.
-3. Sector and macro context: industry trends, top competitors' recent moves, macro themes (rates, geopolitics) directly affecting this name.
-4. Recent analyst views: notable upgrades/downgrades with new price targets and reasoning.
-5. Notable insider transactions or institutional positioning shifts (13F changes, Form 4 activity).
-6. Any contrarian or under-discussed angle worth flagging.
+Cover concisely with dates, figures, sources:
+1. Recent material events (last 60 days) — earnings, executive moves, regulatory, lawsuits, product news.
+2. Upcoming catalysts (next 60 days) — earnings dates, product launches, regulatory deadlines.
+3. Sector and macro context plus 1-2 recent analyst views with price targets.
 
-Format: structured markdown. Be specific. No fluff. Cite sources inline.`;
-      const r = await model.generateContent(prompt);
+Markdown. Be specific. No fluff. Stop when you have 8-12 cited facts.`;
+      const r = await model.generateContent({
+        contents: [{ role: 'user', parts: [{ text: prompt }] }],
+        generationConfig: { maxOutputTokens: 1400, temperature: 0.3 },
+      } as any);
       researchText = r.response.text();
       const candidate: any = r.response.candidates?.[0];
       const grounding = candidate?.groundingMetadata || candidate?.grounding_metadata;
@@ -120,7 +120,7 @@ ${researchText}`;
 
     const synth = await anthropic.messages.create({
       model: CLAUDE_MODEL,
-      max_tokens: 2200,
+      max_tokens: 1500,
       messages: [{ role: 'user', content: SYNTH_PROMPT(ctx) }],
     });
     const txt = synth.content
