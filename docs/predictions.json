@@ -1531,7 +1531,12 @@
     "made_pct_5d_prior": 4.68,
     "price_at_prediction": 280.14,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 4.7,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 2.2,
+    "price_at_resolution": 293.32
   },
   {
     "id": "2026-05-03-AAPL-always_up",
@@ -1553,7 +1558,12 @@
     "made_pct_5d_prior": 4.68,
     "price_at_prediction": 280.14,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 4.7,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 3.7,
+    "price_at_resolution": 293.32
   },
   {
     "id": "2026-05-03-AAPL-always_neutral",
@@ -1575,7 +1585,12 @@
     "made_pct_5d_prior": 4.68,
     "price_at_prediction": 280.14,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 4.7,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 4.7,
+    "price_at_resolution": 293.32
   },
   {
     "id": "2026-05-03-AAPL-momentum",
@@ -1597,7 +1612,12 @@
     "made_pct_5d_prior": 4.68,
     "price_at_prediction": 280.14,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 4.7,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 2.36,
+    "price_at_resolution": 293.32
   },
   {
     "id": "2026-05-03-MSFT-claude",
@@ -1619,7 +1639,12 @@
     "made_pct_5d_prior": -2.44,
     "price_at_prediction": 414.44,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 0.16,
+    "actual_direction": "neutral",
+    "correct_direction": true,
+    "magnitude_error": 1.04,
+    "price_at_resolution": 415.12
   },
   {
     "id": "2026-05-03-MSFT-always_up",
@@ -1641,7 +1666,12 @@
     "made_pct_5d_prior": -2.44,
     "price_at_prediction": 414.44,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 0.16,
+    "actual_direction": "neutral",
+    "correct_direction": false,
+    "magnitude_error": 0.84,
+    "price_at_resolution": 415.12
   },
   {
     "id": "2026-05-03-MSFT-always_neutral",
@@ -1663,7 +1693,12 @@
     "made_pct_5d_prior": -2.44,
     "price_at_prediction": 414.44,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 0.16,
+    "actual_direction": "neutral",
+    "correct_direction": true,
+    "magnitude_error": 0.16,
+    "price_at_resolution": 415.12
   },
   {
     "id": "2026-05-03-MSFT-momentum",
@@ -1685,7 +1720,12 @@
     "made_pct_5d_prior": -2.44,
     "price_at_prediction": 414.44,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 0.16,
+    "actual_direction": "neutral",
+    "correct_direction": false,
+    "magnitude_error": 1.06,
+    "price_at_resolution": 415.12
   },
   {
     "id": "2026-05-03-NVDA-claude",
@@ -1707,7 +1747,12 @@
     "made_pct_5d_prior": -8.38,
     "price_at_prediction": 198.45,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 8.44,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 4.94,
+    "price_at_resolution": 215.2
   },
   {
     "id": "2026-05-03-NVDA-always_up",
@@ -1729,7 +1774,12 @@
     "made_pct_5d_prior": -8.38,
     "price_at_prediction": 198.45,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 8.44,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 7.44,
+    "price_at_resolution": 215.2
   },
   {
     "id": "2026-05-03-NVDA-always_neutral",
@@ -1751,7 +1801,12 @@
     "made_pct_5d_prior": -8.38,
     "price_at_prediction": 198.45,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 8.44,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 8.44,
+    "price_at_resolution": 215.2
   },
   {
     "id": "2026-05-03-NVDA-momentum",
@@ -1773,7 +1828,12 @@
     "made_pct_5d_prior": -8.38,
     "price_at_prediction": 198.45,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 8.44,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 4.25,
+    "price_at_resolution": 215.2
   },
   {
     "id": "2026-05-03-GOOGL-claude",
@@ -1795,7 +1855,12 @@
     "made_pct_5d_prior": 10.09,
     "price_at_prediction": 385.69,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 3.92,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 1.42,
+    "price_at_resolution": 400.8
   },
   {
     "id": "2026-05-03-GOOGL-always_up",
@@ -1817,7 +1882,12 @@
     "made_pct_5d_prior": 10.09,
     "price_at_prediction": 385.69,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 3.92,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 2.92,
+    "price_at_resolution": 400.8
   },
   {
     "id": "2026-05-03-GOOGL-always_neutral",
@@ -1839,7 +1909,12 @@
     "made_pct_5d_prior": 10.09,
     "price_at_prediction": 385.69,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 3.92,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 3.92,
+    "price_at_resolution": 400.8
   },
   {
     "id": "2026-05-03-GOOGL-momentum",
@@ -1861,7 +1936,12 @@
     "made_pct_5d_prior": 10.09,
     "price_at_prediction": 385.69,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 3.92,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 1.12,
+    "price_at_resolution": 400.8
   },
   {
     "id": "2026-05-03-META-claude",
@@ -1883,7 +1963,12 @@
     "made_pct_5d_prior": -10.3,
     "price_at_prediction": 608.75,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 0.14,
+    "actual_direction": "neutral",
+    "correct_direction": false,
+    "magnitude_error": 3.36,
+    "price_at_resolution": 609.63
   },
   {
     "id": "2026-05-03-META-always_up",
@@ -1905,7 +1990,12 @@
     "made_pct_5d_prior": -10.3,
     "price_at_prediction": 608.75,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 0.14,
+    "actual_direction": "neutral",
+    "correct_direction": false,
+    "magnitude_error": 0.86,
+    "price_at_resolution": 609.63
   },
   {
     "id": "2026-05-03-META-always_neutral",
@@ -1927,7 +2017,12 @@
     "made_pct_5d_prior": -10.3,
     "price_at_prediction": 608.75,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 0.14,
+    "actual_direction": "neutral",
+    "correct_direction": true,
+    "magnitude_error": 0.14,
+    "price_at_resolution": 609.63
   },
   {
     "id": "2026-05-03-META-momentum",
@@ -1949,7 +2044,12 @@
     "made_pct_5d_prior": -10.3,
     "price_at_prediction": 608.75,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 0.14,
+    "actual_direction": "neutral",
+    "correct_direction": false,
+    "magnitude_error": 5.01,
+    "price_at_resolution": 609.63
   },
   {
     "id": "2026-05-03-TSLA-claude",
@@ -1971,7 +2071,12 @@
     "made_pct_5d_prior": 3.21,
     "price_at_prediction": 390.82,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 9.6,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 7.1,
+    "price_at_resolution": 428.35
   },
   {
     "id": "2026-05-03-TSLA-always_up",
@@ -1993,7 +2098,12 @@
     "made_pct_5d_prior": 3.21,
     "price_at_prediction": 390.82,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 9.6,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 8.6,
+    "price_at_resolution": 428.35
   },
   {
     "id": "2026-05-03-TSLA-always_neutral",
@@ -2015,7 +2125,12 @@
     "made_pct_5d_prior": 3.21,
     "price_at_prediction": 390.82,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 9.6,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 9.6,
+    "price_at_resolution": 428.35
   },
   {
     "id": "2026-05-03-TSLA-momentum",
@@ -2037,7 +2152,12 @@
     "made_pct_5d_prior": 3.21,
     "price_at_prediction": 390.82,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 9.6,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 8.0,
+    "price_at_resolution": 428.35
   },
   {
     "id": "2026-05-03-AMZN-claude",
@@ -2059,7 +2179,12 @@
     "made_pct_5d_prior": 2.73,
     "price_at_prediction": 268.26,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 1.65,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 0.15,
+    "price_at_resolution": 272.68
   },
   {
     "id": "2026-05-03-AMZN-always_up",
@@ -2081,7 +2206,12 @@
     "made_pct_5d_prior": 2.73,
     "price_at_prediction": 268.26,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 1.65,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 0.65,
+    "price_at_resolution": 272.68
   },
   {
     "id": "2026-05-03-AMZN-always_neutral",
@@ -2103,7 +2233,12 @@
     "made_pct_5d_prior": 2.73,
     "price_at_prediction": 268.26,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 1.65,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 1.65,
+    "price_at_resolution": 272.68
   },
   {
     "id": "2026-05-03-AMZN-momentum",
@@ -2125,7 +2260,12 @@
     "made_pct_5d_prior": 2.73,
     "price_at_prediction": 268.26,
     "resolves_on": "2026-05-10",
-    "resolved": false
+    "resolved": true,
+    "actual_pct": 1.65,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 0.29,
+    "price_at_resolution": 272.68
   },
   {
     "id": "2026-05-04-AAPL-claude",
@@ -5821,6 +5961,622 @@
     "made_pct_5d_prior": 0.23,
     "price_at_prediction": 272.68,
     "resolves_on": "2026-05-16",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-AAPL-claude",
+    "made": "2026-05-10",
+    "ticker": "AAPL",
+    "strategy": "claude",
+    "direction": "up",
+    "magnitude_pct": 2.5,
+    "confidence": 55,
+    "rationale": "Recent +5.96% momentum and AI sector tailwinds suggest continued upside, but the move is already substantial and mean reversion risk exists over a 5-day horizon.",
+    "headline": "Markets 'love chasing bottlenecks': Wall Street weighs epic run in AI stocks",
+    "publisher": "Yahoo Finance",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-05-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 5.96,
+    "price_at_prediction": 293.32,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-AAPL-always_up",
+    "made": "2026-05-10",
+    "ticker": "AAPL",
+    "strategy": "always_up",
+    "direction": "up",
+    "magnitude_pct": 1.0,
+    "confidence": 50,
+    "rationale": "always-up baseline",
+    "headline": "Markets 'love chasing bottlenecks': Wall Street weighs epic run in AI stocks",
+    "publisher": "Yahoo Finance",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-05-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 5.96,
+    "price_at_prediction": 293.32,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-AAPL-always_neutral",
+    "made": "2026-05-10",
+    "ticker": "AAPL",
+    "strategy": "always_neutral",
+    "direction": "neutral",
+    "magnitude_pct": 0.0,
+    "confidence": 50,
+    "rationale": "always-neutral baseline",
+    "headline": "Markets 'love chasing bottlenecks': Wall Street weighs epic run in AI stocks",
+    "publisher": "Yahoo Finance",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-05-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 5.96,
+    "price_at_prediction": 293.32,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-AAPL-momentum",
+    "made": "2026-05-10",
+    "ticker": "AAPL",
+    "strategy": "momentum",
+    "direction": "up",
+    "magnitude_pct": 2.98,
+    "confidence": 50,
+    "rationale": "5d momentum follow (+6.0%)",
+    "headline": "Markets 'love chasing bottlenecks': Wall Street weighs epic run in AI stocks",
+    "publisher": "Yahoo Finance",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-05-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 5.96,
+    "price_at_prediction": 293.32,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-MSFT-claude",
+    "made": "2026-05-10",
+    "ticker": "MSFT",
+    "strategy": "claude",
+    "direction": "neutral",
+    "magnitude_pct": 0.8,
+    "confidence": 35,
+    "rationale": "10-Q filing provides fundamental data for analysis but lacks forward-looking catalysts; minimal recent momentum (+0.36%) suggests consolidation without clear directional bias.",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 0.36,
+    "price_at_prediction": 415.12,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-MSFT-always_up",
+    "made": "2026-05-10",
+    "ticker": "MSFT",
+    "strategy": "always_up",
+    "direction": "up",
+    "magnitude_pct": 1.0,
+    "confidence": 50,
+    "rationale": "always-up baseline",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 0.36,
+    "price_at_prediction": 415.12,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-MSFT-always_neutral",
+    "made": "2026-05-10",
+    "ticker": "MSFT",
+    "strategy": "always_neutral",
+    "direction": "neutral",
+    "magnitude_pct": 0.0,
+    "confidence": 50,
+    "rationale": "always-neutral baseline",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 0.36,
+    "price_at_prediction": 415.12,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-MSFT-momentum",
+    "made": "2026-05-10",
+    "ticker": "MSFT",
+    "strategy": "momentum",
+    "direction": "neutral",
+    "magnitude_pct": 0.18,
+    "confidence": 50,
+    "rationale": "5d momentum follow (+0.4%)",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 0.36,
+    "price_at_prediction": 415.12,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-NVDA-claude",
+    "made": "2026-05-10",
+    "ticker": "NVDA",
+    "strategy": "claude",
+    "direction": "neutral",
+    "magnitude_pct": 2.5,
+    "confidence": 35,
+    "rationale": "Recent +8.42% move suggests momentum, but 8-K filing context is unclear without details, creating uncertainty that typically leads to consolidation after sharp rallies.",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "8-K",
+      "filed": "2026-05-08",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 8.42,
+    "price_at_prediction": 215.2,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-NVDA-always_up",
+    "made": "2026-05-10",
+    "ticker": "NVDA",
+    "strategy": "always_up",
+    "direction": "up",
+    "magnitude_pct": 1.0,
+    "confidence": 50,
+    "rationale": "always-up baseline",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "8-K",
+      "filed": "2026-05-08",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 8.42,
+    "price_at_prediction": 215.2,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-NVDA-always_neutral",
+    "made": "2026-05-10",
+    "ticker": "NVDA",
+    "strategy": "always_neutral",
+    "direction": "neutral",
+    "magnitude_pct": 0.0,
+    "confidence": 50,
+    "rationale": "always-neutral baseline",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "8-K",
+      "filed": "2026-05-08",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 8.42,
+    "price_at_prediction": 215.2,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-NVDA-momentum",
+    "made": "2026-05-10",
+    "ticker": "NVDA",
+    "strategy": "momentum",
+    "direction": "up",
+    "magnitude_pct": 4.21,
+    "confidence": 50,
+    "rationale": "5d momentum follow (+8.4%)",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "8-K",
+      "filed": "2026-05-08",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 8.42,
+    "price_at_prediction": 215.2,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-GOOGL-claude",
+    "made": "2026-05-10",
+    "ticker": "GOOGL",
+    "strategy": "claude",
+    "direction": "up",
+    "magnitude_pct": 2.3,
+    "confidence": 62,
+    "rationale": "Recent +4.58% momentum and positive AI sentiment support continued strength, though overbought conditions and mean reversion suggest moderate gains rather than sustained acceleration.",
+    "headline": "The $1 trillion club's new members are powering the AI boom: Chart of the Day",
+    "publisher": "Yahoo Finance",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 4.58,
+    "price_at_prediction": 400.8,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-GOOGL-always_up",
+    "made": "2026-05-10",
+    "ticker": "GOOGL",
+    "strategy": "always_up",
+    "direction": "up",
+    "magnitude_pct": 1.0,
+    "confidence": 50,
+    "rationale": "always-up baseline",
+    "headline": "The $1 trillion club's new members are powering the AI boom: Chart of the Day",
+    "publisher": "Yahoo Finance",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 4.58,
+    "price_at_prediction": 400.8,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-GOOGL-always_neutral",
+    "made": "2026-05-10",
+    "ticker": "GOOGL",
+    "strategy": "always_neutral",
+    "direction": "neutral",
+    "magnitude_pct": 0.0,
+    "confidence": 50,
+    "rationale": "always-neutral baseline",
+    "headline": "The $1 trillion club's new members are powering the AI boom: Chart of the Day",
+    "publisher": "Yahoo Finance",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 4.58,
+    "price_at_prediction": 400.8,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-GOOGL-momentum",
+    "made": "2026-05-10",
+    "ticker": "GOOGL",
+    "strategy": "momentum",
+    "direction": "up",
+    "magnitude_pct": 2.29,
+    "confidence": 50,
+    "rationale": "5d momentum follow (+4.6%)",
+    "headline": "The $1 trillion club's new members are powering the AI boom: Chart of the Day",
+    "publisher": "Yahoo Finance",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 4.58,
+    "price_at_prediction": 400.8,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-META-claude",
+    "made": "2026-05-10",
+    "ticker": "META",
+    "strategy": "claude",
+    "direction": "neutral",
+    "magnitude_pct": 1.2,
+    "confidence": 35,
+    "rationale": "8-K filing lacks specific content details and recent momentum is negligible, providing insufficient signal for directional prediction over 5 trading days.",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "8-K",
+      "filed": "2026-05-04",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": -0.13,
+    "price_at_prediction": 609.63,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-META-always_up",
+    "made": "2026-05-10",
+    "ticker": "META",
+    "strategy": "always_up",
+    "direction": "up",
+    "magnitude_pct": 1.0,
+    "confidence": 50,
+    "rationale": "always-up baseline",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "8-K",
+      "filed": "2026-05-04",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": -0.13,
+    "price_at_prediction": 609.63,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-META-always_neutral",
+    "made": "2026-05-10",
+    "ticker": "META",
+    "strategy": "always_neutral",
+    "direction": "neutral",
+    "magnitude_pct": 0.0,
+    "confidence": 50,
+    "rationale": "always-neutral baseline",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "8-K",
+      "filed": "2026-05-04",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": -0.13,
+    "price_at_prediction": 609.63,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-META-momentum",
+    "made": "2026-05-10",
+    "ticker": "META",
+    "strategy": "momentum",
+    "direction": "neutral",
+    "magnitude_pct": 0.07,
+    "confidence": 50,
+    "rationale": "5d momentum follow (-0.1%)",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "8-K",
+      "filed": "2026-05-04",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": -0.13,
+    "price_at_prediction": 609.63,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-TSLA-claude",
+    "made": "2026-05-10",
+    "ticker": "TSLA",
+    "strategy": "claude",
+    "direction": "neutral",
+    "magnitude_pct": 2.5,
+    "confidence": 35,
+    "rationale": "Recent +9.13% move suggests potential consolidation after gains; Q1 10-Q filing provides regulatory clarity but lacks forward guidance to drive directional conviction.",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-23",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 9.13,
+    "price_at_prediction": 428.35,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-TSLA-always_up",
+    "made": "2026-05-10",
+    "ticker": "TSLA",
+    "strategy": "always_up",
+    "direction": "up",
+    "magnitude_pct": 1.0,
+    "confidence": 50,
+    "rationale": "always-up baseline",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-23",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 9.13,
+    "price_at_prediction": 428.35,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-TSLA-always_neutral",
+    "made": "2026-05-10",
+    "ticker": "TSLA",
+    "strategy": "always_neutral",
+    "direction": "neutral",
+    "magnitude_pct": 0.0,
+    "confidence": 50,
+    "rationale": "always-neutral baseline",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-23",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 9.13,
+    "price_at_prediction": 428.35,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-TSLA-momentum",
+    "made": "2026-05-10",
+    "ticker": "TSLA",
+    "strategy": "momentum",
+    "direction": "up",
+    "magnitude_pct": 4.57,
+    "confidence": 50,
+    "rationale": "5d momentum follow (+9.1%)",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-23",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 9.13,
+    "price_at_prediction": 428.35,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-AMZN-claude",
+    "made": "2026-05-10",
+    "ticker": "AMZN",
+    "strategy": "claude",
+    "direction": "neutral",
+    "magnitude_pct": 1.2,
+    "confidence": 35,
+    "rationale": "10-Q filing data on PP&E and lease accounting is procedural disclosure with limited immediate price impact; recent +0.23% move suggests consolidation with low conviction.",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 0.23,
+    "price_at_prediction": 272.68,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-AMZN-always_up",
+    "made": "2026-05-10",
+    "ticker": "AMZN",
+    "strategy": "always_up",
+    "direction": "up",
+    "magnitude_pct": 1.0,
+    "confidence": 50,
+    "rationale": "always-up baseline",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 0.23,
+    "price_at_prediction": 272.68,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-AMZN-always_neutral",
+    "made": "2026-05-10",
+    "ticker": "AMZN",
+    "strategy": "always_neutral",
+    "direction": "neutral",
+    "magnitude_pct": 0.0,
+    "confidence": 50,
+    "rationale": "always-neutral baseline",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 0.23,
+    "price_at_prediction": 272.68,
+    "resolves_on": "2026-05-17",
+    "resolved": false
+  },
+  {
+    "id": "2026-05-10-AMZN-momentum",
+    "made": "2026-05-10",
+    "ticker": "AMZN",
+    "strategy": "momentum",
+    "direction": "neutral",
+    "magnitude_pct": 0.12,
+    "confidence": 50,
+    "rationale": "5d momentum follow (+0.2%)",
+    "headline": "",
+    "publisher": "",
+    "filing": {
+      "form": "10-Q",
+      "filed": "2026-04-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
+    },
+    "horizon_days": 5,
+    "made_pct_5d_prior": 0.23,
+    "price_at_prediction": 272.68,
+    "resolves_on": "2026-05-17",
     "resolved": false
   }
 ]

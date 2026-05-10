@@ -127,5 +127,16 @@
     "rolling_7": 71.4,
     "baseline_momentum_rolling_7": 57.1,
     "baseline_always_up_rolling_7": 71.4
+  },
+  {
+    "date": "2026-05-10",
+    "linguist_score": 35,
+    "watchlist_avg_pct": 4.08,
+    "predictions_made": 7,
+    "predictions_resolved": 7,
+    "hit_rate": 66.7,
+    "rolling_7": 57.1,
+    "baseline_momentum_rolling_7": 57.1,
+    "baseline_always_up_rolling_7": 71.4
   }
 ]
