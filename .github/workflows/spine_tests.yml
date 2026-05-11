@@ -20,6 +20,6 @@ jobs:
         with:
           python-version: '3.12'
 
-      - run: pip install pytest anthropic google-generativeai yfinance pandas numpy requests beautifulsoup4 pyyaml
+      - run: pip install pytest anthropic google-generativeai yfinance pandas numpy requests beautifulsoup4 pyyaml supabase
 
       - run: pytest sentinel/tests/test_spine.py -v
