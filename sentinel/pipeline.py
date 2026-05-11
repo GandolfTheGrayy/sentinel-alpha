@@ -28,6 +28,7 @@ from sentinel.linguist.sample_score import score_text
 from sentinel.scout.live_prices import WATCHLIST, fetch_summary
 from sentinel.scout.news import latest_headline
 from sentinel.scout.sec_filings import latest_filing
+from sentinel.storage import db
 
 PREDICTIONS_PATH = Path("docs/predictions.json")
 DATA_PATH = Path("docs/data.json")
@@ -112,9 +113,19 @@ def run() -> dict:
     prices = fetch_summary()
     price_by = {p["ticker"]: p for p in prices}
 
-    predictions: list[dict] = _load(PREDICTIONS_PATH, [])
-    for _p in predictions:
-        _p.setdefault("strategy", "claude")
+    # Source of truth is Supabase; fall back to local JSON if DB unavailable
+    try:
+        predictions: list[dict] = [
+            {**p, "made": str(p.get("made_on") or p.get("made"))}
+            for p in db.get_recent_predictions(limit=2000)
+        ]
+        for _p in predictions:
+            _p.setdefault("strategy", "claude")
+    except Exception as exc:
+        print(f"  WARN: Supabase read failed ({exc}); falling back to predictions.json", file=sys.stderr)
+        predictions = _load(PREDICTIONS_PATH, [])
+        for _p in predictions:
+            _p.setdefault("strategy", "claude")
 
     # ---- resolve due predictions ----
     resolved_today: list[dict] = []
@@ -127,6 +138,7 @@ def run() -> dict:
         try:
             resolve(pr)
             if pr.get("resolved") and "actual_direction" in pr:
+                pr["resolved_on"] = today_iso
                 resolved_today.append(pr)
                 if maybe_alert(pr):
                     alerts_sent += 1
@@ -183,6 +195,14 @@ def run() -> dict:
 
     PREDICTIONS_PATH.parent.mkdir(parents=True, exist_ok=True)
     PREDICTIONS_PATH.write_text(json.dumps(predictions, indent=2), encoding="utf-8")
+
+    # Mirror to Supabase
+    try:
+        touched = new_today + resolved_today
+        db.upsert_predictions(touched)
+        print(f"  Supabase upsert: {len(touched)} prediction rows")
+    except Exception as exc:
+        print(f"  WARN: Supabase upsert failed ({exc})", file=sys.stderr)
 
     # ---- accuracy stats per strategy ----
     accuracy = {s: _strategy_stats(predictions, s) for s in ALL_STRATEGIES}

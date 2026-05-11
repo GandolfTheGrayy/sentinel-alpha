@@ -87,8 +87,14 @@ alter table trades enable row level security;
 alter table predictions enable row level security;
 alter table reports_cache enable row level security;
 
-create policy if not exists "public read portfolios" on portfolios for select using (true);
-create policy if not exists "public read positions" on positions for select using (true);
-create policy if not exists "public read trades" on trades for select using (true);
-create policy if not exists "public read predictions" on predictions for select using (true);
-create policy if not exists "public read reports" on reports_cache for select using (true);
+drop policy if exists "public read portfolios" on portfolios;
+drop policy if exists "public read positions" on positions;
+drop policy if exists "public read trades" on trades;
+drop policy if exists "public read predictions" on predictions;
+drop policy if exists "public read reports" on reports_cache;
+
+create policy "public read portfolios" on portfolios for select using (true);
+create policy "public read positions" on positions for select using (true);
+create policy "public read trades" on trades for select using (true);
+create policy "public read predictions" on predictions for select using (true);
+create policy "public read reports" on reports_cache for select using (true);

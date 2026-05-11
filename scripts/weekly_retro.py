@@ -13,6 +13,8 @@ from pathlib import Path
 
 import anthropic
 
+from sentinel.storage import db
+
 PREDICTIONS_PATH = Path("docs/predictions.json")
 WEEKLY_DIR = Path("backtest_results/weekly")
 MODEL = "claude-sonnet-4-6"
@@ -45,14 +47,20 @@ def main() -> int:
     if not os.environ.get("ANTHROPIC_API_KEY"):
         print("ERROR: ANTHROPIC_API_KEY not set", file=sys.stderr)
         return 1
-    if not PREDICTIONS_PATH.exists():
-        print("no predictions.json yet")
-        return 0
-    preds = json.loads(PREDICTIONS_PATH.read_text(encoding="utf-8"))
     today = date.today()
     week_ago = today - timedelta(days=7)
-    resolved_week = [p for p in preds if p.get("resolved") and p.get("made", "") >= week_ago.isoformat()]
-    made_week = [p for p in preds if p.get("made", "") >= week_ago.isoformat()]
+    try:
+        preds = db.get_recent_predictions(since_date=week_ago.isoformat(), limit=500)
+    except Exception as exc:
+        print(f"WARN: Supabase read failed ({exc}); falling back to JSON", file=sys.stderr)
+        if not PREDICTIONS_PATH.exists():
+            return 0
+        preds = json.loads(PREDICTIONS_PATH.read_text(encoding="utf-8"))
+    # normalize made field for both data sources
+    for p in preds:
+        p.setdefault("made", str(p.get("made_on") or p.get("made") or ""))
+    resolved_week = [p for p in preds if p.get("resolved")]
+    made_week = preds
     if not resolved_week and not made_week:
         print("nothing happened this week")
         return 0

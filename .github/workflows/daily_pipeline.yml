@@ -18,7 +18,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install runtime deps
-        run: pip install anthropic google-generativeai yfinance pandas numpy requests beautifulsoup4 pyyaml
+        run: pip install anthropic google-generativeai yfinance pandas numpy requests beautifulsoup4 pyyaml supabase
 
       - name: Configure git identity
         run: |
@@ -31,6 +31,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python -m sentinel.pipeline
 
       - name: Commit and push artifacts

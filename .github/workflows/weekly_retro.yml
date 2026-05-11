@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - run: pip install anthropic
+      - run: pip install anthropic supabase
 
       - run: |
           git config user.name "${{ secrets.GIT_USER_NAME }}"
@@ -25,7 +25,9 @@ jobs:
 
       - env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python scripts/weekly_retro.py
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python -m scripts.weekly_retro
 
       - run: |
           git add backtest_results/weekly/

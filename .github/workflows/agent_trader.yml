@@ -1,0 +1,28 @@
+name: Sentinel Agent Trader
+
+on:
+  schedule:
+    # Every hour at :05, 14:00–21:00 UTC weekdays (9:30 ET open through ~5pm ET)
+    - cron: '5 14-21 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  trade:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install supabase requests
+
+      - name: Run agent trader
+        env:
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python -m scripts.agent_trader
