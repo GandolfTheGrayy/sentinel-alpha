@@ -107,6 +107,10 @@
     [
       "scout",
       "A data normalizer that maps outputs from all scrapers into a unified SignalRecord schema stored in SQLite"
+    ],
+    [
+      "scout",
+      "A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and r/investing, outputting a normalized SentimentSignal dataclass"
     ]
   ],
   "iterations": {

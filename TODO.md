@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-11
+- [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
+
 ### 2026-05-10
 - [x] A GitHub repository health signal collector measuring stars, commit velocity (co
 - [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
