@@ -1,71 +1,212 @@
 {
-  "date": "2026-05-11",
-  "headline": "Markets remain mixed",
+  "date": "2026-05-12",
+  "headline": "Tesla's Elon Musk, Apple's Tim Cook among CEOs set to join Trump on China trip",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 290.65,
-      "pct_change": 2.28,
+      "close": 292.68,
+      "pct_change": 3.09,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 409.86,
-      "pct_change": -0.37,
+      "close": 412.66,
+      "pct_change": 0.31,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 217.3,
-      "pct_change": 10.59,
+      "close": 219.44,
+      "pct_change": 11.67,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 395.47,
-      "pct_change": 1.81,
+      "close": 388.64,
+      "pct_change": 0.05,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 600.62,
-      "pct_change": -0.72,
+      "close": 598.86,
+      "pct_change": -1.01,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 420.85,
-      "pct_change": 8.08,
+      "close": 445.0,
+      "pct_change": 14.29,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 271.9,
-      "pct_change": -0.6,
+      "close": 268.99,
+      "pct_change": -1.67,
       "source": "yfinance"
     }
   ],
   "linguist": {
-    "score": 45,
-    "reasoning": "The statement uses a neutral descriptor ('remain mixed') that avoids strong directional claims, but lacks explicit hedging language, placing it in moderate uncertainty territory."
+    "score": 72,
+    "reasoning": "The headline uses 'set to join' which is moderately confident about future plans, but lacks absolute certainty markers like 'will' or 'are,' and the conditional nature of scheduled events introduces some inherent uncertainty."
   },
-  "historian": [
+  "historian": [],
+  "report": "backtest_results/2026-05-12.md",
+  "predictions_today": [
     {
-      "date": "2008-09-15",
-      "event": "Lehman Brothers bankruptcy filing \u2014 credit markets seize",
-      "sp500_5d_pct": -22.0,
-      "tags": [
-        "credit",
-        "bank",
-        "collapse",
-        "liquidity"
-      ],
-      "match_score": 1,
-      "method": "keyword"
+      "id": "2026-05-12-AAPL-claude",
+      "made": "2026-05-12",
+      "ticker": "AAPL",
+      "strategy": "claude",
+      "direction": "up",
+      "magnitude_pct": 1.5,
+      "confidence": 42,
+      "rationale": "Tim Cook's participation in Trump's China trip signals potential trade/diplomatic developments favorable to Apple, but momentum prediction is inherently uncertain over 5 trading days.",
+      "headline": "Tesla's Elon Musk, Apple's Tim Cook among CEOs set to join Trump on China trip",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-05-01",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 3.09,
+      "price_at_prediction": 292.68,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-MSFT-claude",
+      "made": "2026-05-12",
+      "ticker": "MSFT",
+      "strategy": "claude",
+      "direction": "neutral",
+      "magnitude_pct": 0.8,
+      "confidence": 35,
+      "rationale": "Recent minimal movement (+0.31%) combined with legal testimony headline lacking material business impact suggests continued sideways trading with modest volatility.",
+      "headline": "Microsoft's Satya Nadella testifies in Elon Musk, OpenAI trial",
+      "publisher": "Yahoo Finance Video",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-29",
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.31,
+      "price_at_prediction": 412.66,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-NVDA-claude",
+      "made": "2026-05-12",
+      "ticker": "NVDA",
+      "strategy": "claude",
+      "direction": "down",
+      "magnitude_pct": 3.5,
+      "confidence": 42,
+      "rationale": "After an 11.67% 5-day rally, profit-taking is likely; AMD competitive AI news adds modest headwind, but momentum and broader AI demand may provide support.",
+      "headline": "Why AMD's AI roadmap is 'very competitive' with Nvidia's",
+      "publisher": "Yahoo Finance Video",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-05-08",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 11.67,
+      "price_at_prediction": 219.44,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-GOOGL-claude",
+      "made": "2026-05-12",
+      "ticker": "GOOGL",
+      "strategy": "claude",
+      "direction": "up",
+      "magnitude_pct": 1.2,
+      "confidence": 62,
+      "rationale": "Strong corporate profit environment supports tech mega-caps like Google, though recent minimal movement and market uncertainty temper upside expectations.",
+      "headline": "By the numbers: Corporate profits haven't been this smoking hot in years",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-05-11",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.05,
+      "price_at_prediction": 388.64,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-META-claude",
+      "made": "2026-05-12",
+      "ticker": "META",
+      "strategy": "claude",
+      "direction": "neutral",
+      "magnitude_pct": 1.5,
+      "confidence": 45,
+      "rationale": "8-K filing without disclosed material event details provides insufficient information to predict directional movement beyond typical volatility range.",
+      "headline": "",
+      "publisher": "",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-05-04",
+        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -1.01,
+      "price_at_prediction": 598.86,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-TSLA-claude",
+      "made": "2026-05-12",
+      "ticker": "TSLA",
+      "strategy": "claude",
+      "direction": "neutral",
+      "magnitude_pct": 3.5,
+      "confidence": 42,
+      "rationale": "Recent 14% rally suggests profit-taking risk despite bullish Optimus narrative, but Piper Sandler's positive call provides near-term support.",
+      "headline": "Tesla: Buying at these levels means you get Optimus for 'free', Piper Sandler says",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-23",
+        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 14.29,
+      "price_at_prediction": 445.0,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-AMZN-claude",
+      "made": "2026-05-12",
+      "ticker": "AMZN",
+      "strategy": "claude",
+      "direction": "neutral",
+      "magnitude_pct": 1.2,
+      "confidence": 35,
+      "rationale": "The headline about GameStop and eBay is unrelated to Amazon fundamentals, and recent -1.67% move lacks directional conviction without current macro context.",
+      "headline": "GameStop stock sinks after eBay rejects takeover bid",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -1.67,
+      "price_at_prediction": 268.99,
+      "resolves_on": "2026-05-19",
+      "resolved": false
     }
   ],
-  "report": "backtest_results/2026-05-11.md",
-  "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [
     {
@@ -879,6 +1020,622 @@
       "magnitude_error": null,
       "created_at": "2026-05-11T04:36:38.452227+00:00",
       "made": "2026-05-11"
+    },
+    {
+      "id": "2026-05-12-AAPL-claude",
+      "made": "2026-05-12",
+      "ticker": "AAPL",
+      "strategy": "claude",
+      "direction": "up",
+      "magnitude_pct": 1.5,
+      "confidence": 42,
+      "rationale": "Tim Cook's participation in Trump's China trip signals potential trade/diplomatic developments favorable to Apple, but momentum prediction is inherently uncertain over 5 trading days.",
+      "headline": "Tesla's Elon Musk, Apple's Tim Cook among CEOs set to join Trump on China trip",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-05-01",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 3.09,
+      "price_at_prediction": 292.68,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-AAPL-always_up",
+      "made": "2026-05-12",
+      "ticker": "AAPL",
+      "strategy": "always_up",
+      "direction": "up",
+      "magnitude_pct": 1.0,
+      "confidence": 50,
+      "rationale": "always-up baseline",
+      "headline": "Tesla's Elon Musk, Apple's Tim Cook among CEOs set to join Trump on China trip",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-05-01",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 3.09,
+      "price_at_prediction": 292.68,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-AAPL-always_neutral",
+      "made": "2026-05-12",
+      "ticker": "AAPL",
+      "strategy": "always_neutral",
+      "direction": "neutral",
+      "magnitude_pct": 0.0,
+      "confidence": 50,
+      "rationale": "always-neutral baseline",
+      "headline": "Tesla's Elon Musk, Apple's Tim Cook among CEOs set to join Trump on China trip",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-05-01",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 3.09,
+      "price_at_prediction": 292.68,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-AAPL-momentum",
+      "made": "2026-05-12",
+      "ticker": "AAPL",
+      "strategy": "momentum",
+      "direction": "up",
+      "magnitude_pct": 1.54,
+      "confidence": 50,
+      "rationale": "5d momentum follow (+3.1%)",
+      "headline": "Tesla's Elon Musk, Apple's Tim Cook among CEOs set to join Trump on China trip",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-05-01",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 3.09,
+      "price_at_prediction": 292.68,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-MSFT-claude",
+      "made": "2026-05-12",
+      "ticker": "MSFT",
+      "strategy": "claude",
+      "direction": "neutral",
+      "magnitude_pct": 0.8,
+      "confidence": 35,
+      "rationale": "Recent minimal movement (+0.31%) combined with legal testimony headline lacking material business impact suggests continued sideways trading with modest volatility.",
+      "headline": "Microsoft's Satya Nadella testifies in Elon Musk, OpenAI trial",
+      "publisher": "Yahoo Finance Video",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-29",
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.31,
+      "price_at_prediction": 412.66,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-MSFT-always_up",
+      "made": "2026-05-12",
+      "ticker": "MSFT",
+      "strategy": "always_up",
+      "direction": "up",
+      "magnitude_pct": 1.0,
+      "confidence": 50,
+      "rationale": "always-up baseline",
+      "headline": "Microsoft's Satya Nadella testifies in Elon Musk, OpenAI trial",
+      "publisher": "Yahoo Finance Video",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-29",
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.31,
+      "price_at_prediction": 412.66,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-MSFT-always_neutral",
+      "made": "2026-05-12",
+      "ticker": "MSFT",
+      "strategy": "always_neutral",
+      "direction": "neutral",
+      "magnitude_pct": 0.0,
+      "confidence": 50,
+      "rationale": "always-neutral baseline",
+      "headline": "Microsoft's Satya Nadella testifies in Elon Musk, OpenAI trial",
+      "publisher": "Yahoo Finance Video",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-29",
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.31,
+      "price_at_prediction": 412.66,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-MSFT-momentum",
+      "made": "2026-05-12",
+      "ticker": "MSFT",
+      "strategy": "momentum",
+      "direction": "neutral",
+      "magnitude_pct": 0.15,
+      "confidence": 50,
+      "rationale": "5d momentum follow (+0.3%)",
+      "headline": "Microsoft's Satya Nadella testifies in Elon Musk, OpenAI trial",
+      "publisher": "Yahoo Finance Video",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-29",
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.31,
+      "price_at_prediction": 412.66,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-NVDA-claude",
+      "made": "2026-05-12",
+      "ticker": "NVDA",
+      "strategy": "claude",
+      "direction": "down",
+      "magnitude_pct": 3.5,
+      "confidence": 42,
+      "rationale": "After an 11.67% 5-day rally, profit-taking is likely; AMD competitive AI news adds modest headwind, but momentum and broader AI demand may provide support.",
+      "headline": "Why AMD's AI roadmap is 'very competitive' with Nvidia's",
+      "publisher": "Yahoo Finance Video",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-05-08",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 11.67,
+      "price_at_prediction": 219.44,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-NVDA-always_up",
+      "made": "2026-05-12",
+      "ticker": "NVDA",
+      "strategy": "always_up",
+      "direction": "up",
+      "magnitude_pct": 1.0,
+      "confidence": 50,
+      "rationale": "always-up baseline",
+      "headline": "Why AMD's AI roadmap is 'very competitive' with Nvidia's",
+      "publisher": "Yahoo Finance Video",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-05-08",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 11.67,
+      "price_at_prediction": 219.44,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-NVDA-always_neutral",
+      "made": "2026-05-12",
+      "ticker": "NVDA",
+      "strategy": "always_neutral",
+      "direction": "neutral",
+      "magnitude_pct": 0.0,
+      "confidence": 50,
+      "rationale": "always-neutral baseline",
+      "headline": "Why AMD's AI roadmap is 'very competitive' with Nvidia's",
+      "publisher": "Yahoo Finance Video",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-05-08",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 11.67,
+      "price_at_prediction": 219.44,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-NVDA-momentum",
+      "made": "2026-05-12",
+      "ticker": "NVDA",
+      "strategy": "momentum",
+      "direction": "up",
+      "magnitude_pct": 5.83,
+      "confidence": 50,
+      "rationale": "5d momentum follow (+11.7%)",
+      "headline": "Why AMD's AI roadmap is 'very competitive' with Nvidia's",
+      "publisher": "Yahoo Finance Video",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-05-08",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 11.67,
+      "price_at_prediction": 219.44,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-GOOGL-claude",
+      "made": "2026-05-12",
+      "ticker": "GOOGL",
+      "strategy": "claude",
+      "direction": "up",
+      "magnitude_pct": 1.2,
+      "confidence": 62,
+      "rationale": "Strong corporate profit environment supports tech mega-caps like Google, though recent minimal movement and market uncertainty temper upside expectations.",
+      "headline": "By the numbers: Corporate profits haven't been this smoking hot in years",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-05-11",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.05,
+      "price_at_prediction": 388.64,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-GOOGL-always_up",
+      "made": "2026-05-12",
+      "ticker": "GOOGL",
+      "strategy": "always_up",
+      "direction": "up",
+      "magnitude_pct": 1.0,
+      "confidence": 50,
+      "rationale": "always-up baseline",
+      "headline": "By the numbers: Corporate profits haven't been this smoking hot in years",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-05-11",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.05,
+      "price_at_prediction": 388.64,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-GOOGL-always_neutral",
+      "made": "2026-05-12",
+      "ticker": "GOOGL",
+      "strategy": "always_neutral",
+      "direction": "neutral",
+      "magnitude_pct": 0.0,
+      "confidence": 50,
+      "rationale": "always-neutral baseline",
+      "headline": "By the numbers: Corporate profits haven't been this smoking hot in years",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-05-11",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.05,
+      "price_at_prediction": 388.64,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-GOOGL-momentum",
+      "made": "2026-05-12",
+      "ticker": "GOOGL",
+      "strategy": "momentum",
+      "direction": "neutral",
+      "magnitude_pct": 0.03,
+      "confidence": 50,
+      "rationale": "5d momentum follow (+0.1%)",
+      "headline": "By the numbers: Corporate profits haven't been this smoking hot in years",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-05-11",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 0.05,
+      "price_at_prediction": 388.64,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-META-claude",
+      "made": "2026-05-12",
+      "ticker": "META",
+      "strategy": "claude",
+      "direction": "neutral",
+      "magnitude_pct": 1.5,
+      "confidence": 45,
+      "rationale": "8-K filing without disclosed material event details provides insufficient information to predict directional movement beyond typical volatility range.",
+      "headline": "",
+      "publisher": "",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-05-04",
+        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -1.01,
+      "price_at_prediction": 598.86,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-META-always_up",
+      "made": "2026-05-12",
+      "ticker": "META",
+      "strategy": "always_up",
+      "direction": "up",
+      "magnitude_pct": 1.0,
+      "confidence": 50,
+      "rationale": "always-up baseline",
+      "headline": "",
+      "publisher": "",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-05-04",
+        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -1.01,
+      "price_at_prediction": 598.86,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-META-always_neutral",
+      "made": "2026-05-12",
+      "ticker": "META",
+      "strategy": "always_neutral",
+      "direction": "neutral",
+      "magnitude_pct": 0.0,
+      "confidence": 50,
+      "rationale": "always-neutral baseline",
+      "headline": "",
+      "publisher": "",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-05-04",
+        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -1.01,
+      "price_at_prediction": 598.86,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-META-momentum",
+      "made": "2026-05-12",
+      "ticker": "META",
+      "strategy": "momentum",
+      "direction": "down",
+      "magnitude_pct": 0.51,
+      "confidence": 50,
+      "rationale": "5d momentum follow (-1.0%)",
+      "headline": "",
+      "publisher": "",
+      "filing": {
+        "form": "8-K",
+        "filed": "2026-05-04",
+        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -1.01,
+      "price_at_prediction": 598.86,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-TSLA-claude",
+      "made": "2026-05-12",
+      "ticker": "TSLA",
+      "strategy": "claude",
+      "direction": "neutral",
+      "magnitude_pct": 3.5,
+      "confidence": 42,
+      "rationale": "Recent 14% rally suggests profit-taking risk despite bullish Optimus narrative, but Piper Sandler's positive call provides near-term support.",
+      "headline": "Tesla: Buying at these levels means you get Optimus for 'free', Piper Sandler says",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-23",
+        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 14.29,
+      "price_at_prediction": 445.0,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-TSLA-always_up",
+      "made": "2026-05-12",
+      "ticker": "TSLA",
+      "strategy": "always_up",
+      "direction": "up",
+      "magnitude_pct": 1.0,
+      "confidence": 50,
+      "rationale": "always-up baseline",
+      "headline": "Tesla: Buying at these levels means you get Optimus for 'free', Piper Sandler says",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-23",
+        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 14.29,
+      "price_at_prediction": 445.0,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-TSLA-always_neutral",
+      "made": "2026-05-12",
+      "ticker": "TSLA",
+      "strategy": "always_neutral",
+      "direction": "neutral",
+      "magnitude_pct": 0.0,
+      "confidence": 50,
+      "rationale": "always-neutral baseline",
+      "headline": "Tesla: Buying at these levels means you get Optimus for 'free', Piper Sandler says",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-23",
+        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 14.29,
+      "price_at_prediction": 445.0,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-TSLA-momentum",
+      "made": "2026-05-12",
+      "ticker": "TSLA",
+      "strategy": "momentum",
+      "direction": "up",
+      "magnitude_pct": 7.14,
+      "confidence": 50,
+      "rationale": "5d momentum follow (+14.3%)",
+      "headline": "Tesla: Buying at these levels means you get Optimus for 'free', Piper Sandler says",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-23",
+        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": 14.29,
+      "price_at_prediction": 445.0,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-AMZN-claude",
+      "made": "2026-05-12",
+      "ticker": "AMZN",
+      "strategy": "claude",
+      "direction": "neutral",
+      "magnitude_pct": 1.2,
+      "confidence": 35,
+      "rationale": "The headline about GameStop and eBay is unrelated to Amazon fundamentals, and recent -1.67% move lacks directional conviction without current macro context.",
+      "headline": "GameStop stock sinks after eBay rejects takeover bid",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -1.67,
+      "price_at_prediction": 268.99,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-AMZN-always_up",
+      "made": "2026-05-12",
+      "ticker": "AMZN",
+      "strategy": "always_up",
+      "direction": "up",
+      "magnitude_pct": 1.0,
+      "confidence": 50,
+      "rationale": "always-up baseline",
+      "headline": "GameStop stock sinks after eBay rejects takeover bid",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -1.67,
+      "price_at_prediction": 268.99,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-AMZN-always_neutral",
+      "made": "2026-05-12",
+      "ticker": "AMZN",
+      "strategy": "always_neutral",
+      "direction": "neutral",
+      "magnitude_pct": 0.0,
+      "confidence": 50,
+      "rationale": "always-neutral baseline",
+      "headline": "GameStop stock sinks after eBay rejects takeover bid",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -1.67,
+      "price_at_prediction": 268.99,
+      "resolves_on": "2026-05-19",
+      "resolved": false
+    },
+    {
+      "id": "2026-05-12-AMZN-momentum",
+      "made": "2026-05-12",
+      "ticker": "AMZN",
+      "strategy": "momentum",
+      "direction": "down",
+      "magnitude_pct": 0.83,
+      "confidence": 50,
+      "rationale": "5d momentum follow (-1.7%)",
+      "headline": "GameStop stock sinks after eBay rejects takeover bid",
+      "publisher": "Yahoo Finance",
+      "filing": {
+        "form": "10-Q",
+        "filed": "2026-04-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
+      },
+      "horizon_days": 5,
+      "made_pct_5d_prior": -1.67,
+      "price_at_prediction": 268.99,
+      "resolves_on": "2026-05-19",
+      "resolved": false
     }
   ],
   "accuracy": {
