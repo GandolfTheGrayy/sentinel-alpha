@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-12
+- [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
+- [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
+- [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
+- [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
+
 ### 2026-05-11
 - [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
 
