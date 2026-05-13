@@ -120,6 +120,21 @@ footer a{color:var(--dim);}
 <div class="sub">autonomous financial intelligence · <a href="https://github.com/GandolfTheGrayy/sentinel-alpha">github</a> · <span id="last-build">checking…</span></div>
 
 <section>
+<h2>Claude Confidence · rolling 7-day hit rate</h2>
+<div class="card" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+  <div style="font-size:56px;font-weight:800;line-height:1;" id="conf-gauge">—</div>
+  <div style="flex:1;min-width:200px;">
+    <div id="conf-meta" style="font-size:12px;color:var(--dim);margin-bottom:4px;">awaiting first week of resolutions</div>
+    <div class="bar" style="height:10px;"><div id="conf-bar" style="width:0%;background:var(--judge);"></div></div>
+    <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--dim);margin-top:4px;"><span>0%</span><span>50% baseline</span><span>100%</span></div>
+  </div>
+  <div style="font-size:11px;color:var(--dim);max-width:240px;line-height:1.5;">
+    Claude vs coin-flip. Above 50% means the system beats random direction-calling on resolved Claude predictions from the last 7 days.
+  </div>
+</div>
+</section>
+
+<section>
 <h2>Lookup · On-Demand Prediction</h2>
 <div class="lookup">
   <input id="search-input" type="text" placeholder="Search any US ticker — symbol or company name (e.g. NVDA, Palantir)" autocomplete="off"/>
@@ -271,6 +286,15 @@ footer a{color:var(--dim);}
 <div class="card judge">
   <div class="card-title">Rolling-7 hit rate over time</div>
   <svg id="trend" viewBox="0 0 600 100" preserveAspectRatio="none" style="width:100%;height:100px;"></svg>
+</div>
+</section>
+
+<section>
+<h2>Calibration · is "70% confidence" actually 70%?</h2>
+<div class="card linguist">
+  <div class="card-title">Confidence bucket vs actual hit rate (Claude)</div>
+  <svg id="calibration" viewBox="0 0 600 200" preserveAspectRatio="xMidYMid meet" style="width:100%;height:220px;"></svg>
+  <div id="calibration-meta" style="font-size:11px;color:var(--dim);margin-top:8px;">awaiting resolved predictions…</div>
 </div>
 </section>
 
@@ -606,14 +630,15 @@ async function loadPortfolio(id){
     const posEl=$(`p-${id}-positions`);
     if(!d.open_positions||!d.open_positions.length){posEl.innerHTML='<div class="empty">none</div>';}
     else{
-      let h='<table class="pos-table"><thead><tr><th>Ticker</th><th>Shares</th><th>Entry</th><th>Now</th><th>P&amp;L</th></tr></thead><tbody>';
+      let h='<table class="pos-table"><thead><tr><th>Ticker</th><th>Shares</th><th>Entry</th><th>Now</th><th>P&amp;L</th><th></th></tr></thead><tbody>';
       for(const p of d.open_positions){
         const pnl=p.pnl,pnlPct=p.pnl_pct;
         const cls=(pnl??0)>=0?'pos':'neg';
         const pnlTxt=pnl!=null?`<span class="${cls}">${pnl>=0?'+':''}$${pnl.toFixed(2)} (${pnlPct>=0?'+':''}${pnlPct.toFixed(1)}%)</span>`:'—';
-        h+=`<tr><td><strong>${esc(p.ticker)}</strong></td><td>${(+p.shares).toFixed(4)}</td><td>$${(+p.entry_price).toFixed(2)}</td><td>${p.current_price!=null?'$'+p.current_price.toFixed(2):'—'}</td><td>${pnlTxt}</td></tr>`;
+        h+=`<tr><td><strong>${esc(p.ticker)}</strong></td><td>${(+p.shares).toFixed(4)}</td><td>$${(+p.entry_price).toFixed(2)}</td><td>${p.current_price!=null?'$'+p.current_price.toFixed(2):'—'}</td><td>${pnlTxt}</td><td><button class="close-pos-btn" data-pos="${p.id}" data-pid="${id}" style="background:var(--line);color:var(--red);border:1px solid var(--line);padding:3px 8px;border-radius:3px;font-size:10px;cursor:pointer;">CLOSE</button></td></tr>`;
       }
       h+='</tbody></table>';posEl.innerHTML=h;
+      posEl.querySelectorAll('.close-pos-btn').forEach(b=>b.addEventListener('click',()=>closePosition(b.dataset.pos,b.dataset.pid)));
     }
     const trEl=$(`p-${id}-trades`);
     if(!d.trades||!d.trades.length){trEl.innerHTML='<div class="empty">none</div>';}
@@ -652,7 +677,79 @@ async function submitTrade(form){
 }
 
 document.querySelectorAll('.trade-form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();submitTrade(f);}));
-loadPortfolio('agent');loadPortfolio('human');
+
+async function closePosition(positionId,portfolioId){
+  if(!confirm('Close this position at current market price?'))return;
+  try{
+    const r=await fetch('/api/close_position',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({position_id:Number(positionId)})});
+    const d=await r.json();
+    if(d.error)throw new Error(d.error);
+    const msg=$(`p-${portfolioId}-msg`);
+    msg.textContent=`closed ${d.shares} ${d.ticker} @ $${d.price.toFixed(2)} ($${d.proceeds.toFixed(2)})`;
+    msg.className='trade-msg ok';
+    loadPortfolio(portfolioId);
+  }catch(e){
+    const msg=$(`p-${portfolioId}-msg`);
+    msg.textContent=`close error: ${e.message}`;msg.className='trade-msg err';
+  }
+}
+
+async function loadConfidenceAndCalibration(){
+  try{
+    const data=await fetch('./data.json',{cache:'no-store'}).then(r=>r.ok?r.json():null);
+    if(data&&data.accuracy&&data.accuracy.claude){
+      const acc=data.accuracy.claude;
+      const r7=acc.rolling_7;const n=acc.total_resolved||0;
+      const gEl=$('conf-gauge');
+      if(r7!=null){
+        gEl.textContent=r7+'%';
+        gEl.style.color=r7>=55?'var(--green)':r7>=45?'var(--historian)':'var(--red)';
+        $('conf-bar').style.width=Math.min(100,r7)+'%';
+        $('conf-bar').style.background=r7>=55?'var(--green)':r7>=45?'var(--historian)':'var(--red)';
+        $('conf-meta').textContent=`${n} resolved Claude predictions lifetime · 30d: ${acc.rolling_30!=null?acc.rolling_30+'%':'—'} · lifetime: ${acc.hit_rate!=null?acc.hit_rate+'%':'—'}`;
+      }
+    }
+  }catch(e){console.warn(e);}
+  try{
+    const resp=await fetch('/api/predictions?strategy=claude&status=resolved&limit=500',{cache:'no-store'}).then(r=>r.json());
+    const preds=(resp.predictions||[]).filter(p=>p.correct_direction!=null&&p.confidence!=null);
+    if(!preds.length){$('calibration-meta').textContent='no resolved predictions yet';return;}
+    const buckets=[[0,25],[25,50],[50,75],[75,100]].map(([a,b])=>({a,b,hits:0,total:0}));
+    for(const p of preds){
+      const bkt=buckets.find(x=>p.confidence>=x.a&&p.confidence<=x.b);
+      if(bkt){bkt.total++;if(p.correct_direction)bkt.hits++;}
+    }
+    const svg=$('calibration');svg.innerHTML='';
+    const w=600,h=200,pad=30,bw=(w-pad*2)/buckets.length;
+    svg.insertAdjacentHTML('beforeend',`<line x1="${pad}" y1="${h-pad}" x2="${w-pad}" y2="${h-pad}" stroke="var(--line)"/>`);
+    svg.insertAdjacentHTML('beforeend',`<line x1="${pad}" y1="${pad}" x2="${pad}" y2="${h-pad}" stroke="var(--line)"/>`);
+    // 50% reference line
+    const y50=h-pad-(50/100)*(h-2*pad);
+    svg.insertAdjacentHTML('beforeend',`<line x1="${pad}" y1="${y50}" x2="${w-pad}" y2="${y50}" stroke="var(--dim)" stroke-dasharray="3,3"/>`);
+    svg.insertAdjacentHTML('beforeend',`<text x="${w-pad-2}" y="${y50-4}" text-anchor="end" fill="var(--dim)" font-size="9">50% coin flip</text>`);
+    buckets.forEach((b,i)=>{
+      const x=pad+i*bw+8;
+      const rate=b.total?(b.hits/b.total)*100:0;
+      const expected=(b.a+b.b)/2;
+      const barH=b.total?((rate/100)*(h-2*pad)):0;
+      const barY=h-pad-barH;
+      const expY=h-pad-((expected/100)*(h-2*pad));
+      const color=b.total<3?'var(--dim)':rate>=expected?'var(--green)':'var(--red)';
+      svg.insertAdjacentHTML('beforeend',`<rect x="${x}" y="${barY}" width="${bw-16}" height="${barH}" fill="${color}" opacity="0.7"/>`);
+      // expected midpoint marker
+      svg.insertAdjacentHTML('beforeend',`<line x1="${x-2}" y1="${expY}" x2="${x+bw-14}" y2="${expY}" stroke="var(--linguist)" stroke-width="2"/>`);
+      svg.insertAdjacentHTML('beforeend',`<text x="${x+(bw-16)/2}" y="${h-pad+14}" text-anchor="middle" fill="var(--dim)" font-size="10">${b.a}-${b.b}</text>`);
+      if(b.total)svg.insertAdjacentHTML('beforeend',`<text x="${x+(bw-16)/2}" y="${barY-4}" text-anchor="middle" fill="var(--fg)" font-size="10" font-weight="600">${rate.toFixed(0)}%</text>`);
+      svg.insertAdjacentHTML('beforeend',`<text x="${x+(bw-16)/2}" y="${h-4}" text-anchor="middle" fill="var(--dim)" font-size="9">n=${b.total}</text>`);
+    });
+    svg.insertAdjacentHTML('beforeend',`<text x="${pad+4}" y="${pad-4}" fill="var(--dim)" font-size="9">actual hit rate</text>`);
+    svg.insertAdjacentHTML('beforeend',`<text x="${w-pad}" y="${pad-4}" text-anchor="end" fill="var(--linguist)" font-size="9">— expected (bucket midpoint)</text>`);
+    const overall=preds.filter(p=>p.correct_direction).length/preds.length*100;
+    $('calibration-meta').textContent=`${preds.length} resolved · overall hit rate ${overall.toFixed(1)}%. Bars above the pink line = better-calibrated-than-expected. Below = overconfident.`;
+  }catch(e){console.warn(e);}
+}
+
+loadPortfolio('agent');loadPortfolio('human');loadConfidenceAndCalibration();
 </script>
 </body>
 </html>

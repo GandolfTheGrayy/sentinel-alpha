@@ -40,6 +40,7 @@ def _normalize_prediction(p: dict) -> dict:
         "actual_direction": p.get("actual_direction"),
         "correct_direction": p.get("correct_direction"),
         "magnitude_error": p.get("magnitude_error"),
+        "postmortem": p.get("postmortem"),
     }
 
 

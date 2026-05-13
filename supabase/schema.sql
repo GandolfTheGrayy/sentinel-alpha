@@ -20,7 +20,9 @@ create table if not exists positions (
   closed boolean default false,
   exit_price numeric,
   exit_time timestamptz,
-  exit_reason text
+  exit_reason text,
+  stop_loss_pct numeric,
+  take_profit_pct numeric
 );
 create index if not exists positions_portfolio_open_idx on positions(portfolio_id, closed);
 
@@ -60,6 +62,7 @@ create table if not exists predictions (
   actual_direction text,
   correct_direction boolean,
   magnitude_error numeric,
+  postmortem text,
   created_at timestamptz default now()
 );
 create index if not exists predictions_made_on_idx on predictions(made_on desc);

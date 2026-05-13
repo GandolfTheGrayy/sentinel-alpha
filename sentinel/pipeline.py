@@ -19,7 +19,7 @@ from pathlib import Path
 import anthropic
 
 from sentinel.historian.rag_query import query
-from sentinel.judge import baselines
+from sentinel.judge import auto_postmortem, baselines
 from sentinel.judge.notify import maybe_alert
 from sentinel.judge.postmortem import render
 from sentinel.judge.predictor import predict
@@ -142,6 +142,11 @@ def run() -> dict:
                 resolved_today.append(pr)
                 if maybe_alert(pr):
                     alerts_sent += 1
+                if pr.get("strategy") == "claude" and pr.get("correct_direction") is False:
+                    try:
+                        pr["postmortem"] = auto_postmortem.generate(pr, client)
+                    except Exception as pm_exc:
+                        print(f"  postmortem failed for {pr.get('id')}: {pm_exc}", file=sys.stderr)
         except Exception:
             traceback.print_exc()
 
