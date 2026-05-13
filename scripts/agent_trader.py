@@ -12,18 +12,19 @@ from __future__ import annotations
 
 import os
 import sys
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 
 import requests
 
 from sentinel.storage import db
 
 PORTFOLIO_ID = "agent"
-POSITION_SIZE_USD = 100.0
+POSITION_SIZE_USD = 125.0
 MIN_CONF = 60
 STOP_LOSS_PCT = -8.0
 TAKE_PROFIT_PCT = 12.0
 MAX_OPEN_POSITIONS = 8
+LOOKBACK_DAYS = 3
 FINNHUB = "https://finnhub.io/api/v1"
 
 
@@ -137,8 +138,10 @@ def open_new_positions() -> int:
         print(f"  skip opens: at cap ({MAX_OPEN_POSITIONS})")
         return 0
     open_pred_ids = {p.get("prediction_id") for p in opens if p.get("prediction_id")}
-    since = date.today().isoformat()
-    candidates = db.get_recent_predictions(strategy="claude", since_date=since, limit=50)
+    since = (date.today() - timedelta(days=LOOKBACK_DAYS)).isoformat()
+    candidates = db.get_recent_predictions(strategy="claude", since_date=since, limit=100)
+    # rank by confidence desc to deploy capital into highest-conviction calls first
+    candidates.sort(key=lambda p: -(p.get("confidence") or 0))
     opened = 0
     for pred in candidates:
         if len(opens) + opened >= MAX_OPEN_POSITIONS:
