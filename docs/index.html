@@ -168,6 +168,8 @@ footer a{color:var(--dim);}
   <div class="card-title" style="margin-top:12px;">Deep Research <span style="color:var(--dim);font-weight:400;text-transform:none;letter-spacing:0;">— Gemini + Google Search</span></div>
   <div class="research-block" id="rpt-research">—</div>
   <div class="sources-list" id="rpt-sources"></div>
+  <div class="card-title" style="margin-top:12px;">Insider Activity (Form 4, last 60d)</div>
+  <div id="rpt-insider" style="font-size:12px;"><div class="empty">loading…</div></div>
   <div class="card-title" style="margin-top:12px;">Recent News</div>
   <div id="rpt-news" style="font-size:12px;"></div>
 </div>
@@ -178,6 +180,13 @@ footer a{color:var(--dim);}
 <section>
 <h2>Portfolios <a href="/portfolios" style="color:var(--accent);font-size:11px;text-transform:none;letter-spacing:0;font-weight:400;margin-left:8px;">manage and trade →</a></h2>
 <div id="portfolio-strip" class="grid-2" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;"></div>
+</section>
+
+<section>
+<h2>Sector Exposure · open positions across all portfolios</h2>
+<div class="card scout">
+  <div id="sector-list"><div class="empty">loading…</div></div>
+</div>
 </section>
 
 <section>
@@ -226,9 +235,10 @@ footer a{color:var(--dim);}
 </section>
 
 <section>
-<h2>Track Record · Claude vs Baselines</h2>
-<div class="grid-4" style="margin-bottom:12px;" id="strat-cards">
-  <div class="card linguist"><div class="card-title">Claude</div><div class="big" id="hit-claude">—</div><div class="card-title" id="claude-meta" style="margin-top:6px;">— resolved</div></div>
+<h2>Track Record · Claude (Haiku · Sonnet) vs Baselines</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:12px;" id="strat-cards">
+  <div class="card linguist"><div class="card-title">Claude · Haiku</div><div class="big" id="hit-claude">—</div><div class="card-title" id="claude-meta" style="margin-top:6px;">— resolved</div></div>
+  <div class="card judge"><div class="card-title">Claude · Sonnet</div><div class="big" id="hit-claude_sonnet">—</div><div class="card-title" id="claude_sonnet-meta" style="margin-top:6px;">— resolved</div></div>
   <div class="card"><div class="card-title">Always Up</div><div class="big" id="hit-always_up">—</div><div class="card-title" id="always_up-meta" style="margin-top:6px;">— resolved</div></div>
   <div class="card"><div class="card-title">Always Neutral</div><div class="big" id="hit-always_neutral">—</div><div class="card-title" id="always_neutral-meta" style="margin-top:6px;">— resolved</div></div>
   <div class="card"><div class="card-title">Momentum</div><div class="big" id="hit-momentum">—</div><div class="card-title" id="momentum-meta" style="margin-top:6px;">— resolved</div></div>
@@ -346,7 +356,7 @@ async function loadRun(){
     }
 
     const acc=d.accuracy||{};
-    for(const s of ['claude','always_up','always_neutral','momentum']){
+    for(const s of ['claude','claude_sonnet','always_up','always_neutral','momentum']){
       const a=acc[s]||{};
       const el=document.getElementById('hit-'+s);
       if(el)el.textContent=a.hit_rate!=null?a.hit_rate+'%':'—';
@@ -525,6 +535,7 @@ async function runReport(ticker){
     const d=await fetch(`/api/report?ticker=${encodeURIComponent(t)}`).then(r=>r.json());
     if(d.error){throw new Error(d.error);}
     renderReport(d);
+    loadInsider(t);
     btn.textContent='Re-run Research';
     btn.disabled=false;
   }catch(e){
@@ -732,7 +743,43 @@ async function loadConfidenceAndCalibration(){
   }catch(e){console.warn(e);}
 }
 
-loadPortfolioStrip();loadConfidenceAndCalibration();
+async function loadSectors(){
+  const el=$('sector-list');
+  try{
+    const d=await fetch('/api/sectors',{cache:'no-store'}).then(r=>r.json());
+    if(!d.sectors||!d.sectors.length){el.innerHTML='<div class="empty">no open positions yet — once portfolios buy stocks, sector breakdown appears here</div>';return;}
+    const total=d.sectors.reduce((s,x)=>s+x.value,0)||1;
+    let h='<table class="pos-table"><thead><tr><th>Sector</th><th>Positions</th><th>Tickers</th><th>Portfolios</th><th>Value</th><th>% of book</th></tr></thead><tbody>';
+    for(const s of d.sectors){
+      const pct=(s.value/total*100).toFixed(1);
+      h+=`<tr><td><strong>${esc(s.industry)}</strong></td><td>${s.positions}</td><td style="color:var(--dim);">${s.tickers.slice(0,5).map(esc).join(', ')}${s.tickers.length>5?'…':''}</td><td style="color:var(--dim);">${s.portfolios.map(esc).join(', ')}</td><td>$${s.value.toFixed(2)}</td><td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;height:6px;background:var(--line);border-radius:3px;overflow:hidden;"><div style="height:100%;width:${pct}%;background:var(--scout);"></div></div><span>${pct}%</span></div></td></tr>`;
+    }
+    h+='</tbody></table>';el.innerHTML=h;
+  }catch(e){el.innerHTML=`<div class="empty" style="color:var(--red);">error: ${esc(e.message)}</div>`;}
+}
+
+async function loadInsider(ticker){
+  const el=$('rpt-insider');el.innerHTML='<div class="empty">loading…</div>';
+  try{
+    const d=await fetch(`/api/insider?ticker=${encodeURIComponent(ticker)}`,{cache:'no-store'}).then(r=>r.json());
+    if(d.error){el.innerHTML=`<div class="empty">${esc(d.error)}</div>`;return;}
+    if(!d.filings_count){el.innerHTML='<div class="empty">no Form 4 filings in last 60 days</div>';return;}
+    const sentClass=d.sentiment==='bullish'?'pos':d.sentiment==='bearish'?'neg':'';
+    const sign=d.net_value>=0?'+':'';
+    let h=`<div style="margin-bottom:8px;"><strong class="${sentClass}">${esc((d.sentiment||'').toUpperCase())}</strong> · ${d.buys} buys · ${d.sells} sells · net <span class="${sentClass}">${sign}$${d.net_value.toLocaleString()}</span> across ${d.filings_count} filings</div>`;
+    if(d.transactions?.length){
+      h+='<table class="pos-table"><thead><tr><th>Filed</th><th>Insider</th><th>Title</th><th>Acquired</th><th>Disposed</th><th>Value</th></tr></thead><tbody>';
+      for(const t of d.transactions){
+        const tCls=t.value>=0?'pos':'neg';const tSign=t.value>=0?'+':'';
+        h+=`<tr><td style="color:var(--dim);">${esc(t.filed)}</td><td>${esc(t.insider||'—')}</td><td style="color:var(--dim);">${esc(t.title||'—')}</td><td>${t.acquired.toLocaleString()}</td><td>${t.disposed.toLocaleString()}</td><td class="${tCls}">${tSign}$${Math.abs(t.value).toLocaleString()}</td></tr>`;
+      }
+      h+='</tbody></table>';
+    }
+    el.innerHTML=h;
+  }catch(e){el.innerHTML=`<div class="empty" style="color:var(--red);">error: ${esc(e.message)}</div>`;}
+}
+
+loadPortfolioStrip();loadConfidenceAndCalibration();loadSectors();
 </script>
 </body>
 </html>

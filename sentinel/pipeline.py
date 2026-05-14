@@ -34,7 +34,11 @@ PREDICTIONS_PATH = Path("docs/predictions.json")
 DATA_PATH = Path("docs/data.json")
 HISTORY_PATH = Path("docs/history.json")
 HORIZON_DAYS = 5
-ALL_STRATEGIES = ["claude", *baselines.STRATEGIES]
+ALL_STRATEGIES = ["claude", "claude_sonnet", *baselines.STRATEGIES]
+STRATEGY_MODELS = {
+    "claude": "claude-haiku-4-5-20251001",
+    "claude_sonnet": "claude-sonnet-4-6",
+}
 
 TICKER_NAMES: dict[str, list[str]] = {
     "AAPL": ["apple", "aapl"],
@@ -182,10 +186,10 @@ def run() -> dict:
                 if (t, strategy) in already:
                     continue
                 try:
-                    if strategy == "claude":
+                    if strategy in STRATEGY_MODELS:
                         if not ctx_text:
                             continue
-                        pred = predict(t, pr["pct_change"], ctx_text, publisher, client=client)
+                        pred = predict(t, pr["pct_change"], ctx_text, publisher, client=client, model=STRATEGY_MODELS[strategy])
                     else:
                         pred = baselines.predict(strategy, t, pr["pct_change"])
                     rec = _make_record(strategy, t, pred, today_iso, pr, nh.get("title", ""), nh.get("publisher", ""), filing, today)

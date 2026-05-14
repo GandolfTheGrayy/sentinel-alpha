@@ -12,8 +12,30 @@ from datetime import date, timedelta
 from pathlib import Path
 
 import anthropic
+import requests
 
 from sentinel.storage import db
+
+
+def _maybe_email(subject: str, body_md: str) -> None:
+    """Send the retrospective via Resend if RESEND_API_KEY + RESEND_TO are set."""
+    key = os.environ.get("RESEND_API_KEY")
+    to = os.environ.get("RESEND_TO")
+    sender = os.environ.get("RESEND_FROM", "Sentinel <onboarding@resend.dev>")
+    if not key or not to:
+        return
+    html = "<pre style='font-family:ui-monospace,monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;'>" + body_md.replace("<", "&lt;").replace(">", "&gt;") + "</pre>"
+    try:
+        r = requests.post(
+            "https://api.resend.com/emails",
+            headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+            json={"from": sender, "to": [to], "subject": subject, "html": html},
+            timeout=20,
+        )
+        r.raise_for_status()
+        print(f"  emailed retrospective to {to}")
+    except Exception as exc:
+        print(f"  WARN: email failed ({exc})", file=sys.stderr)
 
 PREDICTIONS_PATH = Path("docs/predictions.json")
 WEEKLY_DIR = Path("backtest_results/weekly")
@@ -77,8 +99,10 @@ def main() -> int:
     iso_year, iso_week, _ = today.isocalendar()
     out = WEEKLY_DIR / f"{iso_year}-W{iso_week:02d}.md"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(f"# Sentinel Weekly Retrospective — {iso_year}-W{iso_week:02d}\n\nGenerated {today.isoformat()}.\n\n{body}\n", encoding="utf-8")
+    full = f"# Sentinel Weekly Retrospective — {iso_year}-W{iso_week:02d}\n\nGenerated {today.isoformat()}.\n\n{body}\n"
+    out.write_text(full, encoding="utf-8")
     print(f"wrote {out}")
+    _maybe_email(f"Sentinel · W{iso_week:02d} retrospective", full)
     return 0
 
 
