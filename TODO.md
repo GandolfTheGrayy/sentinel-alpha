@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-14
+- [x] A GitHub repository health signal collector measuring stars, commit velocity (co
+- [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
+- [x] A base time-series SQLite schema module — creates tables for price history, sent
+
 ### 2026-05-13
 - [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
 - [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
