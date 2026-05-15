@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-15
+- [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
+- [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+
 ### 2026-05-14
 - [x] A GitHub repository health signal collector measuring stars, commit velocity (co
 - [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
