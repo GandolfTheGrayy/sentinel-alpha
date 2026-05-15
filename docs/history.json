@@ -182,5 +182,16 @@
     "rolling_7": null,
     "baseline_momentum_rolling_7": null,
     "baseline_always_up_rolling_7": null
+  },
+  {
+    "date": "2026-05-15",
+    "linguist_score": 75,
+    "watchlist_avg_pct": 1.85,
+    "predictions_made": 7,
+    "predictions_resolved": 0,
+    "hit_rate": null,
+    "rolling_7": null,
+    "baseline_momentum_rolling_7": null,
+    "baseline_always_up_rolling_7": null
   }
 ]
