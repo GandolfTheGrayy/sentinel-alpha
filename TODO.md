@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-16
+- [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+- [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
+
 ### 2026-05-15
 - [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
 - [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
