@@ -130,7 +130,10 @@
     "linguist::A Regulatory Whispers detector that scans SEC filings for hedging language patterns (e.g. 'may', 'subject to', 'could materially') and scores their density": 2,
     "historian::An event schema module defining dataclasses for MarketEvent, HistoricalMatch, and ConfidenceReport used across the Historian layer": 2,
     "scout::A base time-series SQLite schema module \u2014 creates tables for price history, sentiment signals, and prediction records": 2,
-    "linguist::A 'tells' extractor \u2014 given a block of corporate text, uses Claude to identify specific linguistic tells that historically precede price moves": 2,
-    "scout::A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring developer community sentiment": 2
+    "linguist::A 'tells' extractor \u2014 given a block of corporate text, uses Claude to identify specific linguistic tells that historically precede price moves": 3,
+    "scout::A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring developer community sentiment": 2,
+    "tests::A pytest unit test module for the Scout price fetcher \u2014 mocks yfinance responses and asserts correct SQLite writes": 2,
+    "scout::A config loader that reads a YAML config file and environment variables, with a typed Settings dataclass": 2,
+    "judge::A post-mortem report generator that reads yesterday's PredictionRecord from SQLite, fetches actual price data, and writes a markdown report to backtest_results/": 2
   }
 }
