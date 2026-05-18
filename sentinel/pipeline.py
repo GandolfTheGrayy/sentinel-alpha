@@ -19,12 +19,13 @@ from pathlib import Path
 import anthropic
 
 from sentinel.historian.rag_query import query
-from sentinel.judge import auto_postmortem, baselines
+from sentinel.judge import auto_postmortem, baselines, topic_discoverer, topic_research
 from sentinel.judge.notify import maybe_alert
 from sentinel.judge.postmortem import render
-from sentinel.judge.predictor import predict
+from sentinel.judge.predictor import predict, predict_for_topic
 from sentinel.judge.resolver import resolve
 from sentinel.linguist.sample_score import score_text
+from sentinel.scout.general_news import fetch_general
 from sentinel.scout.live_prices import WATCHLIST, fetch_summary
 from sentinel.scout.news import latest_headline
 from sentinel.scout.sec_filings import latest_filing
@@ -83,7 +84,7 @@ def _strategy_stats(preds: list[dict], strategy: str) -> dict:
     }
 
 
-def _make_record(strategy: str, ticker: str, pred: dict, today_iso: str, pr: dict, headline: str, publisher: str, filing: dict | None, today: date) -> dict:
+def _make_record(strategy: str, ticker: str, pred: dict, today_iso: str, pr: dict, headline: str, publisher: str, filing: dict | None, today: date, topic: dict | None = None) -> dict:
     """Wrap a prediction dict + context into a stored record."""
     return {
         "id": f"{today_iso}-{ticker}-{strategy}",
@@ -102,6 +103,9 @@ def _make_record(strategy: str, ticker: str, pred: dict, today_iso: str, pr: dic
         "price_at_prediction": pr["close"],
         "resolves_on": (today + timedelta(days=HORIZON_DAYS + 2)).isoformat(),
         "resolved": False,
+        "topic_id": topic.get("topic_id") if topic else None,
+        "topic_title": topic.get("title") if topic else None,
+        "evidence": {"sources": (topic.get("sources") or [])[:5], "exposure": topic.get("exposure")} if topic else None,
     }
 
 
@@ -114,6 +118,7 @@ def run() -> dict:
     today_iso = today.isoformat()
     client = anthropic.Anthropic()
 
+    # legacy watchlist prices (kept for trend chart, not used as universe)
     prices = fetch_summary()
     price_by = {p["ticker"]: p for p in prices}
 
@@ -154,53 +159,64 @@ def run() -> dict:
         except Exception:
             traceback.print_exc()
 
-    # ---- make new predictions for today (per-ticker isolated) ----
+    # ---- topic-driven prediction ----
+    # 1. Scan broad market news.
+    # 2. Cluster into the day's top distinct stories (Sonnet).
+    # 3. Deep-research each via Gemini grounded search.
+    # 4. Predict per affected ticker, per strategy.
     new_today: list[dict] = []
     already = {(p["ticker"], p.get("strategy", "claude")) for p in predictions if p.get("made") == today_iso}
-    seen_headlines: dict[str, str] = {}
-    for t in WATCHLIST:
-        try:
-            pr = price_by.get(t)
-            if not pr or "error" in pr:
-                print(f"  {t}: no price data, skipping", file=sys.stderr)
-                continue
-            nh = latest_headline(t) or {"title": "", "publisher": ""}
-            title = nh.get("title", "")
-            if title:
-                if title in seen_headlines and not _headline_belongs_to(title, t):
-                    print(f"  {t}: dropping shared headline (already used by {seen_headlines[title]}, no name match)")
-                    nh, title = {"title": "", "publisher": ""}, ""
-                elif title not in seen_headlines:
-                    seen_headlines[title] = t
-            filing = latest_filing(t)
-            if filing:
-                print(f"  {t}: SEC {filing['form']} filed {filing['filed']} ({len(filing.get('text',''))} chars)")
-            else:
-                print(f"  {t}: no recent SEC filing")
-            ctx_text = title
-            if filing and filing.get("text"):
-                ctx_text = (ctx_text + " | " + filing["text"][:1500]).strip(" |")
-            publisher = nh.get("publisher", "") or (filing["form"] + " filing" if filing else "")
+    researched_topics: list[dict] = []
+    try:
+        headlines = fetch_general(limit=40)
+        print(f"  fetched {len(headlines)} general headlines")
+        topics = topic_discoverer.identify_topics(headlines, client=client, n=4) if headlines else []
+        print(f"  identified {len(topics)} topics: " + ", ".join(t.get("title", "?")[:50] for t in topics))
+        for topic in topics:
+            try:
+                research = topic_research.deep_research(topic)
+                topic.update(research)
+                researched_topics.append(topic)
+                affected = topic.get("affected_tickers") or []
+                print(f"  topic '{topic.get('title', '')[:40]}' → {len(affected)} tickers: {', '.join(a.get('ticker', '?') for a in affected)}")
+            except Exception:
+                print(f"  research failed for topic {topic.get('topic_id')}", file=sys.stderr)
+                traceback.print_exc()
+    except Exception:
+        print("  WARN: topic discovery pipeline failed; no new predictions this run", file=sys.stderr)
+        traceback.print_exc()
 
-            for strategy in ALL_STRATEGIES:
-                if (t, strategy) in already:
+    # Predict on every affected ticker across all topics, all strategies
+    for topic in researched_topics:
+        for affected in (topic.get("affected_tickers") or []):
+            t = affected.get("ticker")
+            if not t:
+                continue
+            try:
+                pr_list = fetch_summary([t])
+                pr = pr_list[0] if pr_list else None
+                if not pr or "error" in pr:
+                    print(f"  {t}: no price data, skipping")
                     continue
-                try:
-                    if strategy in STRATEGY_MODELS:
-                        if not ctx_text:
-                            continue
-                        pred = predict(t, pr["pct_change"], ctx_text, publisher, client=client, model=STRATEGY_MODELS[strategy])
-                    else:
-                        pred = baselines.predict(strategy, t, pr["pct_change"])
-                    rec = _make_record(strategy, t, pred, today_iso, pr, nh.get("title", ""), nh.get("publisher", ""), filing, today)
-                    predictions.append(rec)
-                    new_today.append(rec)
-                except Exception:
-                    print(f"  prediction failed: {t}/{strategy}", file=sys.stderr)
-                    traceback.print_exc()
-        except Exception:
-            print(f"  ticker failed: {t}", file=sys.stderr)
-            traceback.print_exc()
+                for strategy in ALL_STRATEGIES:
+                    if (t, strategy) in already:
+                        continue
+                    try:
+                        if strategy in STRATEGY_MODELS:
+                            pred = predict_for_topic(t, pr["pct_change"], topic, affected, client=client, model=STRATEGY_MODELS[strategy])
+                        else:
+                            pred = baselines.predict(strategy, t, pr["pct_change"])
+                        merged_topic = {**topic, "exposure": affected.get("exposure")}
+                        rec = _make_record(strategy, t, pred, today_iso, pr, topic.get("title", ""), "topic_research", None, today, topic=merged_topic)
+                        predictions.append(rec)
+                        new_today.append(rec)
+                        already.add((t, strategy))
+                    except Exception:
+                        print(f"  prediction failed: {t}/{strategy}", file=sys.stderr)
+                        traceback.print_exc()
+            except Exception:
+                print(f"  ticker failed: {t}", file=sys.stderr)
+                traceback.print_exc()
 
     PREDICTIONS_PATH.parent.mkdir(parents=True, exist_ok=True)
     PREDICTIONS_PATH.write_text(json.dumps(predictions, indent=2), encoding="utf-8")
@@ -241,6 +257,16 @@ def run() -> dict:
         "open_predictions": [p for p in predictions if not p.get("resolved")],
         "accuracy": accuracy,
         "alerts_sent": alerts_sent,
+        "topics_today": [{
+            "topic_id": t.get("topic_id"),
+            "title": t.get("title"),
+            "summary": t.get("summary"),
+            "synthesis": (t.get("synthesis") or "")[:1200],
+            "consensus_view": t.get("consensus_view"),
+            "contrarian_view": t.get("contrarian_view"),
+            "affected_tickers": t.get("affected_tickers") or [],
+            "sources": (t.get("sources") or [])[:6],
+        } for t in researched_topics],
     }
     DATA_PATH.write_text(json.dumps(summary, indent=2, default=str), encoding="utf-8")
 

@@ -16,15 +16,20 @@ from datetime import date, datetime, timedelta, timezone
 
 import requests
 
+import anthropic
+
+from sentinel.judge import exit_evaluator
+from sentinel.scout.general_news import fetch_company
 from sentinel.storage import db
 
 PORTFOLIO_ID = "agent"
 POSITION_SIZE_USD = 125.0
-MIN_CONF = 60
+MIN_CONF = 50
 STOP_LOSS_PCT = -8.0
-TAKE_PROFIT_PCT = 12.0
+TAKE_PROFIT_PCT = 15.0
 MAX_OPEN_POSITIONS = 8
 LOOKBACK_DAYS = 3
+EXIT_EVAL_MIN_CONF = 65
 FINNHUB = "https://finnhub.io/api/v1"
 
 
@@ -99,10 +104,12 @@ def _close_position(pos: dict, reason: str, price: float | None = None) -> bool:
 
 
 def manage_positions() -> tuple[int, int]:
-    """Sweep open positions, close anything past horizon or hit stop/take levels."""
+    """Sweep open positions: stop/take/horizon checks + Claude exit evaluation."""
     closed_count = 0
     opens = db.get_open_positions(PORTFOLIO_ID)
     today_iso = date.today().isoformat()
+    llm_client = anthropic.Anthropic() if os.environ.get("ANTHROPIC_API_KEY") else None
+    preds_cache: list[dict] | None = None
     for pos in opens:
         ticker = pos["ticker"]
         price = _finnhub_price(ticker)
@@ -123,11 +130,25 @@ def manage_positions() -> tuple[int, int]:
         # Underlying prediction resolved?
         pred_id = pos.get("prediction_id")
         if pred_id:
-            preds = db.get_recent_predictions(limit=1000)
-            pred = next((p for p in preds if p.get("id") == pred_id), None)
+            if preds_cache is None:
+                preds_cache = db.get_recent_predictions(limit=1000)
+            pred = next((p for p in preds_cache if p.get("id") == pred_id), None)
             if pred and pred.get("resolved") and (pred.get("resolved_on") or "") <= today_iso:
                 if _close_position(pos, "prediction_resolved", price):
                     closed_count += 1
+                continue
+        # Claude exit evaluation
+        if llm_client is not None:
+            try:
+                news = fetch_company(ticker, lookback_days=7, limit=3)
+                decision = exit_evaluator.should_exit(pos, price, news, client=llm_client)
+                if decision.get("action") == "sell" and int(decision.get("confidence") or 0) >= EXIT_EVAL_MIN_CONF:
+                    reason = f"claude_exit: {decision.get('reason', '')[:80]}"
+                    print(f"  CLAUDE-SELL {ticker} @ ${price:.2f} (conf {decision.get('confidence')}) — {decision.get('reason', '')[:80]}")
+                    if _close_position(pos, reason, price):
+                        closed_count += 1
+            except Exception as exc:
+                print(f"  exit eval failed for {ticker}: {exc}")
     return len(opens), closed_count
 
 
