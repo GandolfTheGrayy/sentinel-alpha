@@ -1,5 +1,1125 @@
 [
   {
+    "id": "2026-05-17-AAPL-claude",
+    "made_on": "2026-05-17",
+    "ticker": "AAPL",
+    "strategy": "claude",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 1.5,
+    "confidence": 35,
+    "rationale": "Recent +2.58% gain suggests momentum, but headline focuses on competitors (Samsung, SK Hynix, AMD) with no direct AAPL catalyst, indicating consolidation likely after the recent move.",
+    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
+    "publisher": "Investing.com",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
+      "form": "10-Q",
+      "filed": "2026-05-01"
+    },
+    "evidence": null,
+    "price_at_prediction": 300.23,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-AAPL-claude_sonnet",
+    "made_on": "2026-05-17",
+    "ticker": "AAPL",
+    "strategy": "claude_sonnet",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 1.2,
+    "confidence": 30,
+    "rationale": "The headline is largely noise with garbled XBRL filing data and no direct AAPL catalyst, while the recent +2.58% move may face mild consolidation without a clear directional driver.",
+    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
+    "publisher": "Investing.com",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
+      "form": "10-Q",
+      "filed": "2026-05-01"
+    },
+    "evidence": null,
+    "price_at_prediction": 300.23,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-AAPL-always_up",
+    "made_on": "2026-05-17",
+    "ticker": "AAPL",
+    "strategy": "always_up",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.0,
+    "confidence": 50,
+    "rationale": "always-up baseline",
+    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
+    "publisher": "Investing.com",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
+      "form": "10-Q",
+      "filed": "2026-05-01"
+    },
+    "evidence": null,
+    "price_at_prediction": 300.23,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-AAPL-always_neutral",
+    "made_on": "2026-05-17",
+    "ticker": "AAPL",
+    "strategy": "always_neutral",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 0.0,
+    "confidence": 50,
+    "rationale": "always-neutral baseline",
+    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
+    "publisher": "Investing.com",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
+      "form": "10-Q",
+      "filed": "2026-05-01"
+    },
+    "evidence": null,
+    "price_at_prediction": 300.23,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-AAPL-momentum",
+    "made_on": "2026-05-17",
+    "ticker": "AAPL",
+    "strategy": "momentum",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.29,
+    "confidence": 50,
+    "rationale": "5d momentum follow (+2.6%)",
+    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
+    "publisher": "Investing.com",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
+      "form": "10-Q",
+      "filed": "2026-05-01"
+    },
+    "evidence": null,
+    "price_at_prediction": 300.23,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-MSFT-claude",
+    "made_on": "2026-05-17",
+    "ticker": "MSFT",
+    "strategy": "claude",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 1.2,
+    "confidence": 35,
+    "rationale": "Recent momentum is positive but the Amazon AI competitive headline suggests market may be reassessing MSFT's AI leadership positioning, creating offsetting pressures.",
+    "headline": "How Amazon Went From an AI Also-Ran to a Real Contender",
+    "publisher": "The Wall Street Journal",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526224155/d125909d8k.htm",
+      "form": "8-K",
+      "filed": "2026-05-14"
+    },
+    "evidence": null,
+    "price_at_prediction": 421.92,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-MSFT-claude_sonnet",
+    "made_on": "2026-05-17",
+    "ticker": "MSFT",
+    "strategy": "claude_sonnet",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 1.2,
+    "confidence": 35,
+    "rationale": "The headline is ambiguous for MSFT\u2014Amazon's AI progress could signal competitive pressure, while the 8-K filing is routine and the recent 2.24% gain may face consolidation without a clear near-term catalyst.",
+    "headline": "How Amazon Went From an AI Also-Ran to a Real Contender",
+    "publisher": "The Wall Street Journal",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526224155/d125909d8k.htm",
+      "form": "8-K",
+      "filed": "2026-05-14"
+    },
+    "evidence": null,
+    "price_at_prediction": 421.92,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-MSFT-always_up",
+    "made_on": "2026-05-17",
+    "ticker": "MSFT",
+    "strategy": "always_up",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.0,
+    "confidence": 50,
+    "rationale": "always-up baseline",
+    "headline": "How Amazon Went From an AI Also-Ran to a Real Contender",
+    "publisher": "The Wall Street Journal",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526224155/d125909d8k.htm",
+      "form": "8-K",
+      "filed": "2026-05-14"
+    },
+    "evidence": null,
+    "price_at_prediction": 421.92,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-MSFT-always_neutral",
+    "made_on": "2026-05-17",
+    "ticker": "MSFT",
+    "strategy": "always_neutral",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 0.0,
+    "confidence": 50,
+    "rationale": "always-neutral baseline",
+    "headline": "How Amazon Went From an AI Also-Ran to a Real Contender",
+    "publisher": "The Wall Street Journal",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526224155/d125909d8k.htm",
+      "form": "8-K",
+      "filed": "2026-05-14"
+    },
+    "evidence": null,
+    "price_at_prediction": 421.92,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-MSFT-momentum",
+    "made_on": "2026-05-17",
+    "ticker": "MSFT",
+    "strategy": "momentum",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.12,
+    "confidence": 50,
+    "rationale": "5d momentum follow (+2.2%)",
+    "headline": "How Amazon Went From an AI Also-Ran to a Real Contender",
+    "publisher": "The Wall Street Journal",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526224155/d125909d8k.htm",
+      "form": "8-K",
+      "filed": "2026-05-14"
+    },
+    "evidence": null,
+    "price_at_prediction": 421.92,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-NVDA-claude",
+    "made_on": "2026-05-17",
+    "ticker": "NVDA",
+    "strategy": "claude",
+    "horizon_days": 5,
+    "direction": "down",
+    "magnitude_pct": 2.5,
+    "confidence": 45,
+    "rationale": "Recent +2.68% move combined with 'mania' and 'bubble' warnings suggest overextension and increased risk of profit-taking pullback, though AI momentum could sustain gains.",
+    "headline": "'This is borderline mania': Wall Street sees bubble-like euphoria in AI-fueled semiconductor rally",
+    "publisher": "Yahoo Finance",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm",
+      "form": "8-K",
+      "filed": "2026-05-08"
+    },
+    "evidence": null,
+    "price_at_prediction": 225.32,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-NVDA-claude_sonnet",
+    "made_on": "2026-05-17",
+    "ticker": "NVDA",
+    "strategy": "claude_sonnet",
+    "horizon_days": 5,
+    "direction": "down",
+    "magnitude_pct": 3.2,
+    "confidence": 42,
+    "rationale": "Bubble/mania rhetoric in headlines often signals near-term sentiment exhaustion and profit-taking risk, though strong AI fundamentals and recent momentum could limit downside.",
+    "headline": "'This is borderline mania': Wall Street sees bubble-like euphoria in AI-fueled semiconductor rally",
+    "publisher": "Yahoo Finance",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm",
+      "form": "8-K",
+      "filed": "2026-05-08"
+    },
+    "evidence": null,
+    "price_at_prediction": 225.32,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-NVDA-always_up",
+    "made_on": "2026-05-17",
+    "ticker": "NVDA",
+    "strategy": "always_up",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.0,
+    "confidence": 50,
+    "rationale": "always-up baseline",
+    "headline": "'This is borderline mania': Wall Street sees bubble-like euphoria in AI-fueled semiconductor rally",
+    "publisher": "Yahoo Finance",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm",
+      "form": "8-K",
+      "filed": "2026-05-08"
+    },
+    "evidence": null,
+    "price_at_prediction": 225.32,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-NVDA-always_neutral",
+    "made_on": "2026-05-17",
+    "ticker": "NVDA",
+    "strategy": "always_neutral",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 0.0,
+    "confidence": 50,
+    "rationale": "always-neutral baseline",
+    "headline": "'This is borderline mania': Wall Street sees bubble-like euphoria in AI-fueled semiconductor rally",
+    "publisher": "Yahoo Finance",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm",
+      "form": "8-K",
+      "filed": "2026-05-08"
+    },
+    "evidence": null,
+    "price_at_prediction": 225.32,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-NVDA-momentum",
+    "made_on": "2026-05-17",
+    "ticker": "NVDA",
+    "strategy": "momentum",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.34,
+    "confidence": 50,
+    "rationale": "5d momentum follow (+2.7%)",
+    "headline": "'This is borderline mania': Wall Street sees bubble-like euphoria in AI-fueled semiconductor rally",
+    "publisher": "Yahoo Finance",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm",
+      "form": "8-K",
+      "filed": "2026-05-08"
+    },
+    "evidence": null,
+    "price_at_prediction": 225.32,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-GOOGL-claude",
+    "made_on": "2026-05-17",
+    "ticker": "GOOGL",
+    "strategy": "claude",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 1.5,
+    "confidence": 35,
+    "rationale": "Recent +2.09% momentum suggests continued strength, but the irrelevant Wayfair headline and lack of Google-specific catalysts create high uncertainty for the next 5 trading days.",
+    "headline": "Why Wayfair (W) Stock Is Down Today",
+    "publisher": "StockStory",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm",
+      "form": "8-K",
+      "filed": "2026-05-11"
+    },
+    "evidence": null,
+    "price_at_prediction": 396.78,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-GOOGL-claude_sonnet",
+    "made_on": "2026-05-17",
+    "ticker": "GOOGL",
+    "strategy": "claude_sonnet",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.2,
+    "confidence": 42,
+    "rationale": "The headline is largely noise (an 8-K filing mislabeled as Wayfair news) and provides no meaningful signal, so the slight positive momentum from the recent +2.09% move may carry forward modestly, but uncertainty remains high.",
+    "headline": "Why Wayfair (W) Stock Is Down Today",
+    "publisher": "StockStory",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm",
+      "form": "8-K",
+      "filed": "2026-05-11"
+    },
+    "evidence": null,
+    "price_at_prediction": 396.78,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-GOOGL-always_up",
+    "made_on": "2026-05-17",
+    "ticker": "GOOGL",
+    "strategy": "always_up",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.0,
+    "confidence": 50,
+    "rationale": "always-up baseline",
+    "headline": "Why Wayfair (W) Stock Is Down Today",
+    "publisher": "StockStory",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm",
+      "form": "8-K",
+      "filed": "2026-05-11"
+    },
+    "evidence": null,
+    "price_at_prediction": 396.78,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-GOOGL-always_neutral",
+    "made_on": "2026-05-17",
+    "ticker": "GOOGL",
+    "strategy": "always_neutral",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 0.0,
+    "confidence": 50,
+    "rationale": "always-neutral baseline",
+    "headline": "Why Wayfair (W) Stock Is Down Today",
+    "publisher": "StockStory",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm",
+      "form": "8-K",
+      "filed": "2026-05-11"
+    },
+    "evidence": null,
+    "price_at_prediction": 396.78,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-GOOGL-momentum",
+    "made_on": "2026-05-17",
+    "ticker": "GOOGL",
+    "strategy": "momentum",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.04,
+    "confidence": 50,
+    "rationale": "5d momentum follow (+2.1%)",
+    "headline": "Why Wayfair (W) Stock Is Down Today",
+    "publisher": "StockStory",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm",
+      "form": "8-K",
+      "filed": "2026-05-11"
+    },
+    "evidence": null,
+    "price_at_prediction": 396.78,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-META-claude",
+    "made_on": "2026-05-17",
+    "ticker": "META",
+    "strategy": "claude",
+    "horizon_days": 5,
+    "direction": "down",
+    "magnitude_pct": 2.8,
+    "confidence": 58,
+    "rationale": "Recent +2.57% gain faces headwind from valuation concerns in AI sector; headline warns of unsustainable growth expectations that typically trigger profit-taking in overextended mega-cap tech stocks.",
+    "headline": "AI Stock Valuations Just Hit a Dangerous Level. A Top CIO Warns: Companies Can\u2019t Grow 100% Annually for 10 Years Straight.",
+    "publisher": "24/7 Wall St.",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm",
+      "form": "8-K",
+      "filed": "2026-05-04"
+    },
+    "evidence": null,
+    "price_at_prediction": 614.23,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-META-claude_sonnet",
+    "made_on": "2026-05-17",
+    "ticker": "META",
+    "strategy": "claude_sonnet",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.8,
+    "confidence": 52,
+    "rationale": "META's 8-K filing alongside recent positive momentum suggests continued strength, though broader AI valuation concerns and cautionary CIO warnings create headwinds that limit upside conviction.",
+    "headline": "AI Stock Valuations Just Hit a Dangerous Level. A Top CIO Warns: Companies Can\u2019t Grow 100% Annually for 10 Years Straight.",
+    "publisher": "24/7 Wall St.",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm",
+      "form": "8-K",
+      "filed": "2026-05-04"
+    },
+    "evidence": null,
+    "price_at_prediction": 614.23,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-META-always_up",
+    "made_on": "2026-05-17",
+    "ticker": "META",
+    "strategy": "always_up",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.0,
+    "confidence": 50,
+    "rationale": "always-up baseline",
+    "headline": "AI Stock Valuations Just Hit a Dangerous Level. A Top CIO Warns: Companies Can\u2019t Grow 100% Annually for 10 Years Straight.",
+    "publisher": "24/7 Wall St.",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm",
+      "form": "8-K",
+      "filed": "2026-05-04"
+    },
+    "evidence": null,
+    "price_at_prediction": 614.23,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-META-always_neutral",
+    "made_on": "2026-05-17",
+    "ticker": "META",
+    "strategy": "always_neutral",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 0.0,
+    "confidence": 50,
+    "rationale": "always-neutral baseline",
+    "headline": "AI Stock Valuations Just Hit a Dangerous Level. A Top CIO Warns: Companies Can\u2019t Grow 100% Annually for 10 Years Straight.",
+    "publisher": "24/7 Wall St.",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm",
+      "form": "8-K",
+      "filed": "2026-05-04"
+    },
+    "evidence": null,
+    "price_at_prediction": 614.23,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-META-momentum",
+    "made_on": "2026-05-17",
+    "ticker": "META",
+    "strategy": "momentum",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.28,
+    "confidence": 50,
+    "rationale": "5d momentum follow (+2.6%)",
+    "headline": "AI Stock Valuations Just Hit a Dangerous Level. A Top CIO Warns: Companies Can\u2019t Grow 100% Annually for 10 Years Straight.",
+    "publisher": "24/7 Wall St.",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm",
+      "form": "8-K",
+      "filed": "2026-05-04"
+    },
+    "evidence": null,
+    "price_at_prediction": 614.23,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-TSLA-claude",
+    "made_on": "2026-05-17",
+    "ticker": "TSLA",
+    "strategy": "claude",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 3.2,
+    "confidence": 52,
+    "rationale": "Recent weakness (-5.11%) may be oversold ahead of positive robotaxi momentum, though regulatory scrutiny in Australia presents ongoing headwinds that limit upside conviction.",
+    "headline": "Tesla Robotaxi Hubs Highlight Autonomy Potential As Australian Scrutiny Builds",
+    "publisher": "Simply Wall St.",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm",
+      "form": "10-Q",
+      "filed": "2026-04-23"
+    },
+    "evidence": null,
+    "price_at_prediction": 422.24,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-TSLA-claude_sonnet",
+    "made_on": "2026-05-17",
+    "ticker": "TSLA",
+    "strategy": "claude_sonnet",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 3.2,
+    "confidence": 38,
+    "rationale": "After a -5.11% pullback, robotaxi/autonomy narrative headlines may provide a partial bounce, but Australian regulatory scrutiny and broader macro uncertainty cap upside conviction.",
+    "headline": "Tesla Robotaxi Hubs Highlight Autonomy Potential As Australian Scrutiny Builds",
+    "publisher": "Simply Wall St.",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm",
+      "form": "10-Q",
+      "filed": "2026-04-23"
+    },
+    "evidence": null,
+    "price_at_prediction": 422.24,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-TSLA-always_up",
+    "made_on": "2026-05-17",
+    "ticker": "TSLA",
+    "strategy": "always_up",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.0,
+    "confidence": 50,
+    "rationale": "always-up baseline",
+    "headline": "Tesla Robotaxi Hubs Highlight Autonomy Potential As Australian Scrutiny Builds",
+    "publisher": "Simply Wall St.",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm",
+      "form": "10-Q",
+      "filed": "2026-04-23"
+    },
+    "evidence": null,
+    "price_at_prediction": 422.24,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-TSLA-always_neutral",
+    "made_on": "2026-05-17",
+    "ticker": "TSLA",
+    "strategy": "always_neutral",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 0.0,
+    "confidence": 50,
+    "rationale": "always-neutral baseline",
+    "headline": "Tesla Robotaxi Hubs Highlight Autonomy Potential As Australian Scrutiny Builds",
+    "publisher": "Simply Wall St.",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm",
+      "form": "10-Q",
+      "filed": "2026-04-23"
+    },
+    "evidence": null,
+    "price_at_prediction": 422.24,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-TSLA-momentum",
+    "made_on": "2026-05-17",
+    "ticker": "TSLA",
+    "strategy": "momentum",
+    "horizon_days": 5,
+    "direction": "down",
+    "magnitude_pct": 2.56,
+    "confidence": 50,
+    "rationale": "5d momentum follow (-5.1%)",
+    "headline": "Tesla Robotaxi Hubs Highlight Autonomy Potential As Australian Scrutiny Builds",
+    "publisher": "Simply Wall St.",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm",
+      "form": "10-Q",
+      "filed": "2026-04-23"
+    },
+    "evidence": null,
+    "price_at_prediction": 422.24,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-AMZN-claude",
+    "made_on": "2026-05-17",
+    "ticker": "AMZN",
+    "strategy": "claude",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 2.3,
+    "confidence": 68,
+    "rationale": "Positive AI investment thesis contrasts with recent 5-day decline, suggesting potential mean reversion and institutional interest in AMZN's AI capabilities may drive recovery over next week.",
+    "headline": "3 Reasons Why Amazon Is a Top AI Investment",
+    "publisher": "Motley Fool",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm",
+      "form": "10-Q",
+      "filed": "2026-04-30"
+    },
+    "evidence": null,
+    "price_at_prediction": 264.14,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-AMZN-claude_sonnet",
+    "made_on": "2026-05-17",
+    "ticker": "AMZN",
+    "strategy": "claude_sonnet",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.8,
+    "confidence": 52,
+    "rationale": "Positive AI investment narrative from Motley Fool may provide mild sentiment support after a recent -1.80% pullback, suggesting a modest mean-reversion bounce, though broader market uncertainty limits conviction.",
+    "headline": "3 Reasons Why Amazon Is a Top AI Investment",
+    "publisher": "Motley Fool",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm",
+      "form": "10-Q",
+      "filed": "2026-04-30"
+    },
+    "evidence": null,
+    "price_at_prediction": 264.14,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-AMZN-always_up",
+    "made_on": "2026-05-17",
+    "ticker": "AMZN",
+    "strategy": "always_up",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.0,
+    "confidence": 50,
+    "rationale": "always-up baseline",
+    "headline": "3 Reasons Why Amazon Is a Top AI Investment",
+    "publisher": "Motley Fool",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm",
+      "form": "10-Q",
+      "filed": "2026-04-30"
+    },
+    "evidence": null,
+    "price_at_prediction": 264.14,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-AMZN-always_neutral",
+    "made_on": "2026-05-17",
+    "ticker": "AMZN",
+    "strategy": "always_neutral",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 0.0,
+    "confidence": 50,
+    "rationale": "always-neutral baseline",
+    "headline": "3 Reasons Why Amazon Is a Top AI Investment",
+    "publisher": "Motley Fool",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm",
+      "form": "10-Q",
+      "filed": "2026-04-30"
+    },
+    "evidence": null,
+    "price_at_prediction": 264.14,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-AMZN-momentum",
+    "made_on": "2026-05-17",
+    "ticker": "AMZN",
+    "strategy": "momentum",
+    "horizon_days": 5,
+    "direction": "down",
+    "magnitude_pct": 0.9,
+    "confidence": 50,
+    "rationale": "5d momentum follow (-1.8%)",
+    "headline": "3 Reasons Why Amazon Is a Top AI Investment",
+    "publisher": "Motley Fool",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm",
+      "form": "10-Q",
+      "filed": "2026-04-30"
+    },
+    "evidence": null,
+    "price_at_prediction": 264.14,
+    "resolves_on": "2026-05-24",
+    "resolved": false,
+    "resolved_on": null,
+    "actual_pct": null,
+    "actual_direction": null,
+    "correct_direction": null,
+    "magnitude_error": null,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
     "id": "2026-05-16-AAPL-claude",
     "made_on": "2026-05-16",
     "ticker": "AAPL",
@@ -27,6 +1147,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -57,6 +1179,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -87,6 +1211,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -117,6 +1243,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -147,6 +1275,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -177,6 +1307,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -207,6 +1339,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -237,6 +1371,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -267,6 +1403,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -297,6 +1435,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -327,6 +1467,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -357,6 +1499,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -387,6 +1531,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -417,6 +1563,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -447,6 +1595,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -477,6 +1627,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -507,6 +1659,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -537,6 +1691,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -567,6 +1723,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -597,6 +1755,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -627,6 +1787,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -657,6 +1819,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -687,6 +1851,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -717,6 +1883,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -747,6 +1915,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -777,6 +1947,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -807,6 +1979,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -837,6 +2011,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -867,6 +2043,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -897,6 +2075,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -927,6 +2107,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -957,6 +2139,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -987,6 +2171,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -1017,6 +2203,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -1047,6 +2235,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-16T11:44:54.043258+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-16"
   },
   {
@@ -1077,6 +2267,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1107,6 +2299,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1137,6 +2331,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1167,6 +2363,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1197,6 +2395,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1227,6 +2427,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1257,6 +2459,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1287,6 +2491,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1317,6 +2523,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1347,6 +2555,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1377,6 +2587,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1407,6 +2619,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1437,6 +2651,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1467,6 +2683,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1497,6 +2715,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1527,6 +2747,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1557,6 +2779,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1587,6 +2811,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1617,6 +2843,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1647,6 +2875,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1677,6 +2907,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1707,6 +2939,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1737,6 +2971,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1767,6 +3003,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1797,6 +3035,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1827,6 +3067,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1857,6 +3099,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1887,6 +3131,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1917,6 +3163,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1947,6 +3195,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -1977,6 +3227,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -2007,6 +3259,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -2037,6 +3291,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -2067,6 +3323,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -2097,6 +3355,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-15"
   },
   {
@@ -2127,6 +3387,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2157,6 +3419,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2187,6 +3451,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2217,6 +3483,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2247,6 +3515,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2277,6 +3547,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2307,6 +3579,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2337,6 +3611,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2367,6 +3643,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2397,6 +3675,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2427,6 +3707,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2457,6 +3739,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2487,6 +3771,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2517,6 +3803,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2547,6 +3835,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2577,6 +3867,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2607,6 +3899,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2637,6 +3931,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2667,6 +3963,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2697,6 +3995,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2727,6 +4027,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2757,6 +4059,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2787,6 +4091,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2817,6 +4123,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2847,6 +4155,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2877,6 +4187,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2907,6 +4219,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2937,6 +4251,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2967,6 +4283,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -2997,6 +4315,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -3027,6 +4347,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -3057,6 +4379,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -3087,6 +4411,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -3117,6 +4443,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -3147,6 +4475,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-14T05:22:23.316557+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-14"
   },
   {
@@ -3177,6 +4507,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3207,6 +4539,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3237,6 +4571,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3267,6 +4603,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3297,6 +4635,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3327,6 +4667,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3357,6 +4699,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3387,6 +4731,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3417,6 +4763,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3447,6 +4795,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3477,6 +4827,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3507,6 +4859,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3537,6 +4891,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3567,6 +4923,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3597,6 +4955,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3627,6 +4987,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3657,6 +5019,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3687,6 +5051,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3717,6 +5083,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3747,6 +5115,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3777,6 +5147,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3807,6 +5179,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3837,6 +5211,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3867,6 +5243,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3897,6 +5275,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3927,6 +5307,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3957,6 +5339,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -3987,6 +5371,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-13"
   },
   {
@@ -4017,6 +5403,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4047,6 +5435,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4077,6 +5467,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4107,6 +5499,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4137,6 +5531,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4167,6 +5563,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4197,6 +5595,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4227,6 +5627,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4257,6 +5659,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4287,6 +5691,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4317,6 +5723,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4347,6 +5755,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4377,6 +5787,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4407,6 +5819,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4437,6 +5851,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4467,6 +5883,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4497,6 +5915,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4527,6 +5947,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4557,6 +5979,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4587,6 +6011,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4617,6 +6043,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4647,6 +6075,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4677,6 +6107,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4707,6 +6139,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4737,6 +6171,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4767,6 +6203,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4797,6 +6235,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4827,6 +6267,8 @@
     "magnitude_error": null,
     "created_at": "2026-05-12T13:02:00.783042+00:00",
     "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
     "made": "2026-05-12"
   },
   {
@@ -4849,15 +6291,18 @@
     "evidence": null,
     "price_at_prediction": 293.32,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 2.36,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 0.14,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 300.23
   },
   {
     "id": "2026-05-11-AAPL-always_up",
@@ -4879,15 +6324,18 @@
     "evidence": null,
     "price_at_prediction": 293.32,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 2.36,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 1.36,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 300.23
   },
   {
     "id": "2026-05-11-AAPL-always_neutral",
@@ -4909,15 +6357,18 @@
     "evidence": null,
     "price_at_prediction": 293.32,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 2.36,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 2.36,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 300.23
   },
   {
     "id": "2026-05-11-AAPL-momentum",
@@ -4939,15 +6390,18 @@
     "evidence": null,
     "price_at_prediction": 293.32,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 2.36,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 0.62,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 300.23
   },
   {
     "id": "2026-05-11-MSFT-claude",
@@ -4969,15 +6423,18 @@
     "evidence": null,
     "price_at_prediction": 415.12,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 1.64,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 0.84,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
-    "postmortem": null,
-    "made": "2026-05-11"
+    "postmortem": "The model overweighted the absence of \"catalytic news\" and underestimated the significance of the 10-Q filing itself as a catalyst. A 10-Q typically contains forward guidance, margin revisions, or operational updates that institutional investors act on immediately\u2014the model treated the filing as informationally neutral rather than recognizing it as the primary driver of near-term repositioning. The stated lack of \"recent momentum\" also missed that a fresh quarterly report often triggers a revaluation wave independent of external headlines, particularly for a mega-cap like MSFT where earnings-linked flows are predictable.",
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 421.92
   },
   {
     "id": "2026-05-11-MSFT-always_up",
@@ -4999,15 +6456,18 @@
     "evidence": null,
     "price_at_prediction": 415.12,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 1.64,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 0.64,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 421.92
   },
   {
     "id": "2026-05-11-MSFT-always_neutral",
@@ -5029,15 +6489,18 @@
     "evidence": null,
     "price_at_prediction": 415.12,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 1.64,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 1.64,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 421.92
   },
   {
     "id": "2026-05-11-MSFT-momentum",
@@ -5059,15 +6522,18 @@
     "evidence": null,
     "price_at_prediction": 415.12,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 1.64,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 1.46,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 421.92
   },
   {
     "id": "2026-05-11-NVDA-claude",
@@ -5089,15 +6555,18 @@
     "evidence": null,
     "price_at_prediction": 215.2,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 4.7,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 2.2,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
-    "postmortem": null,
-    "made": "2026-05-11"
+    "postmortem": "The model overweighted mean reversion on the recent +8.42% move as a signal of imminent pullback, treating the price action as excessive rather than potentially justified by underlying momentum. It simultaneously treated the uninformative 8-K filing as a negative catalyst (uncertainty as drag), when in fact the absence of negative news in a filing context often functions as a small positive for semiconductor stocks during rallies. The model missed that a 4.7% continuation move in the direction of existing momentum is more typical for NVDA than reversion, especially when no material adverse information appears in SEC filings.",
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 225.32
   },
   {
     "id": "2026-05-11-NVDA-always_up",
@@ -5119,15 +6588,18 @@
     "evidence": null,
     "price_at_prediction": 215.2,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 4.7,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 3.7,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 225.32
   },
   {
     "id": "2026-05-11-NVDA-always_neutral",
@@ -5149,15 +6621,18 @@
     "evidence": null,
     "price_at_prediction": 215.2,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 4.7,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 4.7,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 225.32
   },
   {
     "id": "2026-05-11-NVDA-momentum",
@@ -5179,15 +6654,18 @@
     "evidence": null,
     "price_at_prediction": 215.2,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 4.7,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 0.49,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 225.32
   },
   {
     "id": "2026-05-11-GOOGL-claude",
@@ -5209,15 +6687,18 @@
     "evidence": null,
     "price_at_prediction": 400.8,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": -1.0,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 1.3,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
-    "postmortem": null,
-    "made": "2026-05-11"
+    "postmortem": "The model overweighted momentum and sentiment signals while ignoring the timing risk inherent in a stock already up 4.58% with no specific near-term catalysts. The rationale itself acknowledged this gap\u2014\"headlines lack specific fundamental catalysts\"\u2014yet still predicted upside, meaning the model relied too heavily on the belief that AI boom narrative alone would sustain momentum over a 5-day window. A recent earnings filing (10-Q from late April 2026) likely contained either disappointing guidance, margin pressure, or competitive warnings that directly contradicted the positive sentiment backdrop, and the model failed to weight forward-looking filing data heavily enough against backward-looking price action.",
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 396.78
   },
   {
     "id": "2026-05-11-GOOGL-always_up",
@@ -5239,15 +6720,18 @@
     "evidence": null,
     "price_at_prediction": 400.8,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": -1.0,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 0.0,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 396.78
   },
   {
     "id": "2026-05-11-GOOGL-always_neutral",
@@ -5269,15 +6753,18 @@
     "evidence": null,
     "price_at_prediction": 400.8,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": -1.0,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 1.0,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 396.78
   },
   {
     "id": "2026-05-11-GOOGL-momentum",
@@ -5299,15 +6786,18 @@
     "evidence": null,
     "price_at_prediction": 400.8,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": -1.0,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 1.29,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 396.78
   },
   {
     "id": "2026-05-11-META-claude",
@@ -5329,15 +6819,18 @@
     "evidence": null,
     "price_at_prediction": 609.63,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 0.75,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 0.45,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
-    "postmortem": null,
-    "made": "2026-05-11"
+    "postmortem": "The model overweighted the absence of explicit catalyst language in the 8-K filing while underweighting what the filing's mere existence signaled about imminent corporate activity or investor positioning. A neutral prediction despite positive momentum (the stock had already moved +0.75% into the filing date) suggests the model treated the lack of \"substantive detail\" as evidence against upside, when in fact regulatory filings often precede execution of already-telegraphed plans that the market prices in incrementally.",
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 614.23
   },
   {
     "id": "2026-05-11-META-always_up",
@@ -5359,15 +6852,18 @@
     "evidence": null,
     "price_at_prediction": 609.63,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 0.75,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 0.25,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 614.23
   },
   {
     "id": "2026-05-11-META-always_neutral",
@@ -5389,15 +6885,18 @@
     "evidence": null,
     "price_at_prediction": 609.63,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 0.75,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 0.75,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 614.23
   },
   {
     "id": "2026-05-11-META-momentum",
@@ -5419,15 +6918,18 @@
     "evidence": null,
     "price_at_prediction": 609.63,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": 0.75,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 0.68,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 614.23
   },
   {
     "id": "2026-05-11-TSLA-claude",
@@ -5449,15 +6951,18 @@
     "evidence": null,
     "price_at_prediction": 428.35,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": -1.43,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 1.07,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
-    "postmortem": null,
-    "made": "2026-05-11"
+    "postmortem": "The model correctly identified mean reversion pressure but underweighted the significance of absent forward guidance in a 10-Q filing. Typically, a major quarterly report without specific guidance is a red flag that triggers selling, especially after a 9% rally\u2014the lack of bullish signals to justify the recent gains likely drove the downside move. The neutral prediction reflected genuine uncertainty, but that ambiguity itself was a bearish signal the model treated as neutral rather than tilting toward weakness.",
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 422.24
   },
   {
     "id": "2026-05-11-TSLA-always_up",
@@ -5479,15 +6984,18 @@
     "evidence": null,
     "price_at_prediction": 428.35,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": -1.43,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 0.43,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 422.24
   },
   {
     "id": "2026-05-11-TSLA-always_neutral",
@@ -5509,15 +7017,18 @@
     "evidence": null,
     "price_at_prediction": 428.35,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": -1.43,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 1.43,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 422.24
   },
   {
     "id": "2026-05-11-TSLA-momentum",
@@ -5539,15 +7050,18 @@
     "evidence": null,
     "price_at_prediction": 428.35,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": -1.43,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 3.14,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 422.24
   },
   {
     "id": "2026-05-11-AMZN-claude",
@@ -5569,15 +7083,18 @@
     "evidence": null,
     "price_at_prediction": 272.68,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": -3.13,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 2.33,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
-    "postmortem": null,
-    "made": "2026-05-11"
+    "postmortem": "The model overweighted the absence of material news in the 10-Q filing itself while ignoring the timing signal: a routine quarterly disclosure filing often triggers portfolio rebalancing or index reconstitution flows, especially around quarter-end dates like April 30th. The prediction also misjudged the +0.23% pre-filing move as noise rather than recognizing it as potential profit-taking before earnings-adjacent volatility, which would have suggested downside risk rather than neutrality. The confidence should have been lower given that routine filings frequently catalyze technical unwinds in high-beta mega-cap stocks like AMZN, not just fundamental surprises.",
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 264.14
   },
   {
     "id": "2026-05-11-AMZN-always_up",
@@ -5599,15 +7116,18 @@
     "evidence": null,
     "price_at_prediction": 272.68,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": -3.13,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 2.13,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 264.14
   },
   {
     "id": "2026-05-11-AMZN-always_neutral",
@@ -5629,15 +7149,18 @@
     "evidence": null,
     "price_at_prediction": 272.68,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": -3.13,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 3.13,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 264.14
   },
   {
     "id": "2026-05-11-AMZN-momentum",
@@ -5659,784 +7182,17 @@
     "evidence": null,
     "price_at_prediction": 272.68,
     "resolves_on": "2026-05-18",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-18",
+    "actual_pct": -3.13,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 3.01,
     "created_at": "2026-05-11T04:36:38.452227+00:00",
     "postmortem": null,
-    "made": "2026-05-11"
-  },
-  {
-    "id": "2026-05-17-AAPL-claude",
-    "made": "2026-05-17",
-    "ticker": "AAPL",
-    "strategy": "claude",
-    "direction": "neutral",
-    "magnitude_pct": 1.5,
-    "confidence": 35,
-    "rationale": "Recent +2.58% gain suggests momentum, but headline focuses on competitors (Samsung, SK Hynix, AMD) with no direct AAPL catalyst, indicating consolidation likely after the recent move.",
-    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
-    "publisher": "Investing.com",
-    "filing": {
-      "form": "10-Q",
-      "filed": "2026-05-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.58,
-    "price_at_prediction": 300.23,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-AAPL-claude_sonnet",
-    "made": "2026-05-17",
-    "ticker": "AAPL",
-    "strategy": "claude_sonnet",
-    "direction": "neutral",
-    "magnitude_pct": 1.2,
-    "confidence": 30,
-    "rationale": "The headline is largely noise with garbled XBRL filing data and no direct AAPL catalyst, while the recent +2.58% move may face mild consolidation without a clear directional driver.",
-    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
-    "publisher": "Investing.com",
-    "filing": {
-      "form": "10-Q",
-      "filed": "2026-05-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.58,
-    "price_at_prediction": 300.23,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-AAPL-always_up",
-    "made": "2026-05-17",
-    "ticker": "AAPL",
-    "strategy": "always_up",
-    "direction": "up",
-    "magnitude_pct": 1.0,
-    "confidence": 50,
-    "rationale": "always-up baseline",
-    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
-    "publisher": "Investing.com",
-    "filing": {
-      "form": "10-Q",
-      "filed": "2026-05-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.58,
-    "price_at_prediction": 300.23,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-AAPL-always_neutral",
-    "made": "2026-05-17",
-    "ticker": "AAPL",
-    "strategy": "always_neutral",
-    "direction": "neutral",
-    "magnitude_pct": 0.0,
-    "confidence": 50,
-    "rationale": "always-neutral baseline",
-    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
-    "publisher": "Investing.com",
-    "filing": {
-      "form": "10-Q",
-      "filed": "2026-05-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.58,
-    "price_at_prediction": 300.23,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-AAPL-momentum",
-    "made": "2026-05-17",
-    "ticker": "AAPL",
-    "strategy": "momentum",
-    "direction": "up",
-    "magnitude_pct": 1.29,
-    "confidence": 50,
-    "rationale": "5d momentum follow (+2.6%)",
-    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
-    "publisher": "Investing.com",
-    "filing": {
-      "form": "10-Q",
-      "filed": "2026-05-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.58,
-    "price_at_prediction": 300.23,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-MSFT-claude",
-    "made": "2026-05-17",
-    "ticker": "MSFT",
-    "strategy": "claude",
-    "direction": "neutral",
-    "magnitude_pct": 1.2,
-    "confidence": 35,
-    "rationale": "Recent momentum is positive but the Amazon AI competitive headline suggests market may be reassessing MSFT's AI leadership positioning, creating offsetting pressures.",
-    "headline": "How Amazon Went From an AI Also-Ran to a Real Contender",
-    "publisher": "The Wall Street Journal",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526224155/d125909d8k.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.24,
-    "price_at_prediction": 421.92,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-MSFT-claude_sonnet",
-    "made": "2026-05-17",
-    "ticker": "MSFT",
-    "strategy": "claude_sonnet",
-    "direction": "neutral",
-    "magnitude_pct": 1.2,
-    "confidence": 35,
-    "rationale": "The headline is ambiguous for MSFT\u2014Amazon's AI progress could signal competitive pressure, while the 8-K filing is routine and the recent 2.24% gain may face consolidation without a clear near-term catalyst.",
-    "headline": "How Amazon Went From an AI Also-Ran to a Real Contender",
-    "publisher": "The Wall Street Journal",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526224155/d125909d8k.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.24,
-    "price_at_prediction": 421.92,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-MSFT-always_up",
-    "made": "2026-05-17",
-    "ticker": "MSFT",
-    "strategy": "always_up",
-    "direction": "up",
-    "magnitude_pct": 1.0,
-    "confidence": 50,
-    "rationale": "always-up baseline",
-    "headline": "How Amazon Went From an AI Also-Ran to a Real Contender",
-    "publisher": "The Wall Street Journal",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526224155/d125909d8k.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.24,
-    "price_at_prediction": 421.92,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-MSFT-always_neutral",
-    "made": "2026-05-17",
-    "ticker": "MSFT",
-    "strategy": "always_neutral",
-    "direction": "neutral",
-    "magnitude_pct": 0.0,
-    "confidence": 50,
-    "rationale": "always-neutral baseline",
-    "headline": "How Amazon Went From an AI Also-Ran to a Real Contender",
-    "publisher": "The Wall Street Journal",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526224155/d125909d8k.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.24,
-    "price_at_prediction": 421.92,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-MSFT-momentum",
-    "made": "2026-05-17",
-    "ticker": "MSFT",
-    "strategy": "momentum",
-    "direction": "up",
-    "magnitude_pct": 1.12,
-    "confidence": 50,
-    "rationale": "5d momentum follow (+2.2%)",
-    "headline": "How Amazon Went From an AI Also-Ran to a Real Contender",
-    "publisher": "The Wall Street Journal",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-14",
-      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526224155/d125909d8k.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.24,
-    "price_at_prediction": 421.92,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-NVDA-claude",
-    "made": "2026-05-17",
-    "ticker": "NVDA",
-    "strategy": "claude",
-    "direction": "down",
-    "magnitude_pct": 2.5,
-    "confidence": 45,
-    "rationale": "Recent +2.68% move combined with 'mania' and 'bubble' warnings suggest overextension and increased risk of profit-taking pullback, though AI momentum could sustain gains.",
-    "headline": "'This is borderline mania': Wall Street sees bubble-like euphoria in AI-fueled semiconductor rally",
-    "publisher": "Yahoo Finance",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-08",
-      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.68,
-    "price_at_prediction": 225.32,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-NVDA-claude_sonnet",
-    "made": "2026-05-17",
-    "ticker": "NVDA",
-    "strategy": "claude_sonnet",
-    "direction": "down",
-    "magnitude_pct": 3.2,
-    "confidence": 42,
-    "rationale": "Bubble/mania rhetoric in headlines often signals near-term sentiment exhaustion and profit-taking risk, though strong AI fundamentals and recent momentum could limit downside.",
-    "headline": "'This is borderline mania': Wall Street sees bubble-like euphoria in AI-fueled semiconductor rally",
-    "publisher": "Yahoo Finance",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-08",
-      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.68,
-    "price_at_prediction": 225.32,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-NVDA-always_up",
-    "made": "2026-05-17",
-    "ticker": "NVDA",
-    "strategy": "always_up",
-    "direction": "up",
-    "magnitude_pct": 1.0,
-    "confidence": 50,
-    "rationale": "always-up baseline",
-    "headline": "'This is borderline mania': Wall Street sees bubble-like euphoria in AI-fueled semiconductor rally",
-    "publisher": "Yahoo Finance",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-08",
-      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.68,
-    "price_at_prediction": 225.32,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-NVDA-always_neutral",
-    "made": "2026-05-17",
-    "ticker": "NVDA",
-    "strategy": "always_neutral",
-    "direction": "neutral",
-    "magnitude_pct": 0.0,
-    "confidence": 50,
-    "rationale": "always-neutral baseline",
-    "headline": "'This is borderline mania': Wall Street sees bubble-like euphoria in AI-fueled semiconductor rally",
-    "publisher": "Yahoo Finance",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-08",
-      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.68,
-    "price_at_prediction": 225.32,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-NVDA-momentum",
-    "made": "2026-05-17",
-    "ticker": "NVDA",
-    "strategy": "momentum",
-    "direction": "up",
-    "magnitude_pct": 1.34,
-    "confidence": 50,
-    "rationale": "5d momentum follow (+2.7%)",
-    "headline": "'This is borderline mania': Wall Street sees bubble-like euphoria in AI-fueled semiconductor rally",
-    "publisher": "Yahoo Finance",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-08",
-      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.68,
-    "price_at_prediction": 225.32,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-GOOGL-claude",
-    "made": "2026-05-17",
-    "ticker": "GOOGL",
-    "strategy": "claude",
-    "direction": "neutral",
-    "magnitude_pct": 1.5,
-    "confidence": 35,
-    "rationale": "Recent +2.09% momentum suggests continued strength, but the irrelevant Wayfair headline and lack of Google-specific catalysts create high uncertainty for the next 5 trading days.",
-    "headline": "Why Wayfair (W) Stock Is Down Today",
-    "publisher": "StockStory",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-11",
-      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.09,
-    "price_at_prediction": 396.78,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-GOOGL-claude_sonnet",
-    "made": "2026-05-17",
-    "ticker": "GOOGL",
-    "strategy": "claude_sonnet",
-    "direction": "up",
-    "magnitude_pct": 1.2,
-    "confidence": 42,
-    "rationale": "The headline is largely noise (an 8-K filing mislabeled as Wayfair news) and provides no meaningful signal, so the slight positive momentum from the recent +2.09% move may carry forward modestly, but uncertainty remains high.",
-    "headline": "Why Wayfair (W) Stock Is Down Today",
-    "publisher": "StockStory",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-11",
-      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.09,
-    "price_at_prediction": 396.78,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-GOOGL-always_up",
-    "made": "2026-05-17",
-    "ticker": "GOOGL",
-    "strategy": "always_up",
-    "direction": "up",
-    "magnitude_pct": 1.0,
-    "confidence": 50,
-    "rationale": "always-up baseline",
-    "headline": "Why Wayfair (W) Stock Is Down Today",
-    "publisher": "StockStory",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-11",
-      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.09,
-    "price_at_prediction": 396.78,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-GOOGL-always_neutral",
-    "made": "2026-05-17",
-    "ticker": "GOOGL",
-    "strategy": "always_neutral",
-    "direction": "neutral",
-    "magnitude_pct": 0.0,
-    "confidence": 50,
-    "rationale": "always-neutral baseline",
-    "headline": "Why Wayfair (W) Stock Is Down Today",
-    "publisher": "StockStory",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-11",
-      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.09,
-    "price_at_prediction": 396.78,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-GOOGL-momentum",
-    "made": "2026-05-17",
-    "ticker": "GOOGL",
-    "strategy": "momentum",
-    "direction": "up",
-    "magnitude_pct": 1.04,
-    "confidence": 50,
-    "rationale": "5d momentum follow (+2.1%)",
-    "headline": "Why Wayfair (W) Stock Is Down Today",
-    "publisher": "StockStory",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-11",
-      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.09,
-    "price_at_prediction": 396.78,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-META-claude",
-    "made": "2026-05-17",
-    "ticker": "META",
-    "strategy": "claude",
-    "direction": "down",
-    "magnitude_pct": 2.8,
-    "confidence": 58,
-    "rationale": "Recent +2.57% gain faces headwind from valuation concerns in AI sector; headline warns of unsustainable growth expectations that typically trigger profit-taking in overextended mega-cap tech stocks.",
-    "headline": "AI Stock Valuations Just Hit a Dangerous Level. A Top CIO Warns: Companies Can\u2019t Grow 100% Annually for 10 Years Straight.",
-    "publisher": "24/7 Wall St.",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-04",
-      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.57,
-    "price_at_prediction": 614.23,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-META-claude_sonnet",
-    "made": "2026-05-17",
-    "ticker": "META",
-    "strategy": "claude_sonnet",
-    "direction": "up",
-    "magnitude_pct": 1.8,
-    "confidence": 52,
-    "rationale": "META's 8-K filing alongside recent positive momentum suggests continued strength, though broader AI valuation concerns and cautionary CIO warnings create headwinds that limit upside conviction.",
-    "headline": "AI Stock Valuations Just Hit a Dangerous Level. A Top CIO Warns: Companies Can\u2019t Grow 100% Annually for 10 Years Straight.",
-    "publisher": "24/7 Wall St.",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-04",
-      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.57,
-    "price_at_prediction": 614.23,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-META-always_up",
-    "made": "2026-05-17",
-    "ticker": "META",
-    "strategy": "always_up",
-    "direction": "up",
-    "magnitude_pct": 1.0,
-    "confidence": 50,
-    "rationale": "always-up baseline",
-    "headline": "AI Stock Valuations Just Hit a Dangerous Level. A Top CIO Warns: Companies Can\u2019t Grow 100% Annually for 10 Years Straight.",
-    "publisher": "24/7 Wall St.",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-04",
-      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.57,
-    "price_at_prediction": 614.23,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-META-always_neutral",
-    "made": "2026-05-17",
-    "ticker": "META",
-    "strategy": "always_neutral",
-    "direction": "neutral",
-    "magnitude_pct": 0.0,
-    "confidence": 50,
-    "rationale": "always-neutral baseline",
-    "headline": "AI Stock Valuations Just Hit a Dangerous Level. A Top CIO Warns: Companies Can\u2019t Grow 100% Annually for 10 Years Straight.",
-    "publisher": "24/7 Wall St.",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-04",
-      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.57,
-    "price_at_prediction": 614.23,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-META-momentum",
-    "made": "2026-05-17",
-    "ticker": "META",
-    "strategy": "momentum",
-    "direction": "up",
-    "magnitude_pct": 1.28,
-    "confidence": 50,
-    "rationale": "5d momentum follow (+2.6%)",
-    "headline": "AI Stock Valuations Just Hit a Dangerous Level. A Top CIO Warns: Companies Can\u2019t Grow 100% Annually for 10 Years Straight.",
-    "publisher": "24/7 Wall St.",
-    "filing": {
-      "form": "8-K",
-      "filed": "2026-05-04",
-      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": 2.57,
-    "price_at_prediction": 614.23,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-TSLA-claude",
-    "made": "2026-05-17",
-    "ticker": "TSLA",
-    "strategy": "claude",
-    "direction": "up",
-    "magnitude_pct": 3.2,
-    "confidence": 52,
-    "rationale": "Recent weakness (-5.11%) may be oversold ahead of positive robotaxi momentum, though regulatory scrutiny in Australia presents ongoing headwinds that limit upside conviction.",
-    "headline": "Tesla Robotaxi Hubs Highlight Autonomy Potential As Australian Scrutiny Builds",
-    "publisher": "Simply Wall St.",
-    "filing": {
-      "form": "10-Q",
-      "filed": "2026-04-23",
-      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": -5.11,
-    "price_at_prediction": 422.24,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-TSLA-claude_sonnet",
-    "made": "2026-05-17",
-    "ticker": "TSLA",
-    "strategy": "claude_sonnet",
-    "direction": "up",
-    "magnitude_pct": 3.2,
-    "confidence": 38,
-    "rationale": "After a -5.11% pullback, robotaxi/autonomy narrative headlines may provide a partial bounce, but Australian regulatory scrutiny and broader macro uncertainty cap upside conviction.",
-    "headline": "Tesla Robotaxi Hubs Highlight Autonomy Potential As Australian Scrutiny Builds",
-    "publisher": "Simply Wall St.",
-    "filing": {
-      "form": "10-Q",
-      "filed": "2026-04-23",
-      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": -5.11,
-    "price_at_prediction": 422.24,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-TSLA-always_up",
-    "made": "2026-05-17",
-    "ticker": "TSLA",
-    "strategy": "always_up",
-    "direction": "up",
-    "magnitude_pct": 1.0,
-    "confidence": 50,
-    "rationale": "always-up baseline",
-    "headline": "Tesla Robotaxi Hubs Highlight Autonomy Potential As Australian Scrutiny Builds",
-    "publisher": "Simply Wall St.",
-    "filing": {
-      "form": "10-Q",
-      "filed": "2026-04-23",
-      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": -5.11,
-    "price_at_prediction": 422.24,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-TSLA-always_neutral",
-    "made": "2026-05-17",
-    "ticker": "TSLA",
-    "strategy": "always_neutral",
-    "direction": "neutral",
-    "magnitude_pct": 0.0,
-    "confidence": 50,
-    "rationale": "always-neutral baseline",
-    "headline": "Tesla Robotaxi Hubs Highlight Autonomy Potential As Australian Scrutiny Builds",
-    "publisher": "Simply Wall St.",
-    "filing": {
-      "form": "10-Q",
-      "filed": "2026-04-23",
-      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": -5.11,
-    "price_at_prediction": 422.24,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-TSLA-momentum",
-    "made": "2026-05-17",
-    "ticker": "TSLA",
-    "strategy": "momentum",
-    "direction": "down",
-    "magnitude_pct": 2.56,
-    "confidence": 50,
-    "rationale": "5d momentum follow (-5.1%)",
-    "headline": "Tesla Robotaxi Hubs Highlight Autonomy Potential As Australian Scrutiny Builds",
-    "publisher": "Simply Wall St.",
-    "filing": {
-      "form": "10-Q",
-      "filed": "2026-04-23",
-      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": -5.11,
-    "price_at_prediction": 422.24,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-AMZN-claude",
-    "made": "2026-05-17",
-    "ticker": "AMZN",
-    "strategy": "claude",
-    "direction": "up",
-    "magnitude_pct": 2.3,
-    "confidence": 68,
-    "rationale": "Positive AI investment thesis contrasts with recent 5-day decline, suggesting potential mean reversion and institutional interest in AMZN's AI capabilities may drive recovery over next week.",
-    "headline": "3 Reasons Why Amazon Is a Top AI Investment",
-    "publisher": "Motley Fool",
-    "filing": {
-      "form": "10-Q",
-      "filed": "2026-04-30",
-      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": -1.8,
-    "price_at_prediction": 264.14,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-AMZN-claude_sonnet",
-    "made": "2026-05-17",
-    "ticker": "AMZN",
-    "strategy": "claude_sonnet",
-    "direction": "up",
-    "magnitude_pct": 1.8,
-    "confidence": 52,
-    "rationale": "Positive AI investment narrative from Motley Fool may provide mild sentiment support after a recent -1.80% pullback, suggesting a modest mean-reversion bounce, though broader market uncertainty limits conviction.",
-    "headline": "3 Reasons Why Amazon Is a Top AI Investment",
-    "publisher": "Motley Fool",
-    "filing": {
-      "form": "10-Q",
-      "filed": "2026-04-30",
-      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": -1.8,
-    "price_at_prediction": 264.14,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-AMZN-always_up",
-    "made": "2026-05-17",
-    "ticker": "AMZN",
-    "strategy": "always_up",
-    "direction": "up",
-    "magnitude_pct": 1.0,
-    "confidence": 50,
-    "rationale": "always-up baseline",
-    "headline": "3 Reasons Why Amazon Is a Top AI Investment",
-    "publisher": "Motley Fool",
-    "filing": {
-      "form": "10-Q",
-      "filed": "2026-04-30",
-      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": -1.8,
-    "price_at_prediction": 264.14,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-AMZN-always_neutral",
-    "made": "2026-05-17",
-    "ticker": "AMZN",
-    "strategy": "always_neutral",
-    "direction": "neutral",
-    "magnitude_pct": 0.0,
-    "confidence": 50,
-    "rationale": "always-neutral baseline",
-    "headline": "3 Reasons Why Amazon Is a Top AI Investment",
-    "publisher": "Motley Fool",
-    "filing": {
-      "form": "10-Q",
-      "filed": "2026-04-30",
-      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": -1.8,
-    "price_at_prediction": 264.14,
-    "resolves_on": "2026-05-24",
-    "resolved": false
-  },
-  {
-    "id": "2026-05-17-AMZN-momentum",
-    "made": "2026-05-17",
-    "ticker": "AMZN",
-    "strategy": "momentum",
-    "direction": "down",
-    "magnitude_pct": 0.9,
-    "confidence": 50,
-    "rationale": "5d momentum follow (-1.8%)",
-    "headline": "3 Reasons Why Amazon Is a Top AI Investment",
-    "publisher": "Motley Fool",
-    "filing": {
-      "form": "10-Q",
-      "filed": "2026-04-30",
-      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
-    },
-    "horizon_days": 5,
-    "made_pct_5d_prior": -1.8,
-    "price_at_prediction": 264.14,
-    "resolves_on": "2026-05-24",
-    "resolved": false
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-11",
+    "price_at_resolution": 264.14
   }
 ]
