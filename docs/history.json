@@ -219,9 +219,9 @@
   {
     "date": "2026-05-18",
     "linguist_score": 45,
-    "watchlist_avg_pct": 0.75,
+    "watchlist_avg_pct": 1.37,
     "predictions_made": 0,
-    "predictions_resolved": 7,
+    "predictions_resolved": 0,
     "hit_rate": 14.3,
     "rolling_7": 14.3,
     "baseline_momentum_rolling_7": 28.6,
