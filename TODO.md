@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-18
+- [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
+
 ### 2026-05-17
 - [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
 - [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
