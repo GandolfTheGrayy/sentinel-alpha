@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-19
+- [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
+- [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
+- [x] A config loader that reads a YAML config file and environment variables, with a 
+- [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
+
 ### 2026-05-18
 - [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
 
