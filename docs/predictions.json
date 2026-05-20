@@ -4499,17 +4499,18 @@
     "evidence": null,
     "price_at_prediction": 294.8,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 1.78,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 0.02,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 300.05
   },
   {
     "id": "2026-05-13-AAPL-always_up",
@@ -4531,17 +4532,18 @@
     "evidence": null,
     "price_at_prediction": 294.8,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 1.78,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 0.78,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 300.05
   },
   {
     "id": "2026-05-13-AAPL-always_neutral",
@@ -4563,17 +4565,18 @@
     "evidence": null,
     "price_at_prediction": 294.8,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 1.78,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 1.78,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 300.05
   },
   {
     "id": "2026-05-13-AAPL-momentum",
@@ -4595,17 +4598,18 @@
     "evidence": null,
     "price_at_prediction": 294.8,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 1.78,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 0.47,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 300.05
   },
   {
     "id": "2026-05-13-MSFT-claude",
@@ -4627,17 +4631,18 @@
     "evidence": null,
     "price_at_prediction": 407.77,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 1.96,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 1.16,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
-    "postmortem": null,
+    "postmortem": "The model underweighted the positive sentiment lift from OpenAI's legal positioning against Elon Musk, which implicitly strengthened Microsoft's strategic position as OpenAI's primary backer and cloud infrastructure provider. By treating the litigation as \"tangentially relevant,\" the model ignored that markets often rally AI-infrastructure beneficiaries during moments of competitive clarity, particularly when a rival (Musk/xAI) faces legal headwinds. The neutral stance assumed the recent 1.5% decline had already priced in uncertainty, when in reality that dip may have created a tactical entry point that resolved once the trial reinforced Microsoft's de facto dominance in the OpenAI ecosystem.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 415.76
   },
   {
     "id": "2026-05-13-MSFT-always_up",
@@ -4659,17 +4664,18 @@
     "evidence": null,
     "price_at_prediction": 407.77,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 1.96,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 0.96,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 415.76
   },
   {
     "id": "2026-05-13-MSFT-always_neutral",
@@ -4691,17 +4697,18 @@
     "evidence": null,
     "price_at_prediction": 407.77,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 1.96,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 1.96,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 415.76
   },
   {
     "id": "2026-05-13-MSFT-momentum",
@@ -4723,17 +4730,18 @@
     "evidence": null,
     "price_at_prediction": 407.77,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 1.96,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 1.21,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 415.76
   },
   {
     "id": "2026-05-13-NVDA-claude",
@@ -4755,17 +4763,18 @@
     "evidence": null,
     "price_at_prediction": 220.78,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 0.53,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 1.97,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 221.94
   },
   {
     "id": "2026-05-13-NVDA-always_up",
@@ -4787,17 +4796,18 @@
     "evidence": null,
     "price_at_prediction": 220.78,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 0.53,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 0.47,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 221.94
   },
   {
     "id": "2026-05-13-NVDA-always_neutral",
@@ -4819,17 +4829,18 @@
     "evidence": null,
     "price_at_prediction": 220.78,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 0.53,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 0.53,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 221.94
   },
   {
     "id": "2026-05-13-NVDA-momentum",
@@ -4851,17 +4862,18 @@
     "evidence": null,
     "price_at_prediction": 220.78,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 0.53,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 2.59,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 221.94
   },
   {
     "id": "2026-05-13-GOOGL-claude",
@@ -4883,17 +4895,18 @@
     "evidence": null,
     "price_at_prediction": 387.35,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 0.89,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 0.91,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 390.78
   },
   {
     "id": "2026-05-13-GOOGL-always_up",
@@ -4915,17 +4928,18 @@
     "evidence": null,
     "price_at_prediction": 387.35,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 0.89,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 0.11,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 390.78
   },
   {
     "id": "2026-05-13-GOOGL-always_neutral",
@@ -4947,17 +4961,18 @@
     "evidence": null,
     "price_at_prediction": 387.35,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 0.89,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 0.89,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 390.78
   },
   {
     "id": "2026-05-13-GOOGL-momentum",
@@ -4979,17 +4994,18 @@
     "evidence": null,
     "price_at_prediction": 387.35,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": 0.89,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 0.45,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 390.78
   },
   {
     "id": "2026-05-13-META-claude",
@@ -5011,17 +5027,18 @@
     "evidence": null,
     "price_at_prediction": 603.0,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": -0.42,
+    "actual_direction": "neutral",
+    "correct_direction": true,
+    "magnitude_error": 1.38,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 600.45
   },
   {
     "id": "2026-05-13-META-always_up",
@@ -5043,17 +5060,18 @@
     "evidence": null,
     "price_at_prediction": 603.0,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": -0.42,
+    "actual_direction": "neutral",
+    "correct_direction": false,
+    "magnitude_error": 0.58,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 600.45
   },
   {
     "id": "2026-05-13-META-always_neutral",
@@ -5075,17 +5093,18 @@
     "evidence": null,
     "price_at_prediction": 603.0,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": -0.42,
+    "actual_direction": "neutral",
+    "correct_direction": true,
+    "magnitude_error": 0.42,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 600.45
   },
   {
     "id": "2026-05-13-META-momentum",
@@ -5107,17 +5126,18 @@
     "evidence": null,
     "price_at_prediction": 603.0,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": -0.42,
+    "actual_direction": "neutral",
+    "correct_direction": false,
+    "magnitude_error": 0.39,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 600.45
   },
   {
     "id": "2026-05-13-TSLA-claude",
@@ -5139,17 +5159,18 @@
     "evidence": null,
     "price_at_prediction": 433.45,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": -5.31,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 2.81,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
-    "postmortem": null,
+    "postmortem": "The model overweighted the absence of positive catalysts in the 10-Q filing as a neutral signal, failing to account for what the filing *revealed negatively* \u2014 likely margin pressure, delivery misses, or forward guidance cuts that would trigger immediate selling. The 8.71% prior gain was treated as mean reversion risk rather than as evidence of momentum traders still holding positions that would capitulate on disappointing fundamentals, amplifying the downside move beyond typical post-earnings volatility.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 410.43
   },
   {
     "id": "2026-05-13-TSLA-always_up",
@@ -5171,17 +5192,18 @@
     "evidence": null,
     "price_at_prediction": 433.45,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": -5.31,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 4.31,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 410.43
   },
   {
     "id": "2026-05-13-TSLA-always_neutral",
@@ -5203,17 +5225,18 @@
     "evidence": null,
     "price_at_prediction": 433.45,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": -5.31,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 5.31,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 410.43
   },
   {
     "id": "2026-05-13-TSLA-momentum",
@@ -5235,17 +5258,18 @@
     "evidence": null,
     "price_at_prediction": 433.45,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": -5.31,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 0.95,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 410.43
   },
   {
     "id": "2026-05-13-AMZN-claude",
@@ -5267,17 +5291,18 @@
     "evidence": null,
     "price_at_prediction": 265.82,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": -1.73,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 0.77,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
-    "postmortem": null,
+    "postmortem": "The model overweighted the absence of a catalyst and underestimated the negative momentum from the prior -3.33% decline, which suggested technical selling pressure was still active rather than exhausted. By setting a neutral prediction with only 35% confidence, the model hedged rather than acknowledging that two consecutive negative sessions typically carry directional persistence over a 5-day window. The Netflix headline was correctly identified as unrelated noise, but the model failed to recognize that sector-wide weakness or broader market headwinds during that period may have been pushing AMZN lower independent of company-specific news.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 261.22
   },
   {
     "id": "2026-05-13-AMZN-always_up",
@@ -5299,17 +5324,18 @@
     "evidence": null,
     "price_at_prediction": 265.82,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": -1.73,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 0.73,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 261.22
   },
   {
     "id": "2026-05-13-AMZN-always_neutral",
@@ -5331,17 +5357,18 @@
     "evidence": null,
     "price_at_prediction": 265.82,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": -1.73,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 1.73,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 261.22
   },
   {
     "id": "2026-05-13-AMZN-momentum",
@@ -5363,17 +5390,18 @@
     "evidence": null,
     "price_at_prediction": 265.82,
     "resolves_on": "2026-05-20",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-20",
+    "actual_pct": -1.73,
+    "actual_direction": "down",
+    "correct_direction": true,
+    "magnitude_error": 0.06,
     "created_at": "2026-05-13T13:07:41.566869+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-13"
+    "made": "2026-05-13",
+    "price_at_resolution": 261.22
   },
   {
     "id": "2026-05-12-AAPL-claude",
@@ -5405,8 +5433,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 300.01
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-AAPL-always_up",
@@ -5438,8 +5465,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 300.01
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-AAPL-always_neutral",
@@ -5471,8 +5497,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 300.01
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-AAPL-momentum",
@@ -5504,8 +5529,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 300.01
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-MSFT-claude",
@@ -5537,8 +5561,7 @@
     "postmortem": "The model overweighted the irrelevance of the legal headline itself while missing that Nadella's testimony likely addressed Microsoft's AI competitive position and OpenAI partnership\u2014material topics for investors given the strategic importance of these relationships to MSFT's growth narrative. The recent minimal price movement (+0.31%) was treated as evidence of genuine sideways momentum rather than as a potential lull before a catalyst-driven repricing, especially in a volatile AI-focused market where legal clarity on partnerships can shift sentiment sharply. The model's confidence (35%) correctly reflected uncertainty but still anchored too heavily on the absence of \"material business impact\" rather than recognizing that market-moving testimony often appears immaterial in real-time only to trigger reassessment of risk or opportunity.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 429.32
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-MSFT-always_up",
@@ -5570,8 +5593,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 429.32
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-MSFT-always_neutral",
@@ -5603,8 +5625,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 429.32
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-MSFT-momentum",
@@ -5636,8 +5657,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 429.32
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-NVDA-claude",
@@ -5669,8 +5689,7 @@
     "postmortem": "The model overweighted near-term profit-taking signals from the 5-day rally while underestimating how institutional investors would parse the AMD competitive threat. The headline framed AMD's roadmap as \"very competitive,\" which could have been interpreted as validation of the entire AI chip sector rather than a zero-sum loss for Nvidia\u2014yet the model treated it primarily as a headwind without accounting for how positive AI narrative momentum might sustain both competitors. The 42% confidence suggests uncertainty was present, but the directional bias toward down was misplaced given that sector tailwinds (broader AI demand) were explicitly noted as a counterweight that ultimately proved dominant.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 221.28
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-NVDA-always_up",
@@ -5702,8 +5721,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 221.28
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-NVDA-always_neutral",
@@ -5735,8 +5753,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 221.28
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-NVDA-momentum",
@@ -5768,8 +5785,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 221.28
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-GOOGL-claude",
@@ -5801,8 +5817,7 @@
     "postmortem": "The model overweighted the general corporate profit tailwind without accounting for Google's specific margin pressures and competitive threats that would have been evident in the 8-K filing from May 2026. The rationale relied on sector-level strength (tech mega-caps benefiting from broad profit growth) while ignoring company-specific headwinds\u2014likely AI infrastructure costs, regulatory concerns, or competitive losses in key segments\u2014that would offset industry tailwinds and keep the stock flat. The confidence of 62% was unwarranted given the explicit acknowledgment of \"market uncertainty\" in the original rationale, which should have weighted down conviction when facing a company-specific filing that apparently signaled caution.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 388.58
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-GOOGL-always_up",
@@ -5834,8 +5849,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 388.58
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-GOOGL-always_neutral",
@@ -5867,8 +5881,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 388.58
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-GOOGL-momentum",
@@ -5900,8 +5913,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 388.58
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-META-claude",
@@ -5933,8 +5945,7 @@
     "postmortem": "The model correctly identified uncertainty from the sparse 8-K but failed to account for the market's positive interpretation of META's decision to file at all\u2014particularly the timing in May 2026, when filing without disclosed details often signals a routine corporate action rather than a negative event. The neutral prediction underweighted the baseline tendency for META stock to drift upward on days with procedural filings, treating the absence of information as symmetrically risky when it should have been weighted slightly bullish given no negative catalyst was announced.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 609.82
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-META-always_up",
@@ -5966,8 +5977,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 609.82
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-META-always_neutral",
@@ -5999,8 +6009,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 609.82
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-META-momentum",
@@ -6032,8 +6041,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 609.82
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-TSLA-claude",
@@ -6065,8 +6073,7 @@
     "postmortem": "The model overweighted the stabilizing effect of Piper Sandler's bullish call and underestimated the magnitude of profit-taking pressure after a 14% rally. While the rationale correctly identified profit-taking risk, it treated this as a modest headwind rather than the dominant force\u2014the neutral prediction with 42% confidence suggested near-balanced probabilities, when the technical setup (sharp rally into analyst upgrades) historically triggers sharper reversals. The model also appears to have missed or undervalued whatever catalyzed the 9.91% drop on that specific day\u2014likely broader market weakness, rotation out of growth/momentum names, or Tesla-specific execution concerns that the Optimus narrative couldn't counteract.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 400.9
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-TSLA-always_up",
@@ -6098,8 +6105,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 400.9
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-TSLA-always_neutral",
@@ -6131,8 +6137,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 400.9
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-TSLA-momentum",
@@ -6164,8 +6169,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 400.9
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-AMZN-claude",
@@ -6197,8 +6201,7 @@
     "postmortem": "The model underweighted the correlation between retail sentiment shifts and Amazon's stock performance during periods of broad market stress. By dismissing the GameStop/eBay headline as \"unrelated to fundamentals,\" the model ignored that negative retail sector news often precedes broader selloffs in mega-cap tech stocks, which serve as flight-to-safety proxies\u2014meaning when retail confidence deteriorates, investors rotate out of growth stocks like Amazon first. The neutral stance also failed to account for the timing context: a Q2 10-Q filing typically surfaces operational details that can trigger revaluations, and without current macro context, the model had no hedge against downside surprises that quarter-end data might reveal.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 259.24
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-AMZN-always_up",
@@ -6230,8 +6233,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 259.24
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-AMZN-always_neutral",
@@ -6263,8 +6265,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 259.24
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-12-AMZN-momentum",
@@ -6296,8 +6297,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-12",
-    "price_at_resolution": 259.24
+    "made": "2026-05-12"
   },
   {
     "id": "2026-05-11-AMZN-always_up",
