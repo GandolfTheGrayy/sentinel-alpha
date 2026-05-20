@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-20
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+- [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
+
 ### 2026-05-19
 - [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
 - [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
