@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-21
+- [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+- [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
+
 ### 2026-05-20
 - [x] A historical market event ingestion pipeline that reads from a CSV of past event
 - [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
