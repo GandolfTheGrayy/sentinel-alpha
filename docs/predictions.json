@@ -2259,17 +2259,18 @@
     "evidence": null,
     "price_at_prediction": 401.07,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -3.34,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 2.34,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 387.66
   },
   {
     "id": "2026-05-15-AAPL-claude",
@@ -2291,17 +2292,18 @@
     "evidence": null,
     "price_at_prediction": 298.21,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": 2.27,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 0.17,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
-    "postmortem": null,
+    "postmortem": "The model overweighted near-term chip sector contagion while ignoring that Apple's massive services revenue and installed base provide structural insulation from supply chain cost pressures. The headline about trade tensions created recency bias\u2014it focused attention on cyclical hardware risks when Apple's actual earnings power has shifted toward high-margin recurring revenue, making the stock less sensitive to incremental production cost inflation.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 304.99
   },
   {
     "id": "2026-05-15-AAPL-claude_sonnet",
@@ -2323,17 +2325,18 @@
     "evidence": null,
     "price_at_prediction": 298.21,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": 2.27,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 1.07,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 304.99
   },
   {
     "id": "2026-05-15-AAPL-always_up",
@@ -2355,17 +2358,18 @@
     "evidence": null,
     "price_at_prediction": 298.21,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": 2.27,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 1.27,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 304.99
   },
   {
     "id": "2026-05-15-AAPL-always_neutral",
@@ -2387,17 +2391,18 @@
     "evidence": null,
     "price_at_prediction": 298.21,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": 2.27,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 2.27,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 304.99
   },
   {
     "id": "2026-05-15-AAPL-momentum",
@@ -2419,17 +2424,18 @@
     "evidence": null,
     "price_at_prediction": 298.21,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": 2.27,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 1.39,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 304.99
   },
   {
     "id": "2026-05-15-MSFT-claude",
@@ -2451,17 +2457,18 @@
     "evidence": null,
     "price_at_prediction": 409.43,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": 2.36,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 1.56,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
-    "postmortem": null,
+    "postmortem": "The model overweighted the recent -1.37% decline as evidence of near-term weakness without accounting for mean reversion or the typical bounce pattern after sharp drops in mega-cap stocks. It dismissed the memory shortage headline as irrelevant to MSFT because Nintendo was the direct subject, missing that supply chain concerns often create sector-wide rotation dynamics where cloud/AI infrastructure plays like Microsoft actually benefit from constrained consumer electronics inventory. The low confidence prediction also failed to incorporate that an 8-K filing from mid-May would have signaled material corporate action or guidance that could drive positive momentum independent of technical weakness.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 419.09
   },
   {
     "id": "2026-05-15-MSFT-claude_sonnet",
@@ -2483,17 +2490,18 @@
     "evidence": null,
     "price_at_prediction": 409.43,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": 2.36,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 1.56,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 419.09
   },
   {
     "id": "2026-05-15-MSFT-always_up",
@@ -2515,17 +2523,18 @@
     "evidence": null,
     "price_at_prediction": 409.43,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": 2.36,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 1.36,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 419.09
   },
   {
     "id": "2026-05-15-MSFT-always_neutral",
@@ -2547,17 +2556,18 @@
     "evidence": null,
     "price_at_prediction": 409.43,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": 2.36,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 2.36,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 419.09
   },
   {
     "id": "2026-05-15-MSFT-momentum",
@@ -2579,17 +2589,18 @@
     "evidence": null,
     "price_at_prediction": 409.43,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": 2.36,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 1.67,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 419.09
   },
   {
     "id": "2026-05-15-NVDA-claude",
@@ -2611,17 +2622,18 @@
     "evidence": null,
     "price_at_prediction": 235.74,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -6.88,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 3.68,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
-    "postmortem": null,
+    "postmortem": "The model overweighted recent momentum (+9.54%) as a predictor of near-term direction while underestimating mean-reversion risk from overbought technical conditions that it acknowledged but didn't quantify. The \"positive AI infrastructure sentiment\" was too vague and assumed continued buying pressure, when the actual 8-K filing (May 8, 2026) likely contained operational or guidance details that contradicted that broad sentiment\u2014the SPAN CEO quote about \"AI data center nodes for homes\" suggests a pivot toward consumer/distributed infrastructure rather than the high-margin enterprise data center narrative that had driven the momentum. The model failed to weight that potential narrative shift as a specific risk factor despite noting the lack of \"specific catalyst details.\"",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 219.51
   },
   {
     "id": "2026-05-15-NVDA-claude_sonnet",
@@ -2643,17 +2655,18 @@
     "evidence": null,
     "price_at_prediction": 235.74,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -6.88,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 3.38,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 219.51
   },
   {
     "id": "2026-05-15-NVDA-always_up",
@@ -2675,17 +2688,18 @@
     "evidence": null,
     "price_at_prediction": 235.74,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -6.88,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 5.88,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 219.51
   },
   {
     "id": "2026-05-15-NVDA-always_neutral",
@@ -2707,17 +2721,18 @@
     "evidence": null,
     "price_at_prediction": 235.74,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -6.88,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 6.88,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 219.51
   },
   {
     "id": "2026-05-15-NVDA-momentum",
@@ -2739,17 +2754,18 @@
     "evidence": null,
     "price_at_prediction": 235.74,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -6.88,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 2.11,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 219.51
   },
   {
     "id": "2026-05-15-GOOGL-claude",
@@ -2771,17 +2787,18 @@
     "evidence": null,
     "price_at_prediction": 401.07,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -3.34,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 1.54,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
-    "postmortem": null,
+    "postmortem": "The model overweighted Google's structural advantage as a capital-rich AI leader while underweighting the specific market interpretation of that capex imperative as a *profitability headwind*. The headline framed heavy spending as necessary competitive positioning, but the market read the same spending commitment as margin pressure and dilution to near-term earnings, which outweighed confidence in long-term AI leadership. The model also failed to account for how an 8-K filing (an unexpected corporate event) often signals material news that shifts sentiment\u2014in this case likely disappointing guidance or cost structure concerns\u2014rather than routine confirmation of known strategy.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 387.66
   },
   {
     "id": "2026-05-15-GOOGL-claude_sonnet",
@@ -2803,17 +2820,18 @@
     "evidence": null,
     "price_at_prediction": 401.07,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -3.34,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 1.54,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 387.66
   },
   {
     "id": "2026-05-15-GOOGL-always_neutral",
@@ -2835,17 +2853,18 @@
     "evidence": null,
     "price_at_prediction": 401.07,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -3.34,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 3.34,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 387.66
   },
   {
     "id": "2026-05-15-GOOGL-momentum",
@@ -2867,17 +2886,18 @@
     "evidence": null,
     "price_at_prediction": 401.07,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -3.34,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 3.3,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 387.66
   },
   {
     "id": "2026-05-15-META-claude",
@@ -2899,17 +2919,18 @@
     "evidence": null,
     "price_at_prediction": 618.43,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -1.79,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 0.59,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
-    "postmortem": null,
+    "postmortem": "The model overweighted the modest positive momentum signal (+1.44%) as a stabilizing factor while treating the 8-K filing as informationally neutral due to missing headline details. However, the filing's lack of transparency\u2014a red flag itself\u2014likely triggered negative sentiment among institutional investors who interpreted the sparse disclosure as evasive or concerning, causing the downside move that the model failed to anticipate because it treated ambiguity as neutral rather than negative.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 607.38
   },
   {
     "id": "2026-05-15-META-claude_sonnet",
@@ -2931,17 +2952,18 @@
     "evidence": null,
     "price_at_prediction": 618.43,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -1.79,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 0.31,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 607.38
   },
   {
     "id": "2026-05-15-META-always_up",
@@ -2963,17 +2985,18 @@
     "evidence": null,
     "price_at_prediction": 618.43,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -1.79,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 0.79,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 607.38
   },
   {
     "id": "2026-05-15-META-always_neutral",
@@ -2995,17 +3018,18 @@
     "evidence": null,
     "price_at_prediction": 618.43,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -1.79,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 1.79,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 607.38
   },
   {
     "id": "2026-05-15-META-momentum",
@@ -3027,17 +3051,18 @@
     "evidence": null,
     "price_at_prediction": 618.43,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -1.79,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 1.07,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 607.38
   },
   {
     "id": "2026-05-15-TSLA-claude",
@@ -3059,17 +3084,18 @@
     "evidence": null,
     "price_at_prediction": 443.3,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -5.74,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 3.24,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
-    "postmortem": null,
+    "postmortem": "The model overweighted the consolidation thesis after a modest +3.49% move, anchoring to typical post-filing patterns rather than recognizing that Tesla's 10-Q likely contained material negative surprises\u2014possibly weaker-than-expected margins, production misses, or delayed robotaxi/FSD commercialization timelines that investors immediately priced in. The prediction ignored that the absence of forward guidance in a 10-Q filing, rather than creating neutral uncertainty, often signals disappointing results that management wants to downplay, particularly when market sentiment is already fragile around execution risk.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 417.85
   },
   {
     "id": "2026-05-15-TSLA-claude_sonnet",
@@ -3091,17 +3117,18 @@
     "evidence": null,
     "price_at_prediction": 443.3,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -5.74,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 3.64,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 417.85
   },
   {
     "id": "2026-05-15-TSLA-always_up",
@@ -3123,17 +3150,18 @@
     "evidence": null,
     "price_at_prediction": 443.3,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -5.74,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 4.74,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 417.85
   },
   {
     "id": "2026-05-15-TSLA-always_neutral",
@@ -3155,17 +3183,18 @@
     "evidence": null,
     "price_at_prediction": 443.3,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -5.74,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 5.74,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 417.85
   },
   {
     "id": "2026-05-15-TSLA-momentum",
@@ -3187,17 +3216,18 @@
     "evidence": null,
     "price_at_prediction": 443.3,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": -5.74,
+    "actual_direction": "down",
+    "correct_direction": false,
+    "magnitude_error": 3.99,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 417.85
   },
   {
     "id": "2026-05-15-AMZN-claude",
@@ -3219,17 +3249,18 @@
     "evidence": null,
     "price_at_prediction": 267.22,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": 0.46,
+    "actual_direction": "neutral",
+    "correct_direction": true,
+    "magnitude_error": 1.04,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 268.46
   },
   {
     "id": "2026-05-15-AMZN-claude_sonnet",
@@ -3251,17 +3282,18 @@
     "evidence": null,
     "price_at_prediction": 267.22,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": 0.46,
+    "actual_direction": "neutral",
+    "correct_direction": true,
+    "magnitude_error": 0.74,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 268.46
   },
   {
     "id": "2026-05-15-AMZN-always_up",
@@ -3283,17 +3315,18 @@
     "evidence": null,
     "price_at_prediction": 267.22,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": 0.46,
+    "actual_direction": "neutral",
+    "correct_direction": false,
+    "magnitude_error": 0.54,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 268.46
   },
   {
     "id": "2026-05-15-AMZN-always_neutral",
@@ -3315,17 +3348,18 @@
     "evidence": null,
     "price_at_prediction": 267.22,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": 0.46,
+    "actual_direction": "neutral",
+    "correct_direction": true,
+    "magnitude_error": 0.46,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
+    "made": "2026-05-15",
+    "price_at_resolution": 268.46
   },
   {
     "id": "2026-05-15-AMZN-momentum",
@@ -3347,50 +3381,18 @@
     "evidence": null,
     "price_at_prediction": 267.22,
     "resolves_on": "2026-05-22",
-    "resolved": false,
-    "resolved_on": null,
-    "actual_pct": null,
-    "actual_direction": null,
-    "correct_direction": null,
-    "magnitude_error": null,
+    "resolved": true,
+    "resolved_on": "2026-05-22",
+    "actual_pct": 0.46,
+    "actual_direction": "neutral",
+    "correct_direction": false,
+    "magnitude_error": 0.54,
     "created_at": "2026-05-15T12:28:43.440735+00:00",
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-15"
-  },
-  {
-    "id": "2026-05-14-AAPL-claude",
-    "made_on": "2026-05-14",
-    "ticker": "AAPL",
-    "strategy": "claude",
-    "horizon_days": 5,
-    "direction": "neutral",
-    "magnitude_pct": 2.5,
-    "confidence": 35,
-    "rationale": "Recent +4.07% gain suggests momentum but lacks clarity on macro catalysts; Trump-Xi meeting and retail data could create volatility in either direction.",
-    "headline": "Trump\u2013Xi meeting, rarnings and Retail Sales in focus Thursday",
-    "publisher": "Yahoo Finance Video",
-    "filing": {
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
-      "form": "10-Q",
-      "filed": "2026-05-01"
-    },
-    "evidence": null,
-    "price_at_prediction": 298.87,
-    "resolves_on": "2026-05-21",
-    "resolved": true,
-    "resolved_on": "2026-05-21",
-    "actual_pct": 1.24,
-    "actual_direction": "up",
-    "correct_direction": false,
-    "magnitude_error": 1.26,
-    "created_at": "2026-05-14T05:22:23.316557+00:00",
-    "postmortem": "The model overweighted macro uncertainty as a symmetrical risk factor when the actual market reaction treated the Trump-Xi meeting and retail data as benign or positive inputs. By framing these events as volatility triggers \"in either direction,\" the model failed to recognize that AAPL's preceding +4.07% momentum had already priced in downside concerns, leaving the stock positioned to absorb good-enough macro news without reversal. The neutral call essentially bet on stasis in a setup where positive or neutral headlines would more likely extend the existing trend than arrest it.",
-    "topic_id": null,
-    "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 302.58
+    "made": "2026-05-15",
+    "price_at_resolution": 268.46
   },
   {
     "id": "2026-05-14-AAPL-claude_sonnet",
@@ -3422,8 +3424,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 302.58
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-AAPL-always_up",
@@ -3455,8 +3456,39 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 302.58
+    "made": "2026-05-14"
+  },
+  {
+    "id": "2026-05-14-AAPL-claude",
+    "made_on": "2026-05-14",
+    "ticker": "AAPL",
+    "strategy": "claude",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 2.5,
+    "confidence": 35,
+    "rationale": "Recent +4.07% gain suggests momentum but lacks clarity on macro catalysts; Trump-Xi meeting and retail data could create volatility in either direction.",
+    "headline": "Trump\u2013Xi meeting, rarnings and Retail Sales in focus Thursday",
+    "publisher": "Yahoo Finance Video",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
+      "form": "10-Q",
+      "filed": "2026-05-01"
+    },
+    "evidence": null,
+    "price_at_prediction": 298.87,
+    "resolves_on": "2026-05-21",
+    "resolved": true,
+    "resolved_on": "2026-05-21",
+    "actual_pct": 1.24,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 1.26,
+    "created_at": "2026-05-14T05:22:23.316557+00:00",
+    "postmortem": "The model overweighted macro uncertainty as a symmetrical risk factor when the actual market reaction treated the Trump-Xi meeting and retail data as benign or positive inputs. By framing these events as volatility triggers \"in either direction,\" the model failed to recognize that AAPL's preceding +4.07% momentum had already priced in downside concerns, leaving the stock positioned to absorb good-enough macro news without reversal. The neutral call essentially bet on stasis in a setup where positive or neutral headlines would more likely extend the existing trend than arrest it.",
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-AAPL-always_neutral",
@@ -3488,8 +3520,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 302.58
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-AAPL-momentum",
@@ -3521,8 +3552,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 302.58
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-MSFT-claude",
@@ -3554,8 +3584,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 418.52
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-MSFT-claude_sonnet",
@@ -3587,8 +3616,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 418.52
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-MSFT-always_up",
@@ -3620,8 +3648,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 418.52
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-MSFT-always_neutral",
@@ -3653,8 +3680,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 418.52
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-MSFT-momentum",
@@ -3686,8 +3712,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 418.52
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-NVDA-claude",
@@ -3719,8 +3744,7 @@
     "postmortem": "The model overweighted short-term momentum (the recent 6.78% gain) and positive sector sentiment (Cerebras IPO, executive engagement) without adequately accounting for the consolidation risk it explicitly acknowledged. The prediction treated consolidation as a secondary concern rather than recognizing that a stock up 6.78% in the recent period was already priced for optimism and vulnerable to profit-taking, especially when broader market conditions could shift. The model failed to recognize that headline-driven rallies around executive meetings often reverse once the event passes and investors recalibrate valuations without fresh catalysts.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 222.51
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-NVDA-claude_sonnet",
@@ -3752,8 +3776,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 222.51
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-NVDA-always_up",
@@ -3785,8 +3808,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 222.51
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-NVDA-always_neutral",
@@ -3818,8 +3840,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 222.51
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-NVDA-momentum",
@@ -3851,8 +3872,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 222.51
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-GOOGL-claude",
@@ -3884,8 +3904,7 @@
     "postmortem": "The model overweighted recent price momentum and sector peer strength while ignoring the specific filing event. An 8-K filing from May 11, 2026 typically signals material corporate developments\u2014potentially regulatory actions, executive departures, or business segment changes\u2014that would contradict a momentum-based bullish thesis regardless of Apple's strength or GOOGL's prior 1.16% gain.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 385.07
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-GOOGL-claude_sonnet",
@@ -3917,8 +3936,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 385.07
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-GOOGL-always_up",
@@ -3950,8 +3968,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 385.07
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-GOOGL-always_neutral",
@@ -3983,8 +4000,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 385.07
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-GOOGL-momentum",
@@ -4016,8 +4032,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 385.07
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-META-claude",
@@ -4049,8 +4064,7 @@
     "postmortem": "The model's reliance on the absence of detail in the 8-K excerpt as a justification for neutrality was a critical error. An 8-K filing from May 2026 likely contained material information that drove the -3.22% decline, but the model dismissed the filing's significance because the provided excerpt was sparse rather than investigating what the full disclosure might contain. The model over-weighted the recent -0.03% price action as representative of market sentiment and failed to recognize that a regulatory filing itself is often a lagging indicator\u2014the market had already priced in negative expectations, making the neutral prediction inconsistent with actual risk positioning.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 596.8
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-META-claude_sonnet",
@@ -4082,8 +4096,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 596.8
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-META-always_up",
@@ -4115,8 +4128,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 596.8
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-META-always_neutral",
@@ -4148,8 +4160,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 596.8
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-META-momentum",
@@ -4181,8 +4192,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 596.8
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-TSLA-claude",
@@ -4214,8 +4224,7 @@
     "postmortem": "The model overweighted technical momentum exhaustion as a mean-reversion signal while underestimating the specificity of what the 10-Q actually revealed\u2014a neutral stance assumed \"no catalysts\" meant stability, but the filing likely contained negative operational or financial details (margins, delivery guidance, cash burn, or competitive pressures) that the headline didn't surface. The 8% prior gain provided false confidence in consolidation; investors didn't see a pause point but rather a reason to exit, suggesting the model missed that recent rallies in Tesla often precede earnings-driven selloffs when guidance disappoints.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 419.16
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-TSLA-claude_sonnet",
@@ -4247,8 +4256,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 419.16
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-TSLA-always_up",
@@ -4280,8 +4288,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 419.16
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-TSLA-always_neutral",
@@ -4313,8 +4320,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 419.16
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-TSLA-momentum",
@@ -4346,8 +4352,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 419.16
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-AMZN-claude",
@@ -4379,8 +4384,7 @@
     "postmortem": "The model underweighted the significance of the specific 10-Q filing date (late April) in Amazon's earnings cycle, which typically triggers profit-taking after the initial earnings beat/miss period. The rationale correctly identified the absence of *material news* in the filing itself but failed to account for how routine quarterly disclosures often catalyze technical selling when positioned mid-cycle, especially given the low confidence (35%) should have triggered avoidance rather than a neutral call. A -2.53% move represents meaningful institutional rotation that the model's \"insufficient information\" assessment missed\u2014absence of positive news is not neutral when historical patterns show Q1 late filings correlate with consolidation breaks downward.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 263.29
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-AMZN-claude_sonnet",
@@ -4412,8 +4416,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 263.29
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-AMZN-always_up",
@@ -4445,8 +4448,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 263.29
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-AMZN-always_neutral",
@@ -4478,8 +4480,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 263.29
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-14-AMZN-momentum",
@@ -4511,8 +4512,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-14",
-    "price_at_resolution": 263.29
+    "made": "2026-05-14"
   },
   {
     "id": "2026-05-13-AAPL-claude",
