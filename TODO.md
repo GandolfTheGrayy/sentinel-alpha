@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-22
+- [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
+- [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
+
 ### 2026-05-21
 - [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
 - [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
