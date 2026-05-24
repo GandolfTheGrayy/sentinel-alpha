@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-24
+- [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
+
 ### 2026-05-23
 - [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
 - [x] A historical market event ingestion pipeline that reads from a CSV of past event
