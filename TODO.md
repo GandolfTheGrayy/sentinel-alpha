@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-25
+- [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+
 ### 2026-05-24
 - [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
 
