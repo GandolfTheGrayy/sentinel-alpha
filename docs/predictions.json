@@ -1,170 +1,5 @@
 [
   {
-    "id": "2026-05-17-AAPL-claude",
-    "made_on": "2026-05-17",
-    "ticker": "AAPL",
-    "strategy": "claude",
-    "horizon_days": 5,
-    "direction": "neutral",
-    "magnitude_pct": 1.5,
-    "confidence": 35,
-    "rationale": "Recent +2.58% gain suggests momentum, but headline focuses on competitors (Samsung, SK Hynix, AMD) with no direct AAPL catalyst, indicating consolidation likely after the recent move.",
-    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
-    "publisher": "Investing.com",
-    "filing": {
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
-      "form": "10-Q",
-      "filed": "2026-05-01"
-    },
-    "evidence": null,
-    "price_at_prediction": 300.23,
-    "resolves_on": "2026-05-24",
-    "resolved": true,
-    "resolved_on": "2026-05-24",
-    "actual_pct": 2.86,
-    "actual_direction": "up",
-    "correct_direction": false,
-    "magnitude_error": 1.36,
-    "created_at": "2026-05-17T11:55:48.864781+00:00",
-    "postmortem": "The model overweighted the absence of a direct AAPL catalyst in the headline, interpreting silence as consolidation risk when the broader analyst activity on competing chipmakers actually signaled sector momentum that would lift AAPL regardless of individual coverage changes. The prediction also discounted that a +2.58% recent gain following a 10-Q filing represented genuine positive momentum rather than exhaustion, especially in a market environment where AI-related semiconductor strength was broadening across the sector.",
-    "topic_id": null,
-    "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 308.82
-  },
-  {
-    "id": "2026-05-17-AAPL-claude_sonnet",
-    "made_on": "2026-05-17",
-    "ticker": "AAPL",
-    "strategy": "claude_sonnet",
-    "horizon_days": 5,
-    "direction": "neutral",
-    "magnitude_pct": 1.2,
-    "confidence": 30,
-    "rationale": "The headline is largely noise with garbled XBRL filing data and no direct AAPL catalyst, while the recent +2.58% move may face mild consolidation without a clear directional driver.",
-    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
-    "publisher": "Investing.com",
-    "filing": {
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
-      "form": "10-Q",
-      "filed": "2026-05-01"
-    },
-    "evidence": null,
-    "price_at_prediction": 300.23,
-    "resolves_on": "2026-05-24",
-    "resolved": true,
-    "resolved_on": "2026-05-24",
-    "actual_pct": 2.86,
-    "actual_direction": "up",
-    "correct_direction": false,
-    "magnitude_error": 1.66,
-    "created_at": "2026-05-17T11:55:48.864781+00:00",
-    "postmortem": null,
-    "topic_id": null,
-    "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 308.82
-  },
-  {
-    "id": "2026-05-17-AAPL-always_up",
-    "made_on": "2026-05-17",
-    "ticker": "AAPL",
-    "strategy": "always_up",
-    "horizon_days": 5,
-    "direction": "up",
-    "magnitude_pct": 1.0,
-    "confidence": 50,
-    "rationale": "always-up baseline",
-    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
-    "publisher": "Investing.com",
-    "filing": {
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
-      "form": "10-Q",
-      "filed": "2026-05-01"
-    },
-    "evidence": null,
-    "price_at_prediction": 300.23,
-    "resolves_on": "2026-05-24",
-    "resolved": true,
-    "resolved_on": "2026-05-24",
-    "actual_pct": 2.86,
-    "actual_direction": "up",
-    "correct_direction": true,
-    "magnitude_error": 1.86,
-    "created_at": "2026-05-17T11:55:48.864781+00:00",
-    "postmortem": null,
-    "topic_id": null,
-    "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 308.82
-  },
-  {
-    "id": "2026-05-17-AAPL-always_neutral",
-    "made_on": "2026-05-17",
-    "ticker": "AAPL",
-    "strategy": "always_neutral",
-    "horizon_days": 5,
-    "direction": "neutral",
-    "magnitude_pct": 0.0,
-    "confidence": 50,
-    "rationale": "always-neutral baseline",
-    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
-    "publisher": "Investing.com",
-    "filing": {
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
-      "form": "10-Q",
-      "filed": "2026-05-01"
-    },
-    "evidence": null,
-    "price_at_prediction": 300.23,
-    "resolves_on": "2026-05-24",
-    "resolved": true,
-    "resolved_on": "2026-05-24",
-    "actual_pct": 2.86,
-    "actual_direction": "up",
-    "correct_direction": false,
-    "magnitude_error": 2.86,
-    "created_at": "2026-05-17T11:55:48.864781+00:00",
-    "postmortem": null,
-    "topic_id": null,
-    "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 308.82
-  },
-  {
-    "id": "2026-05-17-AAPL-momentum",
-    "made_on": "2026-05-17",
-    "ticker": "AAPL",
-    "strategy": "momentum",
-    "horizon_days": 5,
-    "direction": "up",
-    "magnitude_pct": 1.29,
-    "confidence": 50,
-    "rationale": "5d momentum follow (+2.6%)",
-    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
-    "publisher": "Investing.com",
-    "filing": {
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
-      "form": "10-Q",
-      "filed": "2026-05-01"
-    },
-    "evidence": null,
-    "price_at_prediction": 300.23,
-    "resolves_on": "2026-05-24",
-    "resolved": true,
-    "resolved_on": "2026-05-24",
-    "actual_pct": 2.86,
-    "actual_direction": "up",
-    "correct_direction": true,
-    "magnitude_error": 1.57,
-    "created_at": "2026-05-17T11:55:48.864781+00:00",
-    "postmortem": null,
-    "topic_id": null,
-    "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 308.82
-  },
-  {
     "id": "2026-05-17-MSFT-claude",
     "made_on": "2026-05-17",
     "ticker": "MSFT",
@@ -194,8 +29,7 @@
     "postmortem": "The model overweighted the speculative risk from Amazon's competitive positioning and underestimated MSFT's near-term momentum resilience. The neutral call split the difference between bullish technical setup and bearish headline sentiment, but the market proved more sensitive to short-term positive momentum than to longer-term competitive narrative shifts. The prediction missed that a single competitive headline, without accompanying MSFT-specific negative news or earnings deterioration, typically generates transient market concern rather than sustained selling pressure.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 418.57
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-MSFT-claude_sonnet",
@@ -227,8 +61,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 418.57
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-MSFT-always_up",
@@ -260,8 +93,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 418.57
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-MSFT-always_neutral",
@@ -293,8 +125,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 418.57
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-MSFT-momentum",
@@ -326,8 +157,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 418.57
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-NVDA-claude",
@@ -359,41 +189,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 215.33
-  },
-  {
-    "id": "2026-05-17-NVDA-claude_sonnet",
-    "made_on": "2026-05-17",
-    "ticker": "NVDA",
-    "strategy": "claude_sonnet",
-    "horizon_days": 5,
-    "direction": "down",
-    "magnitude_pct": 3.2,
-    "confidence": 42,
-    "rationale": "Bubble/mania rhetoric in headlines often signals near-term sentiment exhaustion and profit-taking risk, though strong AI fundamentals and recent momentum could limit downside.",
-    "headline": "'This is borderline mania': Wall Street sees bubble-like euphoria in AI-fueled semiconductor rally",
-    "publisher": "Yahoo Finance",
-    "filing": {
-      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm",
-      "form": "8-K",
-      "filed": "2026-05-08"
-    },
-    "evidence": null,
-    "price_at_prediction": 225.32,
-    "resolves_on": "2026-05-24",
-    "resolved": true,
-    "resolved_on": "2026-05-24",
-    "actual_pct": -4.43,
-    "actual_direction": "down",
-    "correct_direction": true,
-    "magnitude_error": 1.23,
-    "created_at": "2026-05-17T11:55:48.864781+00:00",
-    "postmortem": null,
-    "topic_id": null,
-    "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 215.33
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-NVDA-always_up",
@@ -425,8 +221,199 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 215.33
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-NVDA-claude_sonnet",
+    "made_on": "2026-05-17",
+    "ticker": "NVDA",
+    "strategy": "claude_sonnet",
+    "horizon_days": 5,
+    "direction": "down",
+    "magnitude_pct": 3.2,
+    "confidence": 42,
+    "rationale": "Bubble/mania rhetoric in headlines often signals near-term sentiment exhaustion and profit-taking risk, though strong AI fundamentals and recent momentum could limit downside.",
+    "headline": "'This is borderline mania': Wall Street sees bubble-like euphoria in AI-fueled semiconductor rally",
+    "publisher": "Yahoo Finance",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm",
+      "form": "8-K",
+      "filed": "2026-05-08"
+    },
+    "evidence": null,
+    "price_at_prediction": 225.32,
+    "resolves_on": "2026-05-24",
+    "resolved": true,
+    "resolved_on": "2026-05-24",
+    "actual_pct": -4.43,
+    "actual_direction": "down",
+    "correct_direction": true,
+    "magnitude_error": 1.23,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-AAPL-claude",
+    "made_on": "2026-05-17",
+    "ticker": "AAPL",
+    "strategy": "claude",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 1.5,
+    "confidence": 35,
+    "rationale": "Recent +2.58% gain suggests momentum, but headline focuses on competitors (Samsung, SK Hynix, AMD) with no direct AAPL catalyst, indicating consolidation likely after the recent move.",
+    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
+    "publisher": "Investing.com",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
+      "form": "10-Q",
+      "filed": "2026-05-01"
+    },
+    "evidence": null,
+    "price_at_prediction": 300.23,
+    "resolves_on": "2026-05-24",
+    "resolved": true,
+    "resolved_on": "2026-05-24",
+    "actual_pct": 2.86,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 1.36,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": "The model overweighted the absence of a direct AAPL catalyst in the headline, interpreting silence as consolidation risk when the broader analyst activity on competing chipmakers actually signaled sector momentum that would lift AAPL regardless of individual coverage changes. The prediction also discounted that a +2.58% recent gain following a 10-Q filing represented genuine positive momentum rather than exhaustion, especially in a market environment where AI-related semiconductor strength was broadening across the sector.",
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-AAPL-claude_sonnet",
+    "made_on": "2026-05-17",
+    "ticker": "AAPL",
+    "strategy": "claude_sonnet",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 1.2,
+    "confidence": 30,
+    "rationale": "The headline is largely noise with garbled XBRL filing data and no direct AAPL catalyst, while the recent +2.58% move may face mild consolidation without a clear directional driver.",
+    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
+    "publisher": "Investing.com",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
+      "form": "10-Q",
+      "filed": "2026-05-01"
+    },
+    "evidence": null,
+    "price_at_prediction": 300.23,
+    "resolves_on": "2026-05-24",
+    "resolved": true,
+    "resolved_on": "2026-05-24",
+    "actual_pct": 2.86,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 1.66,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-AAPL-always_up",
+    "made_on": "2026-05-17",
+    "ticker": "AAPL",
+    "strategy": "always_up",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.0,
+    "confidence": 50,
+    "rationale": "always-up baseline",
+    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
+    "publisher": "Investing.com",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
+      "form": "10-Q",
+      "filed": "2026-05-01"
+    },
+    "evidence": null,
+    "price_at_prediction": 300.23,
+    "resolves_on": "2026-05-24",
+    "resolved": true,
+    "resolved_on": "2026-05-24",
+    "actual_pct": 2.86,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 1.86,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-AAPL-always_neutral",
+    "made_on": "2026-05-17",
+    "ticker": "AAPL",
+    "strategy": "always_neutral",
+    "horizon_days": 5,
+    "direction": "neutral",
+    "magnitude_pct": 0.0,
+    "confidence": 50,
+    "rationale": "always-neutral baseline",
+    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
+    "publisher": "Investing.com",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
+      "form": "10-Q",
+      "filed": "2026-05-01"
+    },
+    "evidence": null,
+    "price_at_prediction": 300.23,
+    "resolves_on": "2026-05-24",
+    "resolved": true,
+    "resolved_on": "2026-05-24",
+    "actual_pct": 2.86,
+    "actual_direction": "up",
+    "correct_direction": false,
+    "magnitude_error": 2.86,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
+  },
+  {
+    "id": "2026-05-17-AAPL-momentum",
+    "made_on": "2026-05-17",
+    "ticker": "AAPL",
+    "strategy": "momentum",
+    "horizon_days": 5,
+    "direction": "up",
+    "magnitude_pct": 1.29,
+    "confidence": 50,
+    "rationale": "5d momentum follow (+2.6%)",
+    "headline": "5 big analyst AI moves: PT hikes for Samsung and SK Hynix, AMD downgraded",
+    "publisher": "Investing.com",
+    "filing": {
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm",
+      "form": "10-Q",
+      "filed": "2026-05-01"
+    },
+    "evidence": null,
+    "price_at_prediction": 300.23,
+    "resolves_on": "2026-05-24",
+    "resolved": true,
+    "resolved_on": "2026-05-24",
+    "actual_pct": 2.86,
+    "actual_direction": "up",
+    "correct_direction": true,
+    "magnitude_error": 1.57,
+    "created_at": "2026-05-17T11:55:48.864781+00:00",
+    "postmortem": null,
+    "topic_id": null,
+    "topic_title": null,
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-NVDA-always_neutral",
@@ -458,8 +445,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 215.33
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-NVDA-momentum",
@@ -491,8 +477,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 215.33
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-GOOGL-claude",
@@ -524,8 +509,7 @@
     "postmortem": "The model overweighted recent positive momentum (+2.09%) as a predictive signal while dismissing the absence of company-specific catalysts as merely creating \"uncertainty\"\u2014when that absence actually meant no fundamental support to sustain the rally. The 8-K filing from May 2026 suggests a material corporate event occurred that wasn't reflected in the rationale, indicating the model failed to account for potential negative disclosures or guidance adjustments that would trigger the 3.48% sell-off.",
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 382.97
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-GOOGL-claude_sonnet",
@@ -557,8 +541,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 382.97
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-GOOGL-always_up",
@@ -590,8 +573,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 382.97
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-GOOGL-always_neutral",
@@ -623,8 +605,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 382.97
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-GOOGL-momentum",
@@ -656,8 +637,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 382.97
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-META-claude",
@@ -689,8 +669,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 610.26
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-META-claude_sonnet",
@@ -722,8 +701,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 610.26
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-META-always_up",
@@ -755,8 +733,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 610.26
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-META-always_neutral",
@@ -788,8 +765,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 610.26
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-META-momentum",
@@ -821,8 +797,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 610.26
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-TSLA-claude",
@@ -854,8 +829,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 426.01
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-TSLA-claude_sonnet",
@@ -887,8 +861,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 426.01
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-TSLA-always_up",
@@ -920,8 +893,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 426.01
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-TSLA-always_neutral",
@@ -953,8 +925,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 426.01
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-TSLA-momentum",
@@ -986,8 +957,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 426.01
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-AMZN-claude",
@@ -1019,8 +989,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 266.32
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-AMZN-claude_sonnet",
@@ -1052,8 +1021,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 266.32
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-AMZN-always_up",
@@ -1085,8 +1053,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 266.32
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-AMZN-always_neutral",
@@ -1118,8 +1085,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 266.32
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-17-AMZN-momentum",
@@ -1151,8 +1117,7 @@
     "postmortem": null,
     "topic_id": null,
     "topic_title": null,
-    "made": "2026-05-17",
-    "price_at_resolution": 266.32
+    "made": "2026-05-17"
   },
   {
     "id": "2026-05-16-TSLA-always_neutral",
