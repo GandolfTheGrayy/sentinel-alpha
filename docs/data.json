@@ -1,53 +1,53 @@
 {
-  "date": "2026-05-26",
+  "date": "2026-05-27",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 310.11,
-      "pct_change": 3.73,
+      "close": 311.71,
+      "pct_change": 3.13,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 416.2,
-      "pct_change": -0.08,
+      "close": 413.39,
+      "pct_change": -1.61,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 216.68,
-      "pct_change": -1.78,
+      "close": 209.93,
+      "pct_change": -6.06,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 384.71,
-      "pct_change": -0.76,
+      "close": 392.05,
+      "pct_change": 0.81,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 607.6,
-      "pct_change": 0.83,
+      "close": 614.57,
+      "pct_change": 1.57,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 429.29,
-      "pct_change": 6.23,
+      "close": 437.78,
+      "pct_change": 4.92,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 266.81,
-      "pct_change": 2.88,
+      "close": 270.14,
+      "pct_change": 1.94,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses a present tense declarative structure but the word 'remain' suggests an ongoing, uncertain state rather than a definitive claim, and 'mixed' itself indicates ambiguity or lack of clear direction."
+    "reasoning": "The statement uses present tense declarative form ('remain') but the qualifier 'mixed' introduces ambiguity about direction and outcome, indicating moderate uncertainty."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-05-26.md",
+  "report": "backtest_results/2026-05-27.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
