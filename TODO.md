@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-28
+- [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
+- [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
+
 ### 2026-05-25
 - [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
 - [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
