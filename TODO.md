@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-30
+- [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
+- [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+
 ### 2026-05-29
 - [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
 - [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
