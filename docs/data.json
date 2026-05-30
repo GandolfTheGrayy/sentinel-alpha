@@ -1,53 +1,53 @@
 {
-  "date": "2026-05-29",
+  "date": "2026-05-30",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 313.35,
-      "pct_change": 1.47,
+      "close": 312.06,
+      "pct_change": 1.05,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 439.45,
-      "pct_change": 4.99,
+      "close": 450.24,
+      "pct_change": 7.57,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 216.0,
-      "pct_change": 0.31,
+      "close": 211.14,
+      "pct_change": -1.95,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 384.45,
-      "pct_change": 0.39,
+      "close": 380.34,
+      "pct_change": -0.69,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 626.78,
-      "pct_change": 2.71,
+      "close": 632.51,
+      "pct_change": 3.65,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 438.05,
-      "pct_change": 2.83,
+      "close": 435.79,
+      "pct_change": 2.3,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 273.76,
-      "pct_change": 2.79,
+      "close": 270.64,
+      "pct_change": 1.62,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses 'remain' which is declarative but 'mixed' is inherently ambiguous and non-committal, indicating uncertainty about market direction."
+    "reasoning": "The statement uses a present-tense declarative structure but the word 'remain' suggests an ongoing, uncertain situation without clear direction, and 'mixed' indicates lack of clarity rather than definitive positioning."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-05-29.md",
+  "report": "backtest_results/2026-05-30.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
