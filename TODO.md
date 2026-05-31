@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-05-31
+- [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
+
 ### 2026-05-30
 - [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
 - [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
