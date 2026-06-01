@@ -1,53 +1,53 @@
 {
-  "date": "2026-05-31",
+  "date": "2026-06-01",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 312.06,
-      "pct_change": 1.05,
+      "close": 305.72,
+      "pct_change": -0.85,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 450.24,
-      "pct_change": 7.57,
+      "close": 461.8,
+      "pct_change": 11.0,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 211.14,
-      "pct_change": -1.95,
+      "close": 222.21,
+      "pct_change": 3.42,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 380.34,
-      "pct_change": -0.69,
+      "close": 374.91,
+      "pct_change": -3.59,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 632.51,
-      "pct_change": 3.65,
+      "close": 611.41,
+      "pct_change": -0.15,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 435.79,
-      "pct_change": 2.3,
+      "close": 419.05,
+      "pct_change": -3.35,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 270.64,
-      "pct_change": 1.62,
+      "close": 262.73,
+      "pct_change": -0.97,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses a present tense declarative structure but the word 'remain' combined with the vague descriptor 'mixed' introduces ambiguity about magnitude and direction, creating moderate hedging."
+    "reasoning": "The statement uses a present-tense declarative structure but 'remain' combined with the vague descriptor 'mixed' introduces ambiguity about direction and severity, creating moderate uncertainty."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-05-31.md",
+  "report": "backtest_results/2026-06-01.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
