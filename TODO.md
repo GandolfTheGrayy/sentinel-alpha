@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-01
+- [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+
 ### 2026-05-31
 - [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
 
