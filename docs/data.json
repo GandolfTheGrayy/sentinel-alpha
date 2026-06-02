@@ -1,53 +1,53 @@
 {
-  "date": "2026-06-01",
+  "date": "2026-06-02",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 305.72,
-      "pct_change": -0.85,
+      "close": 309.88,
+      "pct_change": -0.31,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 461.8,
-      "pct_change": 11.0,
+      "close": 443.03,
+      "pct_change": 7.36,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 222.21,
-      "pct_change": 3.42,
+      "close": 227.24,
+      "pct_change": 6.89,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 374.91,
-      "pct_change": -3.59,
+      "close": 371.98,
+      "pct_change": -4.33,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 611.41,
-      "pct_change": -0.15,
+      "close": 603.79,
+      "pct_change": -4.95,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 419.05,
-      "pct_change": -3.35,
+      "close": 421.6,
+      "pct_change": -4.26,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 262.73,
-      "pct_change": -0.97,
+      "close": 259.75,
+      "pct_change": -4.45,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses a present-tense declarative structure but 'remain' combined with the vague descriptor 'mixed' introduces ambiguity about direction and severity, creating moderate uncertainty."
+    "reasoning": "The statement uses a neutral, observational tone without hedging language, but 'remain mixed' itself indicates ambiguity and lack of clear directional certainty about market movement."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-06-01.md",
+  "report": "backtest_results/2026-06-02.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
