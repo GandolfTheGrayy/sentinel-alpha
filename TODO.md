@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-02
+- [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
+- [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+
 ### 2026-06-01
 - [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
 - [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
