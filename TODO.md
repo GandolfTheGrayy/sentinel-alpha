@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-03
+- [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+
 ### 2026-06-02
 - [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
 - [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
