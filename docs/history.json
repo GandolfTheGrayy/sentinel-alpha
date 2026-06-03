@@ -391,5 +391,16 @@
     "rolling_7": 14.3,
     "baseline_momentum_rolling_7": 28.6,
     "baseline_always_up_rolling_7": 57.1
+  },
+  {
+    "date": "2026-06-03",
+    "linguist_score": 45,
+    "watchlist_avg_pct": -3.15,
+    "predictions_made": 0,
+    "predictions_resolved": 0,
+    "hit_rate": 24.5,
+    "rolling_7": 14.3,
+    "baseline_momentum_rolling_7": 28.6,
+    "baseline_always_up_rolling_7": 57.1
   }
 ]
