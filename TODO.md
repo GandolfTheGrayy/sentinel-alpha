@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-04
+- [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
+- [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
+
 ### 2026-06-03
 - [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
 - [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
