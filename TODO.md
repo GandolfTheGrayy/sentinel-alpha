@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-05
+- [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
+- [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
+- [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
+
 ### 2026-06-04
 - [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
 - [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
