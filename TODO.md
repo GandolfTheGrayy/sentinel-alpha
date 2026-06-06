@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-06
+- [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
+
 ### 2026-06-05
 - [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
 - [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
