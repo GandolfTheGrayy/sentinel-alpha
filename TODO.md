@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-07
+- [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
+- [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
+- [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
+- [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
+
 ### 2026-06-06
 - [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
 
