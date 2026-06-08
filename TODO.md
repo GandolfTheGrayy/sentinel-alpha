@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-08
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+- [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
+
 ### 2026-06-07
 - [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
 - [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
