@@ -121,7 +121,7 @@
     "historian::A RAG query interface \u2014 given a current SentimentResidual, queries ChromaDB for the top-k most similar historical events and returns a HistoricalMatch list": 5,
     "linguist::A Linguistic Drift detector that compares a company's current 10-Q language against a rolling 30-day baseline and flags significant tone shifts": 8,
     "scout::A GitHub repository health signal collector measuring stars, commit velocity (commits/week), and issue open rate for a given repo": 3,
-    "scout::An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing metadata into a normalized dataclass": 3,
+    "scout::An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing metadata into a normalized dataclass": 4,
     "scout::A data normalizer that maps outputs from all scrapers into a unified SignalRecord schema stored in SQLite": 4,
     "judge::A heuristic update logger that appends CalibrationResult entries to a JSONL file and computes rolling 7-day and 30-day accuracy metrics": 8,
     "scout::A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and r/investing, outputting a normalized SentimentSignal dataclass": 4,
