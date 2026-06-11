@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-11
+- [x] A config loader that reads a YAML config file and environment variables, with a 
+- [x] A prompt template system for LLM-based 'certainty vs. hesitation' scoring of cor
+- [x] A base time-series SQLite schema module — creates tables for price history, sent
+- [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
+
 ### 2026-06-10
 - [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
 
