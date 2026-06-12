@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-12
+- [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+- [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
+
 ### 2026-06-11
 - [x] A config loader that reads a YAML config file and environment variables, with a 
 - [x] A prompt template system for LLM-based 'certainty vs. hesitation' scoring of cor
