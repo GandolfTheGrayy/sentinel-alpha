@@ -127,7 +127,7 @@
     "scout::A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and r/investing, outputting a normalized SentimentSignal dataclass": 4,
     "judge::A Predicted Residual vs. Actual Market Move comparator that calculates directional accuracy and magnitude error, returning a CalibrationResult": 9,
     "judge::A daily summary printer that reads the latest post-mortem and prints a concise console summary of Sentinel's performance": 2,
-    "linguist::A Regulatory Whispers detector that scans SEC filings for hedging language patterns (e.g. 'may', 'subject to', 'could materially') and scores their density": 3,
+    "linguist::A Regulatory Whispers detector that scans SEC filings for hedging language patterns (e.g. 'may', 'subject to', 'could materially') and scores their density": 4,
     "historian::An event schema module defining dataclasses for MarketEvent, HistoricalMatch, and ConfidenceReport used across the Historian layer": 6,
     "scout::A base time-series SQLite schema module \u2014 creates tables for price history, sentiment signals, and prediction records": 3,
     "linguist::A 'tells' extractor \u2014 given a block of corporate text, uses Claude to identify specific linguistic tells that historically precede price moves": 4,

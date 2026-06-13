@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-13
+- [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
+
 ### 2026-06-12
 - [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
 - [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
