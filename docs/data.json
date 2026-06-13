@@ -1,53 +1,53 @@
 {
-  "date": "2026-06-12",
+  "date": "2026-06-13",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 291.27,
-      "pct_change": -3.4,
+      "close": 291.13,
+      "pct_change": -3.45,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 383.4,
-      "pct_change": -6.88,
+      "close": 390.74,
+      "pct_change": -5.1,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 204.32,
-      "pct_change": -2.07,
+      "close": 205.19,
+      "pct_change": -1.65,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 358.95,
-      "pct_change": -1.2,
+      "close": 359.68,
+      "pct_change": -1.0,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 563.45,
-      "pct_change": -3.75,
+      "close": 566.98,
+      "pct_change": -3.14,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 396.07,
-      "pct_change": -3.15,
+      "close": 406.43,
+      "pct_change": -0.62,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 234.46,
-      "pct_change": -4.39,
+      "close": 238.55,
+      "pct_change": -2.72,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses 'remain' which suggests observation of current conditions, but 'mixed' is inherently ambiguous and non-committal about market direction, creating moderate hedging."
+    "reasoning": "The statement uses a present-tense declarative structure but the word 'remain' combined with 'mixed' introduces ambiguity about directionality and duration, reducing certainty despite avoiding explicit hedging language."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-06-12.md",
+  "report": "backtest_results/2026-06-13.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
