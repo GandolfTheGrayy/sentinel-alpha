@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-14
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+- [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
+
 ### 2026-06-13
 - [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
 
