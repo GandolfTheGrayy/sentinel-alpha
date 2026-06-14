@@ -1,5 +1,5 @@
 {
-  "date": "2026-06-13",
+  "date": "2026-06-14",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
@@ -47,7 +47,7 @@
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses a present-tense declarative structure but the word 'remain' combined with 'mixed' introduces ambiguity about directionality and duration, reducing certainty despite avoiding explicit hedging language."
+    "reasoning": "The statement uses a neutral, observational tone without hedging language, but 'remain mixed' itself is inherently non-committal and lacks specificity about direction or conviction."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-06-13.md",
+  "report": "backtest_results/2026-06-14.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
