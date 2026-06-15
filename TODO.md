@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-15
+- [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
+- [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
+
 ### 2026-06-14
 - [x] A historical market event ingestion pipeline that reads from a CSV of past event
 - [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
