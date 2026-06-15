@@ -1,53 +1,53 @@
 {
-  "date": "2026-06-14",
+  "date": "2026-06-15",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 291.13,
-      "pct_change": -3.45,
+      "close": 297.26,
+      "pct_change": 2.31,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 390.74,
-      "pct_change": -5.1,
-      "source": "yfinance"
-    },
-    {
-      "ticker": "NVDA",
-      "close": 205.19,
-      "pct_change": -1.65,
-      "source": "yfinance"
-    },
-    {
-      "ticker": "GOOGL",
-      "close": 359.68,
-      "pct_change": -1.0,
-      "source": "yfinance"
-    },
-    {
-      "ticker": "META",
-      "close": 566.98,
-      "pct_change": -3.14,
-      "source": "yfinance"
-    },
-    {
-      "ticker": "TSLA",
-      "close": 406.43,
+      "close": 400.89,
       "pct_change": -0.62,
       "source": "yfinance"
     },
     {
+      "ticker": "NVDA",
+      "close": 212.4,
+      "pct_change": 2.02,
+      "source": "yfinance"
+    },
+    {
+      "ticker": "GOOGL",
+      "close": 372.05,
+      "pct_change": 2.14,
+      "source": "yfinance"
+    },
+    {
+      "ticker": "META",
+      "close": 599.86,
+      "pct_change": 2.61,
+      "source": "yfinance"
+    },
+    {
+      "ticker": "TSLA",
+      "close": 409.92,
+      "pct_change": 3.34,
+      "source": "yfinance"
+    },
+    {
       "ticker": "AMZN",
-      "close": 238.55,
-      "pct_change": -2.72,
+      "close": 246.14,
+      "pct_change": 0.8,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses a neutral, observational tone without hedging language, but 'remain mixed' itself is inherently non-committal and lacks specificity about direction or conviction."
+    "reasoning": "The statement uses the present tense verb 'remain' which is declarative, but the adjective 'mixed' is inherently non-committal and hedged, suggesting uncertainty about market direction."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-06-14.md",
+  "report": "backtest_results/2026-06-15.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
