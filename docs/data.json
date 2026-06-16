@@ -1,53 +1,53 @@
 {
-  "date": "2026-06-15",
+  "date": "2026-06-16",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 297.26,
-      "pct_change": 2.31,
+      "close": 298.3,
+      "pct_change": 2.3,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 400.89,
-      "pct_change": -0.62,
+      "close": 393.32,
+      "pct_change": -1.02,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 212.4,
-      "pct_change": 2.02,
+      "close": 208.9,
+      "pct_change": 4.23,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 372.05,
-      "pct_change": 2.14,
+      "close": 373.82,
+      "pct_change": 4.89,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 599.86,
-      "pct_change": 2.61,
+      "close": 595.45,
+      "pct_change": 4.38,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 409.92,
-      "pct_change": 3.34,
+      "close": 405.35,
+      "pct_change": 6.23,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 246.14,
-      "pct_change": 0.8,
+      "close": 248.18,
+      "pct_change": 4.28,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses the present tense verb 'remain' which is declarative, but the adjective 'mixed' is inherently non-committal and hedged, suggesting uncertainty about market direction."
+    "reasoning": "The statement uses a present-tense declarative structure but the word 'remain' combined with 'mixed' introduces ambiguity about direction and magnitude, and lacks specificity about which markets or timeframe."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-06-15.md",
+  "report": "backtest_results/2026-06-16.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
