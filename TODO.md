@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-16
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+
 ### 2026-06-15
 - [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
 - [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
