@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-17
+- [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+- [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
+
 ### 2026-06-16
 - [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
 
