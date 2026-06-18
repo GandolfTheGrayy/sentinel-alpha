@@ -1,53 +1,53 @@
 {
-  "date": "2026-06-17",
+  "date": "2026-06-18",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 300.2,
-      "pct_change": 1.55,
+      "close": 298.55,
+      "pct_change": 2.55,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 387.76,
-      "pct_change": -0.66,
+      "close": 375.13,
+      "pct_change": -3.99,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 207.96,
-      "pct_change": 1.51,
+      "close": 207.95,
+      "pct_change": 1.35,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 366.78,
-      "pct_change": 2.52,
+      "close": 359.11,
+      "pct_change": -0.16,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 586.05,
-      "pct_change": 3.2,
+      "close": 563.41,
+      "pct_change": -0.54,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 401.46,
-      "pct_change": 0.58,
+      "close": 388.27,
+      "pct_change": -4.47,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 242.37,
-      "pct_change": 0.36,
+      "close": 237.1,
+      "pct_change": -0.61,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses a present-tense declarative structure ('remain') but the word 'mixed' is inherently ambiguous and non-committal, indicating conflicting or uncertain market conditions without clear direction."
+    "reasoning": "The statement uses a present-tense declarative verb ('remain') which conveys observation, but 'mixed' is a vague descriptor that hedges the direction and magnitude of market movement."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-06-17.md",
+  "report": "backtest_results/2026-06-18.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
