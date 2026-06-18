@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-18
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+
 ### 2026-06-17
 - [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
 - [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
