@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-19
+- [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+
 ### 2026-06-18
 - [x] A historical market event ingestion pipeline that reads from a CSV of past event
 
