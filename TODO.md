@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-20
+- [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+
 ### 2026-06-19
 - [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
 - [x] A ChromaDB vector database setup module — initializes the local DB, defines coll

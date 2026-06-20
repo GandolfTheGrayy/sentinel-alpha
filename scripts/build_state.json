@@ -114,7 +114,7 @@
     ]
   ],
   "iterations": {
-    "historian::A ChromaDB vector database setup module \u2014 initializes the local DB, defines collections for market events and filings, and provides a typed client wrapper": 5,
+    "historian::A ChromaDB vector database setup module \u2014 initializes the local DB, defines collections for market events and filings, and provides a typed client wrapper": 6,
     "tests::A pytest unit test module for the config loader \u2014 tests env var overrides, missing key handling, and type coercion": 3,
     "linguist::A sentiment aggregator that combines Scout signals and Linguist scores into a composite SentimentResidual score with a weighted formula": 4,
     "historian::A historical market event ingestion pipeline that reads from a CSV of past events and embeds them into ChromaDB using a simple embedding function": 8,
@@ -124,7 +124,7 @@
     "scout::An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing metadata into a normalized dataclass": 6,
     "scout::A data normalizer that maps outputs from all scrapers into a unified SignalRecord schema stored in SQLite": 5,
     "judge::A heuristic update logger that appends CalibrationResult entries to a JSONL file and computes rolling 7-day and 30-day accuracy metrics": 8,
-    "scout::A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and r/investing, outputting a normalized SentimentSignal dataclass": 5,
+    "scout::A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and r/investing, outputting a normalized SentimentSignal dataclass": 6,
     "judge::A Predicted Residual vs. Actual Market Move comparator that calculates directional accuracy and magnitude error, returning a CalibrationResult": 10,
     "judge::A daily summary printer that reads the latest post-mortem and prints a concise console summary of Sentinel's performance": 2,
     "linguist::A Regulatory Whispers detector that scans SEC filings for hedging language patterns (e.g. 'may', 'subject to', 'could materially') and scores their density": 4,
