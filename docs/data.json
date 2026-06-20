@@ -1,5 +1,5 @@
 {
-  "date": "2026-06-19",
+  "date": "2026-06-20",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
@@ -46,8 +46,8 @@
     }
   ],
   "linguist": {
-    "score": 45,
-    "reasoning": "The statement uses a present-tense declarative verb ('remain') but the vague qualifier 'mixed' introduces significant uncertainty about market direction or performance."
+    "score": 65,
+    "reasoning": "The statement is declarative about current market conditions but uses 'remain' which suggests ongoing uncertainty rather than a definitive claim, and 'mixed' itself indicates ambiguity about direction."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-06-19.md",
+  "report": "backtest_results/2026-06-20.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
