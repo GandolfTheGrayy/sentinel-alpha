@@ -115,7 +115,7 @@
   ],
   "iterations": {
     "historian::A ChromaDB vector database setup module \u2014 initializes the local DB, defines collections for market events and filings, and provides a typed client wrapper": 6,
-    "tests::A pytest unit test module for the config loader \u2014 tests env var overrides, missing key handling, and type coercion": 3,
+    "tests::A pytest unit test module for the config loader \u2014 tests env var overrides, missing key handling, and type coercion": 4,
     "linguist::A sentiment aggregator that combines Scout signals and Linguist scores into a composite SentimentResidual score with a weighted formula": 4,
     "historian::A historical market event ingestion pipeline that reads from a CSV of past events and embeds them into ChromaDB using a simple embedding function": 8,
     "historian::A RAG query interface \u2014 given a current SentimentResidual, queries ChromaDB for the top-k most similar historical events and returns a HistoricalMatch list": 6,
@@ -126,7 +126,7 @@
     "judge::A heuristic update logger that appends CalibrationResult entries to a JSONL file and computes rolling 7-day and 30-day accuracy metrics": 8,
     "scout::A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and r/investing, outputting a normalized SentimentSignal dataclass": 6,
     "judge::A Predicted Residual vs. Actual Market Move comparator that calculates directional accuracy and magnitude error, returning a CalibrationResult": 10,
-    "judge::A daily summary printer that reads the latest post-mortem and prints a concise console summary of Sentinel's performance": 2,
+    "judge::A daily summary printer that reads the latest post-mortem and prints a concise console summary of Sentinel's performance": 3,
     "linguist::A Regulatory Whispers detector that scans SEC filings for hedging language patterns (e.g. 'may', 'subject to', 'could materially') and scores their density": 4,
     "historian::An event schema module defining dataclasses for MarketEvent, HistoricalMatch, and ConfidenceReport used across the Historian layer": 6,
     "scout::A base time-series SQLite schema module \u2014 creates tables for price history, sentiment signals, and prediction records": 3,
@@ -138,7 +138,7 @@
     "tests::A pytest unit test module for the Linguistic Drift detector \u2014 uses fixture text to assert correct drift scoring": 4,
     "linguist::An earnings call transcript parser that segments text by speaker role (CEO, CFO, Analyst) and prepares each segment for LLM analysis": 5,
     "scout::A modular yfinance-based live price fetcher that stores OHLCV data in SQLite with a swap-ready interface for TimescaleDB": 3,
-    "judge::An anomaly flagging system that detects when actual market moves exceed 2x the predicted residual and generates an AnomalyAlert dataclass": 2,
+    "judge::An anomaly flagging system that detects when actual market moves exceed 2x the predicted residual and generates an AnomalyAlert dataclass": 3,
     "tests::A pytest integration test that runs the Scout \u2192 Linguist pipeline end-to-end with mocked external calls": 3,
     "linguist::A prompt template system for LLM-based 'certainty vs. hesitation' scoring of corporate text, returning a structured CertaintyScore dataclass": 2
   }

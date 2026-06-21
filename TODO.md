@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-21
+- [x] A daily summary printer that reads the latest post-mortem and prints a concise c
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+- [x] A pytest unit test module for the config loader — tests env var overrides, missi
+
 ### 2026-06-20
 - [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
 - [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
