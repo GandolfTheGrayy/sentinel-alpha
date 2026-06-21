@@ -1,5 +1,5 @@
 {
-  "date": "2026-06-20",
+  "date": "2026-06-21",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
@@ -46,8 +46,8 @@
     }
   ],
   "linguist": {
-    "score": 65,
-    "reasoning": "The statement is declarative about current market conditions but uses 'remain' which suggests ongoing uncertainty rather than a definitive claim, and 'mixed' itself indicates ambiguity about direction."
+    "score": 55,
+    "reasoning": "The statement uses a declarative structure but the word 'remain' combined with 'mixed' introduces ambiguity about direction and magnitude, creating moderate hedging."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-06-20.md",
+  "report": "backtest_results/2026-06-21.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
