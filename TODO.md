@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-22
+- [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+- [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
+
 ### 2026-06-21
 - [x] A daily summary printer that reads the latest post-mortem and prints a concise c
 - [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
