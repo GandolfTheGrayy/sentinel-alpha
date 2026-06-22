@@ -1,53 +1,53 @@
 {
-  "date": "2026-06-21",
+  "date": "2026-06-22",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 298.01,
-      "pct_change": 2.36,
+      "close": 300.9,
+      "pct_change": 1.51,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 379.4,
-      "pct_change": -2.9,
+      "close": 371.46,
+      "pct_change": -7.08,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 210.69,
-      "pct_change": 2.68,
+      "close": 210.27,
+      "pct_change": -1.03,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 368.03,
-      "pct_change": 2.32,
+      "close": 346.47,
+      "pct_change": -6.19,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 577.22,
-      "pct_change": 1.9,
+      "close": 563.8,
+      "pct_change": -5.0,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 400.49,
-      "pct_change": -1.46,
+      "close": 409.92,
+      "pct_change": -0.3,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 244.39,
-      "pct_change": 2.45,
+      "close": 234.54,
+      "pct_change": -4.67,
       "source": "yfinance"
     }
   ],
   "linguist": {
-    "score": 55,
-    "reasoning": "The statement uses a declarative structure but the word 'remain' combined with 'mixed' introduces ambiguity about direction and magnitude, creating moderate hedging."
+    "score": 45,
+    "reasoning": "The statement uses present tense indicative ('remain') suggesting observation of fact, but 'mixed' is inherently a qualified descriptor that indicates ambiguity and lack of clear direction, reducing overall certainty."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-06-21.md",
+  "report": "backtest_results/2026-06-22.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
