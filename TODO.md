@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-23
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+- [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
+- [x] A confidence score weighting system that combines RAG similarity scores with rec
+- [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
+
 ### 2026-06-22
 - [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
 - [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
