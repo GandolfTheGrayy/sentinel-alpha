@@ -1,53 +1,53 @@
 {
-  "date": "2026-06-23",
+  "date": "2026-06-24",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 296.58,
-      "pct_change": -0.89,
+      "close": 294.3,
+      "pct_change": -1.65,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 373.08,
-      "pct_change": -5.27,
+      "close": 373.94,
+      "pct_change": -5.05,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 202.04,
-      "pct_change": -2.59,
+      "close": 200.04,
+      "pct_change": -3.55,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 345.02,
-      "pct_change": -7.56,
+      "close": 346.13,
+      "pct_change": -7.27,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 566.94,
-      "pct_change": -5.54,
+      "close": 562.2,
+      "pct_change": -6.33,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 389.54,
-      "pct_change": -3.74,
+      "close": 381.61,
+      "pct_change": -5.7,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 233.33,
-      "pct_change": -5.15,
+      "close": 234.11,
+      "pct_change": -4.83,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses the present tense verb 'remain' which conveys current observation, but 'mixed' is a vague descriptor that avoids committing to a specific direction or outcome, creating moderate hedging."
+    "reasoning": "The word 'remain' suggests ongoing observation rather than speculation, but 'mixed' is inherently non-committal and lacks definitive directional language."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-06-23.md",
+  "report": "backtest_results/2026-06-24.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
