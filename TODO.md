@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-24
+- [x] A prompt template system for LLM-based 'certainty vs. hesitation' scoring of cor
+- [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
+
 ### 2026-06-23
 - [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
 - [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
