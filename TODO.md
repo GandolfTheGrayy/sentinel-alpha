@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-25
+- [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
+- [x] A base time-series SQLite schema module — creates tables for price history, sent
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+
 ### 2026-06-24
 - [x] A prompt template system for LLM-based 'certainty vs. hesitation' scoring of cor
 - [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
