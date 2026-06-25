@@ -1,53 +1,53 @@
 {
-  "date": "2026-06-24",
+  "date": "2026-06-25",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 294.3,
-      "pct_change": -1.65,
+      "close": 293.08,
+      "pct_change": -0.97,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 373.94,
-      "pct_change": -5.05,
-      "source": "yfinance"
-    },
-    {
-      "ticker": "NVDA",
-      "close": 200.04,
+      "close": 365.46,
       "pct_change": -3.55,
       "source": "yfinance"
     },
     {
+      "ticker": "NVDA",
+      "close": 199.0,
+      "pct_change": -2.76,
+      "source": "yfinance"
+    },
+    {
       "ticker": "GOOGL",
-      "close": 346.13,
-      "pct_change": -7.27,
+      "close": 345.29,
+      "pct_change": -5.09,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 562.2,
-      "pct_change": -6.33,
+      "close": 557.67,
+      "pct_change": -1.75,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 381.61,
-      "pct_change": -5.7,
+      "close": 375.53,
+      "pct_change": -5.26,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 234.11,
-      "pct_change": -4.83,
+      "close": 234.27,
+      "pct_change": -1.36,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The word 'remain' suggests ongoing observation rather than speculation, but 'mixed' is inherently non-committal and lacks definitive directional language."
+    "reasoning": "The present tense 'remain' is declarative, but 'mixed' is inherently uncertain/non-committal, indicating the speaker observes conflicting signals without taking a definitive stance on direction."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-06-24.md",
+  "report": "backtest_results/2026-06-25.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
