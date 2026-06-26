@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-26
+- [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
+- [x] A GitHub repository health signal collector measuring stars, commit velocity (co
+
 ### 2026-06-25
 - [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
 - [x] A base time-series SQLite schema module — creates tables for price history, sent
