@@ -1,53 +1,53 @@
 {
-  "date": "2026-06-25",
+  "date": "2026-06-26",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 293.08,
-      "pct_change": -0.97,
+      "close": 275.15,
+      "pct_change": -7.67,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 365.46,
-      "pct_change": -3.55,
+      "close": 352.83,
+      "pct_change": -7.0,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 199.0,
-      "pct_change": -2.76,
+      "close": 195.74,
+      "pct_change": -7.1,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 345.29,
-      "pct_change": -5.09,
+      "close": 343.71,
+      "pct_change": -6.61,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 557.67,
-      "pct_change": -1.75,
+      "close": 542.87,
+      "pct_change": -5.95,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 375.53,
-      "pct_change": -5.26,
+      "close": 375.12,
+      "pct_change": -6.33,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 234.27,
-      "pct_change": -1.36,
+      "close": 227.01,
+      "pct_change": -7.11,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The present tense 'remain' is declarative, but 'mixed' is inherently uncertain/non-committal, indicating the speaker observes conflicting signals without taking a definitive stance on direction."
+    "reasoning": "The statement uses a present-tense declarative structure ('remain') but the vague descriptor 'mixed' introduces semantic uncertainty about market direction, suggesting the author is observing an ambiguous condition rather than making a confident claim."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-06-25.md",
+  "report": "backtest_results/2026-06-26.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
