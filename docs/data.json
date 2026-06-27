@@ -1,53 +1,53 @@
 {
-  "date": "2026-06-26",
+  "date": "2026-06-27",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 275.15,
-      "pct_change": -7.67,
+      "close": 283.78,
+      "pct_change": -4.45,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 352.83,
-      "pct_change": -7.0,
+      "close": 372.97,
+      "pct_change": 1.53,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 195.74,
-      "pct_change": -7.1,
+      "close": 192.53,
+      "pct_change": -7.73,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 343.71,
-      "pct_change": -6.61,
+      "close": 337.39,
+      "pct_change": -3.51,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 542.87,
-      "pct_change": -5.95,
+      "close": 550.25,
+      "pct_change": -2.41,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 375.12,
-      "pct_change": -6.33,
+      "close": 379.71,
+      "pct_change": -6.26,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 227.01,
-      "pct_change": -7.11,
+      "close": 232.69,
+      "pct_change": -0.04,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses a present-tense declarative structure ('remain') but the vague descriptor 'mixed' introduces semantic uncertainty about market direction, suggesting the author is observing an ambiguous condition rather than making a confident claim."
+    "reasoning": "The statement uses a present tense declaration ('remain') but 'mixed' is inherently ambiguous and non-committal, indicating uncertainty about market direction."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-06-26.md",
+  "report": "backtest_results/2026-06-27.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
