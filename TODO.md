@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-27
+- [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
+- [x] A confidence score weighting system that combines RAG similarity scores with rec
+- [x] A base time-series SQLite schema module — creates tables for price history, sent
+- [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
+
 ### 2026-06-26
 - [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
 - [x] A GitHub repository health signal collector measuring stars, commit velocity (co
