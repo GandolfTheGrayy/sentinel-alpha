@@ -1,5 +1,5 @@
 {
-  "date": "2026-06-27",
+  "date": "2026-06-28",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
@@ -47,7 +47,7 @@
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses a present tense declaration ('remain') but 'mixed' is inherently ambiguous and non-committal, indicating uncertainty about market direction."
+    "reasoning": "The statement uses 'remain' (neutral observation verb) but lacks hedging qualifiers, yet 'mixed' is inherently non-committal and suggests uncertainty about market direction."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-06-27.md",
+  "report": "backtest_results/2026-06-28.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
