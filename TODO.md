@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-28
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+
 ### 2026-06-27
 - [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
 - [x] A confidence score weighting system that combines RAG similarity scores with rec

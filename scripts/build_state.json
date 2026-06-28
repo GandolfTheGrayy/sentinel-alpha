@@ -132,7 +132,7 @@
     "scout::A base time-series SQLite schema module \u2014 creates tables for price history, sentiment signals, and prediction records": 5,
     "linguist::A 'tells' extractor \u2014 given a block of corporate text, uses Claude to identify specific linguistic tells that historically precede price moves": 4,
     "scout::A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring developer community sentiment": 4,
-    "tests::A pytest unit test module for the Scout price fetcher \u2014 mocks yfinance responses and asserts correct SQLite writes": 6,
+    "tests::A pytest unit test module for the Scout price fetcher \u2014 mocks yfinance responses and asserts correct SQLite writes": 7,
     "scout::A config loader that reads a YAML config file and environment variables, with a typed Settings dataclass": 4,
     "judge::A post-mortem report generator that reads yesterday's PredictionRecord from SQLite, fetches actual price data, and writes a markdown report to backtest_results/": 7,
     "tests::A pytest unit test module for the Linguistic Drift detector \u2014 uses fixture text to assert correct drift scoring": 5,
