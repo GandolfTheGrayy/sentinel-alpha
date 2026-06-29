@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-29
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+- [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
+- [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
+
 ### 2026-06-28
 - [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
 
