@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-06-30
+- [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
+
 ### 2026-06-29
 - [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
 - [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
