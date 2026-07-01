@@ -1,53 +1,53 @@
 {
-  "date": "2026-06-30",
+  "date": "2026-07-01",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 281.74,
-      "pct_change": -4.27,
+      "close": 290.9,
+      "pct_change": 5.72,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 368.57,
-      "pct_change": -1.44,
+      "close": 377.22,
+      "pct_change": 6.91,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 194.97,
-      "pct_change": -2.53,
+      "close": 194.38,
+      "pct_change": -0.69,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 353.65,
-      "pct_change": 2.17,
+      "close": 358.99,
+      "pct_change": 4.45,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 562.6,
-      "pct_change": 0.07,
+      "close": 597.37,
+      "pct_change": 10.04,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 411.84,
-      "pct_change": 7.92,
+      "close": 423.27,
+      "pct_change": 12.83,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 240.14,
-      "pct_change": 2.58,
+      "close": 238.19,
+      "pct_change": 4.92,
       "source": "yfinance"
     }
   ],
   "linguist": {
-    "score": 65,
-    "reasoning": "The statement is declarative about market conditions but uses 'remain' which suggests ongoing uncertainty, and 'mixed' itself indicates ambiguity rather than a clear directional claim."
+    "score": 45,
+    "reasoning": "The statement uses a neutral descriptor ('remain mixed') that avoids strong directional claims, but is presented as a simple declarative fact without explicit hedging language."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-06-30.md",
+  "report": "backtest_results/2026-07-01.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
