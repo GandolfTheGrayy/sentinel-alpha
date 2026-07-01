@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-01
+- [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
+- [x] A GitHub repository health signal collector measuring stars, commit velocity (co
+- [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
+
 ### 2026-06-30
 - [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
 
