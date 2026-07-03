@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-03
+- [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
+- [x] A pytest unit test module for the config loader — tests env var overrides, missi
+
 ### 2026-07-02
 - [x] A daily summary printer that reads the latest post-mortem and prints a concise c
 
