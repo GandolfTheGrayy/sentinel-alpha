@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-04
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+
 ### 2026-07-03
 - [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
 - [x] A pytest unit test module for the config loader — tests env var overrides, missi

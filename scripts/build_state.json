@@ -138,7 +138,7 @@
     "tests::A pytest unit test module for the Linguistic Drift detector \u2014 uses fixture text to assert correct drift scoring": 6,
     "linguist::An earnings call transcript parser that segments text by speaker role (CEO, CFO, Analyst) and prepares each segment for LLM analysis": 7,
     "scout::A modular yfinance-based live price fetcher that stores OHLCV data in SQLite with a swap-ready interface for TimescaleDB": 5,
-    "judge::An anomaly flagging system that detects when actual market moves exceed 2x the predicted residual and generates an AnomalyAlert dataclass": 4,
+    "judge::An anomaly flagging system that detects when actual market moves exceed 2x the predicted residual and generates an AnomalyAlert dataclass": 5,
     "tests::A pytest integration test that runs the Scout \u2192 Linguist pipeline end-to-end with mocked external calls": 4,
     "linguist::A prompt template system for LLM-based 'certainty vs. hesitation' scoring of corporate text, returning a structured CertaintyScore dataclass": 3,
     "historian::A confidence score weighting system that combines RAG similarity scores with recency decay to produce a final WeightedConfidence float": 3
