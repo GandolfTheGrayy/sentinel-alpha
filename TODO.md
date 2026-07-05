@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-05
+- [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
+- [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
+
 ### 2026-07-04
 - [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
 
