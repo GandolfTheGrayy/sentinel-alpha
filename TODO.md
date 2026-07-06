@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-06
+- [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
+- [x] A pytest unit test module for the config loader — tests env var overrides, missi
+
 ### 2026-07-05
 - [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
 - [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
