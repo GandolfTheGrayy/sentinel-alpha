@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-07
+- [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
+- [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
+- [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
+- [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
+
 ### 2026-07-06
 - [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
 - [x] A pytest unit test module for the config loader — tests env var overrides, missi
