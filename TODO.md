@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-08
+- [x] A config loader that reads a YAML config file and environment variables, with a 
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+- [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
+
 ### 2026-07-07
 - [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
 - [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
