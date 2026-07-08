@@ -1,53 +1,53 @@
 {
-  "date": "2026-07-07",
+  "date": "2026-07-08",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 312.66,
-      "pct_change": 10.97,
+      "close": 310.66,
+      "pct_change": 7.36,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 386.74,
-      "pct_change": 4.93,
+      "close": 388.84,
+      "pct_change": 4.24,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 195.55,
-      "pct_change": 0.3,
+      "close": 196.93,
+      "pct_change": -1.58,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 366.46,
-      "pct_change": 3.62,
+      "close": 367.03,
+      "pct_change": 2.7,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 600.29,
-      "pct_change": 6.7,
+      "close": 615.58,
+      "pct_change": 9.28,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 419.77,
-      "pct_change": 1.93,
+      "close": 402.9,
+      "pct_change": -4.21,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 244.16,
-      "pct_change": 1.67,
+      "close": 245.98,
+      "pct_change": 3.21,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement is a simple factual observation but uses 'remain' which suggests an ongoing, uncertain state rather than a definitive claim, and 'mixed' is inherently non-committal about market direction."
+    "reasoning": "The statement uses a neutral descriptor ('remain mixed') that avoids strong directional claims, indicating moderate uncertainty about market direction despite being stated as a simple observation."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-07-07.md",
+  "report": "backtest_results/2026-07-08.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
