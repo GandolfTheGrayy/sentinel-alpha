@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-09
+- [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
+- [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+- [x] A GitHub repository health signal collector measuring stars, commit velocity (co
+
 ### 2026-07-08
 - [x] A config loader that reads a YAML config file and environment variables, with a 
 - [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
