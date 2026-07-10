@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-10
+- [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
+- [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
+
 ### 2026-07-09
 - [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
 - [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
