@@ -1,53 +1,53 @@
 {
-  "date": "2026-07-09",
+  "date": "2026-07-10",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 311.23,
-      "pct_change": 0.84,
+      "close": 316.22,
+      "pct_change": 2.46,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 378.04,
-      "pct_change": -3.19,
+      "close": 384.36,
+      "pct_change": -1.57,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 202.0,
-      "pct_change": 3.68,
+      "close": 202.78,
+      "pct_change": 4.08,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 358.2,
-      "pct_change": -0.48,
+      "close": 358.89,
+      "pct_change": -0.28,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 586.54,
-      "pct_change": 0.62,
+      "close": 631.48,
+      "pct_change": 8.33,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 395.37,
-      "pct_change": 0.49,
+      "close": 406.55,
+      "pct_change": 3.33,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 242.14,
-      "pct_change": -0.22,
+      "close": 247.04,
+      "pct_change": 1.8,
       "source": "yfinance"
     }
   ],
   "linguist": {
-    "score": 45,
-    "reasoning": "The statement uses a present-tense declarative structure but the word 'remain' suggests an ongoing uncertain state, and 'mixed' itself indicates ambiguity without directional confidence."
+    "score": 35,
+    "reasoning": "The statement uses 'remain' which suggests ongoing uncertainty, and 'mixed' is inherently a hedging descriptor that avoids committing to a directional claim."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-07-09.md",
+  "report": "backtest_results/2026-07-10.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
