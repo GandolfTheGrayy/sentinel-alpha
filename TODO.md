@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-11
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+
 ### 2026-07-10
 - [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
 - [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
