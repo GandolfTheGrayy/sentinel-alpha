@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-12
+- [x] A pytest unit test module for the config loader — tests env var overrides, missi
+- [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
+
 ### 2026-07-11
 - [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
 
