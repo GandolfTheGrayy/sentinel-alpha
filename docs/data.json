@@ -1,5 +1,5 @@
 {
-  "date": "2026-07-12",
+  "date": "2026-07-13",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
@@ -46,8 +46,8 @@
     }
   ],
   "linguist": {
-    "score": 55,
-    "reasoning": "The statement uses 'remain' which suggests ongoing observation rather than speculation, but 'mixed' is a vague descriptor that lacks specificity and implies uncertainty about market direction."
+    "score": 45,
+    "reasoning": "The verb 'remain' is declarative but the adjective 'mixed' is inherently ambiguous and non-committal about direction, creating moderate uncertainty."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-07-12.md",
+  "report": "backtest_results/2026-07-13.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
