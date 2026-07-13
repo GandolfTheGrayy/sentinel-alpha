@@ -124,7 +124,7 @@
     "scout::An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing metadata into a normalized dataclass": 8,
     "scout::A data normalizer that maps outputs from all scrapers into a unified SignalRecord schema stored in SQLite": 8,
     "judge::A heuristic update logger that appends CalibrationResult entries to a JSONL file and computes rolling 7-day and 30-day accuracy metrics": 11,
-    "scout::A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and r/investing, outputting a normalized SentimentSignal dataclass": 7,
+    "scout::A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and r/investing, outputting a normalized SentimentSignal dataclass": 8,
     "judge::A Predicted Residual vs. Actual Market Move comparator that calculates directional accuracy and magnitude error, returning a CalibrationResult": 10,
     "judge::A daily summary printer that reads the latest post-mortem and prints a concise console summary of Sentinel's performance": 4,
     "linguist::A Regulatory Whispers detector that scans SEC filings for hedging language patterns (e.g. 'may', 'subject to', 'could materially') and scores their density": 7,

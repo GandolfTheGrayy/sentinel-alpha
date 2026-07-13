@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-13
+- [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
+
 ### 2026-07-12
 - [x] A pytest unit test module for the config loader — tests env var overrides, missi
 - [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
