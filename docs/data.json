@@ -1,53 +1,53 @@
 {
-  "date": "2026-07-13",
+  "date": "2026-07-14",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 315.32,
-      "pct_change": 0.85,
+      "close": 317.31,
+      "pct_change": 2.14,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 385.1,
-      "pct_change": -0.42,
+      "close": 390.99,
+      "pct_change": 0.55,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 210.96,
-      "pct_change": 7.88,
+      "close": 203.53,
+      "pct_change": 3.35,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 357.18,
-      "pct_change": -2.53,
+      "close": 352.51,
+      "pct_change": -3.96,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 669.21,
-      "pct_change": 11.48,
+      "close": 656.73,
+      "pct_change": 6.68,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 407.76,
-      "pct_change": -2.86,
+      "close": 394.76,
+      "pct_change": -2.02,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 245.34,
-      "pct_change": 0.48,
+      "close": 247.31,
+      "pct_change": 0.54,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The verb 'remain' is declarative but the adjective 'mixed' is inherently ambiguous and non-committal about direction, creating moderate uncertainty."
+    "reasoning": "The statement uses the present tense 'remain' which is declarative, but 'mixed' is inherently ambiguous and non-committal about market direction, indicating moderate uncertainty."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-07-13.md",
+  "report": "backtest_results/2026-07-14.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
