@@ -119,7 +119,7 @@
     "linguist::A sentiment aggregator that combines Scout signals and Linguist scores into a composite SentimentResidual score with a weighted formula": 6,
     "historian::A historical market event ingestion pipeline that reads from a CSV of past events and embeds them into ChromaDB using a simple embedding function": 9,
     "historian::A RAG query interface \u2014 given a current SentimentResidual, queries ChromaDB for the top-k most similar historical events and returns a HistoricalMatch list": 7,
-    "linguist::A Linguistic Drift detector that compares a company's current 10-Q language against a rolling 30-day baseline and flags significant tone shifts": 9,
+    "linguist::A Linguistic Drift detector that compares a company's current 10-Q language against a rolling 30-day baseline and flags significant tone shifts": 10,
     "scout::A GitHub repository health signal collector measuring stars, commit velocity (commits/week), and issue open rate for a given repo": 6,
     "scout::An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing metadata into a normalized dataclass": 8,
     "scout::A data normalizer that maps outputs from all scrapers into a unified SignalRecord schema stored in SQLite": 8,

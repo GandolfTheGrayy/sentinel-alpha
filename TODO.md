@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-15
+- [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
+
 ### 2026-07-14
 - [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
 - [x] A base time-series SQLite schema module — creates tables for price history, sent
