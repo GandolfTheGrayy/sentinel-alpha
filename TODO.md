@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-16
+- [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+- [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+
 ### 2026-07-15
 - [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
 
