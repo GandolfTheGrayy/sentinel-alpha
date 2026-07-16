@@ -1,53 +1,53 @@
 {
-  "date": "2026-07-15",
+  "date": "2026-07-16",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": NaN,
-      "pct_change": NaN,
+      "close": 327.5,
+      "pct_change": 3.57,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": NaN,
-      "pct_change": NaN,
+      "close": 395.63,
+      "pct_change": 2.93,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": NaN,
-      "pct_change": NaN,
+      "close": 212.5,
+      "pct_change": 4.79,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": NaN,
-      "pct_change": NaN,
+      "close": 370.92,
+      "pct_change": 3.35,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 661.04,
-      "pct_change": 9.6,
+      "close": 681.31,
+      "pct_change": 7.89,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": NaN,
-      "pct_change": NaN,
+      "close": 394.46,
+      "pct_change": -2.97,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": NaN,
-      "pct_change": NaN,
+      "close": 254.96,
+      "pct_change": 3.21,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses the present tense 'remain' which is declarative, but 'mixed' is inherently a non-committal descriptor that avoids taking a clear directional stance, creating moderate hedging."
+    "reasoning": "The statement uses the present tense indicative 'remain' which conveys observation, but 'mixed' is inherently ambiguous and non-committal about direction or outcome, creating moderate hedging."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-07-15.md",
+  "report": "backtest_results/2026-07-16.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
