@@ -121,7 +121,7 @@
     "historian::A RAG query interface \u2014 given a current SentimentResidual, queries ChromaDB for the top-k most similar historical events and returns a HistoricalMatch list": 8,
     "linguist::A Linguistic Drift detector that compares a company's current 10-Q language against a rolling 30-day baseline and flags significant tone shifts": 10,
     "scout::A GitHub repository health signal collector measuring stars, commit velocity (commits/week), and issue open rate for a given repo": 6,
-    "scout::An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing metadata into a normalized dataclass": 8,
+    "scout::An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing metadata into a normalized dataclass": 9,
     "scout::A data normalizer that maps outputs from all scrapers into a unified SignalRecord schema stored in SQLite": 9,
     "judge::A heuristic update logger that appends CalibrationResult entries to a JSONL file and computes rolling 7-day and 30-day accuracy metrics": 11,
     "scout::A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and r/investing, outputting a normalized SentimentSignal dataclass": 9,
@@ -139,7 +139,7 @@
     "linguist::An earnings call transcript parser that segments text by speaker role (CEO, CFO, Analyst) and prepares each segment for LLM analysis": 7,
     "scout::A modular yfinance-based live price fetcher that stores OHLCV data in SQLite with a swap-ready interface for TimescaleDB": 5,
     "judge::An anomaly flagging system that detects when actual market moves exceed 2x the predicted residual and generates an AnomalyAlert dataclass": 6,
-    "tests::A pytest integration test that runs the Scout \u2192 Linguist pipeline end-to-end with mocked external calls": 5,
+    "tests::A pytest integration test that runs the Scout \u2192 Linguist pipeline end-to-end with mocked external calls": 6,
     "linguist::A prompt template system for LLM-based 'certainty vs. hesitation' scoring of corporate text, returning a structured CertaintyScore dataclass": 3,
     "historian::A confidence score weighting system that combines RAG similarity scores with recency decay to produce a final WeightedConfidence float": 3
   }

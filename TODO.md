@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-18
+- [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
+- [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
+
 ### 2026-07-17
 - [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
 - [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
