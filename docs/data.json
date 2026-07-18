@@ -1,53 +1,53 @@
 {
-  "date": "2026-07-17",
+  "date": "2026-07-18",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 333.26,
-      "pct_change": 5.69,
+      "close": 333.74,
+      "pct_change": 5.18,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 401.1,
-      "pct_change": 4.15,
+      "close": 393.82,
+      "pct_change": 0.72,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 207.4,
-      "pct_change": -1.69,
+      "close": 202.81,
+      "pct_change": -0.35,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 354.46,
-      "pct_change": -0.76,
+      "close": 346.77,
+      "pct_change": -1.63,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 664.54,
-      "pct_change": -0.7,
+      "close": 646.01,
+      "pct_change": -1.63,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 391.06,
-      "pct_change": -4.1,
+      "close": 380.84,
+      "pct_change": -3.53,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 249.89,
-      "pct_change": 1.85,
+      "close": 247.23,
+      "pct_change": -0.03,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses a present-tense declarative structure but the adjective 'mixed' itself inherently expresses ambiguity and lack of clear direction, creating moderate hedging."
+    "reasoning": "The statement uses a present tense declarative structure but the adjective 'mixed' is inherently ambiguous and non-committal about market direction, indicating moderate uncertainty."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-07-17.md",
+  "report": "backtest_results/2026-07-18.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
