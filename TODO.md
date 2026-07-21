@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-21
+- [x] A config loader that reads a YAML config file and environment variables, with a 
+- [x] A daily summary printer that reads the latest post-mortem and prints a concise c
+- [x] A pytest unit test module for the config loader — tests env var overrides, missi
+
 ### 2026-07-20
 - [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
 
