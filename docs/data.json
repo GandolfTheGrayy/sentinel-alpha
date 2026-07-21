@@ -1,53 +1,53 @@
 {
-  "date": "2026-07-20",
+  "date": "2026-07-21",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 333.74,
-      "pct_change": 5.18,
+      "close": 326.59,
+      "pct_change": 3.73,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 393.82,
-      "pct_change": 0.72,
+      "close": 402.29,
+      "pct_change": 4.51,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 202.81,
-      "pct_change": -0.35,
+      "close": 203.28,
+      "pct_change": -4.02,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 346.77,
-      "pct_change": -1.63,
+      "close": 351.99,
+      "pct_change": -2.09,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 646.01,
-      "pct_change": -1.63,
+      "close": 645.85,
+      "pct_change": -2.3,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 380.84,
-      "pct_change": -3.53,
+      "close": 369.57,
+      "pct_change": -6.72,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 247.23,
-      "pct_change": -0.03,
+      "close": 249.99,
+      "pct_change": 1.01,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses a present-tense declarative structure but lacks specificity and employs the vague qualifier 'mixed,' which hedges the claim about market direction."
+    "reasoning": "The statement uses a present-tense declarative structure but the word 'remain' combined with 'mixed' introduces ambiguity about direction and severity, suggesting observation rather than confident assertion."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-07-20.md",
+  "report": "backtest_results/2026-07-21.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
