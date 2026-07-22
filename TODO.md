@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-22
+- [x] A GitHub repository health signal collector measuring stars, commit velocity (co
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+- [x] A daily summary printer that reads the latest post-mortem and prints a concise c
+- [x] A prompt template system for LLM-based 'certainty vs. hesitation' scoring of cor
+
 ### 2026-07-21
 - [x] A config loader that reads a YAML config file and environment variables, with a 
 - [x] A daily summary printer that reads the latest post-mortem and prints a concise c
