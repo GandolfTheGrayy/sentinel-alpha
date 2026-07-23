@@ -1,53 +1,53 @@
 {
-  "date": "2026-07-22",
+  "date": "2026-07-23",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 327.74,
-      "pct_change": 0.07,
+      "close": 325.89,
+      "pct_change": -2.21,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 397.75,
-      "pct_change": 0.54,
+      "close": 390.34,
+      "pct_change": -2.68,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 207.29,
-      "pct_change": -2.45,
+      "close": 212.06,
+      "pct_change": 2.25,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 347.15,
-      "pct_change": -6.41,
+      "close": 342.09,
+      "pct_change": -3.49,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 643.81,
-      "pct_change": -5.5,
+      "close": 627.17,
+      "pct_change": -5.62,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 378.93,
-      "pct_change": -3.94,
+      "close": 374.01,
+      "pct_change": -4.36,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 247.55,
-      "pct_change": -2.91,
+      "close": 244.85,
+      "pct_change": -2.02,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses a simple present tense verb ('remain') which is declarative, but the vague qualifier 'mixed' introduces hedging by avoiding a definitive directional claim."
+    "reasoning": "The statement uses a present tense declarative ('remain') but the vague qualifier 'mixed' introduces uncertainty about market direction, suggesting neither strong confidence nor heavy hedging."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-07-22.md",
+  "report": "backtest_results/2026-07-23.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
