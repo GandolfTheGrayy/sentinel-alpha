@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-23
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+
 ### 2026-07-22
 - [x] A GitHub repository health signal collector measuring stars, commit velocity (co
 - [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
