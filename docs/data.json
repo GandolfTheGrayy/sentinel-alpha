@@ -1,53 +1,53 @@
 {
-  "date": "2026-07-23",
+  "date": "2026-07-24",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 325.89,
-      "pct_change": -2.21,
+      "close": 321.66,
+      "pct_change": -3.62,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 390.34,
-      "pct_change": -2.68,
+      "close": 381.58,
+      "pct_change": -3.11,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 212.06,
-      "pct_change": 2.25,
+      "close": 208.76,
+      "pct_change": 2.93,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 342.09,
-      "pct_change": -3.49,
+      "close": 317.69,
+      "pct_change": -8.39,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 627.17,
-      "pct_change": -5.62,
+      "close": 606.1,
+      "pct_change": -6.18,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 374.01,
-      "pct_change": -4.36,
+      "close": 319.69,
+      "pct_change": -16.06,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 244.85,
-      "pct_change": -2.02,
+      "close": 233.66,
+      "pct_change": -5.49,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses a present tense declarative ('remain') but the vague qualifier 'mixed' introduces uncertainty about market direction, suggesting neither strong confidence nor heavy hedging."
+    "reasoning": "The statement uses a neutral descriptor ('remain mixed') that acknowledges uncertainty and lack of clear direction, avoiding both strong conviction and excessive hedging language."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-07-23.md",
+  "report": "backtest_results/2026-07-24.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
