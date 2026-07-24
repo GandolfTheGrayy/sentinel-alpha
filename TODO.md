@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-24
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+- [x] A config loader that reads a YAML config file and environment variables, with a 
+- [x] A GitHub repository health signal collector measuring stars, commit velocity (co
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+
 ### 2026-07-23
 - [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
 
