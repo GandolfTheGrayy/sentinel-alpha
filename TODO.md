@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-25
+- [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+- [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
+
 ### 2026-07-24
 - [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
 - [x] A config loader that reads a YAML config file and environment variables, with a 
