@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-26
+- [x] A config loader that reads a YAML config file and environment variables, with a 
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+
 ### 2026-07-25
 - [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
 - [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
