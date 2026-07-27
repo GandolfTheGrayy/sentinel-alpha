@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-27
+- [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
+- [x] A GitHub repository health signal collector measuring stars, commit velocity (co
+
 ### 2026-07-26
 - [x] A config loader that reads a YAML config file and environment variables, with a 
 - [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
