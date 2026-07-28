@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-28
+- [x] A confidence score weighting system that combines RAG similarity scores with rec
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+- [x] A prompt template system for LLM-based 'certainty vs. hesitation' scoring of cor
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+
 ### 2026-07-27
 - [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
 - [x] A GitHub repository health signal collector measuring stars, commit velocity (co
