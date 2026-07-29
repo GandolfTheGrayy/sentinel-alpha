@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-29
+- [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
+- [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
+- [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
+- [x] A pytest unit test module for the config loader — tests env var overrides, missi
+
 ### 2026-07-28
 - [x] A confidence score weighting system that combines RAG similarity scores with rec
 - [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
