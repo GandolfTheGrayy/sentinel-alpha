@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-07-31
+- [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
+- [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
+- [x] A config loader that reads a YAML config file and environment variables, with a 
+
 ### 2026-07-30
 - [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
 - [x] A confidence score weighting system that combines RAG similarity scores with rec
