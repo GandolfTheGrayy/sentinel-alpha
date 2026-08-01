@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-01
+- [x] A GitHub repository health signal collector measuring stars, commit velocity (co
+- [x] A config loader that reads a YAML config file and environment variables, with a 
+- [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
+
 ### 2026-07-31
 - [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
 - [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
