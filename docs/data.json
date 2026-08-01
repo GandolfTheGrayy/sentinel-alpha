@@ -1,53 +1,53 @@
 {
-  "date": "2026-07-31",
+  "date": "2026-08-01",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 333.43,
-      "pct_change": 0.12,
+      "close": 308.91,
+      "pct_change": -8.31,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 451.1,
-      "pct_change": 18.18,
+      "close": 464.72,
+      "pct_change": 19.43,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 195.04,
-      "pct_change": -5.7,
+      "close": 200.75,
+      "pct_change": 2.16,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 333.66,
-      "pct_change": 4.35,
+      "close": 356.13,
+      "pct_change": 9.05,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 539.03,
-      "pct_change": -9.44,
+      "close": 556.71,
+      "pct_change": -6.26,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 308.85,
-      "pct_change": -1.34,
+      "close": 311.21,
+      "pct_change": 0.64,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 235.5,
-      "pct_change": 1.46,
+      "close": 271.58,
+      "pct_change": 17.37,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement is a simple declarative claim about current market conditions, but the word 'remain' combined with the vague descriptor 'mixed' introduces hedging by avoiding specificity about direction or magnitude."
+    "reasoning": "The statement uses a present-tense declarative verb ('remain') but the adjective 'mixed' is inherently uncertain and non-committal, indicating conflicting or unclear market conditions rather than a definitive assertion."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-07-31.md",
+  "report": "backtest_results/2026-08-01.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
