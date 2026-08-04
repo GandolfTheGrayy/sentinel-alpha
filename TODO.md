@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-04
+- [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
+
 ### 2026-08-03
 - [x] A GitHub repository health signal collector measuring stars, commit velocity (co
 
