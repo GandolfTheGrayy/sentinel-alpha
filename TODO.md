@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-05
+- [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
+- [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
+- [x] A prompt template system for LLM-based 'certainty vs. hesitation' scoring of cor
+- [x] A config loader that reads a YAML config file and environment variables, with a 
+
 ### 2026-08-04
 - [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
 
