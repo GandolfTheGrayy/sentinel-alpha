@@ -1,16 +1,5 @@
 [
   {
-    "date": "2026-05-08",
-    "linguist_score": 85,
-    "watchlist_avg_pct": 3.1,
-    "predictions_made": 7,
-    "predictions_resolved": 7,
-    "hit_rate": 71.4,
-    "rolling_7": 71.4,
-    "baseline_momentum_rolling_7": 28.6,
-    "baseline_always_up_rolling_7": 100.0
-  },
-  {
     "date": "2026-05-09",
     "linguist_score": 78,
     "watchlist_avg_pct": 4.08,
@@ -982,6 +971,17 @@
     "date": "2026-08-05",
     "linguist_score": 45,
     "watchlist_avg_pct": 10.56,
+    "predictions_made": 0,
+    "predictions_resolved": 0,
+    "hit_rate": 24.5,
+    "rolling_7": 14.3,
+    "baseline_momentum_rolling_7": 28.6,
+    "baseline_always_up_rolling_7": 57.1
+  },
+  {
+    "date": "2026-08-06",
+    "linguist_score": 45,
+    "watchlist_avg_pct": 7.35,
     "predictions_made": 0,
     "predictions_resolved": 0,
     "hit_rate": 24.5,
