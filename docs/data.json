@@ -1,53 +1,53 @@
 {
-  "date": "2026-08-06",
+  "date": "2026-08-07",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 311.0,
-      "pct_change": -6.73,
+      "close": 312.41,
+      "pct_change": 1.13,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 487.46,
-      "pct_change": 8.06,
+      "close": 499.86,
+      "pct_change": 7.56,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 219.22,
-      "pct_change": 12.4,
+      "close": 218.99,
+      "pct_change": 9.09,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 362.43,
-      "pct_change": 8.62,
+      "close": 357.75,
+      "pct_change": 0.45,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 588.77,
-      "pct_change": 9.23,
+      "close": 589.9,
+      "pct_change": 5.96,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 321.55,
-      "pct_change": 4.11,
+      "close": 319.53,
+      "pct_change": 2.67,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 272.65,
-      "pct_change": 15.77,
+      "close": 272.26,
+      "pct_change": 0.25,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses the present tense verb 'remain' which indicates an observed state, but 'mixed' is a vague descriptor that avoids specificity about direction or magnitude, suggesting moderate uncertainty."
+    "reasoning": "The statement is a declarative observation but uses a vague qualifier ('mixed') that indicates uncertainty about market direction rather than a confident assertion of a specific outcome."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-08-06.md",
+  "report": "backtest_results/2026-08-07.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
