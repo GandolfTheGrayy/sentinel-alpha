@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-07
+- [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
+
 ### 2026-08-06
 - [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
 - [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
