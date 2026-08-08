@@ -1,53 +1,53 @@
 {
-  "date": "2026-08-07",
+  "date": "2026-08-08",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 312.41,
-      "pct_change": 1.13,
+      "close": 313.33,
+      "pct_change": 3.27,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 499.86,
-      "pct_change": 7.56,
+      "close": 499.99,
+      "pct_change": 2.53,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 218.99,
-      "pct_change": 9.09,
+      "close": 223.96,
+      "pct_change": 8.38,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 357.75,
-      "pct_change": 0.45,
+      "close": 354.3,
+      "pct_change": -5.14,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 589.9,
-      "pct_change": 5.96,
+      "close": 592.1,
+      "pct_change": 0.32,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 319.53,
-      "pct_change": 2.67,
+      "close": 328.58,
+      "pct_change": 2.02,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 272.26,
-      "pct_change": 0.25,
+      "close": 274.48,
+      "pct_change": -3.36,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement is a declarative observation but uses a vague qualifier ('mixed') that indicates uncertainty about market direction rather than a confident assertion of a specific outcome."
+    "reasoning": "The statement uses the present tense indicative 'remain' which is factual, but 'mixed' is a vague descriptor that avoids commitment to a specific direction, and the lack of supporting detail or temporal clarity introduces moderate hedging."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-08-07.md",
+  "report": "backtest_results/2026-08-08.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
