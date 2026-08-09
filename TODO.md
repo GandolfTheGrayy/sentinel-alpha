@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-09
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+
 ### 2026-08-08
 - [x] A GitHub repository health signal collector measuring stars, commit velocity (co
 
