@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-08",
+  "date": "2026-08-09",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
@@ -47,7 +47,7 @@
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses the present tense indicative 'remain' which is factual, but 'mixed' is a vague descriptor that avoids commitment to a specific direction, and the lack of supporting detail or temporal clarity introduces moderate hedging."
+    "reasoning": "The word 'remain' suggests an ongoing state but 'mixed' is vague and non-committal, and the statement lacks specific claims or supporting details, creating moderate uncertainty."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-08-08.md",
+  "report": "backtest_results/2026-08-09.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
