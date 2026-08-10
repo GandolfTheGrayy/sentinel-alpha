@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-10
+- [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
+- [x] A confidence score weighting system that combines RAG similarity scores with rec
+
 ### 2026-08-09
 - [x] A historical market event ingestion pipeline that reads from a CSV of past event
 - [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
