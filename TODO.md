@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-11
+- [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
+- [x] A config loader that reads a YAML config file and environment variables, with a 
+
 ### 2026-08-10
 - [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
 - [x] A confidence score weighting system that combines RAG similarity scores with rec
