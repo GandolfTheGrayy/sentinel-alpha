@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-12
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+
 ### 2026-08-11
 - [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
 - [x] A config loader that reads a YAML config file and environment variables, with a 
