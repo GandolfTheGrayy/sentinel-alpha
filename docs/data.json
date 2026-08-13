@@ -1,53 +1,53 @@
 {
-  "date": "2026-08-12",
+  "date": "2026-08-13",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 304.91,
-      "pct_change": -1.87,
+      "close": 302.25,
+      "pct_change": -3.17,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 503.81,
-      "pct_change": 3.35,
+      "close": 492.43,
+      "pct_change": -1.49,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 217.5,
-      "pct_change": -0.78,
+      "close": 224.09,
+      "pct_change": 2.33,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 343.8,
-      "pct_change": -5.14,
+      "close": 343.54,
+      "pct_change": -3.97,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": NaN,
-      "pct_change": NaN,
+      "close": 578.85,
+      "pct_change": -1.87,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 332.81,
-      "pct_change": 3.5,
+      "close": 327.51,
+      "pct_change": 2.5,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 272.27,
-      "pct_change": -0.14,
+      "close": 267.28,
+      "pct_change": -1.83,
       "source": "yfinance"
     }
   ],
   "linguist": {
-    "score": 45,
-    "reasoning": "The statement uses present tense ('remain') which is declarative, but 'mixed' is a vague, non-committal descriptor that suggests uncertainty about market direction."
+    "score": 55,
+    "reasoning": "The statement uses a present-tense declarative verb ('remain') indicating observation of current fact, but the vague qualifier 'mixed' and absence of specific data or timeframe introduce moderate uncertainty."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-08-12.md",
+  "report": "backtest_results/2026-08-13.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
