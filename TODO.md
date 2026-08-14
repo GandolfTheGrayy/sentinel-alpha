@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-14
+- [x] A pytest unit test module for the config loader — tests env var overrides, missi
+
 ### 2026-08-13
 - [x] A daily summary printer that reads the latest post-mortem and prints a concise c
 
