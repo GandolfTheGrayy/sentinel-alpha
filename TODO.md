@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-16
+- [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
+- [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
+
 ### 2026-08-15
 - [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
 - [x] A config loader that reads a YAML config file and environment variables, with a 
