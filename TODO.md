@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-17
+- [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
+- [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
+- [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
+
 ### 2026-08-16
 - [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
 - [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
