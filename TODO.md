@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-18
+- [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+
 ### 2026-08-17
 - [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
 - [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
