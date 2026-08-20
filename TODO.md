@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-20
+- [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
+
 ### 2026-08-19
 - [x] A heuristic update logger that appends CalibrationResult entries to a JSONL file
 - [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
