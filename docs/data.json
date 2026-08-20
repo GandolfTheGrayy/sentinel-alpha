@@ -1,53 +1,53 @@
 {
-  "date": "2026-08-19",
+  "date": "2026-08-20",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 310.03,
-      "pct_change": 2.57,
+      "close": 316.83,
+      "pct_change": 3.79,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 481.63,
-      "pct_change": -2.19,
+      "close": 484.31,
+      "pct_change": -2.53,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 219.74,
-      "pct_change": -1.94,
+      "close": 217.56,
+      "pct_change": -3.44,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 344.2,
-      "pct_change": 0.19,
+      "close": 344.72,
+      "pct_change": -0.47,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 543.67,
-      "pct_change": -6.08,
+      "close": 546.03,
+      "pct_change": -8.23,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 336.87,
-      "pct_change": 2.86,
+      "close": 351.12,
+      "pct_change": 3.28,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 259.45,
-      "pct_change": -2.93,
+      "close": 265.84,
+      "pct_change": 0.27,
       "source": "yfinance"
     }
   ],
   "linguist": {
-    "score": 45,
-    "reasoning": "The verb 'remain' is neutral/observational rather than hedged, but 'mixed' is inherently ambiguous and non-committal about market direction, reducing certainty."
+    "score": 55,
+    "reasoning": "The statement is declarative but uses 'remain' which suggests an ongoing, potentially changeable state rather than a fixed fact, and 'mixed' itself indicates ambiguity or lack of clear direction."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-08-19.md",
+  "report": "backtest_results/2026-08-20.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
