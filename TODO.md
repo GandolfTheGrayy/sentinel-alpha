@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-21
+- [x] A confidence score weighting system that combines RAG similarity scores with rec
+
 ### 2026-08-20
 - [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
 
