@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-22
+- [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
+- [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
+- [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
+- [x] A daily summary printer that reads the latest post-mortem and prints a concise c
+
 ### 2026-08-21
 - [x] A confidence score weighting system that combines RAG similarity scores with rec
 
