@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-23
+- [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+- [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
+- [x] A confidence score weighting system that combines RAG similarity scores with rec
+
 ### 2026-08-22
 - [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
 - [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
