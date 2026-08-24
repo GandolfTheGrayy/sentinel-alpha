@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-24
+- [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
+- [x] A prompt template system for LLM-based 'certainty vs. hesitation' scoring of cor
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+- [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
+
 ### 2026-08-23
 - [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
 - [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
