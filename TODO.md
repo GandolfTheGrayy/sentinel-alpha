@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-25
+- [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
+- [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
+- [x] A base time-series SQLite schema module — creates tables for price history, sent
+- [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
+
 ### 2026-08-24
 - [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
 - [x] A prompt template system for LLM-based 'certainty vs. hesitation' scoring of cor
