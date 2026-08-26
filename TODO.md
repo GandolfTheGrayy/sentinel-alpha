@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-26
+- [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+
 ### 2026-08-25
 - [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
 - [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
