@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-27
+- [x] A GitHub repository health signal collector measuring stars, commit velocity (co
+- [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
+- [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
+
 ### 2026-08-26
 - [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
 - [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
