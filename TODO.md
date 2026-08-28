@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-28
+- [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
+- [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
+- [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+
 ### 2026-08-27
 - [x] A GitHub repository health signal collector measuring stars, commit velocity (co
 - [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
