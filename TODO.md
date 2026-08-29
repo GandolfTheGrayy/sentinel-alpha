@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-29
+- [x] A base time-series SQLite schema module — creates tables for price history, sent
+- [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
+- [x] A confidence score weighting system that combines RAG similarity scores with rec
+
 ### 2026-08-28
 - [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
 - [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
