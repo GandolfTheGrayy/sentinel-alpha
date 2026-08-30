@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-30
+- [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
+
 ### 2026-08-29
 - [x] A base time-series SQLite schema module — creates tables for price history, sent
 - [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
