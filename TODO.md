@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-08-31
+- [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
+- [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
+- [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
+
 ### 2026-08-30
 - [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
 
