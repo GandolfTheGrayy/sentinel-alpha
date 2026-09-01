@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-01
+- [x] A GitHub repository health signal collector measuring stars, commit velocity (co
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+- [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
+
 ### 2026-08-31
 - [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
 - [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
