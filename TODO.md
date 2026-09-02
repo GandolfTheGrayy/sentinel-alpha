@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-02
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+- [x] A confidence score weighting system that combines RAG similarity scores with rec
+
 ### 2026-09-01
 - [x] A GitHub repository health signal collector measuring stars, commit velocity (co
 - [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
