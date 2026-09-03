@@ -135,7 +135,7 @@
     "tests::A pytest unit test module for the Scout price fetcher \u2014 mocks yfinance responses and asserts correct SQLite writes": 13,
     "scout::A config loader that reads a YAML config file and environment variables, with a typed Settings dataclass": 13,
     "judge::A post-mortem report generator that reads yesterday's PredictionRecord from SQLite, fetches actual price data, and writes a markdown report to backtest_results/": 12,
-    "tests::A pytest unit test module for the Linguistic Drift detector \u2014 uses fixture text to assert correct drift scoring": 12,
+    "tests::A pytest unit test module for the Linguistic Drift detector \u2014 uses fixture text to assert correct drift scoring": 13,
     "linguist::An earnings call transcript parser that segments text by speaker role (CEO, CFO, Analyst) and prepares each segment for LLM analysis": 11,
     "scout::A modular yfinance-based live price fetcher that stores OHLCV data in SQLite with a swap-ready interface for TimescaleDB": 9,
     "judge::An anomaly flagging system that detects when actual market moves exceed 2x the predicted residual and generates an AnomalyAlert dataclass": 13,

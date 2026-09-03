@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-03
+- [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
+
 ### 2026-09-02
 - [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
 - [x] A confidence score weighting system that combines RAG similarity scores with rec
