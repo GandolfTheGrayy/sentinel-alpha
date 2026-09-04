@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-04
+- [x] A base time-series SQLite schema module — creates tables for price history, sent
+
 ### 2026-09-03
 - [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
 

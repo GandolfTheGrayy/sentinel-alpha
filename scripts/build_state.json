@@ -129,7 +129,7 @@
     "judge::A daily summary printer that reads the latest post-mortem and prints a concise console summary of Sentinel's performance": 8,
     "linguist::A Regulatory Whispers detector that scans SEC filings for hedging language patterns (e.g. 'may', 'subject to', 'could materially') and scores their density": 12,
     "historian::An event schema module defining dataclasses for MarketEvent, HistoricalMatch, and ConfidenceReport used across the Historian layer": 10,
-    "scout::A base time-series SQLite schema module \u2014 creates tables for price history, sentiment signals, and prediction records": 8,
+    "scout::A base time-series SQLite schema module \u2014 creates tables for price history, sentiment signals, and prediction records": 9,
     "linguist::A 'tells' extractor \u2014 given a block of corporate text, uses Claude to identify specific linguistic tells that historically precede price moves": 9,
     "scout::A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring developer community sentiment": 8,
     "tests::A pytest unit test module for the Scout price fetcher \u2014 mocks yfinance responses and asserts correct SQLite writes": 13,
