@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-05
+- [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
+- [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+
 ### 2026-09-04
 - [x] A base time-series SQLite schema module — creates tables for price history, sent
 
