@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-06
+- [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+- [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+
 ### 2026-09-05
 - [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
 - [x] An event schema module defining dataclasses for MarketEvent, HistoricalMatch, an
