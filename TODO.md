@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-07
+- [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
+- [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+
 ### 2026-09-06
 - [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
 - [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
