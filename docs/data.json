@@ -1,53 +1,53 @@
 {
-  "date": "2026-09-07",
+  "date": "2026-09-08",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 319.97,
-      "pct_change": 0.98,
+      "close": 316.11,
+      "pct_change": -2.77,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 499.7,
-      "pct_change": -1.5,
+      "close": 492.43,
+      "pct_change": -1.71,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 230.36,
-      "pct_change": 4.34,
+      "close": 227.19,
+      "pct_change": 4.48,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 338.46,
-      "pct_change": -0.2,
+      "close": 336.73,
+      "pct_change": 0.58,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 616.77,
-      "pct_change": 7.76,
+      "close": 615.54,
+      "pct_change": 6.4,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 354.08,
-      "pct_change": -3.77,
+      "close": 363.41,
+      "pct_change": 2.06,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 258.51,
-      "pct_change": -0.49,
+      "close": 256.19,
+      "pct_change": 0.5,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses the present tense verb 'remain' which is moderately confident, but 'mixed' is an inherently uncertain descriptor that avoids taking a directional stance."
+    "reasoning": "The statement uses a present-tense declarative structure but the word 'remain' combined with the vague descriptor 'mixed' introduces uncertainty about market direction and trajectory."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-09-07.md",
+  "report": "backtest_results/2026-09-08.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
