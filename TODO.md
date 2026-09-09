@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-09
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+- [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
+
 ### 2026-09-08
 - [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
 
