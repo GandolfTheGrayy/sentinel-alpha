@@ -1,53 +1,53 @@
 {
-  "date": "2026-09-09",
+  "date": "2026-09-10",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 313.56,
-      "pct_change": -3.51,
+      "close": 320.74,
+      "pct_change": -2.28,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 493.28,
-      "pct_change": -0.71,
+      "close": 492.75,
+      "pct_change": -3.41,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 224.3,
-      "pct_change": -0.05,
+      "close": 218.37,
+      "pct_change": -4.41,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 330.32,
-      "pct_change": -1.96,
+      "close": 331.45,
+      "pct_change": -3.16,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 650.47,
-      "pct_change": 9.72,
+      "close": 657.27,
+      "pct_change": 7.63,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 373.08,
-      "pct_change": 4.5,
+      "close": 368.05,
+      "pct_change": -2.21,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 252.15,
-      "pct_change": -1.11,
+      "close": 252.73,
+      "pct_change": -2.38,
       "source": "yfinance"
     }
   ],
   "linguist": {
-    "score": 45,
-    "reasoning": "The word 'remain' suggests continuity without strong commitment, while 'mixed' is inherently non-committal and hedges between opposing directions."
+    "score": 35,
+    "reasoning": "The verb 'remain' is relatively neutral/factual, but 'mixed' is inherently vague and non-committal, and the statement lacks specificity about which markets, timeframe, or magnitude of movement."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-09-09.md",
+  "report": "backtest_results/2026-09-10.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
