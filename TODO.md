@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-10
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+- [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
+- [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
+- [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
+
 ### 2026-09-09
 - [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
 - [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
