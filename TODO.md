@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-11
+- [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
+- [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
+- [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
+- [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
+
 ### 2026-09-10
 - [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
 - [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
