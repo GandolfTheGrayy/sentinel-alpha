@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-12
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+- [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
+- [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
+- [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
+
 ### 2026-09-11
 - [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
 - [x] A Linguistic Drift detector that compares a company's current 10-Q language agai
