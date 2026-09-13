@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-13
+- [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+- [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
+- [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
+
 ### 2026-09-12
 - [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
 - [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
