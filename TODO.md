@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-14
+- [x] A pytest unit test module for the config loader — tests env var overrides, missi
+
 ### 2026-09-13
 - [x] A Predicted Residual vs. Actual Market Move comparator that calculates direction
 - [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
