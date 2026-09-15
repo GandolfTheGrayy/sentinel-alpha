@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-15
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+- [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
+
 ### 2026-09-14
 - [x] A pytest unit test module for the config loader — tests env var overrides, missi
 
