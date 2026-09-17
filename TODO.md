@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-17
+- [x] A daily summary printer that reads the latest post-mortem and prints a concise c
+- [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
+
 ### 2026-09-16
 - [x] A Regulatory Whispers detector that scans SEC filings for hedging language patte
 - [x] A historical market event ingestion pipeline that reads from a CSV of past event
