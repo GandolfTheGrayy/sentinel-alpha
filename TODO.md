@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-18
+- [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
+- [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
+
 ### 2026-09-17
 - [x] A daily summary printer that reads the latest post-mortem and prints a concise c
 - [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
