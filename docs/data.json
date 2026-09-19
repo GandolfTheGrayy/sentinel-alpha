@@ -1,53 +1,53 @@
 {
-  "date": "2026-09-18",
+  "date": "2026-09-19",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 332.71,
-      "pct_change": -0.11,
+      "close": 336.13,
+      "pct_change": 0.92,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 492.19,
-      "pct_change": -2.62,
+      "close": 493.78,
+      "pct_change": -2.3,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 219.0,
-      "pct_change": 3.81,
+      "close": 222.27,
+      "pct_change": 5.36,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 350.28,
-      "pct_change": 0.25,
+      "close": 349.54,
+      "pct_change": 0.04,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 675.31,
-      "pct_change": 1.46,
+      "close": 665.75,
+      "pct_change": 0.02,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 365.39,
-      "pct_change": 1.79,
+      "close": 364.27,
+      "pct_change": 1.48,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 253.0,
-      "pct_change": -0.21,
+      "close": 253.71,
+      "pct_change": 0.07,
       "source": "yfinance"
     }
   ],
   "linguist": {
-    "score": 45,
-    "reasoning": "The statement 'remain mixed' is a neutral observation without hedging language, but the word 'remain' implies an ongoing uncertain or balanced state rather than a definitive claim, and 'mixed' itself denotes lack of clear direction."
+    "score": 65,
+    "reasoning": "The statement uses a simple present-tense declarative structure ('Markets remain mixed') without explicit hedging language, but the word 'mixed' itself conveys inherent ambiguity and lack of clear direction, reducing certainty somewhat."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-09-18.md",
+  "report": "backtest_results/2026-09-19.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
