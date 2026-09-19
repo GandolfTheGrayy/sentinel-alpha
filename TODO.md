@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-19
+- [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+- [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
+- [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
+
 ### 2026-09-18
 - [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
 - [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
