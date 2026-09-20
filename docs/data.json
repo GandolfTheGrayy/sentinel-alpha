@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-19",
+  "date": "2026-09-20",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
@@ -46,8 +46,8 @@
     }
   ],
   "linguist": {
-    "score": 65,
-    "reasoning": "The statement uses a simple present-tense declarative structure ('Markets remain mixed') without explicit hedging language, but the word 'mixed' itself conveys inherent ambiguity and lack of clear direction, reducing certainty somewhat."
+    "score": 45,
+    "reasoning": "The statement uses the present tense verb 'remain' which is declarative, but 'mixed' is inherently a hedging descriptor that acknowledges conflicting or uncertain market conditions."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-09-19.md",
+  "report": "backtest_results/2026-09-20.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
