@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-23
+- [x] A pytest integration test that runs the Scout → Linguist pipeline end-to-end wit
+
 ### 2026-09-22
 - [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
 - [x] A base time-series SQLite schema module — creates tables for price history, sent
