@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-25
+- [x] A base time-series SQLite schema module — creates tables for price history, sent
+- [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
+- [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
+- [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
+
 ### 2026-09-24
 - [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
 - [x] A pytest unit test module for the config loader — tests env var overrides, missi
