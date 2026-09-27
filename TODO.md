@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-27
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+- [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
+- [x] A post-mortem report generator that reads yesterday's PredictionRecord from SQLi
+
 ### 2026-09-26
 - [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
 - [x] An earnings call transcript parser that segments text by speaker role (CEO, CFO,
