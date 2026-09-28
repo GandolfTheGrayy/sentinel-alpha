@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-28
+- [x] A base time-series SQLite schema module — creates tables for price history, sent
+
 ### 2026-09-27
 - [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
 - [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
