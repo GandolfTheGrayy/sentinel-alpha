@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-29
+- [x] A base time-series SQLite schema module — creates tables for price history, sent
+- [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
+- [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
+- [x] An SEC EDGAR RSS scraper that polls the 8-K and 10-Q feeds and extracts filing m
+
 ### 2026-09-28
 - [x] A base time-series SQLite schema module — creates tables for price history, sent
 
