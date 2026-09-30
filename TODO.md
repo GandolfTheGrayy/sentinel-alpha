@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-09-30
+- [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
+- [x] A daily summary printer that reads the latest post-mortem and prints a concise c
+- [x] A 'tells' extractor — given a block of corporate text, uses Claude to identify s
+- [x] A config loader that reads a YAML config file and environment variables, with a 
+
 ### 2026-09-29
 - [x] A base time-series SQLite schema module — creates tables for price history, sent
 - [x] A Hacker News scraper targeting 'Ask HN' posts about tech companies, scoring dev
