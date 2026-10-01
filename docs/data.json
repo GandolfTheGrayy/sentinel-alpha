@@ -1,53 +1,53 @@
 {
-  "date": "2026-09-30",
+  "date": "2026-10-01",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 336.6,
-      "pct_change": 0.2,
+      "close": 328.14,
+      "pct_change": -3.79,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 517.38,
-      "pct_change": 3.91,
+      "close": 514.0,
+      "pct_change": -0.42,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 230.22,
-      "pct_change": 2.51,
+      "close": 230.52,
+      "pct_change": 2.42,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 351.88,
-      "pct_change": 2.78,
+      "close": 338.16,
+      "pct_change": -1.67,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 736.84,
-      "pct_change": -5.24,
+      "close": 727.66,
+      "pct_change": -3.19,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 350.35,
-      "pct_change": -7.3,
+      "close": 356.0,
+      "pct_change": -4.33,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 251.68,
-      "pct_change": 0.92,
+      "close": 247.95,
+      "pct_change": -0.69,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement is declarative but uses the present tense observation 'remain' which describes an ongoing, uncertain state rather than making a confident claim about a specific outcome or direction."
+    "reasoning": "The statement uses a present-tense declarative structure but the word 'remain' combined with 'mixed' introduces ambiguity about direction and magnitude, creating moderate uncertainty about market conditions."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-09-30.md",
+  "report": "backtest_results/2026-10-01.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
