@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-10-01
+- [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
+
 ### 2026-09-30
 - [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
 - [x] A daily summary printer that reads the latest post-mortem and prints a concise c
