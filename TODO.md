@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-10-02
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+
 ### 2026-10-01
 - [x] A Reddit sentiment scraper using PRAW targeting r/wallstreetbets, r/stocks, and 
 
