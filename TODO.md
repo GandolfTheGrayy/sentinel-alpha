@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-10-04
+- [x] A confidence score weighting system that combines RAG similarity scores with rec
+- [x] A historical market event ingestion pipeline that reads from a CSV of past event
+
 ### 2026-10-03
 - [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
 - [x] A pytest unit test module for the Linguistic Drift detector — uses fixture text 
