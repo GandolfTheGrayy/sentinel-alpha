@@ -70,6 +70,10 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-10-05
+- [x] An anomaly flagging system that detects when actual market moves exceed 2x the p
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+
 ### 2026-10-04
 - [x] A confidence score weighting system that combines RAG similarity scores with rec
 - [x] A historical market event ingestion pipeline that reads from a CSV of past event
