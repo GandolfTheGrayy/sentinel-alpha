@@ -1,53 +1,53 @@
 {
-  "date": "2026-10-04",
+  "date": "2026-10-05",
   "headline": "Markets remain mixed",
   "watchlist": [
     {
       "ticker": "AAPL",
-      "close": 333.69,
-      "pct_change": -1.39,
+      "close": 333.9,
+      "pct_change": 1.37,
       "source": "yfinance"
     },
     {
       "ticker": "MSFT",
-      "close": 517.53,
-      "pct_change": 1.63,
+      "close": 528.9,
+      "pct_change": 3.92,
       "source": "yfinance"
     },
     {
       "ticker": "NVDA",
-      "close": 233.95,
-      "pct_change": 2.22,
+      "close": 239.64,
+      "pct_change": 5.47,
       "source": "yfinance"
     },
     {
       "ticker": "GOOGL",
-      "close": 343.5,
-      "pct_change": 0.22,
+      "close": 347.63,
+      "pct_change": 1.97,
       "source": "yfinance"
     },
     {
       "ticker": "META",
-      "close": 728.08,
-      "pct_change": 1.74,
+      "close": 744.31,
+      "pct_change": 0.75,
       "source": "yfinance"
     },
     {
       "ticker": "TSLA",
-      "close": 370.59,
-      "pct_change": 3.68,
+      "close": 379.91,
+      "pct_change": 7.67,
       "source": "yfinance"
     },
     {
       "ticker": "AMZN",
-      "close": 251.52,
-      "pct_change": 2.18,
+      "close": 253.71,
+      "pct_change": 2.85,
       "source": "yfinance"
     }
   ],
   "linguist": {
     "score": 45,
-    "reasoning": "The statement uses 'remain' (suggesting ongoing observation rather than definitive claim) and 'mixed' (inherently ambiguous descriptor) without strong conviction markers, placing it between hedged and declarative language."
+    "reasoning": "The statement uses a present tense verb ('remain') which is declarative, but 'mixed' is inherently ambiguous and non-committal about direction or magnitude, creating moderate hedging."
   },
   "historian": [
     {
@@ -64,7 +64,7 @@
       "method": "keyword"
     }
   ],
-  "report": "backtest_results/2026-10-04.md",
+  "report": "backtest_results/2026-10-05.md",
   "predictions_today": [],
   "resolved_today": [],
   "open_predictions": [],
