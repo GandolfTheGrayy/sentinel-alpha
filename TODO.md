@@ -70,6 +70,11 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-10-07
+- [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
+- [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
+- [x] A RAG query interface — given a current SentimentResidual, queries ChromaDB for 
+
 ### 2026-10-06
 - [x] A sentiment aggregator that combines Scout signals and Linguist scores into a co
 - [x] A daily summary printer that reads the latest post-mortem and prints a concise c
