@@ -70,6 +70,9 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-10-08
+- [x] A GitHub repository health signal collector measuring stars, commit velocity (co
+
 ### 2026-10-07
 - [x] A data normalizer that maps outputs from all scrapers into a unified SignalRecor
 - [x] A ChromaDB vector database setup module — initializes the local DB, defines coll
