@@ -111,18 +111,37 @@ def claude_available(settings: Settings) -> tuple[bool, str]:
         return False, f"claude --version failed: {exc}"
 
 
+# Variables that would make Claude Code bill an API key or a cloud provider instead of the subscription.
+BILLING_ENV_VARS = ("ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN", "CLAUDE_CODE_USE_BEDROCK", "CLAUDE_CODE_USE_VERTEX", "CLAUDE_CODE_USE_FOUNDRY", "ANTHROPIC_BASE_URL")
+
+
+def subscription_env() -> dict[str, str]:
+    """Environment for the claude subprocess: broker secrets and every API-billing variable removed."""
+    return {k: v for k, v in os.environ.items() if k not in BILLING_ENV_VARS and k not in ("ALPACA_API_KEY", "ALPACA_SECRET_KEY")}
+
+
 def claude_logged_in(settings: Settings) -> tuple[bool, str]:
-    """Parse `claude auth status` (JSON). Unknown output counts as logged in so a CLI change never blocks sessions."""
-    if os.environ.get("CLAUDE_CODE_OAUTH_TOKEN"):
-        return True, "CLAUDE_CODE_OAUTH_TOKEN set"
+    """Parse `claude auth status` (JSON) with the subscription-only environment.
+
+    Blocks when the CLI is not logged in or would authenticate with an API key (which bills
+    outside the subscription). Unknown output counts as logged in so a CLI change never blocks sessions.
+    """
+    env = subscription_env()
+    if env.get("CLAUDE_CODE_OAUTH_TOKEN"):
+        return True, "CLAUDE_CODE_OAUTH_TOKEN set (subscription token)"
     try:
-        out = subprocess.run([_claude_cmd(settings), "auth", "status"], capture_output=True, text=True, timeout=30)
+        out = subprocess.run([_claude_cmd(settings), "auth", "status"], capture_output=True, text=True, timeout=30, env=env)
         data = json.loads((out.stdout or "").strip() or "{}")
     except Exception:  # noqa: BLE001
         return True, "auth status unavailable"
-    if isinstance(data, dict) and data.get("loggedIn") is False:
+    if not isinstance(data, dict):
+        return True, "logged in"
+    if data.get("loggedIn") is False:
         return False, "claude CLI is not logged in: run `claude` once and sign in, or set CLAUDE_CODE_OAUTH_TOKEN from `claude setup-token`"
-    return True, f"logged in ({data.get('authMethod', '?')})" if isinstance(data, dict) else "logged in"
+    method = str(data.get("authMethod") or "?")
+    if "api" in method.lower() or "key" in method.lower():
+        return False, f"claude CLI would authenticate with an API key ({method}); Sentinel only runs on the subscription login"
+    return True, f"logged in ({method})"
 
 
 def parse_cli_result(raw: str) -> dict[str, Any]:
@@ -221,7 +240,7 @@ def run_session(db: Database, settings: Settings, md: MarketData, status: dict[s
         "--allowedTools", "Read", "Glob", "Grep", "Bash(python -m sentinel backtest:*)", "Bash(cat:*)",
         "--no-session-persistence", "--disable-slash-commands",
     ]
-    env = {k: v for k, v in os.environ.items() if k not in ("ALPACA_API_KEY", "ALPACA_SECRET_KEY")}
+    env = subscription_env()
     env["SENTINEL_LAB_SESSION"] = "1"
     if settings.sim:
         env["SENTINEL_SIM"] = "1"  # Claude's backtests must hit the sim database, never the paper one
