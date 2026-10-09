@@ -34,6 +34,12 @@ export interface EngineState {
   uptime_s: number
   tick_count: number
   errors_1h: number
+  /**
+   * Sim mode only: the engine's virtual clock (ISO UTC). Every timestamp the backend emits
+   * (positions, events, equity, next runs, market open/close, research runs) is in this
+   * clock, which can be days behind the wall clock. Absent/null in paper and live modes.
+   */
+  sim_time?: string | null
 }
 
 export interface MarketState {
@@ -149,23 +155,29 @@ export interface TradeQuery {
 
 export interface VariantMetricsWindow {
   n: number
-  win_rate: number
-  expectancy_r: number
+  win_rate: number | null
+  expectancy_r: number | null
   pnl: number
 }
 
+/** Metrics on closed trades. Statistics are null until the variant has closed a trade (n = 0). */
 export interface VariantMetrics {
   n: number
-  win_rate: number
-  win_rate_ci: [number, number]
-  expectancy_r: number
-  expectancy_ci: [number, number]
-  profit_factor: number
-  sharpe: number
-  max_dd_pct: number
+  win_rate: number | null
+  win_rate_ci: [number, number] | null
+  expectancy_r: number | null
+  expectancy_ci: [number, number] | null
+  profit_factor: number | null
+  sharpe: number | null
+  max_dd_pct: number | null
   pnl: number
-  avg_hold_minutes: number
+  avg_hold_minutes: number | null
   last_30: VariantMetricsWindow
+}
+
+/** True when the metrics are backed by at least one closed trade. */
+export function hasTrades(m: VariantMetrics | null | undefined): m is VariantMetrics & { expectancy_r: number } {
+  return !!m && m.n > 0 && m.expectancy_r !== null && m.expectancy_r !== undefined
 }
 
 export type ParamValue = number | string | boolean | null

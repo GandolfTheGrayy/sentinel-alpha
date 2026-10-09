@@ -3,7 +3,7 @@ import { Activity, Bitcoin, Briefcase, Gauge, Landmark, Percent, TrendingUp, Wal
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { api } from '../api/client'
-import { useNow, usePoll } from '../api/hooks'
+import { usePoll } from '../api/hooks'
 import type { EquityPoint, EquityRange, PopulationState, VariantStatus } from '../api/types'
 import { ActivityFeed } from '../components/ActivityFeed'
 import { EquityChart, EquityLegend } from '../components/charts/EquityChart'
@@ -17,7 +17,7 @@ import { Skeleton } from '../components/ui/Skeleton'
 import { fmtFrac, fmtNum, fmtPct, fmtUsd, signClass } from '../lib/format'
 import { useTheme } from '../lib/theme'
 import { fmtCountdown, fmtRelative, fmtTime, fmtWeekday, nyClock } from '../lib/time'
-import { useApp } from '../state/AppContext'
+import { useApp, useClock } from '../state/AppContext'
 
 const RANGES: { value: EquityRange; label: string }[] = [
   { value: '1d', label: '1d' },
@@ -137,12 +137,19 @@ export function OverviewPage() {
 
 function MarketCard() {
   const { status } = useApp()
-  const now = useNow(1000)
+  const { now, isSim } = useClock(1000)
   const m = status?.market
   const open = m?.equities_open ?? false
   const sessionLabel = !m ? '' : m.session === 'regular' ? 'Regular session' : m.session === 'pre' ? 'Pre-market' : m.session === 'post' ? 'After hours' : 'Closed'
   return (
-    <Card title="Market" subtitle={<span>{nyClock(new Date(now))} <span className="text-faint">New York</span></span>}>
+    <Card
+      title="Market"
+      subtitle={
+        <span>
+          {nyClock(new Date(now))} <span className="text-faint">New York{isSim ? ' · simulated clock' : ''}</span>
+        </span>
+      }
+    >
       {!m ? (
         <div className="space-y-2">
           <Skeleton className="h-4 w-40" />

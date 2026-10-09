@@ -230,17 +230,15 @@ def cmd_doctor(args: argparse.Namespace) -> int:
         _log("alpaca     no keys in .env (ALPACA_API_KEY / ALPACA_SECRET_KEY) - only --sim will work")
         if not settings.sim:
             ok = False
-    from sentinel.learn.claude_lab import claude_available
+    from sentinel.learn.claude_lab import claude_available, claude_logged_in
 
     avail, msg = claude_available(settings)
     _log(f"claude     {'OK ' + msg if avail else 'MISSING: ' + msg}")
     if avail:
-        try:
-            out = subprocess.run([settings.claude.cli, "auth", "status"], capture_output=True, text=True, timeout=30)
-            txt = (out.stdout or out.stderr).strip().splitlines()
-            _log("           auth: " + (txt[0] if txt else "unknown") + ("  (run `claude` once and /login if it reports no session)" if out.returncode else ""))
-        except Exception as exc:  # noqa: BLE001
-            _log(f"           auth check failed: {exc}")
+        logged, amsg = claude_logged_in(settings)
+        _log(f"           auth: {'OK ' + amsg if logged else 'NOT LOGGED IN - ' + amsg}")
+        if not logged:
+            ok = False
     _log(f"claude     budget cap ${settings.claude.weekly_cap_usd:.2f}/week ({settings.claude.weekly_share:.0%} of est. ${settings.claude.weekly_allowance_usd:.0f} for plan {settings.claude.plan})")
     ui = ROOT / "ui" / "dist" / "index.html"
     _log(f"ui         {'built' if ui.exists() else 'not built (cd ui && npm install && npm run build)'}")

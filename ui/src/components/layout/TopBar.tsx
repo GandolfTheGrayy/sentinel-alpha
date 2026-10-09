@@ -3,12 +3,11 @@ import { Clock, Moon, Sun, Wifi, WifiOff } from 'lucide-react'
 import { useLocation } from 'react-router-dom'
 import type { ConnectionState } from '../../api/client'
 import type { EngineState, MarketState, Mode } from '../../api/types'
-import { useNow } from '../../api/hooks'
 import { fmtUsd } from '../../lib/format'
 import { navFor } from '../../lib/nav'
 import { useTheme } from '../../lib/theme'
 import { fmtCountdown, nyClock } from '../../lib/time'
-import { useApp } from '../../state/AppContext'
+import { useApp, useClock } from '../../state/AppContext'
 import { Badge, Dot, type Tone } from '../ui/Badge'
 import { IconButton } from '../ui/Button'
 import { MiniRing } from '../ui/Gauge'
@@ -69,7 +68,7 @@ function EnginePill({ engine }: { engine: EngineState }) {
 }
 
 function MarketPill({ market }: { market: MarketState }) {
-  const now = useNow(1000)
+  const { now, isSim } = useClock(1000)
   const open = market.equities_open
   const label = market.session === 'regular' ? 'open' : market.session
   const countdown = open ? `closes ${fmtCountdown(market.next_close, now)}` : `opens ${fmtCountdown(market.next_open, now)}`
@@ -78,7 +77,7 @@ function MarketPill({ market }: { market: MarketState }) {
       className={clsx(
         'inline-flex items-center gap-2 rounded-md border border-border bg-panel-2 h-7 px-2 text-[11.5px] whitespace-nowrap shrink-0',
       )}
-      title={`US equities ${label} · ${countdown} · crypto 24/7`}
+      title={`US equities ${label} · ${countdown} · crypto 24/7${isSim ? ' · engine runs on a simulated clock; all times are sim time' : ''}`}
     >
       <Dot tone={open ? 'profit' : market.session === 'closed' ? 'dim' : 'warn'} pulse={open} />
       <span className="hidden xl:inline text-muted">NYSE {label}</span>
@@ -88,6 +87,11 @@ function MarketPill({ market }: { market: MarketState }) {
         {nyClock(new Date(now))}
         <span className="text-faint font-normal">ET</span>
       </span>
+      {isSim && (
+        <Badge tone="info" size="xs" className="uppercase tracking-wide" title="Simulated clock: the engine's virtual time, advanced locally between ticks">
+          sim clock
+        </Badge>
+      )}
     </div>
   )
 }

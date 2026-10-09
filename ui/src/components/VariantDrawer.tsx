@@ -3,8 +3,8 @@ import { Archive, Pause, Play } from 'lucide-react'
 import { useEffect, useMemo } from 'react'
 import { api } from '../api/client'
 import { useAction, usePoll } from '../api/hooks'
-import type { Trade, VariantDetail, VariantStatusChange } from '../api/types'
-import { fmtDuration, fmtFrac, fmtNum, fmtPct, fmtR, fmtUsd, fmtX, signClass } from '../lib/format'
+import { hasTrades, type Trade, type VariantDetail, type VariantStatusChange } from '../api/types'
+import { DASH, fmtDuration, fmtFrac, fmtNum, fmtPct, fmtR, fmtUsd, fmtX, signClass } from '../lib/format'
 import { fmtDate, fmtDateTime } from '../lib/time'
 import { PnlCurve } from './charts/PnlCurve'
 import { Badge, OriginBadge, StatusBadge, exitReasonTone } from './ui/Badge'
@@ -143,8 +143,22 @@ export function VariantDrawer({ id, onClose, onChanged }: VariantDrawerProps) {
             <section>
               <SectionTitle className="mb-2">Metrics (closed trades)</SectionTitle>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                <Stat label="Expectancy" value={fmtR(m.expectancy_r)} cls={signClass(m.expectancy_r)} sub={`CI ${fmtR(m.expectancy_ci[0])} … ${fmtR(m.expectancy_ci[1])}`} />
-                <Stat label="Win rate" value={fmtFrac(m.win_rate)} sub={`CI ${fmtFrac(m.win_rate_ci[0])} … ${fmtFrac(m.win_rate_ci[1])}`} />
+                {hasTrades(m) ? (
+                  <>
+                    <Stat
+                      label="Expectancy"
+                      value={fmtR(m.expectancy_r)}
+                      cls={signClass(m.expectancy_r)}
+                      sub={m.expectancy_ci ? `CI ${fmtR(m.expectancy_ci[0])} … ${fmtR(m.expectancy_ci[1])}` : undefined}
+                    />
+                    <Stat label="Win rate" value={fmtFrac(m.win_rate)} sub={m.win_rate_ci ? `CI ${fmtFrac(m.win_rate_ci[0])} … ${fmtFrac(m.win_rate_ci[1])}` : undefined} />
+                  </>
+                ) : (
+                  <>
+                    <Stat label="Expectancy" value={DASH} cls="text-muted" sub="no trades yet" />
+                    <Stat label="Win rate" value={DASH} cls="text-muted" sub="no trades yet" />
+                  </>
+                )}
                 <Stat label="P&L" value={fmtUsd(m.pnl, { sign: true })} cls={signClass(m.pnl)} sub={`${fmtNum(m.n)} trades`} />
                 <Stat label="Allocation" value={fmtFrac(v.allocation, { digits: 1 })} sub={`${v.open_positions} open`} />
               </div>
@@ -157,10 +171,10 @@ export function VariantDrawer({ id, onClose, onChanged }: VariantDrawerProps) {
                   { k: 'Sharpe', v: fmtNum(m.sharpe, 2) },
                   { k: 'Max drawdown', v: <span className="text-loss">{fmtPct(m.max_dd_pct)}</span> },
                   { k: 'Avg hold', v: fmtDuration(m.avg_hold_minutes) },
-                  { k: 'Last 30: expectancy', v: <span className={signClass(m.last_30.expectancy_r)}>{fmtR(m.last_30.expectancy_r)}</span> },
-                  { k: 'Last 30: win rate', v: fmtFrac(m.last_30.win_rate) },
-                  { k: 'Last 30: P&L', v: <span className={signClass(m.last_30.pnl)}>{fmtUsd(m.last_30.pnl, { sign: true })}</span> },
-                  { k: 'Last 30: n', v: fmtNum(m.last_30.n) },
+                  { k: 'Last 30: expectancy', v: <span className={signClass(m.last_30?.expectancy_r)}>{fmtR(m.last_30?.expectancy_r)}</span> },
+                  { k: 'Last 30: win rate', v: fmtFrac(m.last_30?.win_rate) },
+                  { k: 'Last 30: P&L', v: <span className={signClass(m.last_30?.pnl)}>{fmtUsd(m.last_30?.pnl, { sign: true })}</span> },
+                  { k: 'Last 30: n', v: fmtNum(m.last_30?.n) },
                 ]}
               />
             </section>

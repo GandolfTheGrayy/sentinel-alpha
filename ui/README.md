@@ -30,6 +30,15 @@ src/
   pages/      Overview, Tournament, Trades, Factors, Research, Settings
 ```
 
+## Clock
+
+`src/lib/clock.ts` is the single time source. In sim mode the backend reports `engine.sim_time`
+on every status; `AppContext` forwards it and `nowMs()` returns that virtual instant advanced by
+the real time elapsed since the tick. `fmtRelative`, `fmtCountdown`, `useNow` and `useClock()`
+all read it, so ages, "x ago", countdowns and the top-bar ET clock follow the engine's clock
+(a "SIM CLOCK" hint appears next to the clock). In paper/live mode it is the wall clock.
+To demo it against the mock, open the app with `?sim=1` (or set `VITE_MOCK_SIM=1`).
+
 ## Theme
 
 Tokens live in `src/index.css` under `:root` (light) and `.dark`, exposed to Tailwind v4 through

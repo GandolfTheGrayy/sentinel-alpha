@@ -60,7 +60,7 @@ class Engine:
                 raise RuntimeError("ALPACA_API_KEY / ALPACA_SECRET_KEY missing (put them in .env) or run with --sim")
             from sentinel.data.alpaca_data import AlpacaProvider
 
-            self.provider = AlpacaProvider(key, secret, feed=settings.data.feed)
+            self.provider = AlpacaProvider(key, secret, feed=settings.data.feed, extended_hours=settings.risk.extended_hours)
             self.broker = AlpacaBroker(key, secret, paper=(settings.broker.mode != "live"))
             self.broker.register_crypto(settings.universe.crypto)
         self.md = MarketData(db, self.provider, settings.universe.equities, settings.universe.crypto, feed=settings.data.feed)
@@ -149,7 +149,29 @@ class Engine:
         self.md.load_from_db(self.s.data.backfill_days_minute, self.s.data.backfill_days_daily, now=now)
         self.md.backfill(self.s.data.backfill_days_minute, self.s.data.backfill_days_daily, now=now, log=self.log)
         self.md.last_poll_ts = int(now.timestamp())
+        if not self.sim:
+            self.reconcile()
         self.db.add_event("system", f"engine started ({self.s.mode}); {len(self.trader.tradable_variants())} tradable variants", "info", ts=to_iso(now))
+
+    def reconcile(self) -> None:
+        """Compare the ledger's lots with the broker's net positions and warn about any drift (never auto-fixes)."""
+        try:
+            broker_pos = self.broker.positions()
+        except Exception as exc:  # noqa: BLE001
+            self.db.add_event("system", f"reconcile skipped: broker positions unavailable ({exc})", "warn", ts=to_iso(self.now()))
+            return
+        ledger_pos: dict[str, float] = {}
+        for lot in self.ledger.lots.values():
+            ledger_pos[lot["symbol"]] = ledger_pos.get(lot["symbol"], 0.0) + float(lot["qty"]) * (1.0 if lot["side"] == "long" else -1.0)
+        drift = []
+        for sym in set(broker_pos) | set(ledger_pos):
+            b, l = broker_pos.get(sym, 0.0), ledger_pos.get(sym, 0.0)
+            if abs(b - l) > max(1e-6, abs(b) * 0.001):
+                drift.append(f"{sym}: broker {b:g} vs ledger {l:g}")
+        if drift:
+            self.db.add_event("risk", "position drift between broker and ledger: " + "; ".join(drift[:10]), "warn", {"drift": drift}, ts=to_iso(self.now()))
+        else:
+            self.db.add_event("system", f"reconciled {len(ledger_pos)} ledger symbols with the broker", "info", ts=to_iso(self.now()))
 
     async def run(self) -> None:
         self.running = True

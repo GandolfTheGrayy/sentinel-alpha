@@ -1,6 +1,8 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { api, probeBackend, useApiMode, useSSE, type ConnectionState, type MockReason } from '../api/client'
+import { useNow } from '../api/hooks'
 import type { EquityPoint, EventRow, StatusResponse } from '../api/types'
+import { nowMs, setSimTime } from '../lib/clock'
 
 interface AppState {
   status: StatusResponse | null
@@ -17,6 +19,10 @@ interface AppState {
   /** Increments whenever a tournament/research/system event arrives (pages may refetch). */
   changeTick: number
   refreshStatus: () => Promise<void>
+  /** True while the engine reports a simulated clock (`engine.sim_time`). */
+  simClock: boolean
+  /** The app clock in ms: simulated time (advanced locally between ticks) in sim mode, else the wall clock. */
+  nowMs: () => number
 }
 
 const AppContext = createContext<AppState | null>(null)
@@ -34,21 +40,22 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [changeTick, setChangeTick] = useState(0)
   const probed = useRef(false)
 
+  /** Every status (probe, stream tick, poll) goes through here so the clock source stays in sync. */
+  const applyStatus = useCallback((s: StatusResponse) => {
+    setSimTime(s.engine?.sim_time ?? null)
+    setStatus(s)
+    setStatusError(null)
+  }, [])
+
   // First contact: probe /api/status; fall back to the mock on failure.
   useEffect(() => {
     if (probed.current) return
     probed.current = true
-    void probeBackend().then(({ status: s }) => {
-      setStatus(s)
-      setStatusError(null)
-    })
-  }, [])
+    void probeBackend().then(({ status: s }) => applyStatus(s))
+  }, [applyStatus])
 
   const connection = useSSE({
-    tick: (s) => {
-      setStatus(s)
-      setStatusError(null)
-    },
+    tick: applyStatus,
     event: (e) => {
       setLiveEvents((prev) => {
         if (prev.some((x) => x.id === e.id)) return prev
@@ -69,13 +76,11 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   const refreshStatus = useCallback(async () => {
     try {
-      const s = await api.getStatus()
-      setStatus(s)
-      setStatusError(null)
+      applyStatus(await api.getStatus())
     } catch (e) {
       setStatusError(e instanceof Error ? e : new Error(String(e)))
     }
-  }, [])
+  }, [applyStatus])
 
   // Polling fallback: every 5 s whenever the stream is not delivering ticks.
   useEffect(() => {
@@ -86,6 +91,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
     }, 5000)
     return () => clearInterval(id)
   }, [connection, refreshStatus])
+
+  const simClock = status?.engine?.sim_time != null
 
   const value = useMemo<AppState>(
     () => ({
@@ -100,8 +107,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
       liveEquity,
       changeTick,
       refreshStatus,
+      simClock,
+      nowMs,
     }),
-    [status, statusError, connection, mode, reason, bannerDismissed, liveEvents, liveEquity, changeTick, refreshStatus],
+    [status, statusError, connection, mode, reason, bannerDismissed, liveEvents, liveEquity, changeTick, refreshStatus, simClock],
   )
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>
@@ -116,3 +125,15 @@ export function useApp(): AppState {
 export function useStatus(): StatusResponse | null {
   return useApp().status
 }
+
+/**
+ * Ticking app clock for live displays (ET clock, countdowns). Re-renders every `intervalMs`.
+ * `now` is simulated time in sim mode (see lib/clock.ts), otherwise the wall clock.
+ */
+export function useClock(intervalMs = 1000): { now: number; isSim: boolean } {
+  const { simClock } = useApp()
+  const now = useNow(intervalMs)
+  return { now, isSim: simClock }
+}
+
+export { nowMs }

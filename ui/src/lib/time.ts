@@ -1,4 +1,5 @@
 /** Time helpers. All market-facing displays use America/New_York. */
+import { nowMs } from './clock'
 
 export const NY_TZ = 'America/New_York'
 
@@ -118,8 +119,11 @@ export function fmtWeekday(iso: string | null | undefined): string {
   return weekdayFmt.format(d)
 }
 
-/** "just now", "4m ago", "2h ago", "3d ago" — or "in 4m" for future instants. */
-export function fmtRelative(iso: string | null | undefined, now: number = Date.now()): string {
+/**
+ * "just now", "4m ago", "2h ago", "3d ago" — or "in 4m" for future instants.
+ * `now` defaults to the app clock (simulated when the engine runs in sim mode).
+ */
+export function fmtRelative(iso: string | null | undefined, now: number = nowMs()): string {
   const d = parseTs(iso)
   if (!d) return '—'
   const diff = d.getTime() - now
@@ -134,8 +138,8 @@ export function fmtRelative(iso: string | null | undefined, now: number = Date.n
   return future ? `in ${s}` : `${s} ago`
 }
 
-/** Countdown to an instant: "2h 14m 05s" / "03m 12s". */
-export function fmtCountdown(iso: string | null | undefined, now: number = Date.now()): string {
+/** Countdown to an instant: "2h 14m 05s" / "03m 12s". `now` defaults to the app clock. */
+export function fmtCountdown(iso: string | null | undefined, now: number = nowMs()): string {
   const d = parseTs(iso)
   if (!d) return '—'
   const diff = Math.max(0, d.getTime() - now)

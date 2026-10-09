@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { nowMs } from '../lib/clock'
 import { useApiMode } from './client'
 
 export interface PollState<T> {
@@ -106,11 +107,12 @@ export function useAction<A extends unknown[], R>(fn: (...args: A) => Promise<R>
   return { run, pending, error, result, reset }
 }
 
-/** Re-render on an interval (for clocks and countdowns). Returns Date.now(). */
+/** Re-render on an interval (for clocks and countdowns). Returns the app clock (`nowMs()`), which is the simulated time in sim mode. */
 export function useNow(intervalMs = 1000): number {
-  const [now, setNow] = useState(() => Date.now())
+  const [now, setNow] = useState(() => nowMs())
   useEffect(() => {
-    const id = setInterval(() => setNow(Date.now()), intervalMs)
+    setNow(nowMs())
+    const id = setInterval(() => setNow(nowMs()), intervalMs)
     return () => clearInterval(id)
   }, [intervalMs])
   return now

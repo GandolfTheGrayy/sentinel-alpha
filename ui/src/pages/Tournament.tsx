@@ -3,7 +3,7 @@ import { Trophy } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { api } from '../api/client'
 import { usePoll } from '../api/hooks'
-import { VARIANT_STATUSES, type Variant, type VariantStatus } from '../api/types'
+import { VARIANT_STATUSES, hasTrades, type Variant, type VariantStatus } from '../api/types'
 import { Badge, OriginBadge, StatusBadge } from '../components/ui/Badge'
 import { Card } from '../components/ui/Card'
 import { Chips } from '../components/ui/Chips'
@@ -12,7 +12,7 @@ import { ErrorState } from '../components/ui/EmptyState'
 import { Meter } from '../components/ui/Gauge'
 import { Sparkline } from '../components/ui/Sparkline'
 import { VariantDrawer } from '../components/VariantDrawer'
-import { fmtFrac, fmtNum, fmtPct, fmtR, fmtUsd, fmtX, signClass } from '../lib/format'
+import { DASH, fmtFrac, fmtNum, fmtPct, fmtR, fmtUsd, fmtX, signClass } from '../lib/format'
 import { useApp } from '../state/AppContext'
 
 export function TournamentPage() {
@@ -90,28 +90,41 @@ export function TournamentPage() {
         key: 'exp',
         header: 'Exp R',
         align: 'right',
-        render: (v) => (
-          <div>
-            <div className={clsx('font-semibold', signClass(v.metrics.expectancy_r))}>{fmtR(v.metrics.expectancy_r)}</div>
-            <div className="text-[10px] text-faint">
-              {fmtR(v.metrics.expectancy_ci[0], 2)} … {fmtR(v.metrics.expectancy_ci[1], 2)}
+        render: (v) =>
+          hasTrades(v.metrics) ? (
+            <div>
+              <div className={clsx('font-semibold', signClass(v.metrics.expectancy_r))}>{fmtR(v.metrics.expectancy_r)}</div>
+              {v.metrics.expectancy_ci && (
+                <div className="text-[10px] text-faint">
+                  {fmtR(v.metrics.expectancy_ci[0], 2)} … {fmtR(v.metrics.expectancy_ci[1], 2)}
+                </div>
+              )}
             </div>
-          </div>
-        ),
+          ) : (
+            <div>
+              <div className="text-muted">{DASH}</div>
+              <div className="text-[10px] text-faint">no trades yet</div>
+            </div>
+          ),
         sortValue: (v) => v.metrics.expectancy_r,
       },
       {
         key: 'win',
         header: 'Win rate',
         align: 'right',
-        render: (v) => (
-          <div>
-            <div className="text-text">{fmtFrac(v.metrics.win_rate)}</div>
-            <div className="text-[10px] text-faint">
-              {fmtFrac(v.metrics.win_rate_ci[0])} … {fmtFrac(v.metrics.win_rate_ci[1])}
+        render: (v) =>
+          hasTrades(v.metrics) ? (
+            <div>
+              <div className="text-text">{fmtFrac(v.metrics.win_rate)}</div>
+              {v.metrics.win_rate_ci && (
+                <div className="text-[10px] text-faint">
+                  {fmtFrac(v.metrics.win_rate_ci[0])} … {fmtFrac(v.metrics.win_rate_ci[1])}
+                </div>
+              )}
             </div>
-          </div>
-        ),
+          ) : (
+            <span className="text-muted">{DASH}</span>
+          ),
         sortValue: (v) => v.metrics.win_rate,
         hideBelow: 'xl',
       },

@@ -97,7 +97,17 @@ const MIN = 60_000
 const HISTORY_DAYS = 45
 const STARTING_EQUITY = 100_000
 
-const NOW = Date.now()
+/**
+ * Simulated-clock demo: `VITE_MOCK_SIM=1` or `?sim=1` makes the mock behave like the backend's
+ * sim mode — the virtual clock runs days behind the wall clock, every timestamp is emitted in
+ * that clock and `/api/status` carries `engine.sim_time`.
+ */
+const SIM = import.meta.env.VITE_MOCK_SIM === '1' || (typeof location !== 'undefined' && new URLSearchParams(location.search).get('sim') === '1')
+const CLOCK_OFFSET = SIM ? -(6 * DAY + 14 * HOUR + 8 * MIN) : 0
+/** The mock's "now": the wall clock, or the virtual clock in sim mode. */
+const mockNow = () => Date.now() + CLOCK_OFFSET
+
+const NOW = mockNow()
 const START = NOW - HISTORY_DAYS * DAY
 
 const iso = (ms: number) => new Date(ms).toISOString()
@@ -281,6 +291,8 @@ interface VariantSeed {
   tf: string
   paramOverride?: Record<string, ParamValue>
   markets?: Market[]
+  /** Freshly spawned: no closed trades yet (exercises the empty-metrics state). */
+  noTrades?: boolean
 }
 
 const VARIANT_SEEDS: VariantSeed[] = [
@@ -297,7 +309,7 @@ const VARIANT_SEEDS: VariantSeed[] = [
   { id: 'vwap_revert#1', family: 'vwap_revert', status: 'active', origin: 'seed', parent: null, ageDays: 45, allocation: 0.07, edge: 0.1, tf: '5m' },
   { id: 'vwap_revert#2', family: 'vwap_revert', status: 'incubating', origin: 'claude', parent: 'vwap_revert#1', ageDays: 4, allocation: 0.02, edge: 0.3, tf: '5m', paramOverride: { stretch_pct: 1.1 } },
   { id: 'squeeze#1', family: 'squeeze', status: 'paused', origin: 'seed', parent: null, ageDays: 45, allocation: 0, edge: 0.0, tf: '15m' },
-  { id: 'squeeze#3', family: 'squeeze', status: 'incubating', origin: 'optimizer', parent: 'squeeze#1', ageDays: 5, allocation: 0.02, edge: 0.1, tf: '1h', paramOverride: { kc_mult: 1.2 } },
+  { id: 'squeeze#3', family: 'squeeze', status: 'incubating', origin: 'optimizer', parent: 'squeeze#1', ageDays: 0.2, allocation: 0.02, edge: 0.1, tf: '1h', paramOverride: { kc_mult: 1.2 }, noTrades: true },
   { id: 'xs_momentum#1', family: 'xs_momentum', status: 'active', origin: 'seed', parent: null, ageDays: 45, allocation: 0.09, edge: 0.2, tf: '1d' },
   { id: 'overnight#1', family: 'overnight', status: 'retired', origin: 'seed', parent: null, ageDays: 45, allocation: 0, edge: -0.25, tf: '1d' },
   { id: 'crypto_mtf#1', family: 'crypto_mtf', status: 'active', origin: 'seed', parent: null, ageDays: 45, allocation: 0.1, edge: 0.14, tf: '15m' },
@@ -427,7 +439,7 @@ function genTrades(rng: Rng, runtimes: VariantRuntime[]): Trade[] {
   let nextId = 1
   for (const rt of runtimes) {
     const { seed, spec } = rt
-    const n = tradeCount(seed.status, rng)
+    const n = seed.noTrades ? 0 : tradeCount(seed.status, rng)
     const from = Math.max(rt.createdAt + HOUR, START)
     const endAt = seed.status === 'retired' ? NOW - 4 * DAY : seed.status === 'paused' ? NOW - 2 * DAY : NOW - 3 * HOUR
     const isTrend = ['trend_ema', 'breakout_donchian', 'squeeze', 'crypto_mtf'].includes(spec.family)
@@ -556,6 +568,21 @@ function expectancyCi(rs: number[]): [number, number] {
 function computeMetrics(trades: Trade[], sleeve: number): VariantMetrics {
   const rs = trades.map((t) => t.pnl_r)
   const n = trades.length
+  if (n === 0) {
+    return {
+      n: 0,
+      win_rate: null,
+      win_rate_ci: null,
+      expectancy_r: null,
+      expectancy_ci: null,
+      profit_factor: null,
+      sharpe: null,
+      max_dd_pct: null,
+      pnl: 0,
+      avg_hold_minutes: null,
+      last_30: { n: 0, win_rate: null, expectancy_r: null, pnl: 0 },
+    }
+  }
   const wins = trades.filter((t) => t.pnl > 0)
   const grossWin = wins.reduce((a, t) => a + t.pnl, 0)
   const grossLoss = Math.abs(trades.filter((t) => t.pnl <= 0).reduce((a, t) => a + t.pnl, 0))
@@ -1387,7 +1414,7 @@ function equityAt(points: EquityPoint[], ms: number): number {
 }
 
 function buildStatus(w: World): StatusResponse {
-  const now = Date.now()
+  const now = mockNow()
   const equity = round(w.equityNow + w.positions.reduce((a, p) => a + p.unrealized_pnl, 0), 2)
   const p = nyParts(new Date(now))
   const dayStart = nyWallToInstant(new Date(now), 0, 0, 0).getTime()
@@ -1410,8 +1437,8 @@ function buildStatus(w: World): StatusResponse {
     return t.getTime() > now ? t : nyWallToInstant(new Date(now), daysToSunday + 7, 10, 0)
   })()
   return {
-    mode: 'paper',
-    engine: { ...w.engine },
+    mode: SIM ? 'sim' : 'paper',
+    engine: { ...w.engine, sim_time: SIM ? iso(now) : null },
     market,
     account: {
       equity,
@@ -1463,7 +1490,7 @@ function pickSym() {
 
 function emitEvent(level: EventLevel, kind: EventKind, message: string, data: Record<string, unknown> = {}) {
   const w = W()
-  const row: EventRow = { id: w.nextEventId++, ts: iso(Date.now()), level, kind, message, data }
+  const row: EventRow = { id: w.nextEventId++, ts: iso(mockNow()), level, kind, message, data }
   w.events.push(row)
   if (w.events.length > 600) w.events.splice(0, w.events.length - 600)
   for (const s of subscribers) s.event?.(row)
@@ -1472,7 +1499,7 @@ function emitEvent(level: EventLevel, kind: EventKind, message: string, data: Re
 function liveTick() {
   const w = W()
   tickN++
-  const now = Date.now()
+  const now = mockNow()
   if (w.engine.running && !w.engine.halted) {
     w.engine.last_tick = iso(now)
     w.engine.uptime_s += 2
@@ -1553,7 +1580,7 @@ export const mockClient: ApiClient = {
 
   getEquity: (range: EquityRange, variant?: string) => {
     const w = W()
-    const now = Date.now()
+    const now = mockNow()
     if (variant) {
       const vt = w.trades.filter((t) => t.variant_id === variant)
       const v = w.variants.find((x) => x.id === variant)
@@ -1736,7 +1763,7 @@ export const mockClient: ApiClient = {
       id,
       kind,
       model: kind === 'analyst' ? 'sonnet' : 'opus',
-      started_at: iso(Date.now()),
+      started_at: iso(mockNow()),
       finished_at: null,
       status: 'running',
       cost_usd: 0,
@@ -1756,7 +1783,7 @@ export const mockClient: ApiClient = {
     emitEvent('info', 'research', `${kind} session #${id} started on demand (${run.model})`)
     setTimeout(() => {
       run.status = 'ok'
-      run.finished_at = iso(Date.now())
+      run.finished_at = iso(mockNow())
       run.cost_usd = round(estCost * w.rng.range(0.7, 1.1), 2)
       run.input_tokens = w.rng.int(40_000, 120_000)
       run.output_tokens = w.rng.int(1_500, 6_000)
@@ -1789,7 +1816,7 @@ export const mockClient: ApiClient = {
       c = o * (1 + w.rng.normal(0.0001, 0.004))
       const h = Math.max(o, c) * (1 + Math.abs(w.rng.normal(0, 0.002)))
       const l = Math.min(o, c) * (1 - Math.abs(w.rng.normal(0, 0.002)))
-      bars.push({ t: iso(Date.now() - i * 15 * MIN), o: round(o), h: round(h), l: round(l), c: round(c), v: w.rng.int(1000, 90000) })
+      bars.push({ t: iso(mockNow() - i * 15 * MIN), o: round(o), h: round(h), l: round(l), c: round(c), v: w.rng.int(1000, 90000) })
     }
     return latency(bars)
   },

@@ -111,6 +111,20 @@ def claude_available(settings: Settings) -> tuple[bool, str]:
         return False, f"claude --version failed: {exc}"
 
 
+def claude_logged_in(settings: Settings) -> tuple[bool, str]:
+    """Parse `claude auth status` (JSON). Unknown output counts as logged in so a CLI change never blocks sessions."""
+    if os.environ.get("CLAUDE_CODE_OAUTH_TOKEN"):
+        return True, "CLAUDE_CODE_OAUTH_TOKEN set"
+    try:
+        out = subprocess.run([_claude_cmd(settings), "auth", "status"], capture_output=True, text=True, timeout=30)
+        data = json.loads((out.stdout or "").strip() or "{}")
+    except Exception:  # noqa: BLE001
+        return True, "auth status unavailable"
+    if isinstance(data, dict) and data.get("loggedIn") is False:
+        return False, "claude CLI is not logged in: run `claude` once and sign in, or set CLAUDE_CODE_OAUTH_TOKEN from `claude setup-token`"
+    return True, f"logged in ({data.get('authMethod', '?')})" if isinstance(data, dict) else "logged in"
+
+
 def parse_cli_result(raw: str) -> dict[str, Any]:
     """The last JSON object printed by `claude -p --output-format json`."""
     raw = raw.strip()
@@ -163,6 +177,10 @@ def run_session(db: Database, settings: Settings, md: MarketData, status: dict[s
     if ok:
         avail, msg = claude_available(settings)
         if not avail:
+            ok, reason = False, msg
+    if ok:
+        logged, msg = claude_logged_in(settings)
+        if not logged:
             ok, reason = False, msg
     if ok and not manual:
         # back off after an authentication failure instead of retrying every schedule slot
