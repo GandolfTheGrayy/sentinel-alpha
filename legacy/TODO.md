@@ -70,6 +70,12 @@
 
 ## Completed (AI scaffolding — `_generated/` only, not production)
 
+### 2026-10-09
+- [x] A modular yfinance-based live price fetcher that stores OHLCV data in SQLite wit
+- [x] A confidence score weighting system that combines RAG similarity scores with rec
+- [x] A GitHub repository health signal collector measuring stars, commit velocity (co
+- [x] A pytest unit test module for the Scout price fetcher — mocks yfinance responses
+
 ### 2026-10-08
 - [x] A GitHub repository health signal collector measuring stars, commit velocity (co
 
