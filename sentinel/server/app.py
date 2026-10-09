@@ -34,6 +34,7 @@ class DecisionBody(BaseModel):
 
 class CalibrateBody(BaseModel):
     observed_weekly_pct: float
+    window_hours: float | None = None   # default: the last 7 days
 
 
 class ResearchBody(BaseModel):
@@ -228,8 +229,8 @@ def create_app(engine: Engine, db: Database, settings: Settings, jobs: JobRunner
 
     @app.post("/api/budget/calibrate")
     def calibrate(body: CalibrateBody) -> dict[str, Any]:
-        res = jobs.gov.calibrate(body.observed_weekly_pct, engine.now())
-        engine.record_event("research", f"budget calibrated: {body.observed_weekly_pct}% observed -> allowance ${res.get('allowance_usd', 0)}", "info", res)
+        res = jobs.gov.calibrate(body.observed_weekly_pct, engine.now(), window_hours=body.window_hours or 168.0)
+        engine.record_event("research", f"budget calibrated: {body.observed_weekly_pct}% observed over {body.window_hours or 168:g} h -> allowance ${res.get('allowance_usd', 0)}", "info", res)
         return {**res, "budget": budget()}
 
     @app.get("/api/events")

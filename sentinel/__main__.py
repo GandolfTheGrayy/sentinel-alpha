@@ -197,6 +197,23 @@ def cmd_jobs(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_calibrate(args: argparse.Namespace) -> int:
+    from sentinel.learn.budget import BudgetGovernor
+    from sentinel.store.db import Database
+
+    settings = load_settings(args.config, sim=args.sim)
+    db = Database(settings.db_path)
+    gov = BudgetGovernor(db, settings)
+    res = gov.calibrate(args.observed_pct, window_hours=args.hours)
+    if not res.get("ok"):
+        _log(f"not calibrated: {res.get('reason')}")
+        return 1
+    st = gov.status()
+    _log(f"Sentinel spent ${res['spent_usd_at_calibration']:.2f} over {res['runs']} runs in the last {res['window_hours']:g} h = {args.observed_pct}% of the weekly allowance")
+    _log(f"estimated weekly allowance ${res['allowance_usd']:.2f} -> weekly cap ${st['weekly_cap_usd']:.2f} ({settings.claude.weekly_share:.0%}); spent this week ${st['spent_usd']:.2f}")
+    return 0
+
+
 def cmd_seed(args: argparse.Namespace) -> int:
     import sentinel.strategies  # noqa: F401
     from sentinel.engine.population import seed_population
@@ -292,6 +309,10 @@ def main(argv: list[str] | None = None) -> int:
         j.set_defaults(fn=cmd_jobs)
     s = sub.add_parser("seed", help="create the seed population")
     s.set_defaults(fn=cmd_seed)
+    c = sub.add_parser("calibrate", help="rescale the plan-allowance estimate from an observed /usage change")
+    c.add_argument("--observed-pct", type=float, required=True, help="percentage points of the weekly limit that Sentinel used in the window")
+    c.add_argument("--hours", type=float, default=168.0, help="length of the observation window in hours (default 168 = one week)")
+    c.set_defaults(fn=cmd_calibrate)
     d = sub.add_parser("doctor", help="check keys, Claude CLI, UI build and database")
     d.set_defaults(fn=cmd_doctor)
     u = sub.add_parser("ui-build", help="npm install + build the dashboard")

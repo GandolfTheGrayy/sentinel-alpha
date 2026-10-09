@@ -71,10 +71,18 @@ for the answer. Reported costs are summed over a rolling 7 days and compared wit
 default `max5`). Sessions that would exceed the cap are skipped; the deterministic loop
 keeps learning regardless.
 
-The plan allowance is an estimate in API-equivalent dollars. After the first week, open
-Claude Code, run `/usage`, estimate the share of the weekly limit that Sentinel's sessions
-consumed, and enter it on the Settings page (or `POST /api/budget/calibrate`). The cap
-re-scales to match.
+The plan allowance is an estimate in API-equivalent dollars. To calibrate it, pick a
+window in which you do not use Claude Code yourself (one quiet day is enough): note the
+weekly percentage shown by `/usage` at the start and at the end, then tell Sentinel how
+many points its sessions moved it:
+
+```bash
+python -m sentinel calibrate --observed-pct 1.8 --hours 24
+```
+
+The same thing is available on the Settings page (7-day window) and as
+`POST /api/budget/calibrate`. The cap re-scales to match; the Research page shows every
+session's dollar cost so you can sanity-check the estimate.
 
 Claude needs a login on the machine that runs Sentinel: run `claude` once and sign in, or
 create a long-lived token with `claude setup-token` and put it in `.env` as

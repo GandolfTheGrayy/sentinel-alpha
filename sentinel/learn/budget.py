@@ -42,14 +42,25 @@ class BudgetGovernor:
             return False, f"budget: ${spent:.2f} spent + ${session_budget:.2f} session > ${cap:.2f} weekly cap"
         return True, "ok"
 
-    def calibrate(self, observed_weekly_pct: float, now: datetime | None = None) -> dict[str, Any]:
-        """The user reports that Sentinel's runs over the last 7 days used X % of the weekly allowance."""
-        spent, _ = self.spent(now)
+    def spent_since(self, hours: float, now: datetime | None = None) -> tuple[float, int]:
+        now = now or datetime.now(UTC)
+        return self.db.weekly_claude_spend(to_iso(now - timedelta(hours=hours)))
+
+    def calibrate(self, observed_weekly_pct: float, now: datetime | None = None, window_hours: float = 168.0) -> dict[str, Any]:
+        """The user observed that Sentinel's runs in the last `window_hours` moved Claude Code's weekly usage by X points.
+
+        allowance = spend in the window / (X / 100). Measuring over one quiet day (no personal Claude Code use) is as
+        valid as a whole week and much easier to attribute.
+        """
+        now = now or datetime.now(UTC)
+        window_hours = max(1.0, min(float(window_hours or 168.0), 168.0))
+        spent, runs = self.spent_since(window_hours, now)
         if observed_weekly_pct <= 0 or spent <= 0:
             self.db.kv_set("budget_calibration", None)
-            return {"ok": False, "reason": "need a positive observed percentage and some recorded spend"}
+            return {"ok": False, "reason": f"need a positive observed percentage and some recorded spend in the last {window_hours:g} h (found ${spent:.2f} over {runs} runs)"}
         allowance = spent / (observed_weekly_pct / 100.0)
-        cal = {"observed_pct": observed_weekly_pct, "spent_usd_at_calibration": round(spent, 2), "allowance_usd": round(allowance, 2), "at": to_iso(now or datetime.now(UTC))}
+        cal = {"observed_pct": observed_weekly_pct, "window_hours": window_hours, "spent_usd_at_calibration": round(spent, 2), "runs": runs,
+               "allowance_usd": round(allowance, 2), "at": to_iso(now)}
         self.db.kv_set("budget_calibration", cal)
         return {"ok": True, **cal}
 
