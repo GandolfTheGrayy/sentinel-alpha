@@ -27,3 +27,6 @@ Thumbs.db
 
 # run logs
 logs*.txt
+
+# simulation lab artifacts (real lab/memory.md stays tracked; lab/runs is ignored above)
+lab-sim/
