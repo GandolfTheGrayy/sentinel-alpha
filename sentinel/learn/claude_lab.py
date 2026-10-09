@@ -188,7 +188,8 @@ def run_session(db: Database, settings: Settings, md: MarketData, status: dict[s
         if last_err and last_err.get("error") and "authenticate" in str(last_err["error"]).lower():
             try:
                 from sentinel.store.db import from_iso
-                age_h = (now - from_iso(last_err["finished_at"])).total_seconds() / 3600.0
+                # finished_at is wall-clock time, so compare with the wall clock even when the engine runs on a sim clock
+                age_h = (datetime.now(UTC) - from_iso(last_err["finished_at"])).total_seconds() / 3600.0
             except Exception:  # noqa: BLE001
                 age_h = 999.0
             if age_h < 20:
