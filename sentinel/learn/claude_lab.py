@@ -223,6 +223,8 @@ def run_session(db: Database, settings: Settings, md: MarketData, status: dict[s
     ]
     env = {k: v for k, v in os.environ.items() if k not in ("ALPACA_API_KEY", "ALPACA_SECRET_KEY")}
     env["SENTINEL_LAB_SESSION"] = "1"
+    if settings.sim:
+        env["SENTINEL_SIM"] = "1"  # Claude's backtests must hit the sim database, never the paper one
     env["PYTHONPATH"] = str(ROOT)
     env.setdefault("PYTHONIOENCODING", "utf-8")
     # make `python` resolve to this interpreter for the subprocess
