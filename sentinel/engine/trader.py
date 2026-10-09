@@ -6,6 +6,7 @@ turning signals into sized orders.
 """
 from __future__ import annotations
 
+import uuid
 import zlib
 from dataclasses import dataclass, field
 from datetime import datetime, time, timedelta
@@ -25,6 +26,12 @@ from sentinel.strategies.base import Context, IndicatorCache, Signal, Strategy
 from sentinel.util.clock import EARLY_CLOSES, NY, TF_SECONDS, UTC, next_open_close, session_at, session_bounds, to_ny
 
 TRADING_STATUSES = ("active", "incubating", "probation")
+
+
+def order_id(prefix: str, owner: str, symbol: str, now_ts: int) -> str:
+    """Broker client order id: unique per order even when one variant fires several orders in the same minute."""
+    safe = f"{prefix}-{owner}-{symbol}-{now_ts}-{uuid.uuid4().hex[:6]}".replace("#", "-").replace("/", "-")
+    return safe[:48]
 
 
 def passes_filters(filters: list[dict], feats: dict[str, float]) -> bool:
@@ -183,7 +190,7 @@ class Trader:
         side = "sell" if lot["side"] == "long" else "buy"
         try:
             fill = self.broker.market_order(lot["symbol"], side, float(lot["qty"]), ref_price=ref_price, extended_hours=self.s.risk.extended_hours,
-                                            client_id=f"sx-{lot['id']}-{now_ts}"[:48])
+                                            client_id=order_id("sx", str(lot["id"]), lot["symbol"], now_ts))
         except Exception as exc:  # noqa: BLE001
             self.event("risk", f"close order failed for {lot['symbol']} ({lot['variant_id']}): {exc}", "error")
             fill = None
@@ -361,7 +368,7 @@ class Trader:
         strat = self.strategies[vid]
         side = "buy" if sig.side == "long" else "sell"
         try:
-            fill = self.broker.market_order(sig.symbol, side, qty, ref_price=ref_price, extended_hours=self.s.risk.extended_hours, client_id=f"se-{vid}-{now_ts}"[:48].replace("#", "-"))
+            fill = self.broker.market_order(sig.symbol, side, qty, ref_price=ref_price, extended_hours=self.s.risk.extended_hours, client_id=order_id("se", vid, sig.symbol, now_ts))
         except Exception as exc:  # noqa: BLE001
             self.event("risk", f"entry order failed {vid} {sig.symbol}: {exc}", "error")
             return
