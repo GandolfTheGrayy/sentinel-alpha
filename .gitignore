@@ -1,10 +1,29 @@
-node_modules/
-.vercel/
-.env
-.env.local
-*.log
+# Python
 __pycache__/
 *.pyc
+.venv/
+*.egg-info/
 .pytest_cache/
-.cache/
-docs/_cache/
+
+# Secrets & local config
+.env
+config.yaml
+
+# Runtime data
+data/
+lab/runs/
+lab/proposals/
+logs/
+
+# UI
+ui/node_modules/
+ui/dist/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# run logs
+logs*.txt

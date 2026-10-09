@@ -1,0 +1,81 @@
+# Sentinel v2 configuration. Copy to config.yaml and edit.
+# Secrets never go here: put ALPACA_API_KEY / ALPACA_SECRET_KEY in .env (see .env.example).
+
+broker:
+  provider: alpaca          # alpaca | sim   (sim = synthetic market, no keys needed)
+  mode: paper               # paper | live   (live additionally requires SENTINEL_CONFIRM_LIVE=yes in the environment)
+  starting_equity: 100000   # sim starting cash; also the reference for % statistics when the broker cannot report one
+
+data:
+  backfill_days_minute: 30  # minute bars kept for intraday strategies and backtests
+  backfill_days_daily: 400  # daily bars for the daily families and regime features
+  poll_interval_s: 60
+  feed: iex                 # Alpaca free plan: iex. Paid: sip.
+
+universe:
+  equities: [SPY, QQQ, IWM, AAPL, MSFT, NVDA, AMZN, GOOGL, META, TSLA, AMD, AVGO, NFLX, JPM, XOM, XLF, XLE, XLK, TLT, GLD]
+  crypto: [BTC/USD, ETH/USD, SOL/USD, LTC/USD, AVAX/USD]
+  benchmark_equity: SPY
+  benchmark_crypto: BTC/USD
+
+risk:
+  risk_per_trade_pct: 1.0            # % of the variant's sleeve risked between entry and stop
+  max_position_pct_of_sleeve: 60
+  max_position_pct_of_equity: 10
+  max_open_per_variant: 4
+  max_gross_exposure_pct: 100
+  daily_loss_pause_pct: 3.0          # pause new entries for the day
+  daily_loss_halt_pct: 6.0           # flatten everything and halt until resumed from the UI
+  variant_drawdown_pause_pct: 15.0   # pause a single variant
+  allow_shorts_equities: true
+  extended_hours: false
+
+costs:                                # applied in backtests and the sim broker; Alpaca paper applies its own
+  equity_slippage_bps: 2
+  crypto_slippage_bps: 8
+  equity_fee_bps: 0
+  crypto_fee_bps: 25                  # Alpaca crypto taker fee is ~0.25 %
+
+population:
+  max_variants: 24                    # active + incubating + probation
+  incubation_min_trades: 30
+  incubation_max_days: 21
+  exploration_floor: 0.02             # minimum allocation for any non-retired variant
+  allocation_cap: 0.20
+  control_weight: 0.01                # fixed sleeve for the control families
+
+schedules:                            # all times America/New_York
+  metrics_every_minutes: 15
+  tournament: "16:35"
+  attribution: "16:40"
+  optimizer: "Sat 09:00"
+  analyst: "16:45"
+  strategist: "Sun 10:00"
+
+learn:
+  min_trades_for_attribution: 30
+  attribution_window_days: 45
+  backtest_days: 45                   # window for proposal gating
+  walk_forward_splits: 3
+  optimizer_trials: 24
+
+claude:
+  enabled: true
+  cli: claude                         # command name or full path to the Claude Code binary
+  plan: max5                          # pro | max5 | max20 | custom  (estimated weekly allowance in API-equivalent USD)
+  weekly_share: 0.25                  # Sentinel may use at most this share of the weekly allowance
+  weekly_allowance_usd_est: null      # set to override the plan estimate (custom)
+  allow_code_proposals: true          # let the strategist write new strategy modules (AST-checked + backtest-gated)
+  analyst:
+    model: sonnet
+    max_budget_usd: 1.50
+    max_turns: 15
+    min_new_trades: 10                # skip the daily session when there is nothing new to learn
+  strategist:
+    model: opus
+    max_budget_usd: 6.00
+    max_turns: 30
+
+server:
+  host: 127.0.0.1
+  port: 8787

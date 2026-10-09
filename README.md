@@ -1,98 +1,128 @@
-# Sentinel Sentiment Engine
+# Sentinel v2
 
-An autonomous research system that hunts for **Sentiment Arbitrage** — gaps between what corporate and social language signals and what markets price in.
+A self-improving paper-trading lab. Sentinel trades a diversified population of strategy
+*variants* around the clock (US equities during the session, crypto 24/7), records a
+feature snapshot for every trade, works out which conditions led to good and bad
+outcomes, reallocates capital toward what is working, and uses **Claude Code on your own
+subscription** — under a hard weekly budget — to reason about the evidence and propose
+the next generation of experiments.
 
-🟢 **Live dashboard:** [sentinel.pletkalabs.dev](https://sentinel.pletkalabs.dev)
-
-## Architecture
-
-| Agent | Role |
-|---|---|
-| **Scout** | Live OHLCV (yfinance + stooq fallback), latest news headlines, SEC EDGAR 8-K/10-Q filings |
-| **Linguist** | Claude-powered "certainty vs. hesitation" scoring on filings + headlines |
-| **Historian** | Embedding-based RAG (Gemini `text-embedding-004`) over a curated seed of historical market events |
-| **Judge** | Daily directional predictions (5-trading-day horizon), automatic resolution against actual price moves, weekly Claude retrospective |
-
-## Daily Loop
+Claude never places an order. It reads a digest, runs offline backtests, and writes
+proposals; every proposal is backtested walk-forward against the incumbent and a
+random-entry control before it gets a cent of paper capital.
 
 ```
-05:00 ET ── Scout fetches prices, news, SEC filings per watchlist ticker
-         ── Linguist scores certainty on the combined text per ticker
-         ── Historian RAG-matches against seed events
-         ── Judge asks Claude for a direction + magnitude prediction
-         ── Three baseline strategies (always-up, always-neutral, momentum)
-            also predict, in parallel
-         ── Pipeline writes docs/predictions.json + docs/data.json
-         ── Resolver checks predictions ≥ 7 days old, marks HIT/MISS
-         ── Discord webhook fires on high-conviction HITs and big MISSes
-07:00 ET ── User checks sentinel.pletkalabs.dev — fresh predictions live
+engine (every minute)      learning loop (deterministic)         Claude Code (budgeted)
+bars -> features ->        metrics -> tournament -> factor       analyst  (daily, Sonnet)
+strategies -> risk ->      attribution -> optimizer ->  digest ->  strategist (weekly, Opus)
+Alpaca paper / sim         allocation + lifecycle                    -> proposals -> gate
 ```
 
-The dashboard shows Claude's hit rate next to the three baselines. The system is only useful if Claude meaningfully beats them — that's the working hypothesis being tested daily.
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the design and
+[docs/API.md](docs/API.md) for the dashboard API.
 
-## Repo Layout
+## Quick start
 
-```
-sentinel/
-├── pipeline.py                  ← entrypoint: predict + resolve + persist
-├── scout/                       ← spine modules (live_prices, news, sec_filings)
-│   └── _generated/              ← AI scaffolding (never imported)
-├── linguist/
-│   └── _generated/
-├── historian/                   ← embeddings, rag_query
-│   └── _generated/
-├── judge/                       ← predictor, resolver, baselines, notify, postmortem
-│   └── _generated/
-├── tests/test_spine.py          ← pytest smoke tests
-└── docs/                        ← architecture decision records
-backtest_results/                ← daily markdown post-mortems + weekly retros
-docs/                            ← Vercel-served dashboard + JSON state
-scripts/
-├── sentinel_daily_build.py      ← AI scaffolding generator
-├── weekly_retro.py              ← Sunday retrospective generator
-└── promote.py                   ← move _generated/foo.py into the spine
-```
-
-### Spine vs Scaffolding
-
-Two separate zones inside every pillar:
-
-- **Spine** (`sentinel/{pillar}/*.py`) — hand-written, imported by `pipeline.py`, covered by `tests/test_spine.py`, touched only when you actually want behaviour to change.
-- **Scaffolding** (`sentinel/{pillar}/_generated/*.py`) — Claude-authored exploratory modules from the daily build. Never imported, never run. Read them, copy ideas you like, promote interesting ones with `python scripts/promote.py <pillar> <file>`.
-
-See [`sentinel/docs/ADR-001-architecture.md`](sentinel/docs/ADR-001-architecture.md) for rationale.
-
-## Workflows
-
-| Workflow | Cron | Purpose |
-|---|---|---|
-| `daily_code.yml` | 09:00 UTC | Scaffolding — Claude generates 1–4 stub modules into `_generated/` |
-| `daily_pipeline.yml` | 11:00 UTC | Spine — predict, resolve, notify, publish |
-| `weekly_retro.yml` | 12:00 UTC Sun | Claude retrospective on the past week of resolved predictions |
-| `spine_tests.yml` | every push | pytest on `sentinel/tests/test_spine.py` |
-
-## Required Secrets
-
-| Secret | Required | Purpose |
-|---|---|---|
-| `ANTHROPIC_API_KEY` | yes | Claude calls (predict, score, retrospective) |
-| `GEMINI_API_KEY` | yes | Gemini embeddings for Historian RAG |
-| `GIT_USER_NAME` | yes | Identity on autonomous commits |
-| `GIT_USER_EMAIL` | yes | Must match a verified GitHub email for contributions to count |
-| `SEC_USER_AGENT` | recommended | EDGAR rejects requests without one. Format: `"Your Name your@email"` |
-| `DISCORD_WEBHOOK_URL` | optional | HIT/MISS pings to a Discord channel |
-
-## Local Development
+Requirements: Python 3.11+, Node 20+, [Claude Code](https://claude.com/claude-code) logged in
+(`claude` on your PATH), and an [Alpaca](https://alpaca.markets) account for paper
+trading (free). Nothing is needed for simulation mode.
 
 ```bash
-pip install anthropic google-generativeai yfinance pandas numpy requests beautifulsoup4 pyyaml pytest
-export ANTHROPIC_API_KEY=...
-export GEMINI_API_KEY=...
-export SEC_USER_AGENT="Your Name your@email.com"
-python -m sentinel.pipeline
-pytest sentinel/tests/test_spine.py
+# 1. Python environment
+uv venv --python 3.12 .venv            # or: python -m venv .venv
+.venv/Scripts/activate                 # Windows;  source .venv/bin/activate on macOS/Linux
+uv pip install -e ".[dev]"             # or: pip install -e ".[dev]"
+
+# 2. Dashboard
+python -m sentinel ui-build            # npm install + build into ui/dist
+
+# 3. Try it with no keys: a synthetic market at 120x speed
+python -m sentinel --sim run --speed 120
+#    -> http://127.0.0.1:8787
 ```
 
-## Status
+Paper trading on real data:
 
-This is an active research project, not investment advice. Predictions are exploratory and will be wrong often — the experiment is whether they're wrong less often than a coin flip and the three trivial baselines.
+```bash
+cp .env.example .env                   # add ALPACA_API_KEY / ALPACA_SECRET_KEY (paper keys)
+cp config.example.yaml config.yaml     # optional: universe, risk, schedules, Claude plan
+python -m sentinel doctor              # checks keys, the Claude CLI login, the UI build
+python -m sentinel run
+```
+
+Leave it running. The engine polls minute bars, trades the population, writes every
+fill and exit to `data/sentinel.db`, and the scheduled jobs (America/New_York):
+
+| Job | When | Claude |
+|---|---|---|
+| metrics | every 15 min | no |
+| tournament (lifecycle + reallocation) | 16:35 daily | no |
+| factor attribution | 16:40 daily | no |
+| analyst session | 16:45 daily | Sonnet, capped at $1.50 |
+| parameter optimizer | Sat 09:00 | no |
+| strategist session | Sun 10:00 | Opus, capped at $6.00 |
+
+## The Claude budget
+
+Every research session is a headless `claude -p` call with `--max-budget-usd`,
+`--max-turns`, a read-only tool surface (plus the offline backtester) and a JSON schema
+for the answer. Reported costs are summed over a rolling 7 days and compared with a cap of
+**`weekly_share` (default 25 %) of an estimated plan allowance** (`claude.plan`,
+default `max5`). Sessions that would exceed the cap are skipped; the deterministic loop
+keeps learning regardless.
+
+The plan allowance is an estimate in API-equivalent dollars. After the first week, open
+Claude Code, run `/usage`, estimate the share of the weekly limit that Sentinel's sessions
+consumed, and enter it on the Settings page (or `POST /api/budget/calibrate`). The cap
+re-scales to match.
+
+Claude needs a login on the machine that runs Sentinel: run `claude` once and sign in, or
+create a long-lived token with `claude setup-token` and put it in `.env` as
+`CLAUDE_CODE_OAUTH_TOKEN`.
+
+## Strategy population
+
+Eleven families seed the population (see `sentinel/strategies/`): EMA trend, Bollinger
+mean reversion, opening-range breakout, Donchian breakout, VWAP reversion, volatility
+squeeze, cross-sectional momentum rotation, overnight premium, multi-timeframe crypto
+trend, plus two controls (random entries with the standard exits, and buy-and-hold).
+Variants move through `incubating -> active -> probation -> retired` on confidence
+intervals, not vibes; capital is allocated by Thompson sampling with an exploration floor.
+
+Claude's proposals can change parameters, add entry filters on any recorded feature,
+retire variants, create new variants, or (weekly) write a brand-new family into
+`sentinel/strategies/evolved/`, which is loaded only after an AST allow-list check and a
+passing backtest. Its running notebook lives in `lab/memory.md`.
+
+## Command line
+
+```bash
+python -m sentinel run [--sim] [--speed N] [--port 8787]
+python -m sentinel backtest --family trend_ema --params '{"fast": 9}' --days 45 --json
+python -m sentinel backtest --variant trend_ema#2 --walk-forward 3
+python -m sentinel research --kind analyst [--dry-run]     # one session now (dry-run writes the prompt only)
+python -m sentinel tournament | attribution | optimize     # run a learning job once
+python -m sentinel doctor
+pytest                                                     # 30-second offline test suite
+```
+
+Simulation mode (`--sim`) uses a deterministic synthetic market and its own database
+(`data/sentinel-sim.db`, `lab-sim/`), so it never mixes with paper results.
+
+## Running 24/7 on Windows
+
+`scripts/install_task.ps1` registers a Scheduled Task that starts Sentinel at logon and
+restarts it if it stops; `scripts/uninstall_task.ps1` removes it. On a server without an
+interactive Claude login, use `claude setup-token`. Logs go to `logs/`.
+
+## Safety
+
+* Paper trading by default. Live trading needs `broker.mode: live` **and**
+  `SENTINEL_CONFIRM_LIVE=yes` in the environment.
+* Daily loss limits pause entries (3 %) and flatten + halt (6 %); per-variant drawdown
+  pauses a variant (15 %). All tunable in `config.yaml`.
+* Pause / resume / halt / flatten from the dashboard or `POST /api/engine/{action}`.
+
+This is a research tool, not investment advice. The hypothesis under test is whether a
+disciplined, self-correcting process can find and keep an edge; expect most variants to
+be retired.
