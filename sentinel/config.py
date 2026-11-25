@@ -60,6 +60,7 @@ class RiskCfg(BaseModel):
     max_gross_exposure_pct: float = 100.0
     daily_loss_pause_pct: float = 3.0
     daily_loss_halt_pct: float = 6.0
+    equity_mismatch_pct: float = 3.0   # broker equity vs ledger-implied equity, as % of day-start equity; beyond this the broker figure is suspect
     variant_drawdown_pause_pct: float = 15.0
     allow_shorts_equities: bool = True
     extended_hours: bool = False

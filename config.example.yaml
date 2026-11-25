@@ -25,7 +25,9 @@ risk:
   max_open_per_variant: 4
   max_gross_exposure_pct: 100
   daily_loss_pause_pct: 3.0          # pause new entries for the day
-  daily_loss_halt_pct: 6.0           # flatten everything and halt until resumed from the UI
+  daily_loss_halt_pct: 6.0           # flatten everything and halt for the rest of the day (clears at the next day rollover)
+  equity_mismatch_pct: 3.0           # if the broker's equity disagrees with the ledger by more than this % of day-start equity,
+                                     # the broker figure is suspect and the daily loss is measured from the ledger instead
   variant_drawdown_pause_pct: 15.0   # pause a single variant
   allow_shorts_equities: true
   extended_hours: false

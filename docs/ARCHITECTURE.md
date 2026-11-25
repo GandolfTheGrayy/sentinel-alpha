@@ -48,8 +48,12 @@ before it gets a cent of (paper) capital.
 * **Ledger.** The engine is the source of truth for *which variant owns which lot*. The
   broker holds the net position. One direction per symbol at a time (first variant wins;
   a conflicting signal is recorded as an event, which is itself useful data).
-* **Safety.** Daily loss limit pauses entries; a larger limit flattens and halts; a
-  per-variant drawdown limit pauses the variant. Live trading requires
+* **Safety.** Daily loss limit pauses entries; a larger limit flattens and halts until
+  the next day rollover (an operator halt waits for resume); a per-variant drawdown
+  limit pauses the variant. The daily loss is measured on the broker's equity only while
+  it agrees with the ledger-implied equity (day start + realised + unrealised); a reading
+  that is off by more than `risk.equity_mismatch_pct` is treated as a broker glitch,
+  logged, and the ledger figure is used instead. Live trading requires
   `broker.mode: live` **and** `SENTINEL_CONFIRM_LIVE=yes` in the environment.
 
 ## 2. Strategy population

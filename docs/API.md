@@ -9,7 +9,7 @@ ends in `_frac` (then `0.23` means 23 %).
 ```json
 {
   "mode": "paper",
-  "engine": {"running": true, "paused": false, "halted": false, "last_tick": "2026-10-09T14:31:00Z", "uptime_s": 1234, "tick_count": 99, "errors_1h": 0},
+  "engine": {"running": true, "paused": false, "halted": false, "halt_reason": null, "equity_suspect": false, "last_tick": "2026-10-09T14:31:00Z", "uptime_s": 1234, "tick_count": 99, "errors_1h": 0},
   "market": {"equities_open": true, "next_open": "…", "next_close": "…", "session": "regular", "crypto_open": true},
   "account": {"equity": 100432.1, "cash": 61000.0, "day_pnl": 231.4, "day_pnl_pct": 0.23, "week_pnl": 880.2, "week_pnl_pct": 0.88, "total_pnl": 432.1, "total_pnl_pct": 0.43, "gross_exposure_pct": 39.2, "open_positions": 6, "starting_equity": 100000.0},
   "population": {"active": 12, "incubating": 4, "probation": 1, "paused": 0, "retired": 7},
@@ -18,6 +18,8 @@ ends in `_frac` (then `0.23` means 23 %).
 }
 ```
 `mode` is one of `paper`, `live`, `sim`. `session` is one of `regular`, `pre`, `post`, `closed`.
+`halt_reason` is `risk` (clears at the next day rollover), `operator` (until `resume`) or null.
+`equity_suspect` is true while the broker's equity disagrees with the ledger and the loss limits run on the ledger figure.
 
 ## GET /api/equity?range=1d|1w|1m|all&variant=<id>
 `[{"ts": "…", "equity": 100432.1, "cash": 61000.0, "benchmark": 100210.0}]`

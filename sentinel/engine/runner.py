@@ -260,7 +260,7 @@ class Engine:
 
         return {
             "mode": self.s.mode,
-            "engine": {"running": self.running, "paused": st.paused, "halted": st.halted, "last_tick": self.last_tick, "uptime_s": int(_time.time() - self.started_at),
+            "engine": {"running": self.running, "paused": st.paused, "halted": st.halted, "halt_reason": st.halt_reason, "equity_suspect": st.equity_suspect, "last_tick": self.last_tick, "uptime_s": int(_time.time() - self.started_at),
                        "tick_count": self.tick_count, "errors_1h": len([e for e in st.errors if e[0] > now.timestamp() - 3600]), "sim_time": to_iso(now) if self.sim else None},
             "market": {"equities_open": session_at(now) == "regular", "next_open": to_iso(o), "next_close": to_iso(c), "session": session_at(now), "crypto_open": True},
             "account": {"equity": round(acct["equity"], 2), "cash": round(acct["cash"], 2),
@@ -285,12 +285,14 @@ class Engine:
     def resume(self) -> None:
         self.trader.state.paused = False
         self.trader.state.halted = False
+        self.trader.state.halt_reason = None
         self.trader.state.entries_paused_day = None
         self.db.add_event("system", "engine resumed by operator", "info", ts=to_iso(self.now()))
 
     def halt(self) -> None:
         n = self.trader.flatten_all(int(self.now().timestamp()), "kill")
         self.trader.state.halted = True
+        self.trader.state.halt_reason = "operator"
         self.db.add_event("system", f"halted by operator; flattened {n} lots", "warn", ts=to_iso(self.now()))
 
     def flatten(self) -> int:

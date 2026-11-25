@@ -127,8 +127,11 @@ interactive Claude login, use `claude setup-token`. Logs go to `logs/`.
 
 * Paper trading by default. Live trading needs `broker.mode: live` **and**
   `SENTINEL_CONFIRM_LIVE=yes` in the environment.
-* Daily loss limits pause entries (3 %) and flatten + halt (6 %); per-variant drawdown
-  pauses a variant (15 %). All tunable in `config.yaml`.
+* Daily loss limits pause entries (3 %) and flatten + halt for the rest of the day (6 %);
+  per-variant drawdown pauses a variant (15 %). All tunable in `config.yaml`.
+* The daily loss is cross-checked against the trade ledger: a broker equity reading that
+  the booked trades cannot explain (more than `equity_mismatch_pct` off) is logged and
+  ignored for the loss limits instead of tripping a halt.
 * Pause / resume / halt / flatten from the dashboard or `POST /api/engine/{action}`.
 
 This is a research tool, not investment advice. The hypothesis under test is whether a

@@ -68,10 +68,14 @@ def passes_filters(filters: list[dict], feats: dict[str, float]) -> bool:
 class TraderState:
     paused: bool = False            # no new entries (manual)
     halted: bool = False            # flattened, nothing happens until resumed
+    halt_reason: str | None = None  # "risk" clears itself at the next day rollover; "operator" waits for resume
     entries_paused_day: str | None = None
     day_date: str | None = None
     day_start_equity: float = 0.0
-    last_equity: float = 0.0
+    day_realized: float = 0.0       # closed-trade P&L (after fees) since the day rollover
+    ledger_equity: float = 0.0      # day_start_equity + day_realized + unrealized: what the ledger says equity should be
+    last_equity: float = 0.0        # the equity the daily-loss check last used
+    equity_suspect: bool = False    # the broker's equity disagrees with the ledger; daily loss is measured from the ledger
     last_prices: dict[str, float] = field(default_factory=dict)
     errors: list[tuple[int, str]] = field(default_factory=list)
 
@@ -164,11 +168,31 @@ class Trader:
 
     def _day_rollover(self, now: datetime) -> None:
         d = to_ny(now).date().isoformat()
-        if self.state.day_date != d:
-            self.state.day_date = d
-            self.state.day_start_equity = self.equity()
-            self.state.entries_paused_day = None
-            self.cache.clear()
+        if self.state.day_date == d:
+            return
+        st = self.state
+        st.day_date = d
+        broker_eq = self.equity()
+        ref = st.ledger_equity
+        # a broker figure that still disagrees with yesterday's ledger-implied equity must not become today's baseline
+        if ref > 0 and not self.backtest and self._mismatch_pct(broker_eq, ref, ref) > self.s.risk.equity_mismatch_pct:
+            st.day_start_equity = ref
+            self.event("risk", f"day start: broker equity {broker_eq:,.0f} still disagrees with the ledger ({ref:,.0f}); carrying the ledger figure forward",
+                       "warn", {"broker_equity": broker_eq, "ledger_equity": ref})
+        else:
+            st.day_start_equity = broker_eq
+        st.day_realized = 0.0
+        st.ledger_equity = st.day_start_equity + self.ledger.unrealized(st.last_prices)
+        st.entries_paused_day = None
+        if st.halted and st.halt_reason == "risk":
+            st.halted = False
+            st.halt_reason = None
+            self.event("risk", "daily-loss halt cleared at the day rollover; trading resumes", "info")
+        self.cache.clear()
+
+    @staticmethod
+    def _mismatch_pct(broker_eq: float, ledger_eq: float, base: float) -> float:
+        return abs(broker_eq - ledger_eq) / base * 100.0 if base > 0 else 0.0
 
     # ---- exits --------------------------------------------------------------------------
     def _exits(self, now_ts: int, session: str) -> None:
@@ -201,6 +225,7 @@ class Trader:
             fill = Fill(lot["symbol"], side, float(lot["qty"]), float(ref_price), 0.0, datetime.fromtimestamp(now_ts, UTC), "unfilled")
             reason = "kill" if reason == "kill" else reason
         trade = self.ledger.close(lot, now_ts, fill.price, reason, fees=fill.fees, is_backtest=self.backtest)
+        self.state.day_realized += float(trade["pnl"])
         self.event("exit", f"{lot['variant_id']} {reason} {lot['symbol']} {lot['side']} {fill.qty:g} @ {fill.price:.4g} -> {trade['pnl']:+.2f} ({trade['pnl_r']:+.2f}R)",
                    "info", {"trade": {k: trade[k] for k in ("id", "variant_id", "symbol", "side", "pnl", "pnl_r", "exit_reason")}})
         return trade
@@ -215,18 +240,37 @@ class Trader:
 
     # ---- risk ---------------------------------------------------------------------------
     def _risk_checks(self, now_ts: int) -> None:
-        eq = self.equity()
-        self.state.last_equity = eq
-        start = self.state.day_start_equity or eq
+        st = self.state
+        broker_eq = self.equity()
+        start = st.day_start_equity or broker_eq
         if start <= 0:
             return
+        # what the ledger says equity should be: the day's baseline plus everything the engine has booked since
+        ledger_eq = start + st.day_realized + self.ledger.unrealized(st.last_prices)
+        st.ledger_equity = ledger_eq
+        eq = broker_eq
+        if not self.backtest:
+            gap = self._mismatch_pct(broker_eq, ledger_eq, start)
+            suspect = gap > self.s.risk.equity_mismatch_pct
+            if suspect:
+                # a reading the trades cannot explain (a broker glitch, an account reset, outside activity) must not trigger a halt
+                eq = ledger_eq
+            if suspect and not st.equity_suspect:
+                self.event("risk", f"broker equity {broker_eq:,.0f} disagrees with the ledger ({ledger_eq:,.0f}) by {gap:.1f}%; "
+                           "measuring the daily loss from the ledger until they agree", "warn",
+                           {"broker_equity": broker_eq, "ledger_equity": ledger_eq, "gap_pct": gap})
+            elif st.equity_suspect and not suspect:
+                self.event("risk", f"broker equity {broker_eq:,.0f} agrees with the ledger again", "info", {"broker_equity": broker_eq, "ledger_equity": ledger_eq})
+            st.equity_suspect = suspect
+        st.last_equity = eq
         dd = (start - eq) / start * 100.0
-        if dd >= self.s.risk.daily_loss_halt_pct and not self.state.halted:
+        if dd >= self.s.risk.daily_loss_halt_pct and not st.halted:
             n = self.flatten_all(now_ts, "kill")
-            self.state.halted = True
-            self.event("risk", f"daily loss {dd:.2f}% >= halt limit; flattened {n} lots and halted", "error", {"dd_pct": dd})
-        elif dd >= self.s.risk.daily_loss_pause_pct and self.state.entries_paused_day != self.state.day_date:
-            self.state.entries_paused_day = self.state.day_date
+            st.halted = True
+            st.halt_reason = "risk"
+            self.event("risk", f"daily loss {dd:.2f}% >= halt limit; flattened {n} lots and halted until the next trading day", "error", {"dd_pct": dd})
+        elif dd >= self.s.risk.daily_loss_pause_pct and st.entries_paused_day != st.day_date:
+            st.entries_paused_day = st.day_date
             self.event("risk", f"daily loss {dd:.2f}% >= pause limit; no new entries today", "warn", {"dd_pct": dd})
 
     def entries_allowed(self) -> bool:

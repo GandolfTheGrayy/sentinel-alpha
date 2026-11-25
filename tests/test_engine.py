@@ -70,3 +70,82 @@ def test_filters():
     assert not passes_filters([{"feature": "hour_et", "op": "not_in", "values": [9, 15]}], feats)
     assert passes_filters([{"feature": "atr_pct", "op": "between", "values": [0.5, 1.0]}, {"feature": "missing", "op": "gt", "value": 5}], feats)
     assert not passes_filters([{"feature": "atr_pct", "op": "gt", "value": 1.0}], feats)
+
+
+class _FakeBroker:
+    """Reports whatever equity the test sets; fills instantly at the reference price."""
+
+    name = "fake"
+
+    def __init__(self, equity: float):
+        self.equity = equity
+
+    def account(self) -> dict:
+        return {"equity": self.equity, "cash": self.equity, "buying_power": self.equity, "last_equity": self.equity}
+
+    def positions(self) -> dict:
+        return {}
+
+    def clock(self) -> dict:
+        return {}
+
+    def market_order(self, symbol, side, qty, *, ref_price=None, extended_hours=False, client_id=None):
+        from sentinel.engine.broker import Fill
+        return Fill(symbol, side, qty, float(ref_price), 0.0, datetime(2026, 10, 8, tzinfo=timezone.utc), client_id or "x")
+
+
+def _trader(settings, equity: float):
+    from sentinel.engine.trader import Trader
+    events: list[tuple[str, str, str]] = []
+    broker = _FakeBroker(equity)
+    t = Trader(settings, None, broker, Ledger(None, persist=False), [], {}, on_event=lambda k, m, lvl, d: events.append((k, lvl, m)))
+    t._day_rollover(datetime(2026, 10, 8, 14, 0, tzinfo=timezone.utc))
+    return t, broker, events
+
+
+def test_daily_halt_ignores_broker_equity_the_ledger_cannot_explain(settings):
+    t, broker, events = _trader(settings, 100_000.0)
+    # the broker suddenly reports -81% while the ledger has no open lots and no closed trades today
+    broker.equity = 19_000.0
+    t._risk_checks(1_000)
+    assert not t.state.halted and t.state.equity_suspect and t.state.entries_paused_day is None
+    assert any(k == "risk" and lvl == "warn" and "disagrees with the ledger" in m for k, lvl, m in events)
+    # the reading reverts: one info event, no flapping warnings
+    broker.equity = 100_050.0
+    t._risk_checks(1_060)
+    assert not t.state.equity_suspect and sum("disagrees" in m for _, _, m in events) == 1
+    assert any("agrees with the ledger again" in m for _, _, m in events)
+
+
+def test_daily_halt_fires_when_ledger_agrees_and_clears_at_rollover(settings):
+    t, broker, events = _trader(settings, 10_000.0)
+    lot = t.ledger.open({"variant_id": "v#1", "family": "f", "symbol": "AAPL", "side": "long", "qty": 100, "entry_ts": to_iso(datetime(2026, 10, 8, 14, 0, tzinfo=timezone.utc)),
+                         "entry_price": 100.0, "stop": 98.0, "risk_per_unit": 2.0, "reason": "t", "features": {}})
+    # AAPL drops 7%: the ledger's unrealised loss and the broker's equity agree, so the halt is real
+    t.state.last_prices = {"AAPL": 93.0}
+    broker.equity = 9_300.0
+    t._risk_checks(1_000)
+    assert t.state.halted and t.state.halt_reason == "risk" and not t.ledger.lots and not t.state.equity_suspect
+    assert t.state.day_realized == pytest.approx(-700.0)
+    assert any(lvl == "error" and "halted until the next trading day" in m for _, lvl, m in events)
+    # same day: stays halted
+    t._day_rollover(datetime(2026, 10, 8, 20, 0, tzinfo=timezone.utc))
+    assert t.state.halted
+    # next NY day: the risk halt clears itself and the day baseline restarts from the broker figure
+    t._day_rollover(datetime(2026, 10, 9, 14, 0, tzinfo=timezone.utc))
+    assert not t.state.halted and t.state.halt_reason is None and t.state.day_start_equity == 9_300.0 and t.state.day_realized == 0.0
+    assert any("halt cleared at the day rollover" in m for _, _, m in events)
+    assert lot["id"] not in t.ledger.lots
+
+
+def test_operator_halt_survives_rollover_and_bogus_equity_does_not_become_the_day_baseline(settings):
+    t, broker, events = _trader(settings, 100_000.0)
+    t.state.halted, t.state.halt_reason = True, "operator"
+    t._day_rollover(datetime(2026, 10, 9, 14, 0, tzinfo=timezone.utc))
+    assert t.state.halted and t.state.halt_reason == "operator"
+    # the broker is still reporting nonsense at the rollover: carry the ledger figure forward instead
+    t._risk_checks(1_000)
+    broker.equity = 16_000.0
+    t._day_rollover(datetime(2026, 10, 10, 14, 0, tzinfo=timezone.utc))
+    assert t.state.day_start_equity == pytest.approx(100_000.0)
+    assert any("carrying the ledger figure forward" in m for _, _, m in events)

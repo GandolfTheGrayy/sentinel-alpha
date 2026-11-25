@@ -58,10 +58,14 @@ function ModeBadge({ mode }: { mode: Mode }) {
 function EnginePill({ engine }: { engine: EngineState }) {
   const state = engine.halted ? 'halted' : engine.paused ? 'paused' : engine.running ? 'running' : 'stopped'
   const tone: Tone = state === 'running' ? 'profit' : state === 'paused' ? 'warn' : 'loss'
+  const why = engine.halted ? (engine.halt_reason === 'risk' ? ' by the daily loss limit (clears at the next day rollover)' : engine.halt_reason === 'operator' ? ' by the operator (until resume)' : '') : ''
+  const suspect = engine.equity_suspect ? ' · broker equity disagrees with the ledger; loss limits run on the ledger figure' : ''
   return (
-    <Badge tone={tone} size="md" dot pulse={state === 'running'} className="shrink-0" title={`Engine ${state} · ${engine.tick_count} ticks · ${engine.errors_1h} errors in the last hour`}>
+    <Badge tone={tone} size="md" dot pulse={state === 'running'} className="shrink-0" title={`Engine ${state}${why} · ${engine.tick_count} ticks · ${engine.errors_1h} errors in the last hour${suspect}`}>
       <span className="hidden sm:inline">engine </span>
       {state}
+      {engine.halted && engine.halt_reason && <span className="hidden md:inline text-muted">· {engine.halt_reason}</span>}
+      {engine.equity_suspect && <span className="text-warn">· equity?</span>}
       {engine.errors_1h > 0 && <span className="text-loss">· {engine.errors_1h} err</span>}
     </Badge>
   )

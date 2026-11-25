@@ -30,6 +30,10 @@ export interface EngineState {
   running: boolean
   paused: boolean
   halted: boolean
+  /** Why the engine is halted: 'risk' clears at the next day rollover, 'operator' waits for resume. */
+  halt_reason?: 'risk' | 'operator' | null
+  /** The broker's equity disagrees with the ledger; the daily loss limits run on the ledger figure. */
+  equity_suspect?: boolean
   last_tick: string | null
   uptime_s: number
   tick_count: number
