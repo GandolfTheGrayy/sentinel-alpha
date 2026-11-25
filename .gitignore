@@ -10,7 +10,8 @@ __pycache__/
 config.yaml
 
 # Runtime data
-data/
+# the runtime database directory only (sentinel/data is a package)
+/data/
 lab/runs/
 lab/proposals/
 logs/
