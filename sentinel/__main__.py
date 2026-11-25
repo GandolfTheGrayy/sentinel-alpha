@@ -143,7 +143,7 @@ def _offline_engine_status(db, settings):
     eq = float(row["equity"]) if row else settings.broker.starting_equity
     start = float(db.kv_get("starting_equity") or settings.broker.starting_equity)
     return {"mode": settings.mode, "account": {"equity": eq, "cash": float(row["cash"]) if row else eq, "day_pnl": 0.0, "day_pnl_pct": 0.0, "week_pnl": 0.0,
-            "total_pnl": eq - start, "total_pnl_pct": (eq / start - 1) * 100 if start else 0.0, "open_positions": len(db.open_lots())},
+            "total_pnl": eq - start, "total_pnl_pct": (eq / start - 1) * 100 if start else 0.0, "open_positions": len(db.open_lots()), "starting_equity": start},
             "population": population_counts(db), "budget": BudgetGovernor(db, settings).status()}
 
 
@@ -194,6 +194,26 @@ def cmd_jobs(args: argparse.Namespace) -> int:
     elif args.command == "optimize":
         created = run_optimizer(db, settings, md, now=now, log=_log)
         _log(f"created {[c['id'] for c in created]}")
+    return 0
+
+
+def cmd_publish(args: argparse.Namespace) -> int:
+    from sentinel.learn.publish import publish
+    from sentinel.store.db import Database
+
+    settings = load_settings(args.config, sim=args.sim)
+    db = Database(settings.db_path)
+    now = _clock_for(settings, db)
+    status = _offline_engine_status(db, settings)
+    res = publish(db, settings, status, now, log=_log, push=False if args.no_push else None, dry_run=args.dry_run)
+    _log(f"page: {res['page']}")
+    if res.get("committed"):
+        _log(f"committed {res['sha']}: {res['message']}" + (" (pushed)" if res.get("pushed") else ""))
+    else:
+        _log(f"not committed: {res.get('reason', 'dry run')}")
+    if res.get("push_error"):
+        _log(f"push failed: {res['push_error']}")
+        return 1
     return 0
 
 
@@ -312,6 +332,10 @@ def main(argv: list[str] | None = None) -> int:
     for name, help_ in (("tournament", "evaluate, apply lifecycle, reallocate"), ("attribution", "rebuild the factor report"), ("optimize", "run the parameter search")):
         j = sub.add_parser(name, help=help_)
         j.set_defaults(fn=cmd_jobs)
+    pb = sub.add_parser("publish", help="write today's journal page and commit it (with lab/memory.md) to the repository")
+    pb.add_argument("--no-push", action="store_true", help="commit only")
+    pb.add_argument("--dry-run", action="store_true", help="write the page but do not touch git")
+    pb.set_defaults(fn=cmd_publish)
     s = sub.add_parser("seed", help="create the seed population")
     s.set_defaults(fn=cmd_seed)
     c = sub.add_parser("calibrate", help="rescale the plan-allowance estimate from an observed /usage change")

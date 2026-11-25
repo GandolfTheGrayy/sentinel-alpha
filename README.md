@@ -1,5 +1,7 @@
 # Sentinel v2
 
+[![CI](https://github.com/GandolfTheGrayy/sentinel-alpha/actions/workflows/ci.yml/badge.svg)](https://github.com/GandolfTheGrayy/sentinel-alpha/actions/workflows/ci.yml)
+
 A self-improving paper-trading lab. Sentinel trades a diversified population of strategy
 *variants* around the clock (US equities during the session, crypto 24/7), records a
 feature snapshot for every trade, works out which conditions led to good and bad
@@ -102,6 +104,12 @@ retire variants, create new variants, or (weekly) write a brand-new family into
 `sentinel/strategies/evolved/`, which is loaded only after an AST allow-list check and a
 passing backtest. Its running notebook lives in `lab/memory.md`.
 
+Every day after the analyst session the engine writes a journal page under
+`lab/journal/` (account, trades, population, lifecycle changes, what Claude found and
+which proposals survived) and commits it together with `lab/memory.md`, then pushes.
+That commit is the lab's public record; `publish:` in `config.yaml` turns it off or makes
+it commit without pushing.
+
 ## Command line
 
 ```bash
@@ -110,6 +118,7 @@ python -m sentinel backtest --family trend_ema --params '{"fast": 9}' --days 45 
 python -m sentinel backtest --variant trend_ema#2 --walk-forward 3
 python -m sentinel research --kind analyst [--dry-run]     # one session now (dry-run writes the prompt only)
 python -m sentinel tournament | attribution | optimize     # run a learning job once
+python -m sentinel publish [--no-push] [--dry-run]         # write today's journal page and commit it
 python -m sentinel doctor
 pytest                                                     # 30-second offline test suite
 ```

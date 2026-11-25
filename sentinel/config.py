@@ -89,6 +89,7 @@ class SchedulesCfg(BaseModel):
     optimizer: str = "Sat 09:00"
     analyst: str = "16:45"
     strategist: str = "Sun 10:00"
+    publish: str = "17:00"             # daily journal page, committed and pushed (after the analyst)
 
 
 class LearnCfg(BaseModel):
@@ -127,6 +128,14 @@ class ClaudeCfg(BaseModel):
         return round(self.weekly_allowance_usd * self.weekly_share, 2)
 
 
+class PublishCfg(BaseModel):
+    """The daily journal: lab/journal/<day>.md and lab/memory.md committed to the repository and pushed."""
+    enabled: bool = True
+    push: bool = True
+    remote: str = "origin"
+    git: str = "git"
+
+
 class ServerCfg(BaseModel):
     host: str = "127.0.0.1"
     port: int = 8787
@@ -142,6 +151,7 @@ class Settings(BaseModel):
     schedules: SchedulesCfg = Field(default_factory=SchedulesCfg)
     learn: LearnCfg = Field(default_factory=LearnCfg)
     claude: ClaudeCfg = Field(default_factory=ClaudeCfg)
+    publish: PublishCfg = Field(default_factory=PublishCfg)
     server: ServerCfg = Field(default_factory=ServerCfg)
 
     # runtime (not from yaml)

@@ -103,6 +103,7 @@ the outcome (P&L, R-multiple, hold time, exit reason, MAE/MFE).
 | optimizer | weekly / on underperformance | random search in `PARAM_SPACE` with walk-forward backtests; spawns candidate variants | no |
 | analyst | daily, after the US close | reads the digest, runs backtests to test ideas, writes analysis + proposals | **Sonnet** |
 | strategist | weekly (Sunday) | broader review, may write a new family, updates lab memory | **Opus** |
+| publish | daily, after the analyst | writes `lab/journal/<day>.md` from the database and commits it with `lab/memory.md` to the repository, then pushes | no |
 
 Proposals (`param_change`, `new_variant`, `filter`, `retire`, `new_strategy_code`) are
 validated, backtested walk-forward against the incumbent and the random-entry control,

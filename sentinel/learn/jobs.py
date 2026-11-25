@@ -18,6 +18,7 @@ from sentinel.learn.attribution import build_report, digest_md
 from sentinel.learn.budget import BudgetGovernor
 from sentinel.learn.claude_lab import decide_proposal, run_session
 from sentinel.learn.optimizer import run_optimizer
+from sentinel.learn.publish import publish
 from sentinel.learn.tournament import evaluate_all, run_tournament
 from sentinel.store.db import Database, now_iso, to_iso
 from sentinel.util.clock import UTC
@@ -74,6 +75,7 @@ class JobRunner:
         e.schedule("optimizer", sc.optimizer, lambda: self.submit("optimizer", self.optimizer_job))
         e.schedule("analyst", sc.analyst, lambda: self.submit("analyst", lambda: self.research_job("analyst")))
         e.schedule("strategist", sc.strategist, lambda: self.submit("strategist", lambda: self.research_job("strategist")))
+        e.schedule("publish", sc.publish, lambda: self.submit("publish", self.publish_job))
         e.budget_provider = lambda: self.gov.status(e.now(), next_runs={"analyst": to_iso(e.next_fire_of("analyst")) if e.next_fire_of("analyst") else None,
                                                                          "strategist": to_iso(e.next_fire_of("strategist")) if e.next_fire_of("strategist") else None})
 
@@ -125,6 +127,22 @@ class JobRunner:
         run = self.db.run(run_id) if run_id else None
         self.engine.emit_threadsafe("event", {"ts": now_iso(), "level": "info", "kind": "research", "message": f"{kind} session finished: {run['status'] if run else 'n/a'}", "data": {"run_id": run_id}})
         return {"run_id": run_id, "status": run["status"] if run else None}
+
+    def publish_job(self) -> dict[str, Any]:
+        """Write the day's journal page and commit it (with lab/memory.md) to the repository."""
+        if not self.s.publish.enabled:
+            return {"skipped": "publish.enabled is false"}
+        res = publish(self.db, self.s, self.engine.status(), self.engine.now(), log=self.engine.log)
+        if res.get("committed"):
+            if res.get("pushed"):
+                self.engine.record_event("system", f"journal {res['day']} committed as {res['sha']} and pushed", "info", {"sha": res["sha"], "page": res["page"]})
+            elif self.s.publish.push:
+                self.engine.record_event("system", f"journal {res['day']} committed as {res['sha']}; push failed: {res.get('push_error', '')[:160]}", "warn", {"sha": res["sha"]})
+            else:
+                self.engine.record_event("system", f"journal {res['day']} committed as {res['sha']}", "info", {"sha": res["sha"]})
+        elif res.get("reason") not in (None, "no changes"):
+            self.engine.record_event("system", f"journal not committed: {res['reason']}", "warn", {})
+        return res
 
     def decide_job(self, pid: int, accept: bool) -> dict[str, Any]:
         if not accept:
